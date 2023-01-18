@@ -13,12 +13,12 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::view('/', "welcome")->name("dashboard")->middleware("auth");
+Route::view('/', "dashboard")->name("dashboard")->middleware("auth");
 
 
 
 Route::view("/register","auth.register");
-Route::view("/login","auth.login");
+Route::view("/login","auth.login")->name("login");
 
  Route::controller(AuthController::class,)->group(function () {
      Route::post("/register","register")->name("register");
