@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EditProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +26,6 @@ Route::view("/login","auth.login")->name("login");
      Route::post("/login","login")->name("login");
      Route::post("/logout","logout")->name("logout");
  });
+
+ Route::get("{user}/edit",[EditProfileController::class,"edit"])->name("edit");
+ Route::patch("{user}/edit",[EditProfileController::class,"update"])->name("update");
