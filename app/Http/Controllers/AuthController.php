@@ -22,7 +22,8 @@ class AuthController extends Controller
         return to_route("dashboard");
     }
 
-    public function login(LoginRequest $request) {
+    public function login(LoginRequest $request): \Illuminate\Http\RedirectResponse
+    {
        $fields = $request->validated();
 
         if (Auth::attempt($fields)) {

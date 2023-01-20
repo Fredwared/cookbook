@@ -1,6 +1,6 @@
 <x-layout>
 
-    <x-layout>
+
 
         <div class="flex items-center justify-center h-screen bg-gray-300">
             <!-- Login Container -->
@@ -37,6 +37,6 @@
 
             </div>
 
-    </x-layout>
+
 
 </x-layout>

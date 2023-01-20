@@ -16,18 +16,19 @@
                     </div>
                 </div>
                 <div class="space-x-8 flex justify-between mt-32 md:mt-0 md:justify-center">
+
                     <a href="{{route("edit",auth()->user()->id)}}" class="text-white outline-none py-2 px-4 uppercase rounded bg-blue-400 hover:bg-blue-500 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
                         Edit Profile
                     </a>
 
                     <form action="{{route("logout")}}" method="POST">
                         @csrf
-                        <button type="submit" class="text-white outline-none py-2 px-4 uppercase rounded bg-red-600 hover:bg-red-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
+                        <button  class="text-white outline-none py-2 px-4 uppercase rounded bg-red-600 hover:bg-red-800 shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
                             Logout
                         </button>
                     </form>
 
-                        <a href="#" class="text-white outline-none py-2 px-4 uppercase rounded bg-[#43655A]  shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
+                        <a href="{{route("edit-password",auth()->user()->id)}}" class="text-white outline-none py-2 px-4 uppercase rounded bg-[#43655A]  shadow hover:shadow-lg font-medium transition transform hover:-translate-y-0.5">
                             <button >
                            Reset Password
                             </button>

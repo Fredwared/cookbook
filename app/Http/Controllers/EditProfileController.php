@@ -8,10 +8,7 @@ use App\Models\User;
 class EditProfileController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware("auth");
-    }
+
 
     public function edit(User $user): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
