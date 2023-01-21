@@ -13,7 +13,7 @@ class ResetPasswordController extends Controller
         return view("auth.reset-password");
     }
 
-    public function updatePassword(ResetPasswordRequest $request,User $user)
+    public function updatePassword(ResetPasswordRequest $request,User $user): \Illuminate\Http\RedirectResponse
     {
         $fields = $request->validated();
 
