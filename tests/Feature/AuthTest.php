@@ -102,9 +102,9 @@ class AuthTest extends TestCase
     {
         $user = User::factory()->create();
 
-      $this->actingAs($user)->post(route("update-password",$user->id),[
-          "password" => "something"
-      ])->assertRedirectToRoute("dashboard");
+        $this->actingAs($user)->post(route("update-password", $user->id), [
+            "password" => "something"
+        ])->assertRedirectToRoute("dashboard");
     }
 
 }
