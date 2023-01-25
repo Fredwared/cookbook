@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\RegisterResource;
 use App\Models\User;
+use App\Services\RegisterService;
 use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
@@ -11,38 +13,13 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function register(RegisterRequest $request): \Illuminate\Http\JsonResponse
+    public function register(RegisterRequest $request,RegisterService $registerService): RegisterResource
     {
-
-        try {
-            $fields = $request->validated();
-            $fields["password"] = bcrypt($fields["password"]);
-
-            if (!$fields) {
-                return response()->json([
-                    "status" => false,
-                    "message" => "Validation error",
-                    "error" => $fields->errors()
-                ], 401);
-            }
-            $user = User::query()->create($fields);
-
-            return response()->json([
-                "status" => true,
-                "message" => "User created successfully",
-                "token" => $user->createToken("API TOKEN")->plainTextToken
-            ]);
-
-        } catch (\Throwable $throwable) {
-            return response()->json([
-                "status" => false,
-                "message" => $throwable->getMessage(),
-            ], 500);
-        }
-
+     $user =  $registerService($request->validated());
+        return new RegisterResource($user);
     }
 
-    public function login(LoginRequest $request)
+    public function login(LoginRequest $request): \Illuminate\Http\JsonResponse
     {
         try {
             $fields  = $request->validated();
@@ -62,12 +39,12 @@ class UserController extends Controller
                 ], 401);
             }
 
-            
+
             $user = User::query()->where("email",$fields["email"])->first();
             return response()->json([
                "status" => true,
                "message" => "User logged in successfully",
-               "token" =>  $user->createToken("API TOKEN")->plainTextToken
+               "token" =>  $user->createToken("AUTH TOKEN")->plainTextToken
             ],200);
 
         }
