@@ -13,8 +13,6 @@ class RegisterRequest extends FormRequest
     }
 
 
-
-
     public function rules(): array
     {
         return [
@@ -22,15 +20,10 @@ class RegisterRequest extends FormRequest
             "email" => "required|email|max:255",
             "firstname" => "required|string|max:255",
             "lastname" => "required|string|max:255",
-            "password" => "required|max:255",
-            "password_confirmation => 'required|same:password"
+            "password" => "required|max:255|confirmed",
         ];
     }
 
-    public function prepareForValidation()
-    {
-        $this->merge([
-            "password" => bcrypt($this->password)
-        ]);
-    }
+
+
 }

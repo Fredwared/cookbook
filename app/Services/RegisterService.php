@@ -1,14 +1,19 @@
 <?php
+
 namespace App\Services;
 
 
 use App\Models\User;
 
-class  RegisterService {
 
-    public function __invoke( array $validation): \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model
+class  RegisterService
+{
+
+
+    public function __invoke($validation): \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Builder
     {
 
+        $validation["password"] = bcrypt($validation["password"]);
         return User::query()->create($validation);
 
     }

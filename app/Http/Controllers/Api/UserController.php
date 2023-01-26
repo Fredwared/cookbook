@@ -3,56 +3,32 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\LoginResource;
 use App\Http\Resources\RegisterResource;
-use App\Models\User;
+use App\Services\LoginService;
 use App\Services\RegisterService;
-use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
-    public function register(RegisterRequest $request,RegisterService $registerService): RegisterResource
+    public function register(RegisterRequest $request, RegisterService $registerService): RegisterResource
     {
-     $user =  $registerService($request->validated());
+        $user = $registerService($request->validated());
+
         return new RegisterResource($user);
     }
 
-    public function login(LoginRequest $request): \Illuminate\Http\JsonResponse
+
+    /**
+     * @throws ValidationException
+     */
+    public function login(LoginRequest $request, LoginService $loginService): LoginResource
     {
-        try {
-            $fields  = $request->validated();
-            if (!$fields) {
-                return response()->json([
-                    "status" => false,
-                    "message" => "Validation error",
-                    "error" => $fields->errors()
-                ], 401);
-            }
+        $request->authenticate();
+        $user = $loginService($request->validated());
 
-
-            if (!Auth::attempt($fields)) {
-                return response()->json([
-                    "status" => false,
-                    "message" => "Email or password does not match",
-                ], 401);
-            }
-
-
-            $user = User::query()->where("email",$fields["email"])->first();
-            return response()->json([
-               "status" => true,
-               "message" => "User logged in successfully",
-               "token" =>  $user->createToken("AUTH TOKEN")->plainTextToken
-            ],200);
-
-        }
-        catch (\Throwable $throwable) {
-            return response()->json([
-                "status" => false,
-                "message" => $throwable->getMessage(),
-            ], 500);
-        }
+        return new LoginResource($user);
     }
 }
