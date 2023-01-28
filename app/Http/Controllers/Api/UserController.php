@@ -13,11 +13,14 @@ use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
-    public function register(RegisterRequest $request, RegisterService $registerService): RegisterResource
+    public function register(RegisterRequest $request, RegisterService $registerService): \Illuminate\Http\JsonResponse
     {
         $user = $registerService($request->validated());
 
-        return new RegisterResource($user);
+        return response()->json([
+            "token" => $user->createToken("authToken")->plainTextToken,
+            new RegisterResource($user),
+        ]);
     }
 
 
