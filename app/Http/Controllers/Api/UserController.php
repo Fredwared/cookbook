@@ -19,7 +19,7 @@ class UserController extends Controller
 
         return response()->json([
             "token" => $user->createToken("authToken")->plainTextToken,
-            new RegisterResource($user),
+            "data" => new RegisterResource($user),
         ]);
     }
 
@@ -27,11 +27,15 @@ class UserController extends Controller
     /**
      * @throws ValidationException
      */
-    public function login(LoginRequest $request, LoginService $loginService): LoginResource
+    public function login(LoginRequest $request, LoginService $loginService): \Illuminate\Http\JsonResponse
     {
         $request->authenticate();
         $user = $loginService($request->validated());
 
-        return new LoginResource($user);
+        return response()->json([
+            "token" =>$user->createToken("authToken")->plainTextToken,
+             "data" =>   new LoginResource($user)
+        ]) ;
+
     }
 }
