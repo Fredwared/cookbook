@@ -16,7 +16,7 @@ class  RegisterService
      * @param array $validation
      * @return Model|Builder
      */
-    public function __invoke(array $validation): \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Builder
+    public function __invoke(array $validation): Model|Builder
     {
 
         $validation["password"] = bcrypt($validation["password"]);
