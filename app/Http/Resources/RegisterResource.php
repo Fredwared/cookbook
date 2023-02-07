@@ -15,7 +15,6 @@ class RegisterResource extends JsonResource
             "email" => $this->email,
             "firstname" => $this->firstname,
             "lastname" => $this->lastname,
-            "message" => "User Registered Successfully"
 
         ];
     }

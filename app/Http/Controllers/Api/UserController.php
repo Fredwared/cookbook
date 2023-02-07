@@ -9,22 +9,43 @@ use App\Services\LoginService;
 use App\Services\RegisterService;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
+
 
 class UserController extends Controller
 {
+    /**
+     * User Register
+     *
+     * @bodyParam username string required Username. Example: Admin
+     * @bodyParam email  email required unique Email. Example: admin@gmail.com
+     * @bodyParam firstname string  required max:255 Firstname. Example: Avaz
+     * @bodyParam lastname string  required max:255 Lastname. Example: Akhmedov
+     * @bodyParam password confirmed required max:255 Password. Example: 123asd2
+     * @bodyParam password_confirmation required Password. Example: 123asd2
+     *
+     * @param RegisterRequest $request
+     * @param RegisterService $registerService
+     * @return JsonResponse
+     */
     public function register(RegisterRequest $request, RegisterService $registerService): \Illuminate\Http\JsonResponse
     {
         $user = $registerService($request->validated());
 
         return response()->json([
-            "token" => $user->createToken("authToken")->plainTextToken,
             "data" => new RegisterResource($user),
+            "message" => "User registered successfully"
         ]);
     }
 
 
     /**
+     * User Login
+     *
+     * @bodyParam email  required exists:users,email Email. Example: admin@gmail.com
+     * @bodyParam password required Password. Example: 123asd2
+     *
      * @throws ValidationException
      */
     public function login(LoginRequest $request, LoginService $loginService): \Illuminate\Http\JsonResponse
@@ -33,9 +54,9 @@ class UserController extends Controller
         $user = $loginService($request->validated());
 
         return response()->json([
-            "token" =>$user->createToken("authToken")->plainTextToken,
-             "data" =>   new LoginResource($user)
-        ]) ;
-
+            "token" => $user->createToken("authToken")->plainTextToken,
+            "data" => new LoginResource($user),
+            "message" => "Welcome back " . $user->username
+        ]);
     }
 }

@@ -16,7 +16,6 @@ class LoginResource extends JsonResource
                 "email" => $this->email,
                 "firstname" => $this->firstname,
                 "lastname" => $this->lastname,
-                "message" => $this->username . " welcome back"
             ];
     }
 }

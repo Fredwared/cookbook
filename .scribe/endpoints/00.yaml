@@ -1,0 +1,188 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/user
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/register
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'User Register'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      username:
+        name: username
+        description: Username.
+        required: true
+        example: Admin
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'unique Email.'
+        required: true
+        example: admin@gmail.com
+        type: email
+        custom: []
+      firstname:
+        name: firstname
+        description: 'max:255 Firstname.'
+        required: true
+        example: Avaz
+        type: string
+        custom: []
+      lastname:
+        name: lastname
+        description: 'max:255 Lastname.'
+        required: true
+        example: Akhmedov
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'max:255 Password.'
+        required: true
+        example: 123asd2
+        type: confirmed
+        custom: []
+      password_confirmation:
+        name: password_confirmation
+        description: Password.
+        required: false
+        example: 123asd2
+        type: required
+        custom: []
+    cleanBodyParameters:
+      username: Admin
+      email: admin@gmail.com
+      firstname: Avaz
+      lastname: Akhmedov
+      password: 123asd2
+      password_confirmation: 123asd2
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":3,"username":"Admin","email":"admin@gmail.com","firstname":"Avaz","lastname":"Akhmedov"},"message":"User registered successfully"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '57'
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/login
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'User Login'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'exists:users,email Email.'
+        required: false
+        example: admin@gmail.com
+        type: required
+        custom: []
+      password:
+        name: password
+        description: Password.
+        required: false
+        example: 123asd2
+        type: required
+        custom: []
+    cleanBodyParameters:
+      email: admin@gmail.com
+      password: 123asd2
+    fileParameters: []
+    responses:
+      -
+        status: 422
+        content: '{"message":"The selected email is invalid.","errors":{"email":["The selected email is invalid."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '56'
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

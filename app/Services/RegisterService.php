@@ -4,13 +4,19 @@ namespace App\Services;
 
 
 use App\Models\User;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 
 class  RegisterService
 {
 
 
-    public function __invoke($validation): \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Builder
+    /**
+     * @param array $validation
+     * @return Model|Builder
+     */
+    public function __invoke(array $validation): \Illuminate\Database\Eloquent\Model|\Illuminate\Database\Eloquent\Builder
     {
 
         $validation["password"] = bcrypt($validation["password"]);
