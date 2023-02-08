@@ -114,7 +114,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":3,"username":"Admin","email":"admin@gmail.com","firstname":"Avaz","lastname":"Akhmedov"},"message":"User registered successfully"}'
+        content: '{"data":{"id":4,"username":"Admin","email":"admin@gmail.com","firstname":"Avaz","lastname":"Akhmedov"},"message":"User registered successfully"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -177,6 +177,45 @@ endpoints:
           content-type: application/json
           x-ratelimit-limit: '60'
           x-ratelimit-remaining: '56'
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/logout
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'User Logout'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
           vary: Origin
         description: null
         custom: []

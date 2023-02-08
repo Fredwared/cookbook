@@ -12,7 +12,6 @@ return [
     'title' => "Auth api documentation",
 
 
-
     /*
      * A short description of your API. Will be included in the docs webpage, Postman collection and OpenAPI spec.
      */
@@ -89,7 +88,7 @@ return [
                      * API calls will be made only for routes in this group matching these HTTP methods (GET, POST, etc).
                      * List the methods here or use '*' to mean all methods. Leave empty to disable API calls.
                      */
-                    'methods' => ['GET','POST'],
+                    'methods' => ['GET', 'POST'],
 
                     /*
                      * Laravel config variables which should be set for the API call.
@@ -174,7 +173,7 @@ return [
          * By default, assets are stored in `public/vendor/scribe`.
          * If set, assets will be stored in `public/{{assets_directory}}`
          */
-        'assets_directory' => null,
+        'assets_directory' => "",
 
         /*
          * Middleware to attach to the docs endpoint (if `add_routes` is true).

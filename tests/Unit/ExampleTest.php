@@ -2,13 +2,24 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+
+use Faker\Generator;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
+    use DatabaseTransactions;
 
-    public function test_that_true_is_true()
+    public function testUserRegister()
     {
-        $this->assertTrue(true);
+        $factor = \Faker\Factory::create();
+        dd([
+            'username' => $factor->firstName
+        ]);
+        $d = $this->post('api/login', [
+            'email' => 'asdasd'
+        ]);
+        dd($d->decodeResponseJson());
     }
 }
