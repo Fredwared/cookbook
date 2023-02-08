@@ -1,20 +1,32 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\LoginResource;
-use App\Http\Resources\RegisterResource;
-use App\Services\LoginService;
-use App\Services\RegisterService;
-use App\Http\Requests\RegisterRequest;
-use App\Http\Requests\LoginRequest;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
+
+use App\Http\Requests\Api\V1\{
+    LoginRequest,
+    RegisterRequest
+};
+
+use App\Http\Resources\{
+    LoginResource,
+    RegisterResource
+};
+
+use App\Services\{
+    RegisterService,
+    LoginService
+};
+
+use Illuminate\Http\{
+    JsonResponse,
+    Request
+};
 use Illuminate\Validation\ValidationException;
 
 
-class UserController extends Controller
+class AuthController extends Controller
 {
     /**
      * User Register
@@ -26,9 +38,24 @@ class UserController extends Controller
      * @bodyParam password confirmed required max:255 Password. Example: 123asd2
      * @bodyParam password_confirmation required Password. Example: 123asd2
      *
+     * @header Content-Type application/json
+     * @header Accept application/json
+     *
+     *
      * @param RegisterRequest $request
      * @param RegisterService $registerService
      * @return JsonResponse
+     *
+     * @response {
+     *  "data" [
+     *   "username": "Avaz",
+     *   "email":"avaz@gmail.com",
+     *   "firstname":"Avaz",
+     *   "lastname":"Akhmedov"
+     *  ],
+     * "message":"User created successfully"
+     *
+     *  }
      */
     public function register(RegisterRequest $request, RegisterService $registerService): JsonResponse
     {
@@ -47,11 +74,17 @@ class UserController extends Controller
      * @bodyParam email  required exists:users,email Email. Example: admin@gmail.com
      * @bodyParam password required Password. Example: 123asd2
      *
+     * @header Authorization/Type:Bearer Token
+     * @header Accept application/json
+     *
      * @param LoginRequest $request
      * @param LoginService $loginService
      * @return JsonResponse
      *
      * @throws ValidationException
+     *
+     * /**
+     *
      */
 
     public function login(LoginRequest $request, LoginService $loginService): JsonResponse
@@ -68,6 +101,8 @@ class UserController extends Controller
 
     /**
      * User Logout
+     *
+     * @header Authorization/Type:Bearer Token
      *
      * @param Request $request
      * @return JsonResponse

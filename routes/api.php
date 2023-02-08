@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\V1\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\UserController;
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -10,6 +10,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::post("/register",[UserController::class,"register"]);
-Route::post("/login",[UserController::class,"login"]);
-Route::post("/logout",[UserController::class,"logout"])->middleware("auth:sanctum");
+Route::post("/register",[AuthController::class,"register"]);
+Route::post("/login",[AuthController::class,"login"]);
+Route::post("/logout",[AuthController::class,"logout"])->middleware("auth:sanctum");
