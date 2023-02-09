@@ -4,7 +4,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/user
+    uri: api/v1/user
     metadata:
       groupName: Endpoints
       groupDescription: ''
@@ -43,14 +43,14 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/register
+    uri: api/v1/register
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: 'User Register'
-      description: ''
+      description: 'This endpoint will allow to register users'
       authenticated: false
       custom: []
     headers:
@@ -63,42 +63,42 @@ endpoints:
     bodyParameters:
       username:
         name: username
-        description: Username.
+        description: 'Username of user.'
         required: true
         example: Admin
         type: string
         custom: []
       email:
         name: email
-        description: 'unique Email.'
+        description: 'unique Email of user.'
         required: true
         example: admin@gmail.com
         type: email
         custom: []
       firstname:
         name: firstname
-        description: 'max:255 Firstname.'
+        description: 'Firstname of user.'
         required: true
         example: Avaz
         type: string
         custom: []
       lastname:
         name: lastname
-        description: 'max:255 Lastname.'
+        description: 'Lastname of user.'
         required: true
         example: Akhmedov
         type: string
         custom: []
       password:
         name: password
-        description: 'max:255 Password.'
-        required: true
+        description: 'Password of user.'
+        required: false
         example: 123asd2
-        type: confirmed
+        type: required
         custom: []
       password_confirmation:
         name: password_confirmation
-        description: Password.
+        description: 'Confirm previous password.'
         required: false
         example: 123asd2
         type: required
@@ -114,71 +114,15 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":97,"username":"Admin","email":"admin@gmail.com","firstname":"Avaz","lastname":"Akhmedov"},"message":"User registered successfully"}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
-          vary: Origin
-        description: null
+        content: '{"data":{"username":"Miss Eudora Mohr","email":"rdach@example.com","firstname":"Mireille Lubowitz V","lastname":"Greenfelder"}}'
+        headers: []
+        description: ''
         custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/login
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'User Login'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: 'exists:users,email Email.'
-        required: false
-        example: admin@gmail.com
-        type: required
-        custom: []
-      password:
-        name: password
-        description: Password.
-        required: false
-        example: 123asd2
-        type: required
-        custom: []
-    cleanBodyParameters:
-      email: admin@gmail.com
-      password: 123asd2
-    fileParameters: []
-    responses:
       -
-        status: 422
-        content: '{"message":"The selected email is invalid.","errors":{"email":["The selected email is invalid."]}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '58'
-          vary: Origin
-        description: null
+        status: 200
+        content: "{\r\n  \"data\": {\r\n    \"username\": \"Avaz\",\r\n    \"email\": \"avaz@gmail.com\",\r\n    \"firstname\": \"Avaz\",\r\n    \"lastname\": \"Akhmedov\"\r\n  },\r\n  \"message\": \"User created successfully\"\r\n}"
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth: []
@@ -189,19 +133,20 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/logout
+    uri: api/v1/logout
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
       title: 'User Logout'
-      description: ''
+      description: 'This endpoint will allow to log out users'
       authenticated: false
       custom: []
     headers:
       Content-Type: application/json
       Accept: application/json
+      'Authorization/Type:Bearer': 'Token. Example: 44|cSi4RtDPHw6vjnqiR3oKUP1x963fj1VcW9fMLmUF'
     urlParameters: []
     cleanUrlParameters: []
     queryParameters: []
@@ -211,13 +156,13 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
+        status: 200
+        content: |-
+          {
+           "message":"User logged out"
+          }
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth: []

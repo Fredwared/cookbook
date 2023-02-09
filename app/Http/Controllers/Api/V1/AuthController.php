@@ -3,32 +3,16 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-
-use App\Http\Requests\Api\V1\{
-    LoginRequest,
-    RegisterRequest
-};
-
-use App\Http\Resources\{
-    LoginResource,
-    RegisterResource
-};
-
-use App\Services\{
-    RegisterService,
-    LoginService
-};
-
-use Illuminate\Http\{
-    JsonResponse,
-    Request
-};
+use App\Http\Requests\Api\V1\{LoginRequest, RegisterRequest};
+use App\Http\Resources\{V1\LoginResource, V1\RegisterResource};
+use App\Services\{LoginService, RegisterService};
+use Illuminate\Http\{JsonResponse, Request};
 use Illuminate\Validation\ValidationException;
 
 
 /**
  *
- * APIs for registering and logging in users
+ * APIs to register,login adn logout users
  *
  */
 class AuthController extends Controller
@@ -38,14 +22,13 @@ class AuthController extends Controller
      *
      * This endpoint will allow to register users
      *
-     * @bodyParam username string required Username. Example: Admin
-     * @bodyParam email  email required unique Email. Example: admin@gmail.com
-     * @bodyParam firstname string  required max:255 Firstname. Example: Avaz
-     * @bodyParam lastname string  required max:255 Lastname. Example: Akhmedov
-     * @bodyParam password confirmed required max:255 Password. Example: 123asd2
-     * @bodyParam password_confirmation required Password. Example: 123asd2
+     * @bodyParam username string required Username of user. Example: Admin
+     * @bodyParam email  email required unique Email of user. Example: admin@gmail.com
+     * @bodyParam firstname string  required Firstname of user. Example: Avaz
+     * @bodyParam lastname string  required  Lastname of user. Example: Akhmedov
+     * @bodyParam password  required Password of user. Example: 123asd2
+     * @bodyParam password_confirmation required Confirm previous password. Example: 123asd2
      *
-     * @header Api Version 1
      * @header Content-Type application/json
      * @header Accept application/json
      *
@@ -54,15 +37,12 @@ class AuthController extends Controller
      * @param RegisterService $registerService
      * @return JsonResponse
      *
-     * @response 200 {
-     *  "data" [
-     *   "username": "Avaz",
-     *   "email":"avaz@gmail.com",
-     *   "firstname":"Avaz",
-     *   "lastname":"Akhmedov"
-     *  ],
-     * "message":"User created successfully"
-     *  }
+     * @apiResource App\Http\Resources\V1\RegisterResource
+     * @apiResourceModel App\Models\User
+     *
+     * @responseFile storage/responses/register.json
+     *
+     *
      */
     public function register(RegisterRequest $request, RegisterService $registerService): JsonResponse
     {
@@ -80,12 +60,12 @@ class AuthController extends Controller
      *
      * This endpoint will allow to log in users
      *
-     * @bodyParam email  required exists:users,email Email. Example: admin@gmail.com
-     * @bodyParam password required Password. Example: 123asd2
+     * @bodyParam email  required Email of existing user. Example: admin@gmail.com
+     * @bodyParam password required Password of existing user. Example: 123asd2
      *
-     * @header Authorization/Type:Bearer Token
+     * @header Authorization Bearer {token}
      * @header Accept application/json
-     * @header Api Version 1
+     *
      *
      * @param LoginRequest $request
      * @param LoginService $loginService
@@ -93,16 +73,11 @@ class AuthController extends Controller
      *
      * @throws ValidationException
      *
-     * @response 200 {
-     *  "data" [
-     *   "username": "Avaz",
-     *   "email":"avaz@gmail.com",
-     *   "firstname":"Avaz",
-     *   "lastname":"Akhmedov"
-     *  ],
-     * "message":"Welcome back " . username
+     * @apiResource App\Http\Resources\V1\LoginResource
+     * @apiResourceModel App\Models\User
      *
-     *  }
+     * @responseFile storage/responses/login.json
+     *
      *
      * /**
      *
@@ -125,13 +100,14 @@ class AuthController extends Controller
      *
      * This endpoint will allow to log out users
      *
-     * @header Authorization/Type:Bearer Token
-     * @header Api Version 1
+     * @header Authorization/Type:Bearer Token. Example: 44|cSi4RtDPHw6vjnqiR3oKUP1x963fj1VcW9fMLmUF
+     *
      *
      * @param Request $request
      * @return JsonResponse
      *
-     * @response 200 {
+     * @response 200
+     * {
      *  "message":"User logged out"
      * }
      */

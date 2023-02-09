@@ -107,7 +107,7 @@ class AuthTest extends TestCase
             "password" => bcrypt("1111"),
         ]);
 
-        $this->post("/api/login", [
+        $this->post(route("login"), [
             "email" => $user->email,
             "password" => "1111"
         ]);
@@ -116,13 +116,15 @@ class AuthTest extends TestCase
         Sanctum::actingAs($user)->currentAccessToken()->delete();
 
 
-        $response = $this->json("POST", route("logout"),[])->assertJsonStructure(["message"]);
+        $response = $this->json("POST", route("logout"), [])->assertJsonStructure(["message"]);
 
         $response->assertStatus(200);
 
         $this->assertArrayNotHasKey("token", $response->json());
 
-        User::query()->where("email", "=", $user->email)->exists();
+        $user = User::query()->where("email", "=", $user->email)->exists();
+
+        $this->assertTrue($user);
 
     }
 
