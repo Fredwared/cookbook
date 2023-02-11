@@ -44,15 +44,15 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - POST
-    uri: api/v1/register
+      - GET
+    uri: api/v1/products/categories
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'User Register'
-      description: 'This endpoint will allow to register users'
+      title: 'Show each individual category'
+      description: ''
       authenticated: false
       custom: []
     headers:
@@ -62,70 +62,190 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters:
-      username:
-        name: username
-        description: 'Username of user.'
-        required: true
-        example: Admin
-        type: string
-        custom: []
-      email:
-        name: email
-        description: 'unique Email of user.'
-        required: true
-        example: admin@gmail.com
-        type: email
-        custom: []
-      firstname:
-        name: firstname
-        description: 'Firstname of user.'
-        required: true
-        example: Avaz
-        type: string
-        custom: []
-      lastname:
-        name: lastname
-        description: 'Lastname of user.'
-        required: true
-        example: Akhmedov
-        type: string
-        custom: []
-      password:
-        name: password
-        description: 'Password of user.'
-        required: false
-        example: 123asd2
-        type: required
-        custom: []
-      password_confirmation:
-        name: password_confirmation
-        description: 'Confirm previous password.'
-        required: false
-        example: 123asd2
-        type: required
-        custom: []
-    cleanBodyParameters:
-      username: Admin
-      email: admin@gmail.com
-      firstname: Avaz
-      lastname: Akhmedov
-      password: 123asd2
-      password_confirmation: 123asd2
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"username":"Miss Eudora Mohr","email":"rdach@example.com","firstname":"Mireille Lubowitz V","lastname":"Greenfelder"}}'
+        content: '{"data":{"id":16,"name":"qui"}}'
         headers: []
         description: ''
         custom: []
       -
         status: 200
-        content: "{\r\n  \"data\": {\r\n    \"username\": \"Avaz\",\r\n    \"email\": \"avaz@gmail.com\",\r\n    \"firstname\": \"Avaz\",\r\n    \"lastname\": \"Akhmedov\"\r\n  },\r\n  \"message\": \"User created successfully\"\r\n}"
+        content: "{\r\n  \"data\": {\r\n    \"id\": 1,\r\n    \"name\": \"sport\",\r\n    \"child\": {\r\n      \"parent_id\": 1\r\n    }\r\n  }\r\n}"
         headers: []
         description: ''
         custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/products/categories
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a newly created resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: ''
+        headers:
+          content-type: 'text/html; charset=UTF-8'
+          cache-control: 'no-cache, private'
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/products/categories/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show each individual category'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":17,"name":"et"}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"data\": {\r\n    \"id\": 1,\r\n    \"name\": \"sport\",\r\n    \"child\": {\r\n      \"parent_id\": 1\r\n    }\r\n  }\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/products/categories/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/products/categories/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null

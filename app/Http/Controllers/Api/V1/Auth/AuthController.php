@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Api\V1;
+namespace App\Http\Controllers\Api\V1\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\V1\{LoginRequest, RegisterRequest};
-use App\Http\Resources\{V1\LoginResource, V1\RegisterResource};
+use App\Http\Requests\Api\V1\{Auth\LoginRequest, Auth\RegisterRequest};
+use App\Http\Resources\{V1\Auth\LoginResource, V1\Auth\RegisterResource};
 use App\Services\{LoginService, RegisterService};
 use Illuminate\Http\{JsonResponse, Request};
 use Illuminate\Validation\ValidationException;
@@ -40,7 +40,7 @@ class AuthController extends Controller
      * @apiResource App\Http\Resources\V1\RegisterResource
      * @apiResourceModel App\Models\User
      *
-     * @responseFile storage/responses/register.json
+     * @responseFile storage/responses/auth/register.json
      *
      *
      */
@@ -76,10 +76,10 @@ class AuthController extends Controller
      * @apiResource App\Http\Resources\V1\LoginResource
      * @apiResourceModel App\Models\User
      *
-     * @responseFile storage/responses/login.json
+     * @responseFile storage/responses/auth/login.json
      *
      *
-     * /**
+     *
      *
      */
 
