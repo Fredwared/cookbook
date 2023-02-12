@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\V1\Auth\AuthController;
 use App\Http\Controllers\Api\V1\Products\CategoryController;
+use App\Http\Controllers\Api\V1\Products\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -11,10 +12,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::group(["prefix" => "products", "as" => "products."], function () {
+Route::group([ "as" => "products.","prefix" => "products"], function () {
 
     Route::apiResource("categories", CategoryController::class);
 });
+
+Route::apiResource("/products", ProductController::class);
+
 
 
 Route::controller(AuthController::class)->group(function () {

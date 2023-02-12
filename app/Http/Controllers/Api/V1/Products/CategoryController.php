@@ -14,7 +14,7 @@ class CategoryController extends Controller
 
 
     /**
-     * Show each individual category
+     * Show collection of categories
      *
      *
      * @return AnonymousResourceCollection
@@ -22,12 +22,11 @@ class CategoryController extends Controller
      * @apiResource App\Http\Resources\V1\Products\CategoryResource
      * @apiResourceModel App\Models\Category
      *
-     * @responseFile storage/responses/products/category.json
      */
 
     public function index(): AnonymousResourceCollection
     {
-        $categories = Category::query()->where('parent_id', '=', null)->with("childrens")->get();
+        $categories = Category::query()->whereNull("parent_id")->with("childrens")->get();
         return CategoryResource::collection($categories);
     }
 
@@ -40,6 +39,9 @@ class CategoryController extends Controller
      *
      * @param StoreCategoryRequest $request
      * @return JsonResponse
+     *
+     * @header Content-Type application/json
+     * @header Accept application/json
      *
      * @apiResource App\Http\Resources\V1\Products\CategoryResource
      * @apiResourceModel App\Models\Category
@@ -69,7 +71,6 @@ class CategoryController extends Controller
      * @apiResource App\Http\Resources\V1\Products\CategoryResource
      * @apiResourceModel App\Models\Category
      *
-     * @responseFile storage/responses/products/category.json
      *
      */
 
@@ -89,6 +90,9 @@ class CategoryController extends Controller
      * @param Category $category
      * @return JsonResponse
      *
+     * @header Content-Type application/json
+     * @header Accept application/json
+     *
      * @apiResource App\Http\Resources\V1\Products\CategoryResource
      * @apiResourceModel App\Models\Category
      *
@@ -107,15 +111,13 @@ class CategoryController extends Controller
     }
 
     /**
-     * Update existing category or it's subcategories
+     * Delete existing category or it's subcategories
      *
      *
      *
      * @param Category $category
      * @return JsonResponse
      *
-     * @apiResource App\Http\Resources\V1\Products\CategoryResource
-     * @apiResourceModel App\Models\Category
      *
      * @response 200
      * {
@@ -124,7 +126,7 @@ class CategoryController extends Controller
      *
      */
 
-    public function destroy(Category $category)
+    public function destroy(Category $category): JsonResponse
     {
         $category->delete();
         return response()->json([

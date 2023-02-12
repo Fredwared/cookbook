@@ -45,13 +45,13 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/products/categories
+    uri: api/v1/products
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Show each individual category'
+      title: 'Show collection of products'
       description: ''
       authenticated: false
       custom: []
@@ -68,13 +68,330 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":16,"name":"qui"}}'
+        content: '{"data":{"id":42,"name":"Necessitatibus non sed reprehenderit quam.","description":"Aliquid dolorum libero sapiente. Error laboriosam vitae consequatur voluptates consequatur. Reiciendis voluptas eos molestias est debitis qui enim. Aperiam ea est sint totam accusamus. Dolor laudantium enim et quia ab. Est nulla error voluptatem et provident expedita non. Enim dignissimos hic dolor repellat maxime debitis. Voluptatem consectetur iste ad non et soluta. Adipisci rerum praesentium cumque autem accusantium.","category":"aut","brand":"eos","price":212.05,"reviews":[]}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/products
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new category'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Name of the product.'
+        required: true
+        example: 'gaming pc'
+        type: string
+        custom: []
+      category_id:
+        name: category_id
+        description: ''
+        required: true
+        example: ipsam
+        type: string
+        custom: []
+      brand_id:
+        name: brand_id
+        description: ''
+        required: true
+        example: ducimus
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'Description of the product.'
+        required: false
+        example: 'this is the last gen gaming pc,'
+        type: required
+        custom: []
+      price:
+        name: price
+        description: 'Price of the product.'
+        required: false
+        example: '120.99'
+        type: required
+        custom: []
+      category:
+        name: category
+        description: 'Category of the product.'
+        required: false
+        example: pc
+        type: required
+        custom: []
+      brand:
+        name: brand
+        description: 'Brand of the product.'
+        required: false
+        example: samsung
+        type: required
+        custom: []
+    cleanBodyParameters:
+      name: 'gaming pc'
+      category_id: ipsam
+      brand_id: ducimus
+      description: 'this is the last gen gaming pc,'
+      price: '120.99'
+      category: pc
+      brand: samsung
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":43,"name":"Dolor reiciendis reiciendis sunt qui.","description":"Quo omnis et iste nostrum est recusandae sit libero. Laudantium et neque cum. Impedit quia omnis a quod at dolor. Nobis omnis exercitationem eos alias velit magnam. Consequatur neque sint quo alias iure architecto. Suscipit nemo facere earum maiores. Natus eveniet quia officiis eum ullam laudantium.","category":"similique","brand":"ipsa","price":501.9,"reviews":[]}}'
         headers: []
         description: ''
         custom: []
       -
         status: 200
-        content: "{\r\n  \"data\": {\r\n    \"id\": 1,\r\n    \"name\": \"sport\",\r\n    \"child\": {\r\n      \"parent_id\": 1\r\n    }\r\n  }\r\n}"
+        content: "{\r\n  \"message\": \"new product created successfully\",\r\n  \"data\": {\r\n    \"id\": 4,\r\n    \"name\": \"gaming pc\",\r\n    \"description\": \"t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.\",\r\n    \"category\": \"pc\",\r\n    \"brand\": \"samsung\",\r\n    \"price\": 99.99\r\n  },\r\n\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/products/{}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show individual product'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      '':
+        name: ''
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      '': 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":44,"name":"Officia nihil aut possimus at perferendis.","description":"Eveniet sunt qui blanditiis quisquam ex omnis molestiae. Quia ea quibusdam accusantium at vel at. Voluptates qui fugit ea quam ut. Doloremque ut ut rerum asperiores error. Sint qui nulla iusto nulla.","category":"headset","brand":"iure","price":730.2,"reviews":[]}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/products/{}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update existing product'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      '':
+        name: ''
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      '': 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Name of the product.'
+        required: true
+        example: 'gaming pc'
+        type: string
+        custom: []
+      category_id:
+        name: category_id
+        description: ''
+        required: true
+        example: ex
+        type: string
+        custom: []
+      brand_id:
+        name: brand_id
+        description: ''
+        required: true
+        example: et
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'Description of the product.'
+        required: false
+        example: 'this is the last gen gaming pc,'
+        type: required
+        custom: []
+      price:
+        name: price
+        description: 'Price of the product.'
+        required: false
+        example: '120.99'
+        type: required
+        custom: []
+      category:
+        name: category
+        description: 'Category of the product.'
+        required: false
+        example: pc
+        type: required
+        custom: []
+      brand:
+        name: brand
+        description: 'Brand of the product.'
+        required: false
+        example: samsung
+        type: required
+        custom: []
+    cleanBodyParameters:
+      name: 'gaming pc'
+      category_id: ex
+      brand_id: et
+      description: 'this is the last gen gaming pc,'
+      price: '120.99'
+      category: pc
+      brand: samsung
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":45,"name":"Id sed culpa aut distinctio.","description":"Mollitia nihil rerum iure sint quod. Non quis distinctio nesciunt tenetur est distinctio. Et dolor ipsam illum sint. Eligendi beatae cupiditate iusto quia voluptatem. Vel et beatae id. Est nemo et illo. Veniam similique quo quis. Modi unde non quaerat dolor et quia vel consequatur.","category":"fuga","brand":"dolor","price":274.2,"reviews":[]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"message\": \"proudct updated successfully\",\r\n  \"data\": {\r\n    \"id\": 4,\r\n    \"name\": \"gaming pc\",\r\n    \"description\": \"t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.\",\r\n    \"category\": \"pc\",\r\n    \"brand\": \"samsung\",\r\n    \"price\": 99.99\r\n  }\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/products/{}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      '':
+        name: ''
+        description: ''
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      '': 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/products/categories
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show collection of categories'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":11,"name":"quaerat","childrens":[]}}'
         headers: []
         description: ''
         custom: []
@@ -93,7 +410,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
+      title: 'Create a new category'
       description: ''
       authenticated: false
       custom: []
@@ -104,20 +421,37 @@ endpoints:
     cleanUrlParameters: []
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Name of the category.'
+        required: true
+        example: sport
+        type: string
+        custom: []
+      parent_id:
+        name: parent_id
+        description: 'nullable ID of the parent category for subcategory.'
+        required: false
+        example: 3
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      name: sport
+      parent_id: 3
     fileParameters: []
     responses:
       -
         status: 200
-        content: ''
-        headers:
-          content-type: 'text/html; charset=UTF-8'
-          cache-control: 'no-cache, private'
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
-          vary: Origin
-        description: null
+        content: '{"data":{"id":12,"name":"voluptatem","childrens":[]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"data\": {\r\n    \"id\": 1,\r\n    \"name\": \"sport\",\r\n  }\r\n}"
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth: []
@@ -159,13 +493,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":17,"name":"et"}}'
-        headers: []
-        description: ''
-        custom: []
-      -
-        status: 200
-        content: "{\r\n  \"data\": {\r\n    \"id\": 1,\r\n    \"name\": \"sport\",\r\n    \"child\": {\r\n      \"parent_id\": 1\r\n    }\r\n  }\r\n}"
+        content: '{"data":{"id":13,"name":"dolorem","childrens":[]}}'
         headers: []
         description: ''
         custom: []
@@ -185,7 +513,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Update the specified resource in storage.'
+      title: "Update existing category or it's subcategories"
       description: ''
       authenticated: false
       custom: []
@@ -204,10 +532,38 @@ endpoints:
       id: 1
     queryParameters: []
     cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Name of the category.'
+        required: true
+        example: sport
+        type: string
+        custom: []
+      parent_id:
+        name: parent_id
+        description: 'nullable ID of the parent category for subcategory.'
+        required: false
+        example: 9
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      name: sport
+      parent_id: 9
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":14,"name":"ea","childrens":[]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"data\": {\r\n    \"id\": 1,\r\n    \"name\": \"sport\",\r\n  }\r\n}"
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -223,7 +579,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Remove the specified resource from storage.'
+      title: "Update existing category or it's subcategories"
       description: ''
       authenticated: false
       custom: []
@@ -245,7 +601,22 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":15,"name":"quis","childrens":[]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: |-
+          {
+          "message":"Category deleted successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
