@@ -78,7 +78,7 @@ class ProductController extends Controller
      * @apiResourceModel App\Models\Product
      */
 
-    public function show(Product $product): JsonResponseq
+    public function show(Product $product): JsonResponse
     {
         return response()->json(new ProductResource($product));
     }

@@ -19,7 +19,7 @@ class CategoryTest extends TestCase
      */
     public function testToSeeCollectionOfCategories()
     {
-        $this->getJson(route("products.categories.index"))->assertOk();
+        $this->getJson(route("categories.index"))->assertOk();
     }
 
     /**
@@ -33,7 +33,7 @@ class CategoryTest extends TestCase
             "name" => $this->faker->word(),
             "parent_id" => $this->faker->randomNumber()
         ]);
-        $this->getJson(route("products.categories.show", $data->id))->assertOk();
+        $this->getJson(route("categories.show", $data->id))->assertOk();
 
 
         $category = Category::query()->where("name", "=", $data->name)->exists();
@@ -56,7 +56,7 @@ class CategoryTest extends TestCase
             "name" => "new category",
         ];
 
-        $this->postJson(route("products.categories.store"), $data, ["Accept" => "Application/json"])
+        $this->postJson(route("categories.store"), $data, ["Accept" => "Application/json"])
             ->assertOk()
             ->assertJsonStructure([
                 "data" => [
@@ -89,7 +89,7 @@ class CategoryTest extends TestCase
         $data->name = "Something new";
 
 
-        $this->json("PUT",route("products.categories.update", $data->id), $data->toArray(), ["Accept" => "application/json"])
+        $this->json("PUT",route("categories.update", $data->id), $data->toArray(), ["Accept" => "application/json"])
             ->assertOk()
             ->assertJsonStructure([
                 "data" => [
@@ -118,7 +118,7 @@ class CategoryTest extends TestCase
             "parent_id" => $this->faker->randomNumber()
         ]);
 
-        $this->deleteJson(route("products.categories.destroy", $data->id), $data->toArray())
+        $this->deleteJson(route("categories.destroy", $data->id), $data->toArray())
             ->assertOk()
             ->assertJsonStructure([
                 "message"
