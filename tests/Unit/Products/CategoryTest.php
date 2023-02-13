@@ -1,11 +1,11 @@
 <?php
 
-namespace Tests\Unit;
+namespace Products;
 
 use App\Models\Category;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
 class CategoryTest extends TestCase
 {
