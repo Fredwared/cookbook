@@ -3,62 +3,126 @@
 namespace App\Http\Controllers\Api\V1\Products;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Api\V1\Products\StoreReviewRequest;
+use App\Http\Requests\Api\V1\Products\UpdateReviewRequest;
+use App\Http\Resources\V1\Products\ReviewResource;
+use App\Models\Review;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class ReviewController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
+     * Show collection of reviews
      *
-     * @return \Illuminate\Http\Response
+     *
+     * @return AnonymousResourceCollection
+     *
+     * @apiResource App\Http\Resources\V1\Products\ReviewResource
+     * @apiResourceModel App\Models\Review
+     *
      */
-    public function index()
+    public function index(): AnonymousResourceCollection
     {
-        //
+        $reviews = Review::query()->with("products")->get();
+        return ReviewResource::collection($reviews);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Create a new review
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @bodyParam content required string Body of the review. Example: the worst product ever
+     * @bodyParam product_id required ID of product related to the review
+     *
+     * @header Content-Type application/json
+     * @header Accept application/json
+     *
+     * @apiResource App\Http\Resources\V1\Products\ReviewResource
+     * @apiResourceModel App\Models\Review
+     *
+     * @responseFile storage/responses/products/review.json
+     *
+     * @param StoreReviewRequest $request
+     *
+     * @return JsonResponse
      */
-    public function store(Request $request)
+    public function store(StoreReviewRequest $request): JsonResponse
     {
-        //
+        $fields = $request->validated();
+
+
+        $review = Review::query()->create($fields);
+
+        return response()->json([
+            "message" => "Review created successfully",
+            "data" => new ReviewResource($review)
+        ]);
+    }
+
+
+    /**
+     * Show each individual category
+     *
+     * @param Review $review
+     *
+     * @return ReviewResource
+     *
+     * @apiResource App\Http\Resources\V1\Products\ReviewResource
+     * @apiResourceModel App\Models\Review
+     */
+    public function show(Review $review): ReviewResource
+    {
+        return new ReviewResource($review);
     }
 
     /**
-     * Display the specified resource.
+     * Update a existing resource
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @bodyParam content required string Body of the review. Example: the worst product ever
+     * @bodyParam product_id required ID of product related to the review
+     *
+     * @header Content-Type application/json
+     * @header Accept application/json
+     *
+     * @apiResource App\Http\Resources\V1\Products\ReviewResource
+     * @apiResourceModel App\Models\Review
+     *
+     * @responseFile storage/responses/products/updateReview.json
+     *
+     * @param UpdateReviewRequest $request
+     * @param Review $review
+     *
+     * @return JsonResponse
      */
-    public function show($id)
+
+    public function update(UpdateReviewRequest $request, Review $review): JsonResponse
     {
-        //
+
+        $fields = $request->validated();
+
+        $updatedReview = $review->update($fields);
+
+        return response()->json([
+            "message" => "Review updated successfully",
+            "data" => new ReviewResource($updatedReview)
+        ]);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Delete existing review
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Review $review
+     *
+     * @return JsonResponse
+     *
      */
-    public function update(Request $request, $id)
+    public function destroy(Review $review): JsonResponse
     {
-        //
-    }
+        $review->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return response()->json([
+            "message" => "Review deleted successfully"
+        ]);
     }
 }

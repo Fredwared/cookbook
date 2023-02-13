@@ -88,6 +88,8 @@ class CategoryController extends Controller
      *
      * @param StoreCategoryRequest $request
      * @param Category $category
+     *
+     *
      * @return JsonResponse
      *
      * @header Content-Type application/json

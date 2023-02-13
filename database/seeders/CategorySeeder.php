@@ -16,9 +16,9 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         Category::query()->insert([
-        [
+            [
                 "name" => "gaming",
-                "parent_id" => 1
+                "parent_id" => null
             ],
             [
                 "name" => "laptop",
@@ -39,7 +39,6 @@ class CategorySeeder extends Seeder
         ]);
 
         Category::factory(5)->create();
-
 
 
     }
