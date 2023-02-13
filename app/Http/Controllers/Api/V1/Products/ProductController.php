@@ -111,10 +111,12 @@ class ProductController extends Controller
     {
         $fields = $request->validated();
 
+        $product->update($fields);
+
         return response()->json(
             [
                 "message" => "Product updated successfully",
-                "data" => new ProductResource($product->update($fields))
+                "data" => new ProductResource($product->refresh())
             ]
         );
     }

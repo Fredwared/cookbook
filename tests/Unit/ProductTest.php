@@ -81,28 +81,31 @@ class ProductTest extends TestCase
      *
      */
 
-//    public function testToUpdateProduct()
-//    {
-//        $data = Product::query()->create([
-//            "name" => $this->faker->sentence(),
-//            "description" => $this->faker->paragraph(5),
-//            "category_id" => Category::query()->inRandomOrder()->first()->id,
-//            "brand_id" => Brand::query()->inRandomOrder()->first()->id,
-//            "price" => $this->faker->randomFloat(2, 10, 1000)
-//        ]);
-//
-//
-//        $data->name = "something new";
-//
-//
-//        $this->patchJson(route("products.update", $data->id), $data->toArray(), ["Accept" => "application/json"])
-//            ->assertOk()
-//            ->assertJsonStructure([
-//                "message",
-//                "data"
-//            ]);
-//    }
-//
+    public function testToUpdateProduct()
+    {
+        $data = Product::query()->create([
+            "name" => $this->faker->sentence(),
+            "description" => $this->faker->paragraph(5),
+            "category_id" => Category::query()->inRandomOrder()->first()->id,
+            "brand_id" => Brand::query()->inRandomOrder()->first()->id,
+            "price" => $this->faker->randomFloat(2, 10, 1000)
+        ]);
+
+
+        $data->name = "something new";
+
+
+        $this->patchJson(route("products.update", $data->id), $data->toArray(), ["Accept" => "application/json"])
+            ->assertOk()
+            ->assertJsonStructure([
+                "message",
+                "data"
+            ]);
+
+        $product = Product::query()->where("id", "=", $data->id)->exists();
+
+        $this->assertTrue($product);
+    }
 
 
     /**

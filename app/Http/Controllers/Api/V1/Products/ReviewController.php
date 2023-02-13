@@ -101,11 +101,11 @@ class ReviewController extends Controller
 
         $fields = $request->validated();
 
-        $updatedReview = $review->update($fields);
+        $review->update($fields);
 
         return response()->json([
             "message" => "Review updated successfully",
-            "data" => new ReviewResource($updatedReview)
+            "data" => new ReviewResource($review->refresh())
         ]);
     }
 

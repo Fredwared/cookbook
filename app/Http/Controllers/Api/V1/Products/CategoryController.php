@@ -105,10 +105,10 @@ class CategoryController extends Controller
     {
         $fields = $request->validated();
 
-        $updatedCategory = $category->update($fields);
+        $category->update($fields);
         return response()->json([
             "message" => "Category updated successfully",
-            "data" => new CategoryResource($updatedCategory)
+            "data" => new CategoryResource($category->refresh())
         ]);
     }
 

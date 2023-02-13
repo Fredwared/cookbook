@@ -77,32 +77,32 @@ class CategoryTest extends TestCase
      *
      *
      */
-//    public function testToUpdateCategory()
-//    {
-//
-//        $data = Category::query()->create([
-//            "id" => 58,
-//            "name" => $this->faker->word(),
-//            "parent_id" => $this->faker->randomNumber()
-//        ]);
-//
-//        $data->name = "Something new";
-//
-//
-//        $this->json("PUT",route("products.categories.update", $data->id), $data->toArray(), ["Accept" => "application/json"])
-//            ->assertOk()
-//            ->assertJsonStructure([
-//                "data" => [
-//                    "id",
-//                    "name"
-//                ],
-//                "message",
-//            ]);
-//
-//        $category = Category::query()->where("id", "=", $data->id)->exists();
-//
-//        $this->assertTrue($category);
-//    }
+    public function testToUpdateCategory()
+    {
+
+        $data = Category::query()->create([
+            "id" => 58,
+            "name" => $this->faker->word(),
+            "parent_id" => $this->faker->randomNumber()
+        ]);
+
+        $data->name = "Something new";
+
+
+        $this->json("PUT",route("products.categories.update", $data->id), $data->toArray(), ["Accept" => "application/json"])
+            ->assertOk()
+            ->assertJsonStructure([
+                "data" => [
+                    "id",
+                    "name"
+                ],
+                "message",
+            ]);
+
+        $category = Category::query()->where("id", "=", $data->id)->exists();
+
+        $this->assertTrue($category);
+    }
 
 
     /**
