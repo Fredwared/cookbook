@@ -17,16 +17,16 @@ class ReviewController extends Controller
      * Show collection of reviews
      *
      *
-     * @return AnonymousResourceCollection
+     * @return JsonResponse
      *
      * @apiResource App\Http\Resources\V1\Products\ReviewResource
      * @apiResourceModel App\Models\Review
      *
      */
-    public function index(): AnonymousResourceCollection
+    public function index(): JsonResponse
     {
         $reviews = Review::query()->with("products")->get();
-        return ReviewResource::collection($reviews);
+        return response()->json(ReviewResource::collection($reviews));
     }
 
     /**
@@ -66,14 +66,14 @@ class ReviewController extends Controller
      *
      * @param Review $review
      *
-     * @return ReviewResource
+     * @return JsonResponse
      *
      * @apiResource App\Http\Resources\V1\Products\ReviewResource
      * @apiResourceModel App\Models\Review
      */
-    public function show(Review $review): ReviewResource
+    public function show(Review $review): JsonResponse
     {
-        return new ReviewResource($review);
+        return response()->json(new ReviewResource($review));
     }
 
     /**

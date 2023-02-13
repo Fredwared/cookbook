@@ -18,16 +18,16 @@ class ProductController extends Controller
      * Show collection of products
      *
      *
-     * @return AnonymousResourceCollection
+     * @return JsonResponse
      *
      * @apiResource App\Http\Resources\V1\Products\ProductResource
      * @apiResourceModel App\Models\Product
      *
      */
-    public function index(): AnonymousResourceCollection
+    public function index(): JsonResponse
     {
         $products = Product::query()->with(["category", "brand", "reviews"])->get();
-        return ProductResource::collection($products);
+        return response()->json(ProductResource::collection($products));
     }
 
     /**
@@ -72,15 +72,15 @@ class ProductController extends Controller
      *
      * @param Product $product
      *
-     * @return ProductResource
+     * @return JsonResponse
      *
      * @apiResource App\Http\Resources\V1\Products\ProductResource
      * @apiResourceModel App\Models\Product
      */
 
-    public function show(Product $product): ProductResource
+    public function show(Product $product): JsonResponseq
     {
-        return new ProductResource($product);
+        return response()->json(new ProductResource($product));
     }
 
     /**

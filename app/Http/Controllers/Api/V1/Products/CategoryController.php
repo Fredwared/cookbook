@@ -17,17 +17,17 @@ class CategoryController extends Controller
      * Show collection of categories
      *
      *
-     * @return AnonymousResourceCollection
+     * @return JsonResponse
      *
      * @apiResource App\Http\Resources\V1\Products\CategoryResource
      * @apiResourceModel App\Models\Category
      *
      */
 
-    public function index(): AnonymousResourceCollection
+    public function index(): JsonResponse
     {
         $categories = Category::query()->whereNull("parent_id")->with("childrens")->get();
-        return CategoryResource::collection($categories);
+        return response()->json(CategoryResource::collection($categories));
     }
 
 
@@ -66,7 +66,7 @@ class CategoryController extends Controller
      *
      * @param Category $category
      *
-     * @return CategoryResource
+     * @return JsonResponse
      *
      * @apiResource App\Http\Resources\V1\Products\CategoryResource
      * @apiResourceModel App\Models\Category
@@ -74,9 +74,9 @@ class CategoryController extends Controller
      *
      */
 
-    public function show(Category $category): CategoryResource
+    public function show(Category $category): JsonResponse
     {
-        return new CategoryResource($category);
+        return response()->json(new CategoryResource($category));
     }
 
 
