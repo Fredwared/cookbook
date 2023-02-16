@@ -66,8 +66,16 @@ class ProductTest extends TestCase
             "price" => $this->faker->randomFloat(2, 10, 1000)
         ];
 
+       ;
 
-        $this->postJson(route("products.store"), $data, ["Accept" => "application/json"])
+
+
+        $this->postJson(route("products.store"), [
+            [
+                $data,
+            ]
+
+        ], ["Accept" => "application/json"])
             ->assertOk()
             ->assertJsonStructure([
                 "data",

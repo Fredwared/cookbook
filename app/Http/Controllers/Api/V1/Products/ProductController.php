@@ -49,6 +49,8 @@ class ProductController extends Controller
      * @param StoreProductRequest $request
      * @return JsonResponse
      *
+     *
+     *
      * @apiResource App\Http\Resources\V1\Products\ProductResource
      * @apiResourceModel App\Models\Product
      *
@@ -64,15 +66,14 @@ class ProductController extends Controller
 
         $product = Product::query()->create($fields);
 
-        if ($request->hasFile('images')) {
-            $this->upload($product);
-        }
+        $this->upload($product, $request->hasFile("images"));
 
         return response()->json([
             "message" => "Product created successfully",
             "data" => new ProductResource($product)
         ]);
     }
+
 
     /**
      * Show individual product
@@ -122,10 +123,10 @@ class ProductController extends Controller
 
         $product->update($fields);
 
-        if ($request->hasFile('images')) {
-            $this->clearCollection($product, "images");
-            $this->upload($product);
-        }
+
+        $this->clearCollection($product, "images");
+        $this->upload($product, $request->file("images"));
+
 
         return response()->json(
             [

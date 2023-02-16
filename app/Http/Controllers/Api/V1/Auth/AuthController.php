@@ -37,7 +37,7 @@ class AuthController extends Controller
      * @param RegisterService $registerService
      * @return JsonResponse
      *
-     * @apiResource App\Http\Resources\V1\RegisterResource
+     * @apiResource App\Http\Resources\V1\Auth\RegisterResource
      * @apiResourceModel App\Models\User
      *
      * @responseFile storage/responses/auth/register.json
@@ -73,7 +73,7 @@ class AuthController extends Controller
      *
      * @throws ValidationException
      *
-     * @apiResource App\Http\Resources\V1\LoginResource
+     * @apiResource App\Http\Resources\V1\Auth\LoginResource
      * @apiResourceModel App\Models\User
      *
      * @responseFile storage/responses/auth/login.json

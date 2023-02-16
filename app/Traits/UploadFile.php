@@ -7,13 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 trait UploadFile
 {
 
-    protected function upload(Model $model): void
+    protected function upload(Model $model,$image): void
     {
 
-        $model->addMultipleMediaFromRequest(['images'])
-            ->each(function ($fileAdder) {
-                $fileAdder->toMediaCollection('images');
-            });
+        if ($image) {
+            $model->addMultipleMediaFromRequest(['images'])
+                ->each(function ($fileAdder) {
+                    $fileAdder->toMediaCollection('images');
+                });
+        }
 
     }
 
