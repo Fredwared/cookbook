@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Api\V1\Products;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\Products\StoreProductRequest;
+use App\Http\Requests\Api\V1\Products\UpdateProductRequest;
 use App\Http\Resources\V1\Products\ProductResource;
 use App\Models\Product;
+use App\Traits\UploadFile;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
@@ -13,6 +15,7 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 class ProductController extends Controller
 {
 
+    use UploadFile;
 
     /**
      * Show collection of products
@@ -38,6 +41,7 @@ class ProductController extends Controller
      * @bodyParam category required Category of the product. Example:pc
      * @bodyParam brand required Brand of the product. Example:samsung
      * @bodyParam price required Price of the product. Example:120.99
+     * @bodyParam image required Image of the product.
      *
      * @header Content-Type application/json
      * @header Accept application/json
@@ -57,8 +61,12 @@ class ProductController extends Controller
 
         $fields = $request->validated();
 
+
         $product = Product::query()->create($fields);
 
+        if ($request->hasFile('images')) {
+            $this->upload($product);
+        }
 
         return response()->json([
             "message" => "Product created successfully",
@@ -95,7 +103,7 @@ class ProductController extends Controller
      * @header Content-Type application/json
      * @header Accept application/json
      *
-     * @param StoreProductRequest $request
+     * @param UpdateProductRequest $request
      * @param Product $product
      *
      * @return JsonResponse
@@ -105,13 +113,19 @@ class ProductController extends Controller
      *
      * @responseFile storage/responses/products/updateProduct.json
      *
+     *
      */
 
-    public function update(StoreProductRequest $request, Product $product): JsonResponse
+    public function update(UpdateProductRequest $request, Product $product): JsonResponse
     {
         $fields = $request->validated();
 
         $product->update($fields);
+
+        if ($request->hasFile('images')) {
+            $this->clearCollection($product, "images");
+            $this->upload($product);
+        }
 
         return response()->json(
             [

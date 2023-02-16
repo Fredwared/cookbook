@@ -30,11 +30,11 @@ class CategorySeeder extends Seeder
             ],
             [
                 "name" => "headset",
-                "parent_id" => 1
+                "parent_id" => 3
             ],
             [
                 "name" => "keyboard",
-                "parent_id" => 1
+                "parent_id" => 3
             ],
         ]);
 

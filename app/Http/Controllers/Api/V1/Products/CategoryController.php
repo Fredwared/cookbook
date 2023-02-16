@@ -7,7 +7,6 @@ use App\Http\Requests\Api\V1\Products\StoreCategoryRequest;
 use App\Http\Resources\V1\Products\CategoryResource;
 use App\Models\Category;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class CategoryController extends Controller
 {

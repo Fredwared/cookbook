@@ -2,6 +2,7 @@
 
 namespace Products;
 
+use App\Http\Controllers\Api\V1\Products\CategoryController;
 use App\Models\Category;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -15,7 +16,7 @@ class CategoryTest extends TestCase
     /**
      * Test To See collection of categories
      *
-     *
+     * @see CategoryController::index()
      */
     public function testToSeeCollectionOfCategories()
     {
@@ -25,7 +26,7 @@ class CategoryTest extends TestCase
     /**
      * Test To See Each individual category
      *
-     *
+     * @see CategoryController::show()
      */
     public function testToSeeEachIndividualCategory()
     {
@@ -47,7 +48,7 @@ class CategoryTest extends TestCase
     /**
      * Test To Create New Category
      *
-     *
+     * @see CategoryController::create()
      */
 
     public function testToCreateNewCategory()
@@ -75,7 +76,7 @@ class CategoryTest extends TestCase
     /**
      * Test To Update Category
      *
-     *
+     * @see CategoryController::update()
      */
     public function testToUpdateCategory()
     {
@@ -89,7 +90,7 @@ class CategoryTest extends TestCase
         $data->name = "Something new";
 
 
-        $this->json("PUT",route("categories.update", $data->id), $data->toArray(), ["Accept" => "application/json"])
+        $this->json("PUT", route("categories.update", $data->id), $data->toArray(), ["Accept" => "application/json"])
             ->assertOk()
             ->assertJsonStructure([
                 "data" => [
@@ -108,7 +109,7 @@ class CategoryTest extends TestCase
     /**
      * Test To Delete Category
      *
-     *
+     * @see CategoryController::destroy()
      */
 
     public function testToDestroyCategory()

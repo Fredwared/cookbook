@@ -14,17 +14,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-    Route::apiResource("reviews", ReviewController::class);
+Route::apiResource("products", ProductController::class);
 
-    Route::apiResource("categories", CategoryController::class);
+Route::apiResource("categories", CategoryController::class);
 
-    Route::apiResource("brands", BrandController::class);
+Route::apiResource("reviews", ReviewController::class);
 
-   Route::apiResource("products", ProductController::class);
+Route::apiResource("brands", BrandController::class);
 
 
 Route::controller(AuthController::class)->group(function () {
+
     Route::post("/register", "register")->name("register");
+
     Route::post("/login", "login")->name("login");
+
     Route::post("/logout", "logout")->middleware("auth:sanctum")->name("logout");
 });

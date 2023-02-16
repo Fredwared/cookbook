@@ -2,6 +2,7 @@
 
 namespace Products;
 
+use App\Http\Controllers\Api\V1\Products\BrandController;
 use App\Models\Brand;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -14,7 +15,7 @@ class BrandTest extends TestCase
     /**
      * Test To Create New Brand
      *
-     *
+     * @see BrandController::create()
      */
 
     public function testToCreateNewBrand()
@@ -38,7 +39,7 @@ class BrandTest extends TestCase
     /**
      * Test To Update Existing Brand
      *
-     *
+     * @see BrandController::update()
      */
 
     public function testToUpdateExistingBrand()
@@ -65,7 +66,7 @@ class BrandTest extends TestCase
     /**
      * Test To Delete Existing Brand
      *
-     *
+     * @see BrandController::destroy()
      */
 
     public function testDeleteExistingBrand()

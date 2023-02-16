@@ -2,11 +2,14 @@
 
 namespace Products;
 
+use App\Http\Controllers\Api\V1\Products\ProductController;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 class ProductTest extends TestCase
@@ -17,7 +20,7 @@ class ProductTest extends TestCase
     /**
      * Test To See collection of products
      *
-     *
+     * @see ProductController::index()
      */
     public function testToSeeCollectionOfProducts()
     {
@@ -27,7 +30,7 @@ class ProductTest extends TestCase
     /**
      * Test To See each individual product
      *
-     *
+     * @see ProductController::show()
      */
 
     public function testToSeeIndividualProduct()
@@ -50,7 +53,7 @@ class ProductTest extends TestCase
     /**
      * Test To Create New Product
      *
-     *
+     * @see ProductController::create()
      */
 
     public function testToCreateNewProduct()
@@ -62,6 +65,7 @@ class ProductTest extends TestCase
             "brand_id" => Brand::query()->inRandomOrder()->first()->id,
             "price" => $this->faker->randomFloat(2, 10, 1000)
         ];
+
 
         $this->postJson(route("products.store"), $data, ["Accept" => "application/json"])
             ->assertOk()
@@ -75,10 +79,11 @@ class ProductTest extends TestCase
         $this->assertTrue($product);
     }
 
+
     /**
      * Test To Update Existing Product
      *
-     *
+     * @see ProductController::update()
      */
 
     public function testToUpdateProduct()
@@ -111,7 +116,7 @@ class ProductTest extends TestCase
     /**
      * Test To Delete Existing Product
      *
-     *
+     * @see ProductController::destroy()
      */
 
     public function testToDestroyProduct()

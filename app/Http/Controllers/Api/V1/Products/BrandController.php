@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\Api\V1\Products;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreBrandRequest;
+use App\Http\Requests\Api\V1\Products\StoreBrandRequest;
 use App\Http\Resources\V1\Products\BrandResource;
 use App\Models\Brand;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
