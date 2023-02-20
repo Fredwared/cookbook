@@ -55,7 +55,7 @@ class CategoryController extends Controller
 
         return response()->json([
             "message" => "New category created successfully",
-            "data" => new CategoryResource($category)
+            "data" => CategoryResource::make($category)
 
         ]);
     }
@@ -65,7 +65,7 @@ class CategoryController extends Controller
      *
      * @param Category $category
      *
-     * @return JsonResponse
+     * @return CategoryResource
      *
      * @apiResource App\Http\Resources\V1\Products\CategoryResource
      * @apiResourceModel App\Models\Category
@@ -73,9 +73,9 @@ class CategoryController extends Controller
      *
      */
 
-    public function show(Category $category): JsonResponse
+    public function show(Category $category): CategoryResource
     {
-        return response()->json(new CategoryResource($category));
+        return CategoryResource::make($category);
     }
 
 
@@ -107,7 +107,7 @@ class CategoryController extends Controller
         $category->update($fields);
         return response()->json([
             "message" => "Category updated successfully",
-            "data" => new CategoryResource($category->refresh())
+            "data" =>  CategoryResource::make($category->refresh())
         ]);
     }
 

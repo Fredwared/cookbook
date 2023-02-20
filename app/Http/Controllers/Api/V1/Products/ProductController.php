@@ -9,8 +9,7 @@ use App\Http\Resources\V1\Products\ProductResource;
 use App\Models\Product;
 use App\Traits\UploadFile;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ProductController extends Controller
 {
@@ -64,13 +63,15 @@ class ProductController extends Controller
         $fields = $request->validated();
 
 
-        $product = Product::query()->create($fields);
+        $product = Product::create($fields);
 
-        $this->upload($product, $request->hasFile("images"));
+
+        $this->upload($product);
+
 
         return response()->json([
             "message" => "Product created successfully",
-            "data" => new ProductResource($product)
+            "data" => ProductResource::make($product)
         ]);
     }
 
@@ -81,15 +82,15 @@ class ProductController extends Controller
      *
      * @param Product $product
      *
-     * @return JsonResponse
+     * @return ProductResource
      *
      * @apiResource App\Http\Resources\V1\Products\ProductResource
      * @apiResourceModel App\Models\Product
      */
 
-    public function show(Product $product): JsonResponse
+    public function show(Product $product): ProductResource
     {
-        return response()->json(new ProductResource($product));
+        return ProductResource::make($product);
     }
 
     /**
@@ -123,15 +124,16 @@ class ProductController extends Controller
 
         $product->update($fields);
 
-
-        $this->clearCollection($product, "images");
-        $this->upload($product, $request->file("images"));
+        if ($request->hasFile("images")) {
+            $this->clearCollection($product, "images");
+            $this->upload($product);
+        }
 
 
         return response()->json(
             [
                 "message" => "Product updated successfully",
-                "data" => new ProductResource($product->refresh())
+                "data" => ProductResource::make($product->refresh())
             ]
         );
     }
@@ -157,6 +159,29 @@ class ProductController extends Controller
         return response()->json([
             "message" => "Product deleted successfully"
         ]);
+    }
+
+    /**
+     * Update Current Preview
+     *
+     * @param Product $product
+     * @param Media $media
+     * @return JsonResponse
+     */
+    public function updateMainImage(Product $product, Media $media): JsonResponse
+    {
+
+
+        $product->getMedia("images")
+            ->each(
+                fn(Media $image) => $image->setCustomProperty("is_main", $image->id == $media->id)->save()
+            );
+
+        return response()->json([
+            "message" => "Preview  updated successfully"
+        ]);
+
+
     }
 
 }

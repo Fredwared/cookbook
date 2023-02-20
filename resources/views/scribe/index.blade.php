@@ -30,9 +30,9 @@
         var useCsrf = Boolean(1);
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
-    <script src="{{ asset("/vendor/scribe/js/tryitout-4.15.0.js") }}"></script>
+    <script src="{{ asset("/vendor/scribe/js/tryitout-4.16.0.js") }}"></script>
 
-    <script src="{{ asset("/vendor/scribe/js/theme-default-4.15.0.js") }}"></script>
+    <script src="{{ asset("/vendor/scribe/js/theme-default-4.16.0.js") }}"></script>
 
 </head>
 
@@ -71,10 +71,7 @@
                     <a href="#endpoints">Endpoints</a>
                 </li>
                                     <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-user">
-                                <a href="#endpoints-GETapi-v1-user">GET api/v1/user</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-products">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-products">
                                 <a href="#endpoints-GETapi-v1-products">Show collection of products</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-products">
@@ -154,7 +151,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: February 16, 2023</li>
+        <li>Last updated: February 19, 2023</li>
     </ul>
 </div>
 
@@ -171,7 +168,7 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>Authenticate requests to this API's endpoints by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+<p>This API is authenticated by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
@@ -179,123 +176,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
     
 
-                                <h2 id="endpoints-GETapi-v1-user">GET api/v1/user</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-user">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/user" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/user"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-v1-user">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-vary: Origin
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-user" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-user"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-user" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-user" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-user"></code></pre>
-</span>
-<form id="form-GETapi-v1-user" data-method="GET"
-      data-path="api/v1/user"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-user', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-user"
-                    onclick="tryItOut('GETapi-v1-user');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-user"
-                    onclick="cancelTryOut('GETapi-v1-user');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-user" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/user</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="GETapi-v1-user"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="GETapi-v1-user"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-GETapi-v1-products">Show collection of products</h2>
+                                <h2 id="endpoints-GETapi-v1-products">Show collection of products</h2>
 
 <p>
 </p>
@@ -338,13 +219,14 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 46,
-        &quot;name&quot;: &quot;Nisi ad similique non eius exercitationem et est quaerat.&quot;,
-        &quot;description&quot;: &quot;Omnis labore qui iste dolorum voluptate molestias. Perspiciatis at explicabo unde vitae et expedita quia. Magni dolores velit et vel esse similique. Voluptatem repellendus est qui nihil consectetur. Est sequi aliquam optio voluptatem in et vel et.&quot;,
-        &quot;category&quot;: &quot;temporibus&quot;,
-        &quot;brand&quot;: &quot;facere&quot;,
-        &quot;price&quot;: 426.91,
+        &quot;id&quot;: 42,
+        &quot;name&quot;: &quot;Quam repellendus dolorem voluptas fuga esse.&quot;,
+        &quot;description&quot;: &quot;Natus sint dolores labore dicta. Itaque doloremque eum repudiandae voluptatibus a quaerat dolorem. Odit odio sit explicabo dolores reprehenderit. Et quos vel illo harum. Perferendis nostrum ipsum rem quasi et qui sequi. Quasi ad voluptas neque nostrum.&quot;,
+        &quot;category&quot;: &quot;dolorum&quot;,
+        &quot;brand&quot;: &quot;eveniet&quot;,
+        &quot;price&quot;: 613.57,
         &quot;reviews&quot;: [],
+        &quot;image&quot;: [],
         &quot;images&quot;: []
     }
 }</code>
@@ -430,14 +312,14 @@ fetch(url, {
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
     --form "name=gaming pc" \
-    --form "category_id=accusamus" \
-    --form "brand_id=vel" \
+    --form "category_id=eum" \
+    --form "brand_id=sunt" \
     --form "description=this is the last gen gaming pc," \
     --form "price=120.99" \
     --form "category=pc" \
     --form "brand=samsung" \
-    --form "image=aliquid" \
-    --form "images[]=@C:\Users\-\AppData\Local\Temp\phpF6EC.tmp" </code></pre></div>
+    --form "image=aut" \
+    --form "images[]=@C:\Users\-\AppData\Local\Temp\phpC672.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -452,13 +334,13 @@ const headers = {
 
 const body = new FormData();
 body.append('name', 'gaming pc');
-body.append('category_id', 'accusamus');
-body.append('brand_id', 'vel');
+body.append('category_id', 'eum');
+body.append('brand_id', 'sunt');
 body.append('description', 'this is the last gen gaming pc,');
 body.append('price', '120.99');
 body.append('category', 'pc');
 body.append('brand', 'samsung');
-body.append('image', 'aliquid');
+body.append('image', 'aut');
 body.append('images[]', document.querySelector('input[name="images[]"]').files[0]);
 
 fetch(url, {
@@ -477,13 +359,14 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 47,
-        &quot;name&quot;: &quot;Omnis qui voluptatibus iusto eaque tempora magni.&quot;,
-        &quot;description&quot;: &quot;Inventore facilis inventore ab enim voluptatem incidunt. Hic eum voluptatibus optio quia. Quasi quo officia et maiores tenetur. Earum voluptatem inventore vitae molestias. Officiis at ut non est dolores aliquid et ut. At tempore facilis impedit dignissimos voluptatem laboriosam. Magnam distinctio aut voluptatum blanditiis unde qui omnis. Cum voluptas voluptas magni laudantium minima.&quot;,
-        &quot;category&quot;: &quot;gaming&quot;,
-        &quot;brand&quot;: &quot;facere&quot;,
-        &quot;price&quot;: 414.37,
+        &quot;id&quot;: 43,
+        &quot;name&quot;: &quot;Quia modi dignissimos quo laboriosam nihil sunt.&quot;,
+        &quot;description&quot;: &quot;Quis libero accusantium tempora reprehenderit voluptatibus quia rerum. Non accusantium eum non amet. Voluptas similique aut nihil laudantium eum velit molestiae. Nobis id consequatur soluta voluptatem. Enim eaque enim qui voluptatibus. Velit qui recusandae molestiae esse.&quot;,
+        &quot;category&quot;: &quot;numquam&quot;,
+        &quot;brand&quot;: &quot;adipisci&quot;,
+        &quot;price&quot;: 662.07,
         &quot;reviews&quot;: [],
+        &quot;image&quot;: [],
         &quot;images&quot;: []
     }
 }</code>
@@ -586,10 +469,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="category_id"                data-endpoint="POSTapi-v1-products"
-               value="accusamus"
+               value="eum"
                data-component="body">
     <br>
-<p>Example: <code>accusamus</code></p>
+<p>Example: <code>eum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>brand_id</code></b>&nbsp;&nbsp;
@@ -597,10 +480,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="brand_id"                data-endpoint="POSTapi-v1-products"
-               value="vel"
+               value="sunt"
                data-component="body">
     <br>
-<p>Example: <code>vel</code></p>
+<p>Example: <code>sunt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -665,10 +548,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="image"                data-endpoint="POSTapi-v1-products"
-               value="aliquid"
+               value="aut"
                data-component="body">
     <br>
-<p>Image of the product. Example: <code>aliquid</code></p>
+<p>Image of the product. Example: <code>aut</code></p>
         </div>
         </form>
 
@@ -715,13 +598,14 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 48,
-        &quot;name&quot;: &quot;Labore suscipit voluptatem est amet laudantium.&quot;,
-        &quot;description&quot;: &quot;Mollitia sit rerum accusamus eum asperiores consequatur repellat. Cum omnis cupiditate voluptas. Omnis nihil ut laudantium a. In impedit magni assumenda omnis facere nisi animi. Rerum voluptate esse officia nostrum ad id illum. Voluptas sunt minima illo illum ea in iure.&quot;,
+        &quot;id&quot;: 44,
+        &quot;name&quot;: &quot;Unde delectus vero optio incidunt occaecati veritatis facere.&quot;,
+        &quot;description&quot;: &quot;Consequatur architecto deleniti velit tenetur quod nulla. Modi quo repellat natus ut eaque consequuntur. Reiciendis voluptatem modi voluptatum consectetur. Cupiditate exercitationem exercitationem consequatur consequatur voluptatem. Doloremque ut illum iure. Unde et qui eum. Maxime quaerat voluptas nobis id perspiciatis beatae.&quot;,
         &quot;category&quot;: &quot;pc&quot;,
-        &quot;brand&quot;: &quot;modi&quot;,
-        &quot;price&quot;: 747.83,
+        &quot;brand&quot;: &quot;reiciendis&quot;,
+        &quot;price&quot;: 385.78,
         &quot;reviews&quot;: [],
+        &quot;image&quot;: [],
         &quot;images&quot;: []
     }
 }</code>
@@ -819,13 +703,13 @@ fetch(url, {
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
     --form "name=gaming pc" \
-    --form "category_id=asperiores" \
-    --form "brand_id=temporibus" \
+    --form "category_id=minima" \
+    --form "brand_id=dolore" \
     --form "description=this is the last gen gaming pc," \
     --form "price=120.99" \
     --form "category=pc" \
     --form "brand=samsung" \
-    --form "images[]=@C:\Users\-\AppData\Local\Temp\phpF72B.tmp" </code></pre></div>
+    --form "images[]=@C:\Users\-\AppData\Local\Temp\phpC876.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -840,8 +724,8 @@ const headers = {
 
 const body = new FormData();
 body.append('name', 'gaming pc');
-body.append('category_id', 'asperiores');
-body.append('brand_id', 'temporibus');
+body.append('category_id', 'minima');
+body.append('brand_id', 'dolore');
 body.append('description', 'this is the last gen gaming pc,');
 body.append('price', '120.99');
 body.append('category', 'pc');
@@ -864,13 +748,14 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 49,
-        &quot;name&quot;: &quot;Aut modi est aut.&quot;,
-        &quot;description&quot;: &quot;Autem nihil reiciendis ratione et tempora. Perspiciatis fuga enim rerum voluptas optio. Earum omnis consectetur aliquam sint molestiae aut. Enim ut et quaerat totam. Impedit nihil quis sequi repudiandae eaque ad voluptatem. Delectus eum velit placeat aliquam minus blanditiis consequatur. Eaque non unde voluptatem. Enim nemo quo maiores.&quot;,
-        &quot;category&quot;: &quot;keyboard&quot;,
-        &quot;brand&quot;: &quot;aperiam&quot;,
-        &quot;price&quot;: 716.75,
+        &quot;id&quot;: 45,
+        &quot;name&quot;: &quot;Ea distinctio iste inventore facilis.&quot;,
+        &quot;description&quot;: &quot;Aliquid aspernatur quos dolores velit non. Voluptatem vel dolore sint nostrum est rem. Quaerat est sit assumenda maiores. Veniam voluptatibus eos sapiente numquam magni iste. Dolores nesciunt et consectetur qui voluptatem culpa vero ut. Autem aut dolorem qui et ut id magnam.&quot;,
+        &quot;category&quot;: &quot;vel&quot;,
+        &quot;brand&quot;: &quot;adipisci&quot;,
+        &quot;price&quot;: 998.29,
         &quot;reviews&quot;: [],
+        &quot;image&quot;: [],
         &quot;images&quot;: []
     }
 }</code>
@@ -988,10 +873,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="category_id"                data-endpoint="PUTapi-v1-products--id-"
-               value="asperiores"
+               value="minima"
                data-component="body">
     <br>
-<p>Example: <code>asperiores</code></p>
+<p>Example: <code>minima</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>brand_id</code></b>&nbsp;&nbsp;
@@ -999,10 +884,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="brand_id"                data-endpoint="PUTapi-v1-products--id-"
-               value="temporibus"
+               value="dolore"
                data-component="body">
     <br>
-<p>Example: <code>temporibus</code></p>
+<p>Example: <code>dolore</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1227,8 +1112,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 15,
-        &quot;name&quot;: &quot;molestiae&quot;,
+        &quot;id&quot;: 11,
+        &quot;name&quot;: &quot;corrupti&quot;,
         &quot;childrens&quot;: []
     }
 }</code>
@@ -1315,7 +1200,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"name\": \"sport\",
-    \"parent_id\": 3
+    \"parent_id\": 20
 }"
 </code></pre></div>
 
@@ -1332,7 +1217,7 @@ const headers = {
 
 let body = {
     "name": "sport",
-    "parent_id": 3
+    "parent_id": 20
 };
 
 fetch(url, {
@@ -1351,8 +1236,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 16,
-        &quot;name&quot;: &quot;voluptatem&quot;,
+        &quot;id&quot;: 12,
+        &quot;name&quot;: &quot;consequatur&quot;,
         &quot;childrens&quot;: []
     }
 }</code>
@@ -1449,10 +1334,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="parent_id"                data-endpoint="POSTapi-v1-categories"
-               value="3"
+               value="20"
                data-component="body">
     <br>
-<p>nullable ID of the parent category for subcategory. Example: <code>3</code></p>
+<p>nullable ID of the parent category for subcategory. Example: <code>20</code></p>
         </div>
         </form>
 
@@ -1499,8 +1384,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 17,
-        &quot;name&quot;: &quot;consequuntur&quot;,
+        &quot;id&quot;: 13,
+        &quot;name&quot;: &quot;assumenda&quot;,
         &quot;childrens&quot;: []
     }
 }</code>
@@ -1599,7 +1484,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"name\": \"sport\",
-    \"parent_id\": 1
+    \"parent_id\": 7
 }"
 </code></pre></div>
 
@@ -1616,7 +1501,7 @@ const headers = {
 
 let body = {
     "name": "sport",
-    "parent_id": 1
+    "parent_id": 7
 };
 
 fetch(url, {
@@ -1635,8 +1520,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 18,
-        &quot;name&quot;: &quot;corporis&quot;,
+        &quot;id&quot;: 14,
+        &quot;name&quot;: &quot;fuga&quot;,
         &quot;childrens&quot;: []
     }
 }</code>
@@ -1749,10 +1634,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="parent_id"                data-endpoint="PUTapi-v1-categories--id-"
-               value="1"
+               value="7"
                data-component="body">
     <br>
-<p>nullable ID of the parent category for subcategory. Example: <code>1</code></p>
+<p>nullable ID of the parent category for subcategory. Example: <code>7</code></p>
         </div>
         </form>
 
@@ -1920,9 +1805,9 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 45,
-        &quot;body&quot;: &quot;Quas enim laborum consequuntur. Ut eaque eum accusantium dolor beatae autem et. Est voluptas laudantium est neque. Ipsam exercitationem molestiae libero rem doloribus voluptatem. Enim nam ducimus est dolor placeat explicabo omnis.&quot;,
-        &quot;product_id&quot;: 5
+        &quot;id&quot;: 41,
+        &quot;body&quot;: &quot;Hic voluptates pariatur numquam non. Voluptas non est optio consectetur et odio. Est aliquid ipsa atque reprehenderit. Earum iste aspernatur aspernatur quia nisi. Aperiam adipisci aut iste ut nihil dolor vero blanditiis. Hic commodi et harum qui ut nihil. Cum ut et rerum repellat ut.&quot;,
+        &quot;product_id&quot;: 24
     }
 }</code>
  </pre>
@@ -2008,7 +1893,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"content\": \"the worst product ever\",
-    \"product_id\": \"ducimus\"
+    \"product_id\": \"amet\"
 }"
 </code></pre></div>
 
@@ -2025,7 +1910,7 @@ const headers = {
 
 let body = {
     "content": "the worst product ever",
-    "product_id": "ducimus"
+    "product_id": "amet"
 };
 
 fetch(url, {
@@ -2044,9 +1929,9 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 46,
-        &quot;body&quot;: &quot;Soluta rerum fuga id saepe. Aspernatur omnis tempore nihil nihil iste. Excepturi placeat beatae velit unde. Id et non ut.&quot;,
-        &quot;product_id&quot;: 19
+        &quot;id&quot;: 42,
+        &quot;body&quot;: &quot;Aut et asperiores porro cupiditate. Rerum impedit qui non fugit fuga id. Hic facilis quo voluptas eos quo quis. Labore sed ut quis animi debitis. Omnis a velit id a. Quo est vel nesciunt quibusdam temporibus deserunt.&quot;,
+        &quot;product_id&quot;: 3
     }
 }</code>
  </pre>
@@ -2144,10 +2029,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="product_id"                data-endpoint="POSTapi-v1-reviews"
-               value="ducimus"
+               value="amet"
                data-component="body">
     <br>
-<p>ID of product related to the review Example: <code>ducimus</code></p>
+<p>ID of product related to the review Example: <code>amet</code></p>
         </div>
         </form>
 
@@ -2194,9 +2079,9 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 47,
-        &quot;body&quot;: &quot;Eius incidunt vitae et odio repudiandae sunt. Aut libero esse inventore. Minus soluta voluptatem rem inventore laborum aut. Qui quod et eum eum.&quot;,
-        &quot;product_id&quot;: 6
+        &quot;id&quot;: 43,
+        &quot;body&quot;: &quot;Reprehenderit sed sequi rem cum nesciunt. Sequi totam et voluptas ea inventore. Assumenda sit eaque enim adipisci non ducimus sint aut. Praesentium qui qui dolorum suscipit iure nihil quas. Dolore blanditiis illum aliquam saepe blanditiis.&quot;,
+        &quot;product_id&quot;: 14
     }
 }</code>
  </pre>
@@ -2294,7 +2179,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"content\": \"the worst product ever\",
-    \"product_id\": \"in\"
+    \"product_id\": \"voluptatem\"
 }"
 </code></pre></div>
 
@@ -2311,7 +2196,7 @@ const headers = {
 
 let body = {
     "content": "the worst product ever",
-    "product_id": "in"
+    "product_id": "voluptatem"
 };
 
 fetch(url, {
@@ -2330,9 +2215,9 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 48,
-        &quot;body&quot;: &quot;Velit doloribus sint molestiae iure excepturi porro sunt. Exercitationem odio aut est assumenda assumenda. Debitis ut iusto ducimus sunt nulla doloremque deleniti fuga. Voluptatum corrupti iste et est.&quot;,
-        &quot;product_id&quot;: 40
+        &quot;id&quot;: 44,
+        &quot;body&quot;: &quot;Consequuntur sit reiciendis tempore qui adipisci quidem sint voluptatem. In molestiae deleniti et non. Quasi fuga ex et molestias. Eum optio iure vel quod quae totam. Et rem voluptatibus illum unde.&quot;,
+        &quot;product_id&quot;: 5
     }
 }</code>
  </pre>
@@ -2446,10 +2331,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="product_id"                data-endpoint="PUTapi-v1-reviews--id-"
-               value="in"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>ID of product related to the review Example: <code>in</code></p>
+<p>ID of product related to the review Example: <code>voluptatem</code></p>
         </div>
         </form>
 
@@ -2608,8 +2493,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 15,
-        &quot;name&quot;: &quot;velit&quot;
+        &quot;id&quot;: 11,
+        &quot;name&quot;: &quot;ut&quot;
     }
 }</code>
  </pre>
@@ -2694,7 +2579,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"nesciunt\"
+    \"name\": \"amet\"
 }"
 </code></pre></div>
 
@@ -2710,7 +2595,7 @@ const headers = {
 };
 
 let body = {
-    "name": "nesciunt"
+    "name": "amet"
 };
 
 fetch(url, {
@@ -2729,8 +2614,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 16,
-        &quot;name&quot;: &quot;ut&quot;
+        &quot;id&quot;: 12,
+        &quot;name&quot;: &quot;et&quot;
     }
 }</code>
  </pre>
@@ -2816,10 +2701,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-v1-brands"
-               value="nesciunt"
+               value="amet"
                data-component="body">
     <br>
-<p>Name of the brand. Example apple Example: <code>nesciunt</code></p>
+<p>Name of the brand. Example apple Example: <code>amet</code></p>
         </div>
         </form>
 
@@ -2866,8 +2751,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 17,
-        &quot;name&quot;: &quot;excepturi&quot;
+        &quot;id&quot;: 13,
+        &quot;name&quot;: &quot;at&quot;
     }
 }</code>
  </pre>
@@ -2964,7 +2849,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"non\"
+    \"name\": \"qui\"
 }"
 </code></pre></div>
 
@@ -2980,7 +2865,7 @@ const headers = {
 };
 
 let body = {
-    "name": "non"
+    "name": "qui"
 };
 
 fetch(url, {
@@ -2999,8 +2884,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 18,
-        &quot;name&quot;: &quot;et&quot;
+        &quot;id&quot;: 14,
+        &quot;name&quot;: &quot;accusamus&quot;
     }
 }</code>
  </pre>
@@ -3102,10 +2987,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="PUTapi-v1-brands--id-"
-               value="non"
+               value="qui"
                data-component="body">
     <br>
-<p>Name of the brand. Example apple Example: <code>non</code></p>
+<p>Name of the brand. Example apple Example: <code>qui</code></p>
         </div>
         </form>
 
@@ -3283,10 +3168,10 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;username&quot;: &quot;Ms. Shemar Sauer II&quot;,
-        &quot;email&quot;: &quot;deontae80@example.net&quot;,
-        &quot;firstname&quot;: &quot;Monroe Abernathy&quot;,
-        &quot;lastname&quot;: &quot;Erdman&quot;
+        &quot;username&quot;: &quot;Aric Simonis&quot;,
+        &quot;email&quot;: &quot;iblick@example.org&quot;,
+        &quot;firstname&quot;: &quot;Dr. Kelvin O&#039;Hara&quot;,
+        &quot;lastname&quot;: &quot;Powlowski&quot;
     }
 }</code>
  </pre>
@@ -3492,10 +3377,10 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;username&quot;: &quot;Austyn Kunde&quot;,
-        &quot;email&quot;: &quot;okeefe.joshua@example.com&quot;,
-        &quot;firstname&quot;: &quot;Eunice Sporer&quot;,
-        &quot;lastname&quot;: &quot;Windler&quot;
+        &quot;username&quot;: &quot;Miss Tia Champlin&quot;,
+        &quot;email&quot;: &quot;joyce05@example.com&quot;,
+        &quot;firstname&quot;: &quot;Fritz Kovacek&quot;,
+        &quot;lastname&quot;: &quot;Kovacek&quot;
     }
 }</code>
  </pre>

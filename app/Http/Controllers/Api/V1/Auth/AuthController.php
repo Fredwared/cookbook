@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api\V1\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\{Auth\LoginRequest, Auth\RegisterRequest};
 use App\Http\Resources\{V1\Auth\LoginResource, V1\Auth\RegisterResource};
-use App\Services\{LoginService, RegisterService};
+use App\Services\{Auth\LoginService, Auth\RegisterService};
 use Illuminate\Http\{JsonResponse, Request};
 use Illuminate\Validation\ValidationException;
 

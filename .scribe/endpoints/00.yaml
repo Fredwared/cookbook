@@ -4,45 +4,6 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/user
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
     uri: api/v1/products
     metadata:
       groupName: Endpoints
@@ -66,7 +27,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":46,"name":"Nisi ad similique non eius exercitationem et est quaerat.","description":"Omnis labore qui iste dolorum voluptate molestias. Perspiciatis at explicabo unde vitae et expedita quia. Magni dolores velit et vel esse similique. Voluptatem repellendus est qui nihil consectetur. Est sequi aliquam optio voluptatem in et vel et.","category":"temporibus","brand":"facere","price":426.91,"reviews":[],"images":[]}}'
+        content: '{"data":{"id":42,"name":"Quam repellendus dolorem voluptas fuga esse.","description":"Natus sint dolores labore dicta. Itaque doloremque eum repudiandae voluptatibus a quaerat dolorem. Odit odio sit explicabo dolores reprehenderit. Et quos vel illo harum. Perferendis nostrum ipsum rem quasi et qui sequi. Quasi ad voluptas neque nostrum.","category":"dolorum","brand":"eveniet","price":613.57,"reviews":[],"image":[],"images":[]}}'
         headers: []
         description: ''
         custom: []
@@ -108,14 +69,14 @@ endpoints:
         name: category_id
         description: ''
         required: true
-        example: accusamus
+        example: eum
         type: string
         custom: []
       brand_id:
         name: brand_id
         description: ''
         required: true
-        example: vel
+        example: sunt
         type: string
         custom: []
       description:
@@ -158,25 +119,25 @@ endpoints:
         name: image
         description: 'Image of the product.'
         required: false
-        example: aliquid
+        example: aut
         type: required
         custom: []
     cleanBodyParameters:
       name: 'gaming pc'
-      category_id: accusamus
-      brand_id: vel
+      category_id: eum
+      brand_id: sunt
       description: 'this is the last gen gaming pc,'
       price: '120.99'
       category: pc
       brand: samsung
-      image: aliquid
+      image: aut
     fileParameters:
       images:
         - null
     responses:
       -
         status: 200
-        content: '{"data":{"id":47,"name":"Omnis qui voluptatibus iusto eaque tempora magni.","description":"Inventore facilis inventore ab enim voluptatem incidunt. Hic eum voluptatibus optio quia. Quasi quo officia et maiores tenetur. Earum voluptatem inventore vitae molestias. Officiis at ut non est dolores aliquid et ut. At tempore facilis impedit dignissimos voluptatem laboriosam. Magnam distinctio aut voluptatum blanditiis unde qui omnis. Cum voluptas voluptas magni laudantium minima.","category":"gaming","brand":"facere","price":414.37,"reviews":[],"images":[]}}'
+        content: '{"data":{"id":43,"name":"Quia modi dignissimos quo laboriosam nihil sunt.","description":"Quis libero accusantium tempora reprehenderit voluptatibus quia rerum. Non accusantium eum non amet. Voluptas similique aut nihil laudantium eum velit molestiae. Nobis id consequatur soluta voluptatem. Enim eaque enim qui voluptatibus. Velit qui recusandae molestiae esse.","category":"numquam","brand":"adipisci","price":662.07,"reviews":[],"image":[],"images":[]}}'
         headers: []
         description: ''
         custom: []
@@ -226,7 +187,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":48,"name":"Labore suscipit voluptatem est amet laudantium.","description":"Mollitia sit rerum accusamus eum asperiores consequatur repellat. Cum omnis cupiditate voluptas. Omnis nihil ut laudantium a. In impedit magni assumenda omnis facere nisi animi. Rerum voluptate esse officia nostrum ad id illum. Voluptas sunt minima illo illum ea in iure.","category":"pc","brand":"modi","price":747.83,"reviews":[],"images":[]}}'
+        content: '{"data":{"id":44,"name":"Unde delectus vero optio incidunt occaecati veritatis facere.","description":"Consequatur architecto deleniti velit tenetur quod nulla. Modi quo repellat natus ut eaque consequuntur. Reiciendis voluptatem modi voluptatum consectetur. Cupiditate exercitationem exercitationem consequatur consequatur voluptatem. Doloremque ut illum iure. Unde et qui eum. Maxime quaerat voluptas nobis id perspiciatis beatae.","category":"pc","brand":"reiciendis","price":385.78,"reviews":[],"image":[],"images":[]}}'
         headers: []
         description: ''
         custom: []
@@ -277,14 +238,14 @@ endpoints:
         name: category_id
         description: ''
         required: true
-        example: asperiores
+        example: minima
         type: string
         custom: []
       brand_id:
         name: brand_id
         description: ''
         required: true
-        example: temporibus
+        example: dolore
         type: string
         custom: []
       description:
@@ -325,8 +286,8 @@ endpoints:
         custom: []
     cleanBodyParameters:
       name: 'gaming pc'
-      category_id: asperiores
-      brand_id: temporibus
+      category_id: minima
+      brand_id: dolore
       description: 'this is the last gen gaming pc,'
       price: '120.99'
       category: pc
@@ -337,7 +298,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":49,"name":"Aut modi est aut.","description":"Autem nihil reiciendis ratione et tempora. Perspiciatis fuga enim rerum voluptas optio. Earum omnis consectetur aliquam sint molestiae aut. Enim ut et quaerat totam. Impedit nihil quis sequi repudiandae eaque ad voluptatem. Delectus eum velit placeat aliquam minus blanditiis consequatur. Eaque non unde voluptatem. Enim nemo quo maiores.","category":"keyboard","brand":"aperiam","price":716.75,"reviews":[],"images":[]}}'
+        content: '{"data":{"id":45,"name":"Ea distinctio iste inventore facilis.","description":"Aliquid aspernatur quos dolores velit non. Voluptatem vel dolore sint nostrum est rem. Quaerat est sit assumenda maiores. Veniam voluptatibus eos sapiente numquam magni iste. Dolores nesciunt et consectetur qui voluptatem culpa vero ut. Autem aut dolorem qui et ut id magnam.","category":"vel","brand":"adipisci","price":998.29,"reviews":[],"image":[],"images":[]}}'
         headers: []
         description: ''
         custom: []
@@ -426,7 +387,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":15,"name":"molestiae","childrens":[]}}'
+        content: '{"data":{"id":11,"name":"corrupti","childrens":[]}}'
         headers: []
         description: ''
         custom: []
@@ -468,17 +429,17 @@ endpoints:
         name: parent_id
         description: 'nullable ID of the parent category for subcategory.'
         required: false
-        example: 3
+        example: 20
         type: integer
         custom: []
     cleanBodyParameters:
       name: sport
-      parent_id: 3
+      parent_id: 20
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":16,"name":"voluptatem","childrens":[]}}'
+        content: '{"data":{"id":12,"name":"consequatur","childrens":[]}}'
         headers: []
         description: ''
         custom: []
@@ -528,7 +489,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":17,"name":"consequuntur","childrens":[]}}'
+        content: '{"data":{"id":13,"name":"assumenda","childrens":[]}}'
         headers: []
         description: ''
         custom: []
@@ -579,17 +540,17 @@ endpoints:
         name: parent_id
         description: 'nullable ID of the parent category for subcategory.'
         required: false
-        example: 1
+        example: 7
         type: integer
         custom: []
     cleanBodyParameters:
       name: sport
-      parent_id: 1
+      parent_id: 7
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":18,"name":"corporis","childrens":[]}}'
+        content: '{"data":{"id":14,"name":"fuga","childrens":[]}}'
         headers: []
         description: ''
         custom: []
@@ -678,7 +639,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":45,"body":"Quas enim laborum consequuntur. Ut eaque eum accusantium dolor beatae autem et. Est voluptas laudantium est neque. Ipsam exercitationem molestiae libero rem doloribus voluptatem. Enim nam ducimus est dolor placeat explicabo omnis.","product_id":5}}'
+        content: '{"data":{"id":41,"body":"Hic voluptates pariatur numquam non. Voluptas non est optio consectetur et odio. Est aliquid ipsa atque reprehenderit. Earum iste aspernatur aspernatur quia nisi. Aperiam adipisci aut iste ut nihil dolor vero blanditiis. Hic commodi et harum qui ut nihil. Cum ut et rerum repellat ut.","product_id":24}}'
         headers: []
         description: ''
         custom: []
@@ -720,17 +681,17 @@ endpoints:
         name: product_id
         description: 'ID of product related to the review'
         required: false
-        example: ducimus
+        example: amet
         type: required
         custom: []
     cleanBodyParameters:
       content: 'the worst product ever'
-      product_id: ducimus
+      product_id: amet
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":46,"body":"Soluta rerum fuga id saepe. Aspernatur omnis tempore nihil nihil iste. Excepturi placeat beatae velit unde. Id et non ut.","product_id":19}}'
+        content: '{"data":{"id":42,"body":"Aut et asperiores porro cupiditate. Rerum impedit qui non fugit fuga id. Hic facilis quo voluptas eos quo quis. Labore sed ut quis animi debitis. Omnis a velit id a. Quo est vel nesciunt quibusdam temporibus deserunt.","product_id":3}}'
         headers: []
         description: ''
         custom: []
@@ -780,7 +741,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":47,"body":"Eius incidunt vitae et odio repudiandae sunt. Aut libero esse inventore. Minus soluta voluptatem rem inventore laborum aut. Qui quod et eum eum.","product_id":6}}'
+        content: '{"data":{"id":43,"body":"Reprehenderit sed sequi rem cum nesciunt. Sequi totam et voluptas ea inventore. Assumenda sit eaque enim adipisci non ducimus sint aut. Praesentium qui qui dolorum suscipit iure nihil quas. Dolore blanditiis illum aliquam saepe blanditiis.","product_id":14}}'
         headers: []
         description: ''
         custom: []
@@ -831,17 +792,17 @@ endpoints:
         name: product_id
         description: 'ID of product related to the review'
         required: false
-        example: in
+        example: voluptatem
         type: required
         custom: []
     cleanBodyParameters:
       content: 'the worst product ever'
-      product_id: in
+      product_id: voluptatem
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":48,"body":"Velit doloribus sint molestiae iure excepturi porro sunt. Exercitationem odio aut est assumenda assumenda. Debitis ut iusto ducimus sunt nulla doloremque deleniti fuga. Voluptatum corrupti iste et est.","product_id":40}}'
+        content: '{"data":{"id":44,"body":"Consequuntur sit reiciendis tempore qui adipisci quidem sint voluptatem. In molestiae deleniti et non. Quasi fuga ex et molestias. Eum optio iure vel quod quae totam. Et rem voluptatibus illum unde.","product_id":5}}'
         headers: []
         description: ''
         custom: []
@@ -921,7 +882,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":15,"name":"velit"}}'
+        content: '{"data":{"id":11,"name":"ut"}}'
         headers: []
         description: ''
         custom: []
@@ -956,16 +917,16 @@ endpoints:
         name: name
         description: 'Name of the brand. Example apple'
         required: false
-        example: nesciunt
+        example: amet
         type: required
         custom: []
     cleanBodyParameters:
-      name: nesciunt
+      name: amet
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":16,"name":"ut"}}'
+        content: '{"data":{"id":12,"name":"et"}}'
         headers: []
         description: ''
         custom: []
@@ -1015,7 +976,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":17,"name":"excepturi"}}'
+        content: '{"data":{"id":13,"name":"at"}}'
         headers: []
         description: ''
         custom: []
@@ -1059,16 +1020,16 @@ endpoints:
         name: name
         description: 'Name of the brand. Example apple'
         required: false
-        example: non
+        example: qui
         type: required
         custom: []
     cleanBodyParameters:
-      name: non
+      name: qui
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":18,"name":"et"}}'
+        content: '{"data":{"id":14,"name":"accusamus"}}'
         headers: []
         description: ''
         custom: []
@@ -1196,7 +1157,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"username":"Ms. Shemar Sauer II","email":"deontae80@example.net","firstname":"Monroe Abernathy","lastname":"Erdman"}}'
+        content: '{"data":{"username":"Aric Simonis","email":"iblick@example.org","firstname":"Dr. Kelvin O''Hara","lastname":"Powlowski"}}'
         headers: []
         description: ''
         custom: []
@@ -1255,7 +1216,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"username":"Austyn Kunde","email":"okeefe.joshua@example.com","firstname":"Eunice Sporer","lastname":"Windler"}}'
+        content: '{"data":{"username":"Miss Tia Champlin","email":"joyce05@example.com","firstname":"Fritz Kovacek","lastname":"Kovacek"}}'
         headers: []
         description: ''
         custom: []

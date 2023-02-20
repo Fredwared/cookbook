@@ -6,7 +6,10 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateMediaTable extends Migration
 {
-    public function up()
+    /**
+     * @return void
+     */
+    public function up(): void
     {
         Schema::create('media', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -24,7 +27,6 @@ class CreateMediaTable extends Migration
             $table->json('generated_conversions');
             $table->json('responsive_images');
             $table->unsignedInteger('order_column')->nullable()->index();
-
             $table->nullableTimestamps();
         });
     }

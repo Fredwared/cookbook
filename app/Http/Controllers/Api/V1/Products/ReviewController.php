@@ -56,7 +56,7 @@ class ReviewController extends Controller
 
         return response()->json([
             "message" => "Review created successfully",
-            "data" => new ReviewResource($review)
+            "data" => ReviewResource::make($review)
         ]);
     }
 
@@ -66,14 +66,14 @@ class ReviewController extends Controller
      *
      * @param Review $review
      *
-     * @return JsonResponse
+     * @return ReviewResource
      *
      * @apiResource App\Http\Resources\V1\Products\ReviewResource
      * @apiResourceModel App\Models\Review
      */
-    public function show(Review $review): JsonResponse
+    public function show(Review $review): ReviewResource
     {
-        return response()->json(new ReviewResource($review));
+        return ReviewResource::make($review);
     }
 
     /**
@@ -105,7 +105,7 @@ class ReviewController extends Controller
 
         return response()->json([
             "message" => "Review updated successfully",
-            "data" => new ReviewResource($review->refresh())
+            "data" => ReviewResource::make($review->refresh())
         ]);
     }
 
