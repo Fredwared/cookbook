@@ -1,0 +1,172 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/user
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/register
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'User Register'
+      description: 'This endpoint will allow to register users'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      username:
+        name: username
+        description: 'Username of user.'
+        required: true
+        example: Admin
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'unique Email of user.'
+        required: true
+        example: admin@gmail.com
+        type: email
+        custom: []
+      firstname:
+        name: firstname
+        description: 'Firstname of user.'
+        required: true
+        example: Avaz
+        type: string
+        custom: []
+      lastname:
+        name: lastname
+        description: 'Lastname of user.'
+        required: true
+        example: Akhmedov
+        type: string
+        custom: []
+      password:
+        name: password
+        description: 'Password of user.'
+        required: false
+        example: 123asd2
+        type: required
+        custom: []
+      password_confirmation:
+        name: password_confirmation
+        description: 'Confirm previous password.'
+        required: false
+        example: 123asd2
+        type: required
+        custom: []
+    cleanBodyParameters:
+      username: Admin
+      email: admin@gmail.com
+      firstname: Avaz
+      lastname: Akhmedov
+      password: 123asd2
+      password_confirmation: 123asd2
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"username":"Miss Eudora Mohr","email":"rdach@example.com","firstname":"Mireille Lubowitz V","lastname":"Greenfelder"}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"data\": {\r\n    \"username\": \"Avaz\",\r\n    \"email\": \"avaz@gmail.com\",\r\n    \"firstname\": \"Avaz\",\r\n    \"lastname\": \"Akhmedov\"\r\n  },\r\n  \"message\": \"User created successfully\"\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/logout
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'User Logout'
+      description: 'This endpoint will allow to log out users'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      'Authorization/Type:Bearer': 'Token. Example: 44|cSi4RtDPHw6vjnqiR3oKUP1x963fj1VcW9fMLmUF'
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message":"User logged out"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
