@@ -4,13 +4,13 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/user
+    uri: api/v1/products
     metadata:
       groupName: Endpoints
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Show collection of products'
       description: ''
       authenticated: false
       custom: []
@@ -26,14 +26,1057 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
+        status: 200
+        content: '{"data":{"id":42,"name":"Quam repellendus dolorem voluptas fuga esse.","description":"Natus sint dolores labore dicta. Itaque doloremque eum repudiandae voluptatibus a quaerat dolorem. Odit odio sit explicabo dolores reprehenderit. Et quos vel illo harum. Perferendis nostrum ipsum rem quasi et qui sequi. Quasi ad voluptas neque nostrum.","category":"dolorum","brand":"eveniet","price":613.57,"reviews":[],"image":[],"images":[]}}'
+        headers: []
+        description: ''
         custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/products
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new category'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Name of the product.'
+        required: true
+        example: 'gaming pc'
+        type: string
+        custom: []
+      category_id:
+        name: category_id
+        description: ''
+        required: true
+        example: eum
+        type: string
+        custom: []
+      brand_id:
+        name: brand_id
+        description: ''
+        required: true
+        example: sunt
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'Description of the product.'
+        required: false
+        example: 'this is the last gen gaming pc,'
+        type: required
+        custom: []
+      price:
+        name: price
+        description: 'Price of the product.'
+        required: false
+        example: '120.99'
+        type: required
+        custom: []
+      images:
+        name: images
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: true
+        example:
+          - null
+        type: 'file[]'
+        custom: []
+      category:
+        name: category
+        description: 'Category of the product.'
+        required: false
+        example: pc
+        type: required
+        custom: []
+      brand:
+        name: brand
+        description: 'Brand of the product.'
+        required: false
+        example: samsung
+        type: required
+        custom: []
+      image:
+        name: image
+        description: 'Image of the product.'
+        required: false
+        example: aut
+        type: required
+        custom: []
+    cleanBodyParameters:
+      name: 'gaming pc'
+      category_id: eum
+      brand_id: sunt
+      description: 'this is the last gen gaming pc,'
+      price: '120.99'
+      category: pc
+      brand: samsung
+      image: aut
+    fileParameters:
+      images:
+        - null
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":43,"name":"Quia modi dignissimos quo laboriosam nihil sunt.","description":"Quis libero accusantium tempora reprehenderit voluptatibus quia rerum. Non accusantium eum non amet. Voluptas similique aut nihil laudantium eum velit molestiae. Nobis id consequatur soluta voluptatem. Enim eaque enim qui voluptatibus. Velit qui recusandae molestiae esse.","category":"numquam","brand":"adipisci","price":662.07,"reviews":[],"image":[],"images":[]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"message\": \"new product created successfully\",\r\n  \"data\": {\r\n    \"id\": 4,\r\n    \"name\": \"gaming pc\",\r\n    \"description\": \"t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.\",\r\n    \"category\": \"pc\",\r\n    \"brand\": \"samsung\",\r\n    \"price\": 99.99\r\n  },\r\n\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/products/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show individual product'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":44,"name":"Unde delectus vero optio incidunt occaecati veritatis facere.","description":"Consequatur architecto deleniti velit tenetur quod nulla. Modi quo repellat natus ut eaque consequuntur. Reiciendis voluptatem modi voluptatum consectetur. Cupiditate exercitationem exercitationem consequatur consequatur voluptatem. Doloremque ut illum iure. Unde et qui eum. Maxime quaerat voluptas nobis id perspiciatis beatae.","category":"pc","brand":"reiciendis","price":385.78,"reviews":[],"image":[],"images":[]}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/products/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update existing product'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Name of the product.'
+        required: true
+        example: 'gaming pc'
+        type: string
+        custom: []
+      category_id:
+        name: category_id
+        description: ''
+        required: true
+        example: minima
+        type: string
+        custom: []
+      brand_id:
+        name: brand_id
+        description: ''
+        required: true
+        example: dolore
+        type: string
+        custom: []
+      description:
+        name: description
+        description: 'Description of the product.'
+        required: false
+        example: 'this is the last gen gaming pc,'
+        type: required
+        custom: []
+      price:
+        name: price
+        description: 'Price of the product.'
+        required: false
+        example: '120.99'
+        type: required
+        custom: []
+      images:
+        name: images
+        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
+        required: false
+        example:
+          - null
+        type: 'file[]'
+        custom: []
+      category:
+        name: category
+        description: 'Category of the product.'
+        required: false
+        example: pc
+        type: required
+        custom: []
+      brand:
+        name: brand
+        description: 'Brand of the product.'
+        required: false
+        example: samsung
+        type: required
+        custom: []
+    cleanBodyParameters:
+      name: 'gaming pc'
+      category_id: minima
+      brand_id: dolore
+      description: 'this is the last gen gaming pc,'
+      price: '120.99'
+      category: pc
+      brand: samsung
+    fileParameters:
+      images:
+        - null
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":45,"name":"Ea distinctio iste inventore facilis.","description":"Aliquid aspernatur quos dolores velit non. Voluptatem vel dolore sint nostrum est rem. Quaerat est sit assumenda maiores. Veniam voluptatibus eos sapiente numquam magni iste. Dolores nesciunt et consectetur qui voluptatem culpa vero ut. Autem aut dolorem qui et ut id magnam.","category":"vel","brand":"adipisci","price":998.29,"reviews":[],"image":[],"images":[]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"message\": \"proudct updated successfully\",\r\n  \"data\": {\r\n    \"id\": 4,\r\n    \"name\": \"gaming pc\",\r\n    \"description\": \"t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.\",\r\n    \"category\": \"pc\",\r\n    \"brand\": \"samsung\",\r\n    \"price\": 99.99\r\n  }\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/products/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete existing product'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "message":"Product deleted successfully"
+           }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/categories
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show collection of categories'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":11,"name":"corrupti","childrens":[]}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/categories
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new category'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Name of the category.'
+        required: true
+        example: sport
+        type: string
+        custom: []
+      parent_id:
+        name: parent_id
+        description: 'nullable ID of the parent category for subcategory.'
+        required: false
+        example: 20
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      name: sport
+      parent_id: 20
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":12,"name":"consequatur","childrens":[]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"data\": {\r\n    \"id\": 1,\r\n    \"name\": \"sport\",\r\n  }\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/categories/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show each individual category'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":13,"name":"assumenda","childrens":[]}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/categories/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Update existing category or it's subcategories"
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Name of the category.'
+        required: true
+        example: sport
+        type: string
+        custom: []
+      parent_id:
+        name: parent_id
+        description: 'nullable ID of the parent category for subcategory.'
+        required: false
+        example: 7
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      name: sport
+      parent_id: 7
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":14,"name":"fuga","childrens":[]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"data\": {\r\n    \"id\": 1,\r\n    \"name\": \"sport\",\r\n  }\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/categories/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Delete existing category or it's subcategories"
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "message":"Category deleted successfully"
+          }
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/reviews
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show collection of reviews'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":41,"body":"Hic voluptates pariatur numquam non. Voluptas non est optio consectetur et odio. Est aliquid ipsa atque reprehenderit. Earum iste aspernatur aspernatur quia nisi. Aperiam adipisci aut iste ut nihil dolor vero blanditiis. Hic commodi et harum qui ut nihil. Cum ut et rerum repellat ut.","product_id":24}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/reviews
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new review'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      content:
+        name: content
+        description: 'string Body of the review.'
+        required: false
+        example: 'the worst product ever'
+        type: required
+        custom: []
+      product_id:
+        name: product_id
+        description: 'ID of product related to the review'
+        required: false
+        example: amet
+        type: required
+        custom: []
+    cleanBodyParameters:
+      content: 'the worst product ever'
+      product_id: amet
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":42,"body":"Aut et asperiores porro cupiditate. Rerum impedit qui non fugit fuga id. Hic facilis quo voluptas eos quo quis. Labore sed ut quis animi debitis. Omnis a velit id a. Quo est vel nesciunt quibusdam temporibus deserunt.","product_id":3}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"message\": \"new review created successfully\",\r\n  \"data\": {\r\n    \"id\": 3,\r\n    \"content\": \"t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.\",\r\n    \"product_id\": 5\r\n  }\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/reviews/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show each individual category'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the review.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":43,"body":"Reprehenderit sed sequi rem cum nesciunt. Sequi totam et voluptas ea inventore. Assumenda sit eaque enim adipisci non ducimus sint aut. Praesentium qui qui dolorum suscipit iure nihil quas. Dolore blanditiis illum aliquam saepe blanditiis.","product_id":14}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/reviews/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update a existing resource'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the review.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      content:
+        name: content
+        description: 'string Body of the review.'
+        required: false
+        example: 'the worst product ever'
+        type: required
+        custom: []
+      product_id:
+        name: product_id
+        description: 'ID of product related to the review'
+        required: false
+        example: voluptatem
+        type: required
+        custom: []
+    cleanBodyParameters:
+      content: 'the worst product ever'
+      product_id: voluptatem
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":44,"body":"Consequuntur sit reiciendis tempore qui adipisci quidem sint voluptatem. In molestiae deleniti et non. Quasi fuga ex et molestias. Eum optio iure vel quod quae totam. Et rem voluptatibus illum unde.","product_id":5}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"message\": \"review updated successfully\",\r\n  \"data\": {\r\n    \"id\": 3,\r\n    \"content\": \"t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.\",\r\n    \"product_id\": 5\r\n  }\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/reviews/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete existing review'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the review.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/brands
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show collection of brands'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":11,"name":"ut"}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/brands
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new brand'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Name of the brand. Example apple'
+        required: false
+        example: amet
+        type: required
+        custom: []
+    cleanBodyParameters:
+      name: amet
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":12,"name":"et"}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"message\": \"New brand created successfully\",\r\n  \"data\": {\r\n    \"id\": 3,\r\n    \"name\": \"Apple\"\r\n  }\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/brands/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show individual Brand'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the brand.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":13,"name":"at"}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/brands/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update an existing brand'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the brand.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Name of the brand. Example apple'
+        required: false
+        example: qui
+        type: required
+        custom: []
+    cleanBodyParameters:
+      name: qui
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":14,"name":"accusamus"}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"message\": \"Brand updated created successfully\",\r\n  \"data\": {\r\n    \"id\": 3,\r\n    \"name\": \"Apple\"\r\n  }\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/brands/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete existing brand'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the brand.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -114,13 +1157,72 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"username":"Miss Eudora Mohr","email":"rdach@example.com","firstname":"Mireille Lubowitz V","lastname":"Greenfelder"}}'
+        content: '{"data":{"username":"Aric Simonis","email":"iblick@example.org","firstname":"Dr. Kelvin O''Hara","lastname":"Powlowski"}}'
         headers: []
         description: ''
         custom: []
       -
         status: 200
         content: "{\r\n  \"data\": {\r\n    \"username\": \"Avaz\",\r\n    \"email\": \"avaz@gmail.com\",\r\n    \"firstname\": \"Avaz\",\r\n    \"lastname\": \"Akhmedov\"\r\n  },\r\n  \"message\": \"User created successfully\"\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/login
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'User Login'
+      description: 'This endpoint will allow to log in users'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Authorization: 'Bearer {token}'
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Email of existing user.'
+        required: false
+        example: admin@gmail.com
+        type: required
+        custom: []
+      password:
+        name: password
+        description: 'Password of existing user.'
+        required: false
+        example: 123asd2
+        type: required
+        custom: []
+    cleanBodyParameters:
+      email: admin@gmail.com
+      password: 123asd2
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"username":"Miss Tia Champlin","email":"joyce05@example.com","firstname":"Fritz Kovacek","lastname":"Kovacek"}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"token\": \"32|U888YUcdCveAbJWyeSR3Ndm06ibolHiUxghlxH3N\"\r\n  \"data\": {\r\n    \"username\": \"Avaz\",\r\n    \"email\": \"avaz@gmail.com\",\r\n    \"firstname\": \"Avaz\",\r\n    \"lastname\": \"Akhmedov\"\r\n  },\r\n  \"message\": \"Welcome back Avaz\"\r\n}"
         headers: []
         description: ''
         custom: []
