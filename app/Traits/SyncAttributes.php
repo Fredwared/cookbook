@@ -39,8 +39,6 @@ trait SyncAttributes
 
     protected function updateAttributes(Product $product, array $attributes): void
     {
-
-
         $attributes = collect($attributes)->map(function ($item) use ($product) {
 
 

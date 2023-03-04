@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Currency;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -23,7 +24,7 @@ class ProductFactory extends Factory
             "brand_id" => Brand::query()->inRandomOrder()->first()->id,
             "name" => $this->faker->sentence(),
             "description" => $this->faker->paragraph(7),
-            "price" => $this->faker->randomFloat(2, 10, 1000)
+            "price" => $this->faker->randomFloat(2, 10, 1000),
         ];
     }
 }

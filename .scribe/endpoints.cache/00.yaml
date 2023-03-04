@@ -31,12 +31,12 @@ endpoints:
         name: media_id
         description: 'The ID of the media.'
         required: true
-        example: 1
+        example: 4
         type: integer
         custom: []
     cleanUrlParameters:
       product_id: 1
-      media_id: 1
+      media_id: 4
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -75,7 +75,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":42,"name":"Eos enim amet nesciunt voluptas eum eligendi expedita voluptatum.","description":"Eius accusantium inventore voluptatem. Corrupti aut quasi rem fuga sapiente aperiam. Doloremque ipsam ipsam reprehenderit doloribus ut. Qui cum ratione quisquam doloribus magnam quaerat et. Recusandae hic rerum qui saepe labore quaerat vero iste.","category":"headset","brand":"dolorem","price":283.54,"reviews":[],"preview":null,"images":[],"attributes":[]}}'
+        content: null
         headers: []
         description: ''
         custom: []
@@ -117,14 +117,14 @@ endpoints:
         name: category_id
         description: ''
         required: true
-        example: ut
+        example: esse
         type: string
         custom: []
       brand_id:
         name: brand_id
         description: ''
         required: true
-        example: necessitatibus
+        example: itaque
         type: string
         custom: []
       description:
@@ -145,7 +145,7 @@ endpoints:
         name: images
         description: 'array Image of the product.'
         required: false
-        example: enim
+        example: libero
         type: required
         custom: []
       attributes:
@@ -159,14 +159,14 @@ endpoints:
         name: 'attributes[].name'
         description: ''
         required: true
-        example: fugit
+        example: eligendi
         type: string
         custom: []
       'attributes[].value':
         name: 'attributes[].value'
         description: ''
         required: true
-        example: consequatur
+        example: non
         type: string
         custom: []
       category:
@@ -185,11 +185,11 @@ endpoints:
         custom: []
     cleanBodyParameters:
       name: 'gaming pc'
-      category_id: ut
-      brand_id: necessitatibus
+      category_id: esse
+      brand_id: itaque
       description: 'this is the last gen gaming pc,'
       price: '120.99'
-      images: enim
+      images: libero
       attributes: color
       category: pc
       brand: samsung
@@ -197,7 +197,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":43,"name":"Quis est rem laudantium autem ex sit.","description":"Et omnis modi autem sint non corrupti. Consequuntur aut nemo doloribus ducimus doloremque distinctio eos esse. Sed asperiores occaecati sapiente et aut officia cum. Non adipisci quis ipsam dolore ut ab autem vitae. Eum velit accusantium sapiente distinctio et. Omnis fugiat aut dignissimos voluptatem. Rerum nemo qui repudiandae. Voluptas culpa magni vero sint qui deleniti. Et et occaecati voluptas cupiditate nostrum omnis eum. Et eligendi eaque nihil corporis ut suscipit suscipit.","category":"laptop","brand":"dolorem","price":773.21,"reviews":[],"preview":null,"images":[],"attributes":[]}}'
+        content: null
         headers: []
         description: ''
         custom: []
@@ -247,7 +247,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":44,"name":"Ad non quo consequatur perspiciatis fuga.","description":"Ea temporibus assumenda nisi ducimus. Nihil quis similique est non. Repudiandae magni placeat tempora distinctio sint possimus debitis. Necessitatibus adipisci aspernatur dolore dolorem excepturi saepe sint. Eum ad debitis sed culpa minima dolore.","category":"gaming","brand":"dolorem","price":470.91,"reviews":[],"preview":null,"images":[],"attributes":[]}}'
+        content: null
         headers: []
         description: ''
         custom: []
@@ -298,14 +298,14 @@ endpoints:
         name: category_id
         description: ''
         required: true
-        example: excepturi
+        example: deleniti
         type: string
         custom: []
       brand_id:
         name: brand_id
         description: ''
         required: true
-        example: placeat
+        example: non
         type: string
         custom: []
       description:
@@ -341,14 +341,14 @@ endpoints:
         name: 'attributes[].name'
         description: ''
         required: true
-        example: id
+        example: vitae
         type: string
         custom: []
       'attributes[].value':
         name: 'attributes[].value'
         description: ''
         required: true
-        example: voluptates
+        example: hic
         type: string
         custom: []
       category:
@@ -367,8 +367,8 @@ endpoints:
         custom: []
     cleanBodyParameters:
       name: 'gaming pc'
-      category_id: excepturi
-      brand_id: placeat
+      category_id: deleniti
+      brand_id: non
       description: 'this is the last gen gaming pc,'
       price: '120.99'
       attributes: color
@@ -380,7 +380,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":45,"name":"Aut quia omnis voluptatem sapiente.","description":"Tempore voluptatum modi ullam et rerum nisi rerum atque. Nihil quis itaque error non at ea repellat. Voluptatibus voluptas aut harum natus nisi. Necessitatibus voluptatibus dicta consectetur ducimus dolor dignissimos dolores. Sequi accusantium ut eum id. Est assumenda eum vero ab. Tempore aspernatur et iusto perferendis non suscipit ut. Dolorem quae qui excepturi repudiandae. Ut aut quod sapiente unde tenetur eveniet ipsum. Vel est quo aliquid cumque.","category":"pc","brand":"voluptatem","price":515.92,"reviews":[],"preview":null,"images":[],"attributes":[]}}'
+        content: null
         headers: []
         description: ''
         custom: []
@@ -469,7 +469,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":11,"name":"voluptatem","childrens":[]}}'
+        content: '{"data":{"id":11,"name":"atque","childrens":[]}}'
         headers: []
         description: ''
         custom: []
@@ -511,17 +511,17 @@ endpoints:
         name: parent_id
         description: 'nullable ID of the parent category for subcategory.'
         required: false
-        example: 18
+        example: 5
         type: integer
         custom: []
     cleanBodyParameters:
       name: sport
-      parent_id: 18
+      parent_id: 5
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":12,"name":"autem","childrens":[]}}'
+        content: '{"data":{"id":12,"name":"quo","childrens":[]}}'
         headers: []
         description: ''
         custom: []
@@ -571,7 +571,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":13,"name":"ipsam","childrens":[]}}'
+        content: '{"data":{"id":13,"name":"soluta","childrens":[]}}'
         headers: []
         description: ''
         custom: []
@@ -622,17 +622,17 @@ endpoints:
         name: parent_id
         description: 'nullable ID of the parent category for subcategory.'
         required: false
-        example: 20
+        example: 11
         type: integer
         custom: []
     cleanBodyParameters:
       name: sport
-      parent_id: 20
+      parent_id: 11
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":14,"name":"officiis","childrens":[]}}'
+        content: '{"data":{"id":14,"name":"enim","childrens":[]}}'
         headers: []
         description: ''
         custom: []
@@ -721,7 +721,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"body":"Neque accusamus dolorem ipsa. Omnis magnam provident sapiente consequatur omnis et quis. Fugit vero ab voluptatum. Sequi quibusdam quaerat et inventore ullam ducimus. Suscipit occaecati sunt et exercitationem quis harum quod occaecati. Aut totam saepe repellat in."}}'
+        content: '{"data":{"body":"Et sed accusamus eos est. Voluptatem velit eaque non porro in natus et. In porro veritatis et quae. Voluptates ducimus qui exercitationem perferendis sint maxime amet. Eos repellat mollitia laudantium deleniti praesentium nobis. Id vero in et repellendus minima. Dolorem consequatur distinctio laborum consequatur."}}'
         headers: []
         description: ''
         custom: []
@@ -763,17 +763,17 @@ endpoints:
         name: product_id
         description: 'ID of product related to the review'
         required: false
-        example: assumenda
+        example: rerum
         type: required
         custom: []
     cleanBodyParameters:
       content: 'the worst product ever'
-      product_id: assumenda
+      product_id: rerum
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"body":"Quod excepturi sed eum qui ipsam aut voluptates. Animi qui autem reiciendis quo consequatur. Quia minima velit omnis harum. At adipisci harum exercitationem perspiciatis ut iusto ut ut. Non quam beatae praesentium in molestiae saepe. Sit veritatis omnis quia in dolore aperiam provident. Totam rerum nemo sunt eveniet minus nam consequatur eaque."}}'
+        content: '{"data":{"body":"Veritatis quis blanditiis facilis dolorum. Ipsum est amet nam fugit eos ut animi. Facere quam dicta excepturi veritatis. Sunt consequatur voluptas sequi. Placeat voluptatum omnis neque delectus reiciendis voluptatibus. Veniam in nemo aut quod quam enim cumque. Eum ea quia molestiae quia et."}}'
         headers: []
         description: ''
         custom: []
@@ -823,7 +823,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"body":"Quaerat ducimus esse est natus sed. Voluptates ea nulla sequi. Pariatur nobis dolor quod quae eos ipsum. Officiis quasi laboriosam suscipit. Unde perferendis et deserunt atque iure."}}'
+        content: '{"data":{"body":"Nobis harum quia dolorum assumenda non. Aliquid atque voluptatem debitis a. Sed dolores sunt rerum quia qui quia. Est et suscipit neque maxime repellendus. Dolorem iure fuga id. Consequuntur at aut maxime ratione provident."}}'
         headers: []
         description: ''
         custom: []
@@ -874,17 +874,17 @@ endpoints:
         name: product_id
         description: 'ID of product related to the review'
         required: false
-        example: maiores
+        example: exercitationem
         type: required
         custom: []
     cleanBodyParameters:
       content: 'the worst product ever'
-      product_id: maiores
+      product_id: exercitationem
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"body":"Animi repellat rerum illum eos. Labore dignissimos qui modi quae nam praesentium nisi. Esse illum repellendus dolor occaecati aut sed. Quia dolor et blanditiis eum."}}'
+        content: '{"data":{"body":"Aut qui necessitatibus quod dolore. Saepe tempora blanditiis error rerum aut quia. Non repudiandae recusandae et et aut sequi eligendi mollitia. Vel consectetur ipsa aut reiciendis ut. Delectus ea esse quas est labore quia suscipit. Commodi odio necessitatibus consequatur sed. Porro mollitia est facilis maxime."}}'
         headers: []
         description: ''
         custom: []
@@ -964,7 +964,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":11,"name":"est"}}'
+        content: '{"data":{"id":11,"name":"laboriosam"}}'
         headers: []
         description: ''
         custom: []
@@ -999,16 +999,16 @@ endpoints:
         name: name
         description: 'Name of the brand. Example apple'
         required: false
-        example: libero
+        example: atque
         type: required
         custom: []
     cleanBodyParameters:
-      name: libero
+      name: atque
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":12,"name":"nam"}}'
+        content: '{"data":{"id":12,"name":"ab"}}'
         headers: []
         description: ''
         custom: []
@@ -1058,7 +1058,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":13,"name":"mollitia"}}'
+        content: '{"data":{"id":13,"name":"ut"}}'
         headers: []
         description: ''
         custom: []
@@ -1102,16 +1102,16 @@ endpoints:
         name: name
         description: 'Name of the brand. Example apple'
         required: false
-        example: nulla
+        example: est
         type: required
         custom: []
     cleanBodyParameters:
-      name: nulla
+      name: est
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":14,"name":"aut"}}'
+        content: '{"data":{"id":14,"name":"qui"}}'
         headers: []
         description: ''
         custom: []
@@ -1147,6 +1147,220 @@ endpoints:
       id:
         name: id
         description: 'The ID of the brand.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/currencies/list
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show the list of currencies fetched from api'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"name":null,"value":null,"code":null}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/currencies
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show collection of currencies'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":1,"code":"UZS","name":"Uzbek Sum","value":11320}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/currencies
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new currency'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      code:
+        name: code
+        description: 'Code of the currency.'
+        required: false
+        example: USD
+        type: required
+        custom: []
+      name:
+        name: name
+        description: 'Name of the currency.'
+        required: true
+        example: 'US Dollar'
+        type: string
+        custom: []
+      value:
+        name: value
+        description: 'Value of the currency.'
+        required: false
+        example: 'US Dollar = 11000 Uzbek Sum,'
+        type: required
+        custom: []
+    cleanBodyParameters:
+      code: USD
+      name: 'US Dollar'
+      value: 'US Dollar = 11000 Uzbek Sum,'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":1,"code":"UZS","name":"Uzbek Sum","value":11320}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/currencies/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Show individual currency'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the currency.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":1,"code":"UZS","name":"Uzbek Sum","value":11320}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/currencies/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Delete existing currency'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the currency.'
         required: true
         example: 1
         type: integer
@@ -1239,7 +1453,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"username":"Prof. Reyes D''Amore","email":"delaney63@example.org","firstname":"Thomas Franecki DDS","lastname":"Fritsch"}}'
+        content: '{"data":{"username":"Kayley Botsford","email":"amina87@example.org","firstname":"Lukas Wiza Sr.","lastname":"Daugherty"}}'
         headers: []
         description: ''
         custom: []
@@ -1298,7 +1512,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"username":"Mr. Dominic Cruickshank","email":"cummerata.katherine@example.com","firstname":"Jany Purdy","lastname":"Ryan"}}'
+        content: '{"data":{"username":"Abbie Blanda","email":"tfeil@example.com","firstname":"Ms. Lilliana Reichel Sr.","lastname":"Sanford"}}'
         headers: []
         description: ''
         custom: []

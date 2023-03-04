@@ -27,7 +27,7 @@ class ProductController extends Controller
      */
     public function index(): JsonResponse
     {
-        $products = Product::query()->with(["category", "brand", "reviews", "attributes"])->get();
+        $products = Product::query()->with("category", "brand", "reviews", "attributes")->get();
         return response()->json(ProductResource::collection($products));
     }
 
