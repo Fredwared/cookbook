@@ -9,6 +9,7 @@ use App\Http\Resources\V1\Products\ProductResource;
 use App\Models\Product;
 use App\Services\Products\ProductService;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ProductController extends Controller
@@ -148,7 +149,11 @@ class ProductController extends Controller
      */
     public function destroy(Product $product): JsonResponse
     {
-        $product->delete();
+        DB::transaction(function () use ($product) {
+            $product->attributes()->detach();
+            $product->delete();
+        });
+
 
         return response()->json([
             "message" => "Product deleted successfully"

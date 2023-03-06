@@ -8,15 +8,15 @@ use Spatie\MediaLibrary\HasMedia;
 trait UploadFile
 {
 
-    protected function upload(HasMedia $model): void
+    protected function upload(HasMedia $model, $collectionName): void
     {
         $model->addMultipleMediaFromRequest(['images'])
-            ->each(function ($fileAdder) {
+            ->each(function ($fileAdder) use ($collectionName) {
                 $fileAdder->withCustomProperties(["is_main" => false]);
-                $fileAdder->toMediaCollection('images');
+                $fileAdder->toMediaCollection($collectionName);
             });
 
-        $model->getFirstMedia("images")
+        $model->getFirstMedia($collectionName)
             ->setCustomProperty("is_main", true)
             ->save();
 

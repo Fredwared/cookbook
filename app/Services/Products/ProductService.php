@@ -5,23 +5,29 @@ namespace App\Services\Products;
 use App\Models\Product;
 use App\Traits\SyncAttributes;
 use App\Traits\UploadFile;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class ProductService
 {
     use UploadFile, SyncAttributes;
 
 
-    public function storeProduct(array $validation): Product
+    /**
+     * @param array $validation
+     * @return Model
+     */
+    public function storeProduct(array $validation): Model
     {
-
 
         $product = Product::query()->create($validation);
 
-        $this->attachAttributes($product, $validation["attributes"]);
-        $this->upload($product);
+        DB::transaction(function () use ($validation, $product) {
+            $this->attachAttributes($product, $validation["attributes"]);
+            $this->upload($product, "images");
+        });
 
         return $product;
-
     }
 
     /**
@@ -33,16 +39,15 @@ class ProductService
     public function updateProduct(array $validation, Product $product, $image): Product
     {
 
+        DB::transaction(function () use ($validation, $product, $image) {
+            $this->updateAttributes($product, $validation["attributes"]);
 
-        $this->updateAttributes($product, $validation["attributes"]);
-
-
-        if ($image) {
-            $this->clearCollection($product, "images");
-            $this->upload($product);
-        }
-
-        $product->update($validation);
+            if ($image) {
+                $this->clearCollection($product, "images");
+                $this->upload($product);
+            }
+            $product->update($validation);
+        });
 
         return $product;
 
