@@ -7,14 +7,14 @@ use App\Http\Requests\Api\V1\Products\StoreProductRequest;
 use App\Http\Requests\Api\V1\Products\UpdateProductRequest;
 use App\Http\Resources\V1\Products\ProductResource;
 use App\Models\Product;
-use App\Traits\UploadFile;
+use App\Services\Products\ProductService;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ProductController extends Controller
 {
 
-    use UploadFile;
 
     /**
      * Show collection of products
@@ -28,7 +28,7 @@ class ProductController extends Controller
      */
     public function index(): JsonResponse
     {
-        $products = Product::query()->with(["category", "brand", "reviews"])->get();
+        $products = Product::query()->with("category", "brand", "reviews", "attributes")->get();
         return response()->json(ProductResource::collection($products));
     }
 
@@ -40,12 +40,14 @@ class ProductController extends Controller
      * @bodyParam category required Category of the product. Example:pc
      * @bodyParam brand required Brand of the product. Example:samsung
      * @bodyParam price required Price of the product. Example:120.99
-     * @bodyParam image required Image of the product.
+     * @bodyParam images  required array Image of the product.
+     * @bodyParam attributes required array Attributes of the product.Example:color
      *
      * @header Content-Type application/json
      * @header Accept application/json
      *
      * @param StoreProductRequest $request
+     * @param ProductService $productService
      * @return JsonResponse
      *
      *
@@ -57,17 +59,11 @@ class ProductController extends Controller
      *
      */
 
-    public function store(StoreProductRequest $request): JsonResponse
+    public function store(StoreProductRequest $request, ProductService $productService): JsonResponse
     {
-
-        $fields = $request->validated();
-
-
-        $product = Product::create($fields);
-
-
-        $this->upload($product);
-
+        $product = $productService->storeProduct(
+            $request->validated()
+        );
 
         return response()->json([
             "message" => "Product created successfully",
@@ -101,12 +97,14 @@ class ProductController extends Controller
      * @bodyParam category required Category of the product. Example:pc
      * @bodyParam brand required Brand of the product. Example:samsung
      * @bodyParam price required Price of the product. Example:120.99
+     * @bodyParam attributes required array Attributes of the product.Example:color
      *
      * @header Content-Type application/json
      * @header Accept application/json
      *
      * @param UpdateProductRequest $request
      * @param Product $product
+     * @param ProductService $productService
      *
      * @return JsonResponse
      *
@@ -118,22 +116,19 @@ class ProductController extends Controller
      *
      */
 
-    public function update(UpdateProductRequest $request, Product $product): JsonResponse
+    public function update(UpdateProductRequest $request, Product $product, ProductService $productService): JsonResponse
     {
-        $fields = $request->validated();
 
-        $product->update($fields);
 
-        if ($request->hasFile("images")) {
-            $this->clearCollection($product, "images");
-            $this->upload($product);
-        }
+        $product = $productService->updateProduct(
+            $request->validated(), $product, $request->hasFile("images")
+        );
 
 
         return response()->json(
             [
                 "message" => "Product updated successfully",
-                "data" => ProductResource::make($product->refresh())
+                "data" => ProductResource::make($product->fresh())
             ]
         );
     }
@@ -154,7 +149,11 @@ class ProductController extends Controller
      */
     public function destroy(Product $product): JsonResponse
     {
-        $product->delete();
+        DB::transaction(function () use ($product) {
+            $product->attributes()->detach();
+            $product->delete();
+        });
+
 
         return response()->json([
             "message" => "Product deleted successfully"

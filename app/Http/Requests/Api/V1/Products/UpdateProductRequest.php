@@ -22,7 +22,10 @@ class UpdateProductRequest extends FormRequest
             "description" => "required|string",
             "price" => "required|numeric",
             "images" => "nullable|array",
-            "images.*" => "nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048"
+            "images.*" => "nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048",
+            "attributes" => "required|array",
+            "attributes.*.name" => "required",
+            "attributes.*.value" => "required"
         ];
     }
 }

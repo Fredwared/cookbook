@@ -21,7 +21,10 @@ class StoreProductRequest extends FormRequest
             "description" => "required|string",
             "price" => "required|numeric",
             "images" => "required|array",
-            "images.*" => "required|image|mimes:jpg,png,jpeg,gif,svg|max:2048"
+            "images.*" => "required|image|mimes:jpg,png,jpeg,gif,svg|max:2048",
+            "attributes" => "required|array",
+            "attributes.*.name" => "required",
+            "attributes.*.value" => "required"
         ];
     }
 }

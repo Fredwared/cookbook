@@ -3,6 +3,7 @@
 namespace Products;
 
 use App\Http\Controllers\Api\V1\Products\ProductController;
+use App\Models\Attribute;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
@@ -65,9 +66,6 @@ class ProductTest extends TestCase
             "brand_id" => Brand::query()->inRandomOrder()->first()->id,
             "price" => $this->faker->randomFloat(2, 10, 1000)
         ];
-
-       ;
-
 
 
         $this->postJson(route("products.store"), [
