@@ -37,10 +37,14 @@ trait SyncAttributes
 
     }
 
+    /**
+     * @param Product $product
+     * @param array $attributes
+     * @return void
+     */
     protected function updateAttributes(Product $product, array $attributes): void
     {
         $attributes = collect($attributes)->map(function ($item) use ($product) {
-
 
             if ($product->attributes()->exists()) {
                 $product->attributes()->detach();
@@ -51,7 +55,6 @@ trait SyncAttributes
             if ($attribute->value()->exists()) {
                 $attribute->value()->delete();
             }
-
             AttributeValue::query()->firstOrCreate([
                 "attribute_id" => $attribute->id,
                 'value' => $item['value']

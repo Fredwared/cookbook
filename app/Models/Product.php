@@ -12,9 +12,9 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Product extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia, Currency;
+    use HasFactory, InteractsWithMedia,Currency;
 
-    protected $fillable = ["name", "description", "category_id", "brand_id", "price", "currency_id"];
+    protected $fillable = ["name", "description", "category_id", "brand_id", "price"];
 
     /**
      * @return BelongsTo

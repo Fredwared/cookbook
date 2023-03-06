@@ -19,7 +19,7 @@ class ProductResource extends JsonResource
                 "name" => $this->category->name
             ],
             "brand" => $this->brand->name,
-            "price" => number_format(num: $this->price($currency), decimals: '2', thousands_separator: ' '),
+            "price" => number_format(num: $this->price($currency), decimals: '2', decimal_separator: '.'),
             "reviews" => ReviewResource::collection($this->reviews),
             "preview" => $this->getFirstMedia("images", ["is_main" => true])?->original_url,
             "images" => ImageResource::collection($this->getMedia("images")),
