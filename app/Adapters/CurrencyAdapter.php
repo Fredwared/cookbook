@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 class CurrencyAdapter
 {
 
-    protected PendingRequest $request;
+    private PendingRequest $request;
 
     public function __construct()
     {
@@ -57,12 +57,13 @@ class CurrencyAdapter
     {
         $response = $this->request->get("/arkhiv-kursov-valyut/json/$currency/");
         $this->checkSuccessfullResponse($response);
-        $data = $response->json();
+        $data = $response->json(0);
 
         return [
             "name" => $data["CcyNm_EN"],
             "code" => $data["Ccy"],
-            "value" => $data["Rate"]];
+            "value" => $data["Rate"]
+        ];
     }
 
 }

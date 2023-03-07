@@ -56,6 +56,7 @@ class CurrencyController extends Controller
     {
         try {
             $currency = $currencyService->storeCurrency($request->validated());
+
             return response()->json([
                 "message" => "New currency added successfully",
                 "data" => CurrencyResource::make($currency)
