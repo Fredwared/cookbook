@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 
 trait Currency
@@ -28,20 +29,21 @@ trait Currency
             return $this->price;
         }
 
+
         return $this->convert(Str::lower($currency));
     }
 
     protected function convert($to)
     {
+
         $from = "usd";
 
-        if (!key_exists($from, $this->currencies)) {
+        if (!Arr::exists($this->currencies, $to) or !Arr::exists($this->currencies, $from)) {
             return $this->price;
         }
 
         $base_value = $this->currencies[$from];
         $uzs_value = $base_value * $this->price;
-
 
         return $uzs_value / $this->currencies[$to];
     }
