@@ -2,30 +2,30 @@
 
 namespace App\Http\Resources\V1\Products;
 
+use App\Traits\CurrencyConverter;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends JsonResource
 {
+    use CurrencyConverter;
 
     public function toArray($request): array
     {
-        $currency = request("currency", $this->currency);
         return [
-            "id" => $this->id,
+            "id" => $this->uuid,
             "name" => $this->name,
             "description" => $this->description,
-            "category" => [
-                "id" => $this->category->id,
-                "name" => $this->category->name
-            ],
+            "category" => ProductCategoryResource::make($this->whenLoaded('category')),
             "brand" => $this->brand->name,
-            "price" => number_format(num: $this->price($currency), decimals: '2', decimal_separator: '.'),
-            "reviews" => ReviewResource::collection($this->reviews),
-            "preview" => $this->getFirstMedia("images", ["is_main" => true])?->original_url,
-            "images" => ImageResource::collection($this->getMedia("images")),
-            "attributes" => AttributeResource::collection($this->attributes)
+            "reviews" => ReviewResource::collection($this->whenLoaded('reviews')),
+            "price" => [
+                "amount" => $this->currencyConvert(request('rate', 1), $this->price),
+                "currencyCode" => request("currency","usd")
+            ],
+            "preview" => $this->images->where('custom_properties.is_main', '=', true)->first()?->getFullUrl(),
+            "images" => ImageResource::collection($this->whenLoaded('images')),
+            "attributes" => AttributeResource::collection($this->whenLoaded('attributes'))
         ];
     }
-
 
 }

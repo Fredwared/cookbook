@@ -40,39 +40,46 @@ class UpdateCurrency extends Command
     public function handle(): int
     {
         $currencies = $this->adapter->getCurrencies();
-        $this->addToDatabase($currencies);
-
+        $this->addToDataBase($currencies);
         return CommandAlias::SUCCESS;
     }
 
 
-    /**
-     * @param array $currencies
-     * @return int
-     */
-    protected function addToDatabase(array $currencies): int
+    public function addToDataBase(array $currencies): int
     {
         $filtered_currencies = $this->filter($currencies);
 
-        Currency::query()->updateOrCreate(['code' => "UZS"], [
-            'value' => 1,
-            'name' => "Uzbek sum"
-        ]);
+        Currency::query()->upsert([
+            "code" => "UZS",
+            "value" => 1,
+            "name" => "Uzbek sum"
+        ], uniqueBy: "code");
+
         foreach ($filtered_currencies as $currency) {
-            Currency::query()->updateOrCreate(['code' => $currency['Ccy']], [
+
+            Currency::query()->upsert([
+                "code" => $currency["Ccy"],
                 'value' => $currency['Rate'],
                 'name' => $currency['CcyNm_EN']
-            ]);
+            ], uniqueBy: $currency["Ccy"]);
+
         }
+
         $this->output->info("Currency Updated successfully");
 
         return CommandAlias::SUCCESS;
+
     }
 
-    protected function filter(array $currencies): array
+    /**
+     * @param array $currencies
+     * @return array
+     */
+    public function filter(array $currencies): array
     {
-        $currency_names = ["EUR", "USD", "RUB"];
-        return array_filter($currencies, fn(array $currency) => in_array($currency["Ccy"], $currency_names));
-    }
 
+        $currencyCodes = ["USD", "RUB", "EUR"];
+        return array_filter($currencies, fn(array $currency) => in_array($currency["Ccy"], $currencyCodes));
+
+    }
 }

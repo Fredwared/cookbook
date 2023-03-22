@@ -23,7 +23,7 @@ class CurrencyController extends Controller
      * @return AnonymousResourceCollection
      *
      * @apiResource App\Http\Resources\V1\Products\CurrencyResource
-     * @apiResourceModel App\Models\Currency
+     * @apiResourceModel App\Models\CurrencyService
      *
      */
     public function index(): AnonymousResourceCollection
@@ -50,7 +50,7 @@ class CurrencyController extends Controller
      *
      *
      * @apiResource App\Http\Resources\V1\Products\CurrencyResource
-     * @apiResourceModel App\Models\Currency
+     * @apiResourceModel App\Models\CurrencyService
      */
     public function store(StoreCurrencyRequest $request, CurrencyService $currencyService): JsonResponse
     {
@@ -78,7 +78,7 @@ class CurrencyController extends Controller
      * @return CurrencyResource
      *
      * @apiResource App\Http\Resources\V1\Products\CurrencyResource
-     * @apiResourceModel App\Models\Currency
+     * @apiResourceModel App\Models\CurrencyService
      */
     public function show(Currency $currency): CurrencyResource
     {
@@ -106,7 +106,7 @@ class CurrencyController extends Controller
         $currency->delete();
 
         return response()->json([
-            "message" => "Currency removed successfully"
+            "message" => "CurrencyService removed successfully"
         ]);
     }
 
@@ -117,13 +117,13 @@ class CurrencyController extends Controller
      * @return AnonymousResourceCollection
      *
      * @apiResource App\Http\Resources\V1\Products\ListCurrencyResource
-     * @apiResourceModel App\Models\Currency
+     * @apiResourceModel App\Models\CurrencyService
      * @throws Exception
      */
     public function list(): AnonymousResourceCollection
     {
 
-        $currencyAdapter = new CurrencyAdapter();
+        $currencyAdapter = app(CurrencyAdapter::class);
         $list = $currencyAdapter->getCurrenciesList();
         return ListCurrencyResource::collection($list);
     }

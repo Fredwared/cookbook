@@ -19,7 +19,7 @@ class ProductAttributeFactory extends Factory
     public function definition()
     {
         return [
-            "product_id" => Product::query()->inRandomOrder()->first()->id,
+            "product_uuid" => Product::query()->inRandomOrder()->first()->uuid,
             "attribute_id" => Attribute::query()->inRandomOrder()->first()->id,
         ];
     }

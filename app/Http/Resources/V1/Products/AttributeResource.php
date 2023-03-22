@@ -14,8 +14,8 @@ class AttributeResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            "name" => $this->name,
-            "value" => $this->value?->value
+            "name" => $this->attribute->name,
+            "value" => $this->value,
         ];
     }
 }

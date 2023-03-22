@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('product_attributes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("product_id")->constrained();
-            $table->foreignId("attribute_id")->constrained();
+            $table->uuid("product_uuid");
+            $table->unsignedBigInteger('attribute_id');
             $table->timestamps();
         });
     }

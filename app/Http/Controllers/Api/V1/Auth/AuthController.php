@@ -46,11 +46,12 @@ class AuthController extends Controller
      */
     public function register(RegisterRequest $request, RegisterService $registerService): JsonResponse
     {
+
         $user = $registerService($request->validated());
 
         return response()->json([
-            "data" => new RegisterResource($user),
-            "message" => "User registered successfully"
+            "message" => "User registered successfully",
+            "data" => RegisterResource::make($user)
         ]);
     }
 

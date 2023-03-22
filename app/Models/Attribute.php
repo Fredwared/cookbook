@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Attribute extends Model
 {
@@ -12,14 +13,15 @@ class Attribute extends Model
     protected $fillable = ["name"];
 
 
-    public function value(): \Illuminate\Database\Eloquent\Relations\HasOne
+
+    public function value(): HasMany
     {
-        return $this->hasOne(AttributeValue::class);
+        return $this->hasMany(AttributeValue::class);
     }
 
     public function products(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->belongsToMany(Product::class, "product_attributes");
+        return $this->belongsToMany(Product::class, "product_attributes","product_uuid","attribute_id");
     }
 
 

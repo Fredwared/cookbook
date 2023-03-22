@@ -18,7 +18,8 @@ class ReviewFactory extends Factory
     public function definition()
     {
         return [
-            "product_id" => Product::query()->inRandomOrder()->first()->id,
+            "user_id" => $this->faker->randomElement([1,2,3,4,5,6,7,8,9]),
+            "product_uuid" => Product::query()->inRandomOrder()->first()->uuid,
             "content" => $this->faker->paragraph(5)
         ];
     }

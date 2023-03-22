@@ -52,6 +52,9 @@ class ReviewController extends Controller
         $fields = $request->validated();
 
 
+
+        $fields["user_id"] = 1;
+
         $review = Review::query()->create($fields);
 
         return response()->json([

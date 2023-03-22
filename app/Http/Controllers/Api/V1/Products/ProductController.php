@@ -5,10 +5,13 @@ namespace App\Http\Controllers\Api\V1\Products;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\Products\StoreProductRequest;
 use App\Http\Requests\Api\V1\Products\UpdateProductRequest;
+use App\Http\Requests\ProductCurrencyRequest;
 use App\Http\Resources\V1\Products\ProductResource;
 use App\Models\Product;
+use App\Services\Products\CurrencyService;
 use App\Services\Products\ProductService;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Facades\DB;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
@@ -20,16 +23,22 @@ class ProductController extends Controller
      * Show collection of products
      *
      *
-     * @return JsonResponse
      *
      * @apiResource App\Http\Resources\V1\Products\ProductResource
      * @apiResourceModel App\Models\Product
-     *
      */
-    public function index(): JsonResponse
+    public function index(ProductCurrencyRequest $request): AnonymousResourceCollection
     {
-        $products = Product::query()->with("category", "brand", "reviews", "attributes")->get();
-        return response()->json(ProductResource::collection($products));
+        $products = Product::query()
+            ->with(["category", "brand", "reviews", "attributes.attribute", 'images'])
+            ->get();
+
+        /** @var CurrencyService $currency */
+        $currency = app(CurrencyService::class)->getCurrency(request("currency", "usd"));
+
+        request()->merge(['rate' => $currency->value]);
+
+        return ProductResource::collection($products);
     }
 
     /**
@@ -118,8 +127,6 @@ class ProductController extends Controller
 
     public function update(UpdateProductRequest $request, Product $product, ProductService $productService): JsonResponse
     {
-
-
         $product = $productService->updateProduct(
             $request->validated(), $product, $request->hasFile("images")
         );
@@ -149,6 +156,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product): JsonResponse
     {
+
         DB::transaction(function () use ($product) {
             $product->attributes()->detach();
             $product->delete();

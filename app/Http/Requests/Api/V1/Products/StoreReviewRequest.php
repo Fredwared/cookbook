@@ -21,7 +21,7 @@ class StoreReviewRequest extends FormRequest
     {
         return [
             "content" => "required|string",
-            "product_id" => "required|exists:products,id"
+            "product_uuid" => "required|exists:products,uuid"
         ];
     }
 }

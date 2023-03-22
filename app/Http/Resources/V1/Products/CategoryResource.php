@@ -14,7 +14,7 @@ class CategoryResource extends JsonResource
         return [
             "id" => $this->id,
             "name" => $this->name,
-            'childrens' => self::collection($this->childrens),
+            'childrens' => self::collection($this->whenLoaded("childrens")),
         ];
     }
 }
