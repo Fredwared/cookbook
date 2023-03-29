@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\V1\Products\ProductController;
 use App\Http\Controllers\Api\V1\Products\ReviewController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::patch("/products/{product}/{media}", [ProductController::class, "updateMainImage"]);
 Route::apiResource("products", ProductController::class);
 

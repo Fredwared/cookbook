@@ -18,7 +18,6 @@ class ProductFactory extends Factory
             "description" => $this->faker->paragraph(7),
             "price" => $this->faker->randomFloat(2, 10, 1000),
             "category_id" => Category::query()->inRandomOrder()->first()->id,
-
         ];
     }
 }
