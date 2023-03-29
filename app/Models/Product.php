@@ -13,12 +13,19 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
+
+ class Person {
+    public array $data;
+
+
+}
+
+
 class Product extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia, HasUuids;
 
     protected $primaryKey = "uuid";
-
     protected $fillable = ["name", "description", "category_id", "brand_id", "price"];
 
 
@@ -47,7 +54,7 @@ class Product extends Model implements HasMedia
 
     public function reviews(): HasMany
     {
-        return $this->hasMany(Review::class, "product_uuid");
+        return $this->hasMany(Review::class);
     }
 
 

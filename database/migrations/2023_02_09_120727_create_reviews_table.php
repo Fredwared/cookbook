@@ -14,7 +14,7 @@ return new class extends Migration {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->foreignUuid("product_uuid");
-            $table->unsignedInteger("user_id");
+            $table->foreignId("user_id")->constrained("users");
             $table->longText("content");
             $table->timestamps();
         });

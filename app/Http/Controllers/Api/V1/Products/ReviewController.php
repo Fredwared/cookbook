@@ -7,6 +7,7 @@ use App\Http\Requests\Api\V1\Products\StoreReviewRequest;
 use App\Http\Requests\Api\V1\Products\UpdateReviewRequest;
 use App\Http\Resources\V1\Products\ReviewResource;
 use App\Models\Review;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
@@ -25,8 +26,9 @@ class ReviewController extends Controller
      */
     public function index(): JsonResponse
     {
-        $reviews = Review::query()->with("products")->get();
-        return response()->json(ReviewResource::collection($reviews));
+        $reviews = Review::query()->with("users")->get();
+
+        return ReviewResource::collection($reviews);
     }
 
     /**
