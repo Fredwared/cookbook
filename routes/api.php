@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Api\V1\Auth\AuthController;
-use App\Http\Controllers\Api\V1\Products\BrandController;
 use App\Http\Controllers\Api\V1\Products\CategoryController;
 use App\Http\Controllers\Api\V1\Products\CurrencyController;
 use App\Http\Controllers\Api\V1\Products\ProductController;
@@ -13,7 +12,6 @@ Route::apiResource("products", ProductController::class);
 
 Route::apiResource("categories", CategoryController::class);
 Route::apiResource("reviews", ReviewController::class);
-Route::apiResource("brands", BrandController::class);
 
 Route::get("/currencies/list", [CurrencyController::class, "list"]);
 Route::apiResource("currencies", CurrencyController::class);

@@ -16,7 +16,6 @@ class ProductResource extends JsonResource
             "name" => $this->name,
             "description" => $this->description,
             "category" => ProductCategoryResource::make($this->whenLoaded('category')),
-            "brand" => $this->brand->name,
             "reviews" => ReviewResource::collection($this->whenLoaded('reviews')),
             "price" => [
                 "amount" => $this->currencyConvert(request('rate', 1), $this->price),

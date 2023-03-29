@@ -17,7 +17,6 @@ class StoreProductRequest extends FormRequest
         return [
             "name" => "required|string",
             "category_id" => "required|exists:categories,id",
-            "brand_id" => "required|exists:brands,id",
             "description" => "required|string",
             "price" => "required|numeric",
             "images" => "required|array",

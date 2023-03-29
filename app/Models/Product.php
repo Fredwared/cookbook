@@ -14,11 +14,6 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 
- class Person {
-    public array $data;
-
-
-}
 
 
 class Product extends Model implements HasMedia
@@ -26,7 +21,7 @@ class Product extends Model implements HasMedia
     use HasFactory, InteractsWithMedia, HasUuids;
 
     protected $primaryKey = "uuid";
-    protected $fillable = ["name", "description", "category_id", "brand_id", "price"];
+    protected $fillable = ["name", "description", "category_id", "price"];
 
 
     /**
@@ -38,15 +33,6 @@ class Product extends Model implements HasMedia
         return $this->belongsTo(Category::class);
     }
 
-
-    /**
-     * @return BelongsTo
-     */
-
-    public function brand(): BelongsTo
-    {
-        return $this->belongsTo(Brand::class);
-    }
 
     /**
      * @return HasMany

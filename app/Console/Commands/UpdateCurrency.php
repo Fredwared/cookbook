@@ -49,19 +49,17 @@ class UpdateCurrency extends Command
     {
         $filtered_currencies = $this->filter($currencies);
 
-        Currency::query()->upsert([
-            "code" => "UZS",
+        Currency::query()->updateOrCreate(["code" => "Uzs"],[
             "value" => 1,
             "name" => "Uzbek sum"
-        ], uniqueBy: "code");
+        ]);
 
         foreach ($filtered_currencies as $currency) {
 
-            Currency::query()->upsert([
-                "code" => $currency["Ccy"],
+            Currency::query()->updateOrCreate(["code" => $currency["Ccy"]],[
                 'value' => $currency['Rate'],
                 'name' => $currency['CcyNm_EN']
-            ], uniqueBy: $currency["Ccy"]);
+            ]);
 
         }
 
