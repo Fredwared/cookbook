@@ -18,13 +18,13 @@ class ReviewController extends Controller
      * Show collection of reviews
      *
      *
-     * @return JsonResponse
+     * @return AnonymousResourceCollection
      *
      * @apiResource App\Http\Resources\V1\Products\ReviewResource
      * @apiResourceModel App\Models\Review
      *
      */
-    public function index(): JsonResponse
+    public function index(): AnonymousResourceCollection
     {
         $reviews = Review::query()->with("users")->get();
 
