@@ -4,19 +4,19 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('product_attributes', function (Blueprint $table) {
+        Schema::create('product_contacts', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("product_id")->constrained("products");
-            $table->foreignId("attribute_id")->constrained("attributes");
+            $table->foreignId("product_id")->constrained();
+            $table->string("name");
+            $table->string("phone_number");
             $table->timestamps();
         });
     }
@@ -26,8 +26,8 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('product_attributes');
+        Schema::dropIfExists('product_contacts');
     }
 };

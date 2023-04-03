@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,15 +14,15 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 
-
-
 class Product extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia, HasUuids;
+    use HasFactory, InteractsWithMedia;
 
-    protected $primaryKey = "uuid";
-    protected $fillable = ["name", "description", "category_id", "price"];
 
+
+    protected $fillable = ["name", "description", "category_id", "price", "city_id"];
+    protected $hidden = "id";
+    protected $primaryKey = "id";
 
     /**
      * @return BelongsTo
@@ -31,6 +31,17 @@ class Product extends Model implements HasMedia
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+
+    public function city(): BelongsTo
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    public function contacts(): HasMany
+    {
+        return $this->hasMany(ProductContact::class);
     }
 
 
@@ -46,14 +57,13 @@ class Product extends Model implements HasMedia
 
     public function attributes(): BelongsToMany
     {
-        return $this->belongsToMany(AttributeValue::class, "product_attributes", 'attribute_id', 'product_uuid');
+        return $this->belongsToMany(AttributeValue::class, "product_attributes", "product_id", "attribute_id");
     }
 
     public function images(): MorphMany
     {
         return $this->morphMany(Media::class, 'model');
     }
-
 
     /**
      * @return string
@@ -62,4 +72,20 @@ class Product extends Model implements HasMedia
     {
         return "uuid";
     }
+
+    public function scopeFilter(Builder $query)
+    {
+        $search = request("search");
+
+
+        $query->when($search, function (Builder $query) use ($search) {
+
+            $query
+                ->whereHas("type", function (Builder $query) use ($search) {
+                    $query->where("name", "like", "%" . $search . "%")
+                        ->orWhere("capacity", "like", "%" . $search . "%");
+                });
+        });
+    }
+
 }

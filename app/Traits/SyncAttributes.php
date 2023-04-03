@@ -32,6 +32,37 @@ trait SyncAttributes
 
         $product->attributes()->attach($attributes);
 
+    }
+
+    public function updateAttributes(Product $product, array $attributes): void
+    {
+
+
+        $attributes = collect($attributes)->map(function ($item) use ($product) {
+
+
+            if ($product->attributes()->exists()) {
+                $product->attributes()->detach();
+                $product->attributes()->delete();
+            }
+            $attribute = Attribute::query()->firstOrCreate(["name" => $item['name']]);
+
+            if ($attribute->value()->exists()) {
+                $attribute->value()->delete();
+            }
+
+            AttributeValue::query()->firstOrCreate([
+                "attribute_id" => $attribute->id,
+                'value' => $item['value']
+            ]);
+            return [
+                'attribute_id' => $attribute->id,
+                'product_id' => $product->id
+            ];
+        });
+
+        $product->attributes()->sync($attributes);
+
 
     }
 }

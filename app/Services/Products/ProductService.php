@@ -7,6 +7,7 @@ use App\Traits\SyncAttributes;
 use App\Traits\UploadFile;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ProductService
 {
@@ -20,17 +21,19 @@ class ProductService
     public function storeProduct(array $validation): Model
     {
 
+        $validation["uuid"] = Str::uuid();
 
         /** @var Product $product */
         $product = Product::query()->create($validation);
 
 
+
         DB::transaction(function () use ($validation, $product) {
-            $product->attributes()->attach($validation["attributes"]);
+            $this->attachAttributes($product, $validation["attributes"]);
             $this->upload($product, "images");
         });
 
-        return $product->load('attributes.attribute');
+        return $product;
     }
 
     /**

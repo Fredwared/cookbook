@@ -7,7 +7,6 @@ use App\Http\Requests\Api\V1\Products\StoreReviewRequest;
 use App\Http\Requests\Api\V1\Products\UpdateReviewRequest;
 use App\Http\Resources\V1\Products\ReviewResource;
 use App\Models\Review;
-use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
@@ -56,6 +55,7 @@ class ReviewController extends Controller
 
 
         $fields["user_id"] = 1;
+
 
         $review = Review::query()->create($fields);
 

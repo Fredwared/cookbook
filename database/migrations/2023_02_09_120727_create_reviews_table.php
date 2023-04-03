@@ -13,8 +13,9 @@ return new class extends Migration {
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->foreignUuid("product_uuid");
+            $table->foreignId("product_id")->constrained();
             $table->foreignId("user_id")->constrained("users");
+            $table->float("rating");
             $table->longText("content");
             $table->timestamps();
         });

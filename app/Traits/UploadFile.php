@@ -34,7 +34,7 @@ trait UploadFile
     protected function uploadAvatar (HasMedia $model): void
     {
         $model
-            ->addMediaFromRequest("avatar") //starting method
+            ->addMediaFromRequest("avatar")
             ->toMediaCollection("avatars");
 
     }

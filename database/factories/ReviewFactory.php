@@ -20,8 +20,9 @@ class ReviewFactory extends Factory
     {
         return [
             "user_id" => User::query()->inRandomOrder()->first()->id,
-            "product_uuid" => Product::query()->inRandomOrder()->first()->uuid,
-            "content" => $this->faker->paragraph(5)
+            "product_id" => Product::query()->inRandomOrder()->first()->id,
+            "content" => $this->faker->paragraph(5),
+            "rating" => $this->faker->randomElement([1,2,3,4,5])
         ];
     }
 }

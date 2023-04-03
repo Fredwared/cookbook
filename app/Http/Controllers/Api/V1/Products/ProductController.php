@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api\V1\Products;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\V1\Products\ProductCurrencyRequest;
 use App\Http\Requests\Api\V1\Products\StoreProductRequest;
 use App\Http\Requests\Api\V1\Products\UpdateProductRequest;
 use App\Http\Resources\V1\Products\ProductResource;
@@ -27,10 +26,12 @@ class ProductController extends Controller
      * @apiResource App\Http\Resources\V1\Products\ProductResource
      * @apiResourceModel App\Models\Product
      */
-    public function index(ProductCurrencyRequest $request): AnonymousResourceCollection
+    public function index(): AnonymousResourceCollection
     {
         $products = Product::query()
-            ->with(["category",  "reviews", "attributes.attribute", 'images'])
+            ->with(["category", "reviews", "attributes", "images", "contacts","city"])
+            ->scopes(["filter"])
+            ->withAvg("reviews","rating")
             ->get();
 
         /** @var CurrencyService $currency */
@@ -95,6 +96,10 @@ class ProductController extends Controller
 
     public function show(Product $product): ProductResource
     {
+        $product->load(["category", "reviews", "attributes", "images", "city","contacts"]);
+        $currency = app(CurrencyService::class)->getCurrency(request("currency", "usd"));
+
+        request()->merge(['rate' => $currency->value]);
         return ProductResource::make($product);
     }
 

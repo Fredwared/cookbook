@@ -10,7 +10,7 @@ class Review extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["product_uuid", "content","user_id"];
+    protected $fillable = ["product_id", "content","user_id"];
 
 
     /**
@@ -18,7 +18,7 @@ class Review extends Model
      */
     public function products(): BelongsTo
     {
-        return $this->belongsTo(Product::class, "product_uuid");
+        return $this->belongsTo(Product::class);
     }
 
 

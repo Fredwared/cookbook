@@ -16,14 +16,12 @@ class ProductResource extends JsonResource
             "name" => $this->name,
             "description" => $this->description,
             "category" => ProductCategoryResource::make($this->whenLoaded('category')),
+            "contacts" => ProductContactResource::collection($this->whenLoaded("contacts")),
+            "city" => $this->city->name,
+            "location" => $this->location,
             "reviews" => ReviewResource::collection($this->whenLoaded('reviews')),
-            "price" => [
-                "amount" => $this->currencyConvert(request('rate', 1), $this->price),
-                "currencyCode" => request("currency","usd")
-            ],
-            "preview" => $this->images->where('custom_properties.is_main', '=', true)->first()?->getFullUrl(),
             "images" => ImageResource::collection($this->whenLoaded('images')),
-            "attributes" => AttributeResource::collection($this->whenLoaded('attributes'))
+            "isPetAllowed" => boolval($this->is_pet_allowed),
         ];
     }
 
