@@ -30,7 +30,7 @@ class ProductService
 
         DB::transaction(function () use ($validation, $product) {
             $this->attachAttributes($product, $validation["attributes"]);
-            $this->upload($product, "images");
+            $this->uploadMultiple($product, "images");
         });
 
         return $product;
@@ -48,7 +48,7 @@ class ProductService
             $product->attributes()->sync($validation["attributes"]);
             if ($image) {
                 $this->clearCollection($product, "images");
-                $this->upload($product);
+                $this->uploadMultiple($product);
             }
 
             $product->update($validation);

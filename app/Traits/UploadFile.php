@@ -10,7 +10,7 @@ use Spatie\MediaLibrary\MediaCollections\Exceptions\FileIsTooBig;
 trait UploadFile
 {
 
-    protected function upload(HasMedia $model, $collectionName): void
+    protected function uploadMultiple(HasMedia $model, $collectionName): void
     {
         $model->addMultipleMediaFromRequest(['images'])
             ->each(function ($fileAdder) use ($collectionName) {

@@ -16,7 +16,7 @@ class ProductContactResource extends JsonResource
     {
         return [
             "name"  => $this->name,
-            "phoneNumber" => $this->phone_number
+            "phoneNumber" =>$this->phone_number
         ];
     }
 }

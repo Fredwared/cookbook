@@ -19,7 +19,6 @@ class Product extends Model implements HasMedia
     use HasFactory, InteractsWithMedia;
 
 
-
     protected $fillable = ["name", "description", "category_id", "price", "city_id"];
     protected $hidden = "id";
     protected $primaryKey = "id";
@@ -44,6 +43,10 @@ class Product extends Model implements HasMedia
         return $this->hasMany(ProductContact::class);
     }
 
+    public function entities(): HasMany
+    {
+        return $this->hasMany(ProductEntity::class,"product_id");
+    }
 
     /**
      * @return HasMany
@@ -81,9 +84,13 @@ class Product extends Model implements HasMedia
         $query->when($search, function (Builder $query) use ($search) {
 
             $query
-                ->whereHas("type", function (Builder $query) use ($search) {
-                    $query->where("name", "like", "%" . $search . "%")
-                        ->orWhere("capacity", "like", "%" . $search . "%");
+                ->where("name", "like", "%" . $search . "%")
+                ->orWhereHas("city", function (Builder $query) use ($search) {
+                    $query->where("name", "like", "%" . $search . "%");
+                })
+                ->orWhereHas("category", function (Builder $query) use ($search) {
+                    $query->where("name", "like", "%" . $search . "%");
+
                 });
         });
     }

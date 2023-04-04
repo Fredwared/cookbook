@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             CitySeeder::class,
             ProductSeeder::class,
             ProductContactSeeder::class,
+            ProductEntitySeeder::class,
             ReviewSeeder::class,
             AttributeSeeder::class,
             AttributeValueSeeder::class,
