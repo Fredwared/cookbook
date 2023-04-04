@@ -21,6 +21,7 @@ class ProductResource extends JsonResource
             "city" => $this->city->name,
             "location" => $this->location,
             "reviews" => ReviewResource::collection($this->whenLoaded('reviews')),
+            "rate" =>$this->reviews->avg("rating"),
             "images" => ImageResource::collection($this->whenLoaded('images')),
             "isPetAllowed" => boolval($this->is_pet_allowed),
         ];

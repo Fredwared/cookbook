@@ -29,10 +29,11 @@ class ProductController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $products = Product::query()
-            ->with(["category", "reviews", "images","entities", "contacts","city"])
+            ->with(["category", "reviews", "images", "entities", "contacts", "city"])
             ->scopes(["filter"])
-            ->withAvg("reviews","rating")
+            ->withAvg("reviews", "rating")
             ->get();
+
 
         /** @var CurrencyService $currency */
         $currency = app(CurrencyService::class)->getCurrency(request("currency", "usd"));
@@ -96,7 +97,7 @@ class ProductController extends Controller
 
     public function show(Product $product): ProductResource
     {
-        $product->load(["category", "reviews", "entities", "images", "city","contacts"]);
+        $product->load(["category", "reviews", "entities", "images", "city", "contacts"]);
         $currency = app(CurrencyService::class)->getCurrency(request("currency", "usd"));
 
         request()->merge(['rate' => $currency->value]);
