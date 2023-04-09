@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use App\Models\Category;
 use App\Models\City;
-use App\Models\ProductEntity;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 

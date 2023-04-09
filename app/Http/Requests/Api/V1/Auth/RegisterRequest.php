@@ -16,12 +16,18 @@ class RegisterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "username" => "required|max:255|uniqu e:users",
-            "email" => "required|email|max:255|unique:users",
-            "firstname" => "required|string|max:255",
-            "lastname" => "required|string|max:255",
-            "avatar" => "required|image|mimes:jpg,png,jpeg,gif,svg|max:2048",
-            "password" => "required|max:255|confirmed",
+            "firstname" => "required|max:255|string",
+            "lastname" => "required|max:255|string",
+            "surname" => "max:255|string",
+            "birthdate" => "date",
+            "country_id" => "required|exists:countries,id",
+            "city_id" => "exists:countries,id",
+            "primary_number" => "required|numeric|regex:/^([0-9\s\-\+\(\)]*)$/|",
+            "number" => "required|numeric|regex:/^([0-9\s\-\+\(\)]*)$/|",
+            "optional_number" => "numeric|regex:/^([0-9\s\-\+\(\)]*)$/|",
+            "email" => "required|email|unique:users,email",
+            "password" => 'required',
+            "password_confirmation" => 'required|same:password',
         ];
     }
 

@@ -20,6 +20,8 @@ Route::apiResource("currencies", CurrencyController::class);
 
 Route::controller(AuthController::class)->group(function () {
     Route::post("/register", "register")->name("register");
+    Route::post("/verify", "verify")->name("verify");
+    Route::post("/resend-code", "resend")->name("resend");
     Route::post("/login", "login")->name("login");
     Route::post("/logout", "logout")->middleware("auth:sanctum")->name("logout");
 });

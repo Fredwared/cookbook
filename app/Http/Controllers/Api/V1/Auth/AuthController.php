@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Api\V1\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\V1\{Auth\LoginRequest, Auth\RegisterRequest};
+use App\Http\Requests\Api\V1\{Auth\LoginRequest, Auth\RegisterRequest, Auth\ResendCodeRequest, Auth\VerifyUserRequest};
 use App\Http\Resources\{V1\Auth\LoginResource, V1\Auth\RegisterResource};
+use App\Models\User;
+use App\Models\UserCode;
 use App\Services\{Auth\LoginService, Auth\RegisterService};
 use Illuminate\Http\{JsonResponse, Request};
 use Illuminate\Validation\ValidationException;
@@ -41,20 +43,84 @@ class AuthController extends Controller
      * @apiResourceModel App\Models\User
      *
      * @responseFile storage/responses/auth/register.json
-     *
-     *
      */
     public function register(RegisterRequest $request, RegisterService $registerService): JsonResponse
     {
 
+        $code = rand(100000, 999999);
         $user = $registerService($request->validated());
 
+        $userCode = UserCode::query()->create([
+            "phone_number" => $user->primary_number,
+            "user_id" => $user->id,
+            "code" => $code,
+        ]);
+
+
         return response()->json([
+            "pincode" => $userCode->code,
             "message" => "User registered successfully",
             "data" => RegisterResource::make($user)
         ]);
     }
 
+
+    /**
+     * @param VerifyUserRequest $request
+     * @return JsonResponse
+     */
+    public function verify(VerifyUserRequest $request): JsonResponse
+    {
+
+        $fields = $request->validated();
+
+        $userCode = UserCode::query()
+            ->where("user_id", $fields["user_id"])
+            ->where("code", $fields["code"])
+            ->first();
+
+        if (!$userCode or $userCode->code != $request->input('code')) {
+            return response()->json(
+                [
+                    "message" => "Invalid code"
+                ]
+            );
+        }
+
+
+        User::query()->find($fields["user_id"])->update(["is_verified" => true]);
+
+
+        $userCode->delete();
+
+        return response()->json(
+            [
+                "message" => "Successfully verified"
+            ]
+        );
+
+    }
+
+
+    public function resend(ResendCodeRequest $request): JsonResponse
+    {
+        $fields = $request->validated();
+
+        $user = User::query()->where('primary_number', $fields['number'])->first();
+        $code = rand(100000, 999999);
+
+        UserCode::query()->where("user_id", $user->id)->delete();
+
+        UserCode::query()->create([
+            "user_id" => $user->id,
+            "code" => $code
+        ]);
+
+        return response()->json([
+            "pincode" => $code,
+            "message" => "Code resend successfully"
+        ]);
+    }
 
     /**
      * User Login
@@ -84,14 +150,15 @@ class AuthController extends Controller
      *
      */
 
-    public function login(LoginRequest $request, LoginService $loginService): JsonResponse
+    public
+    function login(LoginRequest $request, LoginService $loginService): JsonResponse
     {
         $request->authenticate();
         $user = $loginService($request->validated());
 
         return response()->json([
             "token" => $user->createToken("authToken")->plainTextToken,
-            "data" => new LoginResource($user),
+            "data" => LoginResource::make($user),
             "message" => "Welcome back " . $user->username
         ]);
     }
@@ -112,7 +179,8 @@ class AuthController extends Controller
      *  "message":"User logged out"
      * }
      */
-    public function logout(Request $request): JsonResponse
+    public
+    function logout(Request $request): JsonResponse
     {
 
         $accessToken = $request->user()->currentAccessToken();

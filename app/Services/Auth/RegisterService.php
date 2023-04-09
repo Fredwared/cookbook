@@ -4,22 +4,21 @@ namespace App\Services\Auth;
 
 
 use App\Models\User;
-use App\Traits\UploadFile;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 
 class  RegisterService
 {
-    use UploadFile;
-
 
     public function __invoke(array $validation): Model|Builder
     {
-
         $validation["password"] = bcrypt($validation["password"]);
         $user = User::query()->create($validation);
-        $this->uploadAvatar($user);
+
+
+        event(new Registered($user));
 
         return $user;
 
