@@ -21,7 +21,7 @@ class ProductResource extends JsonResource
             "rooms" => EntityResource::collection($this->whenLoaded("entities")),
             "contacts" => ProductContactResource::collection($this->whenLoaded("contacts")),
             "reviews" => ReviewResource::collection($this->whenLoaded('reviews')),
-            "rate" => $this->reviews->avg("rating"),
+            "rate" => number_format($this->reviews->avg("rating"),2,","),
             "images" => ImageResource::collection($this->whenLoaded('images')),
             "isPetAllowed" => boolval($this->is_pet_allowed),
         ];

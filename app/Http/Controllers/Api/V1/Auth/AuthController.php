@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\{Auth\LoginRequest, Auth\RegisterRequest, Auth\ResendCodeRequest, Auth\VerifyUserRequest};
 use App\Http\Resources\{V1\Auth\LoginResource, V1\Auth\RegisterResource};
 use App\Models\User;
-use App\Models\UserCode;
-use App\Services\{Auth\LoginService, Auth\RegisterService};
+use App\Services\{Auth\RegisterService};
+use Exception;
 use Illuminate\Http\{JsonResponse, Request};
 use Illuminate\Validation\ValidationException;
 
@@ -48,17 +48,11 @@ class AuthController extends Controller
     {
 
         $code = rand(100000, 999999);
-        $user = $registerService($request->validated());
-
-        $userCode = UserCode::query()->create([
-            "phone_number" => $user->primary_number,
-            "user_id" => $user->id,
-            "code" => $code,
-        ]);
+        $user = $registerService->registerUser($request->validated(), $code);
 
 
         return response()->json([
-            "pincode" => $userCode->code,
+            "pincode" => $code,
             "message" => "User registered successfully",
             "data" => RegisterResource::make($user)
         ]);
@@ -67,31 +61,15 @@ class AuthController extends Controller
 
     /**
      * @param VerifyUserRequest $request
+     * @param RegisterService $registerService
      * @return JsonResponse
+     * @throws Exception
      */
-    public function verify(VerifyUserRequest $request): JsonResponse
+    public function verify(VerifyUserRequest $request, RegisterService $registerService): JsonResponse
     {
 
-        $fields = $request->validated();
+        $registerService->verifyUser($request->validated());
 
-        $userCode = UserCode::query()
-            ->where("user_id", $fields["user_id"])
-            ->where("code", $fields["code"])
-            ->first();
-
-        if (!$userCode or $userCode->code != $request->input('code')) {
-            return response()->json(
-                [
-                    "message" => "Invalid code"
-                ]
-            );
-        }
-
-
-        User::query()->find($fields["user_id"])->update(["is_verified" => true]);
-
-
-        $userCode->delete();
 
         return response()->json(
             [
@@ -102,19 +80,17 @@ class AuthController extends Controller
     }
 
 
-    public function resend(ResendCodeRequest $request): JsonResponse
+    /**
+     * @param ResendCodeRequest $request
+     * @param RegisterService $registerService
+     * @return JsonResponse
+     * @throws Exception
+     */
+    public function resend(ResendCodeRequest $request, RegisterService $registerService): JsonResponse
     {
-        $fields = $request->validated();
-
-        $user = User::query()->where('primary_number', $fields['number'])->first();
         $code = rand(100000, 999999);
 
-        UserCode::query()->where("user_id", $user->id)->delete();
-
-        UserCode::query()->create([
-            "user_id" => $user->id,
-            "code" => $code
-        ]);
+        $registerService->resendVerificationCode($request->validated(), $code);
 
         return response()->json([
             "pincode" => $code,
@@ -135,7 +111,6 @@ class AuthController extends Controller
      *
      *
      * @param LoginRequest $request
-     * @param LoginService $loginService
      * @return JsonResponse
      *
      * @throws ValidationException
@@ -150,16 +125,19 @@ class AuthController extends Controller
      *
      */
 
-    public
-    function login(LoginRequest $request, LoginService $loginService): JsonResponse
+    public function login(LoginRequest $request): JsonResponse
     {
         $request->authenticate();
-        $user = $loginService($request->validated());
+        $fields = $request->validated();
+
+        $user = User::query()->where("email", $fields["email"])->first();
+
+        $token = $user->createToken("authToken")->plainTextToken;
 
         return response()->json([
-            "token" => $user->createToken("authToken")->plainTextToken,
+            "token" => $token,
+            "message" => "Welcome back " . $user->firstname,
             "data" => LoginResource::make($user),
-            "message" => "Welcome back " . $user->username
         ]);
     }
 
