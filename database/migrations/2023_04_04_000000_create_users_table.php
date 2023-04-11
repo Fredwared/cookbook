@@ -28,7 +28,7 @@ return new class extends Migration {
             $table->string("email");
             $table->string("preferred_contact_method")->default(UserConstants::PRIMARY_CONTACT);
             $table->string("password");
-            $table->boolean("is_verified")->default(false);
+            $table->timestamp('verified_at');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -16,10 +16,10 @@ class UserFactory extends Factory
             "firstname" => fake()->firstName(),
             "lastname" => fake()->lastName(),
             "country_id" => Country::query()->inRandomOrder()->first()->id,
-            "primary_number" => fake()->phoneNumber(),
-            "number" => fake()->phoneNumber(),
+            "primary_number" => str_replace('+', '', fake()->unique()->e164PhoneNumber()),
+            "number" => str_replace('+', '', fake()->unique()->e164PhoneNumber()),
             "email" => fake()->email(),
-            "password" => fake()->password(), // password
+            "password" => bcrypt(fake()->password()), // password
             "remember_token" => Str::random(10),
         ];
     }

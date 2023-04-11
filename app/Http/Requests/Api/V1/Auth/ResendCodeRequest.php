@@ -24,8 +24,7 @@ class ResendCodeRequest extends FormRequest
     public function rules()
     {
         return [
-            "user_id" =>"required|exists:users,id",
-            "number" => "required|numeric|regex:/^([0-9\s\-\+\(\)]*)$/|"
+            "number" => "required|numeric|regex:/^[0-9 ]+$/|exists:users,primary_number"
         ];
     }
 }

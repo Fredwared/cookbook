@@ -22,11 +22,11 @@ class RegisterRequest extends FormRequest
             "birthdate" => "date",
             "country_id" => "required|exists:countries,id",
             "city_id" => "exists:countries,id",
-            "primary_number" => "required|numeric|regex:/^([0-9\s\-\+\(\)]*)$/|",
-            "number" => "required|numeric|regex:/^([0-9\s\-\+\(\)]*)$/|",
-            "optional_number" => "numeric|regex:/^([0-9\s\-\+\(\)]*)$/|",
+            "primary_number" => "required|numeric|regex:/^[0-9 ]+$/|unique:users,primary_number",
+            "number" => "required|numeric|regex:/^[0-9 ]+$/",
+            "optional_number" => "numeric|regex:/^[0-9 ]+$/",
             "email" => "required|email|unique:users,email",
-            "password" => 'required',
+            "password" => 'required|min:6',
             "password_confirmation" => 'required|same:password',
         ];
     }

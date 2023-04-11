@@ -48,13 +48,12 @@ class AuthController extends Controller
     {
 
         $code = rand(100000, 999999);
-        $user = $registerService->registerUser($request->validated(), $code);
+        $registerService->registerUser($request->validated(), $code);
 
 
         return response()->json([
+            "message" => "Pincode was sent",
             "pincode" => $code,
-            "message" => "User registered successfully",
-            "data" => RegisterResource::make($user)
         ]);
     }
 
@@ -63,17 +62,18 @@ class AuthController extends Controller
      * @param VerifyUserRequest $request
      * @param RegisterService $registerService
      * @return JsonResponse
-     * @throws Exception
+     * @throws ValidationException
      */
     public function verify(VerifyUserRequest $request, RegisterService $registerService): JsonResponse
     {
 
-        $registerService->verifyUser($request->validated());
+        $user = $registerService->verifyUser($request->validated());
 
 
         return response()->json(
             [
-                "message" => "Successfully verified"
+                "message" => "Successfully verified",
+                "data" => RegisterResource::make($user)
             ]
         );
 
@@ -92,9 +92,10 @@ class AuthController extends Controller
 
         $registerService->resendVerificationCode($request->validated(), $code);
 
+
         return response()->json([
+            "message" => "Code resend successfully",
             "pincode" => $code,
-            "message" => "Code resend successfully"
         ]);
     }
 
