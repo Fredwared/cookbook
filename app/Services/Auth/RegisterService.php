@@ -56,22 +56,14 @@ class  RegisterService
     }
 
     /**
-     * @param array $validation
      * @param $code
      * @return bool
      * @throws Exception
      */
-    public function resendVerificationCode(array $validation, $code): bool
+    public function resendVerificationCode($code): bool
     {
-        $user = User::query()->where("primary_number", $validation["number"])->exists();
 
         Cache::forget("user_verification_code");
-
-        if ($user) {
-            throw ValidationException::withMessages([
-                "user" => "User is verified"
-            ]);
-        }
 
         return Cache::put("user_verification_code", $code);
 

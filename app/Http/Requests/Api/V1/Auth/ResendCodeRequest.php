@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Api\V1\Auth;
 
+use App\Rules\UserVerified;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ResendCodeRequest extends FormRequest
@@ -24,7 +25,7 @@ class ResendCodeRequest extends FormRequest
     public function rules()
     {
         return [
-            "number" => "required|numeric|regex:/^[0-9 ]+$/|exists:users,primary_number"
+            "number" => ["required", "numeric", "exists:users,primary_number", new UserVerified()]
         ];
     }
 }
