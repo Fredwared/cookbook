@@ -10,15 +10,17 @@ return new class extends Migration {
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->uuid()->index();
             $table->foreignId("category_id")->constrained();
-            $table->foreignId("brand_id")->constrained();
-            $table->text("name");
+            $table->foreignId("city_id")->constrained("cities");
+            $table->string("location");
+            $table->text("name")->unique();
             $table->longText("description");
-            $table->float("price");
+            $table->boolean("is_pet_allowed")->default(false);
             $table->timestamps();
         });
     }

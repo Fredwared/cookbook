@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,8 +19,10 @@ class ReviewFactory extends Factory
     public function definition()
     {
         return [
+            "user_id" => User::query()->inRandomOrder()->first()->id,
             "product_id" => Product::query()->inRandomOrder()->first()->id,
-            "content" => $this->faker->paragraph(5)
+            "content" => $this->faker->paragraph(5),
+            "rating" => $this->faker->randomElement([1,2,3,4,5])
         ];
     }
 }

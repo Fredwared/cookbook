@@ -7,12 +7,11 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class ReviewResource extends JsonResource
 {
 
-    public function toArray($request)
+    public function toArray($request): array
     {
         return [
-            "id" => $this->id,
+            "rating" => $this->rating,
             "body" => $this->content,
-            "product_id" => $this->products->id
         ];
     }
 }

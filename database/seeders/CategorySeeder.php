@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
@@ -17,28 +16,45 @@ class CategorySeeder extends Seeder
     {
         Category::query()->insert([
             [
-                "name" => "gaming",
-                "parent_id" => null
+                "name" => "Chain hotel"
             ],
             [
-                "name" => "laptop",
-                "parent_id" => 1
+                "name" => "Motel"
             ],
             [
-                "name" => "pc",
-                "parent_id" => 1
+                "name" => "Resort"
             ],
             [
-                "name" => "headset",
-                "parent_id" => 3
+                "name" => "Boutique hotels"
             ],
             [
-                "name" => "keyboard",
-                "parent_id" => 3
+                "name" => " Bunkhouse"
+            ],
+            [
+                "name" => " Extended stay hotel"
+            ],
+            [
+                "name" => "Echo hotel"
+            ],
+            [
+                "name" => "Pop-up hotel"
+            ],
+            [
+                "name" => "Roadhouses"
+            ],
+            [
+                "name" => "Pet-friendly hotel"
+            ],
+            [
+                "name" => "Transit hotel"
+            ],
+            [
+              "name" => "Heritage hotel"
+            ],
+            [
+                "name" => "Hostel"
             ],
         ]);
-
-        Category::factory(5)->create();
 
 
     }

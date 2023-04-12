@@ -14,6 +14,7 @@ class RegisterResource extends JsonResource
             "email" => $this->email,
             "firstname" => $this->firstname,
             "lastname" => $this->lastname,
+            "avatar" => $this->getFirstMediaUrl("avatars"),
 
         ];
     }

@@ -7,6 +7,7 @@ use App\Http\Requests\Api\V1\Products\StoreCategoryRequest;
 use App\Http\Resources\V1\Products\CategoryResource;
 use App\Models\Category;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class CategoryController extends Controller
 {
@@ -16,17 +17,17 @@ class CategoryController extends Controller
      * Show collection of categories
      *
      *
-     * @return JsonResponse
+     * @return AnonymousResourceCollection
      *
      * @apiResource App\Http\Resources\V1\Products\CategoryResource
      * @apiResourceModel App\Models\Category
      *
      */
 
-    public function index(): JsonResponse
+    public function index(): AnonymousResourceCollection
     {
         $categories = Category::query()->whereNull("parent_id")->with("childrens")->get();
-        return response()->json(CategoryResource::collection($categories));
+        return CategoryResource::collection($categories);
     }
 
 
@@ -107,7 +108,7 @@ class CategoryController extends Controller
         $category->update($fields);
         return response()->json([
             "message" => "Category updated successfully",
-            "data" =>  CategoryResource::make($category->refresh())
+            "data" => CategoryResource::make($category->refresh())
         ]);
     }
 

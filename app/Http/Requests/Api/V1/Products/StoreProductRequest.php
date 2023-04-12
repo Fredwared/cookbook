@@ -17,11 +17,13 @@ class StoreProductRequest extends FormRequest
         return [
             "name" => "required|string",
             "category_id" => "required|exists:categories,id",
-            "brand_id" => "required|exists:brands,id",
             "description" => "required|string",
             "price" => "required|numeric",
             "images" => "required|array",
-            "images.*" => "required|image|mimes:jpg,png,jpeg,gif,svg|max:2048"
+            "images.*" => "required|image|mimes:jpg,png,jpeg,gif,svg|max:2048",
+            "attributes" => "required|array",
+            "attributes.*.name" => "required|string|max:100",
+            "attributes.*.value" => "required|max:100"
         ];
     }
 }

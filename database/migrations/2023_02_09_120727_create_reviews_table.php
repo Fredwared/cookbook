@@ -5,9 +5,8 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
+
     /**
-     * Run the migrations.
-     *
      * @return void
      */
     public function up()
@@ -15,6 +14,8 @@ return new class extends Migration {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->foreignId("product_id")->constrained();
+            $table->foreignId("user_id")->constrained("users");
+            $table->float("rating");
             $table->longText("content");
             $table->timestamps();
         });

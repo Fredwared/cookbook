@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Brand;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\ProductContact;
 use Illuminate\Database\Seeder;
 
-class BrandSeeder extends Seeder
+class ProductContactSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +14,6 @@ class BrandSeeder extends Seeder
      */
     public function run()
     {
-        Brand::factory(10)->create();
+        ProductContact::factory(20)->create();
     }
 }
