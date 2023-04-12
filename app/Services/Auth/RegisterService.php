@@ -65,7 +65,7 @@ class  RegisterService
 
         Cache::forget("user_verification_code");
 
-        return Cache::put("user_verification_code", $code);
+        return Cache::put("user_verification_code", $code, now()->addMinutes(10));
 
     }
 }
