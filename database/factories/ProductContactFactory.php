@@ -20,7 +20,7 @@ class ProductContactFactory extends Factory
         return [
             "product_id" =>Product::query()->inRandomOrder()->first()->id,
             "name" => $this->faker->name(),
-            "phone_number"=> $this->faker->phoneNumber
+            "phone_number"=> str_replace('+', '', $this->faker->unique()->e164PhoneNumber())
         ];
     }
 }

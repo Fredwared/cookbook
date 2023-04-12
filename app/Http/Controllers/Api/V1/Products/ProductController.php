@@ -97,7 +97,7 @@ class ProductController extends Controller
 
     public function show(Product $product): ProductResource
     {
-        $product->load(["category", "reviews", "entities", "images", "city", "contacts"]);
+        $product->load(["category", "reviews", "images", "entities", "contacts", "city"]);
         $currency = app(CurrencyService::class)->getCurrency(request("currency", "usd"));
 
         request()->merge(['rate' => $currency->value]);

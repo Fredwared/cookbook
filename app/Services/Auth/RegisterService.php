@@ -4,24 +4,68 @@ namespace App\Services\Auth;
 
 
 use App\Models\User;
-use App\Traits\UploadFile;
+use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Validation\ValidationException;
 
 
 class  RegisterService
 {
-    use UploadFile;
+
+    /**
+     * @param array $validation
+     * @param $code
+     * @return mixed
+     */
+    public function registerUser(array $validation, $code): mixed
+    {
+        $validation["password"] = bcrypt($validation["password"]);
 
 
-    public function __invoke(array $validation): Model|Builder
+        Cache::put([
+            'user_verification_code' => $code,
+            'user' => $validation
+        ], now()->addMinutes(10));
+
+        return $code;
+    }
+
+
+    /**
+     * @param array $validation
+     * @return Model|Builder
+     * @throws ValidationException
+     */
+    public function verifyUser(array $validation): Model|Builder
+    {
+        $user = Cache::get("user");
+
+        $userCode = Cache::get("user_verification_code");
+
+        if ($validation["code"] != $userCode) {
+            throw ValidationException::withMessages([
+                "code" => "Invalid code"
+            ]);
+        }
+
+        return User::query()->create($user);
+
+
+    }
+
+    /**
+     * @param $code
+     * @return bool
+     * @throws Exception
+     */
+    public function resendVerificationCode($code): bool
     {
 
-        $validation["password"] = bcrypt($validation["password"]);
-        $user = User::query()->create($validation);
-        $this->uploadAvatar($user);
+        Cache::forget("user_verification_code");
 
-        return $user;
+        return Cache::put("user_verification_code", $code);
 
     }
 }

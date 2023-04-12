@@ -2,30 +2,39 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
-class User extends Authenticatable implements  HasMedia
+class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable,InteractsWithMedia;
+    use HasApiTokens, HasFactory, Notifiable, InteractsWithMedia;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
+
     protected $fillable = [
-        'username',
-        'email',
         'firstname',
         'lastname',
+        'email',
+        'country_id',
+        'city_id',
+        'birthdate',
+        'number',
+        'primary_number',
+        'optional_number',
+        'surname',
         'password',
+        'gender',
+        'preferred_contact_method',
     ];
 
     /**
@@ -44,8 +53,11 @@ class User extends Authenticatable implements  HasMedia
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'verified_at' => 'datetime',
     ];
+
+
+
 
     /**
      *
@@ -56,4 +68,8 @@ class User extends Authenticatable implements  HasMedia
         return $this->hasMany(Review::class);
     }
 
+    public function country(): BelongsTo
+    {
+        return $this->belongsTo(Country::class);
+    }
 }

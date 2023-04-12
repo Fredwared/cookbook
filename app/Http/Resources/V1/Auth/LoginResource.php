@@ -11,11 +11,8 @@ class LoginResource extends JsonResource
     {
         return
             [
-                "username" => $this->username,
-                "email" => $this->email,
                 "firstname" => $this->firstname,
                 "lastname" => $this->lastname,
-                "avatar" => $this->getFirstMediaUrl("avatars")
             ];
     }
 }

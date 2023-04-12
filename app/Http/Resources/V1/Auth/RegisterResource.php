@@ -10,12 +10,12 @@ class RegisterResource extends JsonResource
     public function toArray($request): array
     {
         return [
-            "username" => $this->username,
-            "email" => $this->email,
             "firstname" => $this->firstname,
             "lastname" => $this->lastname,
-            "avatar" => $this->getFirstMediaUrl("avatars"),
-
+            "country" => $this->country->name,
+            "primaryNumber" => $this->primary_number,
+            "number" => $this->number,
+            "email" => $this->email
         ];
     }
 }
