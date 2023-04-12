@@ -19,7 +19,19 @@ class Product extends Model implements HasMedia
     use HasFactory, InteractsWithMedia;
 
 
-    protected $fillable = ["name", "description", "category_id", "price", "city_id"];
+    protected $fillable = [
+        "uuid",
+        "name",
+        "description",
+        "category_id",
+        "price",
+        "city_id",
+        "country_id",
+        "postal_code",
+        "location",
+        "rating"
+    ];
+
     protected $hidden = "id";
     protected $primaryKey = "id";
 
@@ -45,7 +57,7 @@ class Product extends Model implements HasMedia
 
     public function entities(): HasMany
     {
-        return $this->hasMany(ProductEntity::class,"product_id");
+        return $this->hasMany(ProductEntity::class, "product_id");
     }
 
     /**
@@ -66,6 +78,11 @@ class Product extends Model implements HasMedia
     public function images(): MorphMany
     {
         return $this->morphMany(Media::class, 'model');
+    }
+
+    public function country(): BelongsTo
+    {
+        return $this->belongsTo(Country::class);
     }
 
     /**

@@ -23,7 +23,7 @@ class CurrencyController extends Controller
      * @return AnonymousResourceCollection
      *
      * @apiResource App\Http\Resources\V1\Products\CurrencyResource
-     * @apiResourceModel App\Models\CurrencyService
+     * @apiResourceModel App\Models\Currency
      *
      */
     public function index(): AnonymousResourceCollection
@@ -50,7 +50,7 @@ class CurrencyController extends Controller
      *
      *
      * @apiResource App\Http\Resources\V1\Products\CurrencyResource
-     * @apiResourceModel App\Models\CurrencyService
+     * @apiResourceModel App\Models\Currency
      */
     public function store(StoreCurrencyRequest $request, CurrencyService $currencyService): JsonResponse
     {
@@ -78,7 +78,7 @@ class CurrencyController extends Controller
      * @return CurrencyResource
      *
      * @apiResource App\Http\Resources\V1\Products\CurrencyResource
-     * @apiResourceModel App\Models\CurrencyService
+     * @apiResourceModel App\Models\Currency
      */
     public function show(Currency $currency): CurrencyResource
     {
@@ -117,7 +117,7 @@ class CurrencyController extends Controller
      * @return AnonymousResourceCollection
      *
      * @apiResource App\Http\Resources\V1\Products\ListCurrencyResource
-     * @apiResourceModel App\Models\CurrencyService
+     * @apiResourceModel App\Models\Currency
      * @throws Exception
      */
     public function list(): AnonymousResourceCollection

@@ -16,43 +16,53 @@ class CategorySeeder extends Seeder
     {
         Category::query()->insert([
             [
-                "name" => "Chain hotel"
+                "name" => "Hotel",
+                "parent_id" => null
             ],
             [
-                "name" => "Motel"
+                "name" => "Houses and cottage",
+                "parent_id" => null
+            ],
+
+            [
+                "name" => "Condominium",
+                "parent_id" => 2
             ],
             [
-                "name" => "Resort"
+                "name" => "Single-family home",
+                "parent_id" => 2
             ],
             [
-                "name" => "Boutique hotels"
+                "name" => "Multifamily",
+                "parent_id" => 2
             ],
             [
-                "name" => " Bunkhouse"
+                "name" => "Townhouse",
+                "parent_id" => 2
             ],
             [
-                "name" => " Extended stay hotel"
+                "name" => "Motel",
+                "parent_id" => 1
+            ],
+
+            [
+                "name" => "Resort",
+                "parent_id" => 1
+
             ],
             [
-                "name" => "Echo hotel"
+                "name" => "Boutique hotels",
+                "parent_id" => 1
             ],
             [
-                "name" => "Pop-up hotel"
+                "name" => " Extended stay hotel",
+                "parent_id" => 1
+
             ],
             [
-                "name" => "Roadhouses"
-            ],
-            [
-                "name" => "Pet-friendly hotel"
-            ],
-            [
-                "name" => "Transit hotel"
-            ],
-            [
-              "name" => "Heritage hotel"
-            ],
-            [
-                "name" => "Hostel"
+                "name" => "Hostel",
+                "parent_id" => 1
+
             ],
         ]);
 

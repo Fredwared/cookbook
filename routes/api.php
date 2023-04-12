@@ -5,11 +5,18 @@ use App\Http\Controllers\Api\V1\Products\CategoryController;
 use App\Http\Controllers\Api\V1\Products\CurrencyController;
 use App\Http\Controllers\Api\V1\Products\ProductController;
 use App\Http\Controllers\Api\V1\Products\ReviewController;
+use App\Http\Controllers\Api\V1\Products\WizardController;
 use Illuminate\Support\Facades\Route;
 
 
+Route::prefix("wizard")->group(function () {
+    Route::post("setup", [WizardController::class, "setup"]);
+    Route::post("services/{product}", [WizardController::class, "services"]);
+});
+
 Route::patch("/products/{product}/{media}", [ProductController::class, "updateMainImage"]);
-Route::apiResource("products", ProductController::class);
+Route::apiResource("products", ProductController::class)->only(["index", "show"]);
+
 
 Route::apiResource("categories", CategoryController::class);
 Route::apiResource("reviews", ReviewController::class);

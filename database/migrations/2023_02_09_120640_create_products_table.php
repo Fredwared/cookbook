@@ -17,10 +17,13 @@ return new class extends Migration {
             $table->uuid()->index();
             $table->foreignId("category_id")->constrained();
             $table->foreignId("city_id")->constrained("cities");
+            $table->foreignId("country_id")->constrained("countries");
             $table->string("location");
             $table->text("name")->unique();
             $table->longText("description");
             $table->boolean("is_pet_allowed")->default(false);
+            $table->integer("postal_code");
+            $table->float("rating");
             $table->timestamps();
         });
     }
