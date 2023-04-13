@@ -85,31 +85,14 @@ class Product extends Model implements HasMedia
         return $this->belongsTo(Country::class);
     }
 
+
+
     /**
      * @return string
      */
     public function getRouteKeyName(): string
     {
         return "uuid";
-    }
-
-    public function scopeFilter(Builder $query)
-    {
-        $search = request("search");
-
-
-        $query->when($search, function (Builder $query) use ($search) {
-
-            $query
-                ->where("name", "like", "%" . $search . "%")
-                ->orWhereHas("city", function (Builder $query) use ($search) {
-                    $query->where("name", "like", "%" . $search . "%");
-                })
-                ->orWhereHas("category", function (Builder $query) use ($search) {
-                    $query->where("name", "like", "%" . $search . "%");
-
-                });
-        });
     }
 
 }

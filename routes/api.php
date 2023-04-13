@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix("wizard")->group(function () {
     Route::post("setup", [WizardController::class, "setup"]);
-    Route::post("services/{product}", [WizardController::class, "services"]);
+    Route::post("{product}/services", [WizardController::class, "services"]);
 });
 
 Route::patch("/products/{product}/{media}", [ProductController::class, "updateMainImage"]);

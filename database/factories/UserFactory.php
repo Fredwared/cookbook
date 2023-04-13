@@ -19,7 +19,7 @@ class UserFactory extends Factory
             "primary_number" => str_replace('+', '', fake()->unique()->e164PhoneNumber()),
             "number" => str_replace('+', '', fake()->unique()->e164PhoneNumber()),
             "email" => fake()->email(),
-            "password" => bcrypt(fake()->password()), // password
+            "password" => fake()->password(), // password
             "remember_token" => Str::random(10),
         ];
     }

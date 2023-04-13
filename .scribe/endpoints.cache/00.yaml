@@ -28,21 +28,21 @@ endpoints:
         name: category_id
         description: ''
         required: true
-        example: voluptatem
+        example: ea
         type: string
         custom: []
       name:
         name: name
         description: ''
         required: true
-        example: error
+        example: dolores
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: true
-        example: 'Quasi error nam fugiat accusantium.'
+        example: 'Quibusdam esse dolorem distinctio alias et quo vel voluptatum.'
         type: string
         custom: []
       images:
@@ -57,28 +57,28 @@ endpoints:
         name: postal_code
         description: ''
         required: true
-        example: 0.1
+        example: 1476.0
         type: number
         custom: []
       location:
         name: location
         description: ''
         required: true
-        example: magni
+        example: deleniti
         type: string
         custom: []
       city_id:
         name: city_id
         description: ''
         required: true
-        example: ad
+        example: asperiores
         type: string
         custom: []
       country_id:
         name: country_id
         description: ''
         required: true
-        example: distinctio
+        example: quas
         type: string
         custom: []
       contacts:
@@ -86,53 +86,102 @@ endpoints:
         description: ''
         required: true
         example:
-          - saepe
+          - atque
         type: 'string[]'
         custom: []
       rating:
         name: rating
         description: 'Must not be greater than 5. Must be at least 1.'
         required: true
-        example: 43
+        example: 2
         type: number
         custom: []
       'contacts[].name':
         name: 'contacts[].name'
         description: 'Must not be greater than 100 characters.'
         required: true
-        example: oyjelfgirpvipjqncpybq
+        example: mhgxomflgngumxfukdoszi
         type: string
         custom: []
       'contacts[].number':
         name: 'contacts[].number'
         description: 'Must match the regex /^[0-9 ]+$/.'
         required: true
-        example: '98099'
+        example: '82'
         type: number
         custom: []
     cleanBodyParameters:
-      category_id: voluptatem
-      name: error
-      description: 'Quasi error nam fugiat accusantium.'
-      postal_code: 0.1
-      location: magni
-      city_id: ad
-      country_id: distinctio
+      category_id: ea
+      name: dolores
+      description: 'Quibusdam esse dolorem distinctio alias et quo vel voluptatum.'
+      postal_code: 1476.0
+      location: deleniti
+      city_id: asperiores
+      country_id: quas
       contacts:
-        - saepe
-      rating: 43
+        - atque
+      rating: 2
     fileParameters:
       images:
         - null
     responses:
       -
         status: 422
-        content: '{"message":"The selected category id is invalid. (and 5 more errors)","errors":{"category_id":["The selected category id is invalid."],"city_id":["The selected city id is invalid."],"country_id":["The selected country id is invalid."],"rating":["The rating must not be greater than 5."],"contacts.0.name":["The contacts.0.name field is required."],"contacts.0.number":["The contacts.0.number field is required."]}}'
+        content: '{"message":"The selected category id is invalid. (and 4 more errors)","errors":{"category_id":["The selected category id is invalid."],"city_id":["The selected city id is invalid."],"country_id":["The selected country id is invalid."],"contacts.0.name":["The contacts.0.name field is required."],"contacts.0.number":["The contacts.0.number field is required."]}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
           x-ratelimit-remaining: '59'
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/wizard/{product_uuid}/services'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      product_uuid:
+        name: product_uuid
+        description: ''
+        required: true
+        example: d944821c-2ab0-4fe4-9195-c8372f0a153b
+        type: string
+        custom: []
+    cleanUrlParameters:
+      product_uuid: d944821c-2ab0-4fe4-9195-c8372f0a153b
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: ''
+        headers:
+          content-type: 'text/html; charset=UTF-8'
+          cache-control: 'no-cache, private'
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '58'
           vary: Origin
         description: null
         custom: []
@@ -214,7 +263,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":"5cb846fb-8da8-44dc-8e04-5c49b1bd3036","name":"Error id eos ullam voluptate est molestiae.","description":"Facilis tempora nostrum qui quae maxime officia voluptate eius. Est qui quo et voluptatem consectetur ea mollitia. Accusantium harum quidem consequatur est non officia quasi sit. Soluta neque amet ipsum quia ut. Explicabo consequatur iste eum incidunt autem. Consectetur quibusdam quo eum deleniti velit beatae. Provident quos necessitatibus ut. Magni quas voluptatum sunt eos modi quas laboriosam.","city":"stad","location":"Quod atque illo possimus et.","rate":"0,00","isPetAllowed":false}}'
+        content: '{"data":{"id":"e63e569f-42dc-4939-9618-1159747906fe","name":"Natus at molestiae natus fugiat exercitationem.","description":"Deserunt asperiores nihil non voluptatem officia placeat dolorem sunt. Fuga ab porro nobis recusandae possimus fugit. Repellat libero optio quos temporibus velit. Laborum dolores accusamus autem dolor accusantium est ab. Explicabo deserunt et esse voluptas maiores quae veniam.","country":"Tajikistan","city":"stad","location":"Perferendis adipisci maxime qui error.","rating":1,"postalCode":112332,"rate":"0,00","isPetAllowed":false}}'
         headers: []
         description: ''
         custom: []
@@ -258,7 +307,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":"06d59fa3-3f75-4e1b-803e-6ba423eb8850","name":"Aliquid dolor reiciendis sunt ipsam officia mollitia.","description":"Dolorem nemo corporis temporibus quo voluptatem facere exercitationem. Id nihil non est aperiam ipsum distinctio. Id nemo sit hic qui doloribus consequatur sit cum. Voluptas esse iste placeat accusantium. Beatae illo consequatur voluptatem eos dolorem libero labore. Deleniti sint sapiente quia voluptates aperiam. Est rerum voluptatem possimus et ut quo fugit.","city":"shire","location":"Voluptas reprehenderit aut est non incidunt qui.","rate":"0,00","isPetAllowed":false}}'
+        content: '{"data":{"id":"58048b93-a221-46f7-975a-3f1ff4787a14","name":"Maiores omnis quas repudiandae.","description":"Aut mollitia vel nostrum et similique libero qui. Debitis ex doloremque provident doloremque. In delectus optio id asperiores libero aut. Ut dolores aspernatur voluptatem ullam. Est impedit voluptas molestiae nam cumque enim dolor. Distinctio dolor laborum temporibus adipisci molestiae omnis eius est. Autem excepturi aspernatur molestiae. Eius nobis dolores recusandae doloribus quidem ut.","country":"Kazakhstan","city":"fort","location":"Non repellat ut et rem voluptatem.","rating":4,"postalCode":112332,"rate":"0,00","isPetAllowed":false}}'
         headers: []
         description: ''
         custom: []
@@ -294,7 +343,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":12,"name":"sapiente"}}'
+        content: '{"data":{"id":16,"name":"corrupti"}}'
         headers: []
         description: ''
         custom: []
@@ -338,7 +387,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":14,"name":"omnis"}}'
+        content: '{"data":{"id":18,"name":"et"}}'
         headers: []
         description: ''
         custom: []
@@ -421,7 +470,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"rating":4,"body":"Aut qui molestiae dolores ad. Nihil veniam quasi tenetur enim. Iste fugit dolore omnis earum. Incidunt qui est eum dolorem velit. Laboriosam quam consequatur dignissimos. Voluptatem est fuga voluptas vero. Alias architecto officia tempora debitis autem consequuntur officiis corrupti."}}'
+        content: '{"data":{"rating":5,"body":"In pariatur temporibus minus laborum beatae atque inventore. Perspiciatis expedita consectetur et natus aut sed assumenda. Itaque et dolor et deserunt quis. Adipisci officia beatae dicta sit ducimus iure hic. Sed ut fugiat dignissimos explicabo vitae et. Enim quod voluptas velit unde quaerat."}}'
         headers: []
         description: ''
         custom: []
@@ -465,7 +514,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"rating":2,"body":"Placeat numquam ut dolorem repellendus voluptatum voluptatem incidunt amet. Maiores quo non molestiae cumque excepturi molestiae. Magni qui eos non eos aut. Ut qui voluptas fugiat excepturi. Cumque quod optio itaque error excepturi. Omnis et eos consequuntur qui ullam enim cumque porro."}}'
+        content: '{"data":{"rating":2,"body":"Ea in voluptatem rerum doloribus. Cumque est porro eaque deleniti illo quia ut iste. Sequi impedit soluta laborum. Rerum nostrum consectetur maxime eos sint et et rerum. Quasi totam aut odio porro eaque. Et accusamus earum ad repudiandae et corporis officiis nihil. Qui quis at nihil."}}'
         headers: []
         description: ''
         custom: []
@@ -539,7 +588,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"name":null,"code":null,"value":null}}'
+        content: '{"data":{"name":"Uzbek sum","code":"Uzs","value":1}}'
         headers: []
         description: ''
         custom: []
@@ -575,7 +624,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"code":null,"name":null,"value":null}}'
+        content: '{"data":{"id":1,"code":"Uzs","name":"Uzbek sum","value":1}}'
         headers: []
         description: ''
         custom: []
@@ -635,7 +684,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"code":null,"name":null,"value":null}}'
+        content: '{"data":{"id":1,"code":"Uzs","name":"Uzbek sum","value":1}}'
         headers: []
         description: ''
         custom: []
@@ -666,11 +715,11 @@ endpoints:
         name: id
         description: 'The ID of the currency.'
         required: true
-        example: 18
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 18
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -679,7 +728,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":null,"code":null,"name":null,"value":null}}'
+        content: '{"data":{"id":1,"code":"Uzs","name":"Uzbek sum","value":1}}'
         headers: []
         description: ''
         custom: []
@@ -710,11 +759,11 @@ endpoints:
         name: id
         description: 'The ID of the currency.'
         required: true
-        example: 20
+        example: 1
         type: integer
         custom: []
     cleanUrlParameters:
-      id: 20
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -843,7 +892,7 @@ endpoints:
         name: preferred_contact_method
         description: 'method of user to contact.Default email'
         required: false
-        example: quasi
+        example: omnis
         type: Preferred
         custom: []
     cleanBodyParameters:
@@ -859,7 +908,7 @@ endpoints:
       password: 123asd2
       password_confirmation: 123asd2
       gender: 'male or female'
-      preferred_contact_method: quasi
+      preferred_contact_method: omnis
     fileParameters: []
     responses:
       -
@@ -869,7 +918,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '58'
+          x-ratelimit-remaining: '57'
           vary: Origin
         description: null
         custom: []
@@ -904,16 +953,16 @@ endpoints:
         name: code
         description: ''
         required: false
-        example: est
+        example: autem
         type: required.
         custom: []
     cleanBodyParameters:
-      code: est
+      code: autem
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"firstname":"Richard","lastname":"Haley","country":"Turkey","primaryNumber":"13514773448","number":"15305913525","email":"tristian.towne@hotmail.com"}}'
+        content: '{"data":{"firstname":"Cullen","lastname":"Fay","country":"Turkey","primaryNumber":"13606844255","number":"19795194884","email":"schimmel.anna@prosacco.org"}}'
         headers: []
         description: ''
         custom: []
@@ -962,7 +1011,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '57'
+          x-ratelimit-remaining: '56'
           vary: Origin
         description: null
         custom: []
@@ -1015,7 +1064,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"firstname":"Russel","lastname":"Kris"}}'
+        content: '{"data":{"firstname":"Keshawn","lastname":"Stracke"}}'
         headers: []
         description: ''
         custom: []

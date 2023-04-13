@@ -74,6 +74,9 @@
                                                     <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-wizard-setup">
                                 <a href="#endpoints-POSTapi-v1-wizard-setup">POST api/v1/wizard/setup</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-wizard--product_uuid--services">
+                                <a href="#endpoints-POSTapi-v1-wizard--product_uuid--services">POST api/v1/wizard/{product_uuid}/services</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-PATCHapi-v1-products--product_uuid---media_id-">
                                 <a href="#endpoints-PATCHapi-v1-products--product_uuid---media_id-">Update Current Preview</a>
                             </li>
@@ -142,7 +145,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: April 12, 2023</li>
+        <li>Last updated: April 13, 2023</li>
     </ul>
 </div>
 
@@ -183,16 +186,16 @@ You can switch the language used with the tabs at the top right (or from the nav
     "http://localhost:8000/api/v1/wizard/setup" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "category_id=voluptatem" \
-    --form "name=error" \
-    --form "description=Quasi error nam fugiat accusantium." \
-    --form "postal_code=0.1" \
-    --form "location=magni" \
-    --form "city_id=ad" \
-    --form "country_id=distinctio" \
-    --form "contacts[]=saepe" \
-    --form "rating=43" \
-    --form "images[]=@C:\Users\-\AppData\Local\Temp\php25B8.tmp" </code></pre></div>
+    --form "category_id=ea" \
+    --form "name=dolores" \
+    --form "description=Quibusdam esse dolorem distinctio alias et quo vel voluptatum." \
+    --form "postal_code=1476" \
+    --form "location=deleniti" \
+    --form "city_id=asperiores" \
+    --form "country_id=quas" \
+    --form "contacts[]=atque" \
+    --form "rating=2" \
+    --form "images[]=@C:\Users\-\AppData\Local\Temp\php4978.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -206,15 +209,15 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('category_id', 'voluptatem');
-body.append('name', 'error');
-body.append('description', 'Quasi error nam fugiat accusantium.');
-body.append('postal_code', '0.1');
-body.append('location', 'magni');
-body.append('city_id', 'ad');
-body.append('country_id', 'distinctio');
-body.append('contacts[]', 'saepe');
-body.append('rating', '43');
+body.append('category_id', 'ea');
+body.append('name', 'dolores');
+body.append('description', 'Quibusdam esse dolorem distinctio alias et quo vel voluptatum.');
+body.append('postal_code', '1476');
+body.append('location', 'deleniti');
+body.append('city_id', 'asperiores');
+body.append('country_id', 'quas');
+body.append('contacts[]', 'atque');
+body.append('rating', '2');
 body.append('images[]', document.querySelector('input[name="images[]"]').files[0]);
 
 fetch(url, {
@@ -241,7 +244,7 @@ vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The selected category id is invalid. (and 5 more errors)&quot;,
+    &quot;message&quot;: &quot;The selected category id is invalid. (and 4 more errors)&quot;,
     &quot;errors&quot;: {
         &quot;category_id&quot;: [
             &quot;The selected category id is invalid.&quot;
@@ -251,9 +254,6 @@ vary: Origin
         ],
         &quot;country_id&quot;: [
             &quot;The selected country id is invalid.&quot;
-        ],
-        &quot;rating&quot;: [
-            &quot;The rating must not be greater than 5.&quot;
         ],
         &quot;contacts.0.name&quot;: [
             &quot;The contacts.0.name field is required.&quot;
@@ -333,10 +333,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="category_id"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="voluptatem"
+               value="ea"
                data-component="body">
     <br>
-<p>Example: <code>voluptatem</code></p>
+<p>Example: <code>ea</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -344,10 +344,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="error"
+               value="dolores"
                data-component="body">
     <br>
-<p>Example: <code>error</code></p>
+<p>Example: <code>dolores</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -355,10 +355,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="description"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="Quasi error nam fugiat accusantium."
+               value="Quibusdam esse dolorem distinctio alias et quo vel voluptatum."
                data-component="body">
     <br>
-<p>Example: <code>Quasi error nam fugiat accusantium.</code></p>
+<p>Example: <code>Quibusdam esse dolorem distinctio alias et quo vel voluptatum.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
@@ -379,10 +379,10 @@ vary: Origin
  &nbsp;
                 <input type="number" style="display: none"
                name="postal_code"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="0.1"
+               value="1476"
                data-component="body">
     <br>
-<p>Example: <code>0.1</code></p>
+<p>Example: <code>1476</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>location</code></b>&nbsp;&nbsp;
@@ -390,10 +390,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="location"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="magni"
+               value="deleniti"
                data-component="body">
     <br>
-<p>Example: <code>magni</code></p>
+<p>Example: <code>deleniti</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
@@ -401,10 +401,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="city_id"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="ad"
+               value="asperiores"
                data-component="body">
     <br>
-<p>Example: <code>ad</code></p>
+<p>Example: <code>asperiores</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>country_id</code></b>&nbsp;&nbsp;
@@ -412,10 +412,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="country_id"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="distinctio"
+               value="quas"
                data-component="body">
     <br>
-<p>Example: <code>distinctio</code></p>
+<p>Example: <code>quas</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -432,10 +432,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="contacts.0.name"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="oyjelfgirpvipjqncpybq"
+               value="mhgxomflgngumxfukdoszi"
                data-component="body">
     <br>
-<p>Must not be greater than 100 characters. Example: <code>oyjelfgirpvipjqncpybq</code></p>
+<p>Must not be greater than 100 characters. Example: <code>mhgxomflgngumxfukdoszi</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>number</code></b>&nbsp;&nbsp;
@@ -443,10 +443,10 @@ vary: Origin
  &nbsp;
                 <input type="number" style="display: none"
                name="contacts.0.number"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="98099"
+               value="82"
                data-component="body">
     <br>
-<p>Must match the regex /^[0-9 ]+$/. Example: <code>98099</code></p>
+<p>Must match the regex /^[0-9 ]+$/. Example: <code>82</code></p>
                     </div>
                                     </details>
         </div>
@@ -456,12 +456,140 @@ vary: Origin
  &nbsp;
                 <input type="number" style="display: none"
                name="rating"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="43"
+               value="2"
                data-component="body">
     <br>
-<p>Must not be greater than 5. Must be at least 1. Example: <code>43</code></p>
+<p>Must not be greater than 5. Must be at least 1. Example: <code>2</code></p>
         </div>
         </form>
+
+                    <h2 id="endpoints-POSTapi-v1-wizard--product_uuid--services">POST api/v1/wizard/{product_uuid}/services</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-wizard--product_uuid--services">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/v1/wizard/d944821c-2ab0-4fe4-9195-c8372f0a153b/services" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/wizard/d944821c-2ab0-4fe4-9195-c8372f0a153b/services"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-wizard--product_uuid--services">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">content-type: text/html; charset=UTF-8
+cache-control: no-cache, private
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 58
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;"></code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-wizard--product_uuid--services" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-wizard--product_uuid--services"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-wizard--product_uuid--services" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-wizard--product_uuid--services" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-wizard--product_uuid--services"></code></pre>
+</span>
+<form id="form-POSTapi-v1-wizard--product_uuid--services" data-method="POST"
+      data-path="api/v1/wizard/{product_uuid}/services"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-wizard--product_uuid--services', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-wizard--product_uuid--services"
+                    onclick="tryItOut('POSTapi-v1-wizard--product_uuid--services');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-wizard--product_uuid--services"
+                    onclick="cancelTryOut('POSTapi-v1-wizard--product_uuid--services');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-wizard--product_uuid--services" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/wizard/{product_uuid}/services</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="POSTapi-v1-wizard--product_uuid--services"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="POSTapi-v1-wizard--product_uuid--services"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>product_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="product_uuid"                data-endpoint="POSTapi-v1-wizard--product_uuid--services"
+               value="d944821c-2ab0-4fe4-9195-c8372f0a153b"
+               data-component="url">
+    <br>
+<p>Example: <code>d944821c-2ab0-4fe4-9195-c8372f0a153b</code></p>
+            </div>
+                    </form>
 
                     <h2 id="endpoints-PATCHapi-v1-products--product_uuid---media_id-">Update Current Preview</h2>
 
@@ -629,11 +757,14 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: &quot;5cb846fb-8da8-44dc-8e04-5c49b1bd3036&quot;,
-        &quot;name&quot;: &quot;Error id eos ullam voluptate est molestiae.&quot;,
-        &quot;description&quot;: &quot;Facilis tempora nostrum qui quae maxime officia voluptate eius. Est qui quo et voluptatem consectetur ea mollitia. Accusantium harum quidem consequatur est non officia quasi sit. Soluta neque amet ipsum quia ut. Explicabo consequatur iste eum incidunt autem. Consectetur quibusdam quo eum deleniti velit beatae. Provident quos necessitatibus ut. Magni quas voluptatum sunt eos modi quas laboriosam.&quot;,
+        &quot;id&quot;: &quot;e63e569f-42dc-4939-9618-1159747906fe&quot;,
+        &quot;name&quot;: &quot;Natus at molestiae natus fugiat exercitationem.&quot;,
+        &quot;description&quot;: &quot;Deserunt asperiores nihil non voluptatem officia placeat dolorem sunt. Fuga ab porro nobis recusandae possimus fugit. Repellat libero optio quos temporibus velit. Laborum dolores accusamus autem dolor accusantium est ab. Explicabo deserunt et esse voluptas maiores quae veniam.&quot;,
+        &quot;country&quot;: &quot;Tajikistan&quot;,
         &quot;city&quot;: &quot;stad&quot;,
-        &quot;location&quot;: &quot;Quod atque illo possimus et.&quot;,
+        &quot;location&quot;: &quot;Perferendis adipisci maxime qui error.&quot;,
+        &quot;rating&quot;: 1,
+        &quot;postalCode&quot;: 112332,
         &quot;rate&quot;: &quot;0,00&quot;,
         &quot;isPetAllowed&quot;: false
     }
@@ -746,11 +877,14 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: &quot;06d59fa3-3f75-4e1b-803e-6ba423eb8850&quot;,
-        &quot;name&quot;: &quot;Aliquid dolor reiciendis sunt ipsam officia mollitia.&quot;,
-        &quot;description&quot;: &quot;Dolorem nemo corporis temporibus quo voluptatem facere exercitationem. Id nihil non est aperiam ipsum distinctio. Id nemo sit hic qui doloribus consequatur sit cum. Voluptas esse iste placeat accusantium. Beatae illo consequatur voluptatem eos dolorem libero labore. Deleniti sint sapiente quia voluptates aperiam. Est rerum voluptatem possimus et ut quo fugit.&quot;,
-        &quot;city&quot;: &quot;shire&quot;,
-        &quot;location&quot;: &quot;Voluptas reprehenderit aut est non incidunt qui.&quot;,
+        &quot;id&quot;: &quot;58048b93-a221-46f7-975a-3f1ff4787a14&quot;,
+        &quot;name&quot;: &quot;Maiores omnis quas repudiandae.&quot;,
+        &quot;description&quot;: &quot;Aut mollitia vel nostrum et similique libero qui. Debitis ex doloremque provident doloremque. In delectus optio id asperiores libero aut. Ut dolores aspernatur voluptatem ullam. Est impedit voluptas molestiae nam cumque enim dolor. Distinctio dolor laborum temporibus adipisci molestiae omnis eius est. Autem excepturi aspernatur molestiae. Eius nobis dolores recusandae doloribus quidem ut.&quot;,
+        &quot;country&quot;: &quot;Kazakhstan&quot;,
+        &quot;city&quot;: &quot;fort&quot;,
+        &quot;location&quot;: &quot;Non repellat ut et rem voluptatem.&quot;,
+        &quot;rating&quot;: 4,
+        &quot;postalCode&quot;: 112332,
         &quot;rate&quot;: &quot;0,00&quot;,
         &quot;isPetAllowed&quot;: false
     }
@@ -875,8 +1009,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 12,
-        &quot;name&quot;: &quot;sapiente&quot;
+        &quot;id&quot;: 16,
+        &quot;name&quot;: &quot;corrupti&quot;
     }
 }</code>
  </pre>
@@ -987,8 +1121,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 14,
-        &quot;name&quot;: &quot;omnis&quot;
+        &quot;id&quot;: 18,
+        &quot;name&quot;: &quot;et&quot;
     }
 }</code>
  </pre>
@@ -1232,8 +1366,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;rating&quot;: 4,
-        &quot;body&quot;: &quot;Aut qui molestiae dolores ad. Nihil veniam quasi tenetur enim. Iste fugit dolore omnis earum. Incidunt qui est eum dolorem velit. Laboriosam quam consequatur dignissimos. Voluptatem est fuga voluptas vero. Alias architecto officia tempora debitis autem consequuntur officiis corrupti.&quot;
+        &quot;rating&quot;: 5,
+        &quot;body&quot;: &quot;In pariatur temporibus minus laborum beatae atque inventore. Perspiciatis expedita consectetur et natus aut sed assumenda. Itaque et dolor et deserunt quis. Adipisci officia beatae dicta sit ducimus iure hic. Sed ut fugiat dignissimos explicabo vitae et. Enim quod voluptas velit unde quaerat.&quot;
     }
 }</code>
  </pre>
@@ -1345,7 +1479,7 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
         &quot;rating&quot;: 2,
-        &quot;body&quot;: &quot;Placeat numquam ut dolorem repellendus voluptatum voluptatem incidunt amet. Maiores quo non molestiae cumque excepturi molestiae. Magni qui eos non eos aut. Ut qui voluptas fugiat excepturi. Cumque quod optio itaque error excepturi. Omnis et eos consequuntur qui ullam enim cumque porro.&quot;
+        &quot;body&quot;: &quot;Ea in voluptatem rerum doloribus. Cumque est porro eaque deleniti illo quia ut iste. Sequi impedit soluta laborum. Rerum nostrum consectetur maxime eos sint et et rerum. Quasi totam aut odio porro eaque. Et accusamus earum ad repudiandae et corporis officiis nihil. Qui quis at nihil.&quot;
     }
 }</code>
  </pre>
@@ -1580,9 +1714,9 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;name&quot;: null,
-        &quot;code&quot;: null,
-        &quot;value&quot;: null
+        &quot;name&quot;: &quot;Uzbek sum&quot;,
+        &quot;code&quot;: &quot;Uzs&quot;,
+        &quot;value&quot;: 1
     }
 }</code>
  </pre>
@@ -1693,10 +1827,10 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: null,
-        &quot;code&quot;: null,
-        &quot;name&quot;: null,
-        &quot;value&quot;: null
+        &quot;id&quot;: 1,
+        &quot;code&quot;: &quot;Uzs&quot;,
+        &quot;name&quot;: &quot;Uzbek sum&quot;,
+        &quot;value&quot;: 1
     }
 }</code>
  </pre>
@@ -1820,10 +1954,10 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: null,
-        &quot;code&quot;: null,
-        &quot;name&quot;: null,
-        &quot;value&quot;: null
+        &quot;id&quot;: 1,
+        &quot;code&quot;: &quot;Uzs&quot;,
+        &quot;name&quot;: &quot;Uzbek sum&quot;,
+        &quot;value&quot;: 1
     }
 }</code>
  </pre>
@@ -1938,14 +2072,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/currencies/18" \
+    --get "http://localhost:8000/api/v1/currencies/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/currencies/18"
+    "http://localhost:8000/api/v1/currencies/1"
 );
 
 const headers = {
@@ -1968,10 +2102,10 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: null,
-        &quot;code&quot;: null,
-        &quot;name&quot;: null,
-        &quot;value&quot;: null
+        &quot;id&quot;: 1,
+        &quot;code&quot;: &quot;Uzs&quot;,
+        &quot;name&quot;: &quot;Uzbek sum&quot;,
+        &quot;value&quot;: 1
     }
 }</code>
  </pre>
@@ -2044,10 +2178,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="id"                data-endpoint="GETapi-v1-currencies--id-"
-               value="18"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the currency. Example: <code>18</code></p>
+<p>The ID of the currency. Example: <code>1</code></p>
             </div>
                     </form>
 
@@ -2064,14 +2198,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/currencies/20" \
+    "http://localhost:8000/api/v1/currencies/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/currencies/20"
+    "http://localhost:8000/api/v1/currencies/1"
 );
 
 const headers = {
@@ -2156,10 +2290,10 @@ fetch(url, {
  &nbsp;
                 <input type="number" style="display: none"
                name="id"                data-endpoint="DELETEapi-v1-currencies--id-"
-               value="20"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the currency. Example: <code>20</code></p>
+<p>The ID of the currency. Example: <code>1</code></p>
             </div>
                     </form>
 
@@ -2192,7 +2326,7 @@ fetch(url, {
     \"password\": \"123asd2\",
     \"password_confirmation\": \"123asd2\",
     \"gender\": \"male or female\",
-    \"preferred_contact_method\": \"quasi\"
+    \"preferred_contact_method\": \"omnis\"
 }"
 </code></pre></div>
 
@@ -2220,7 +2354,7 @@ let body = {
     "password": "123asd2",
     "password_confirmation": "123asd2",
     "gender": "male or female",
-    "preferred_contact_method": "quasi"
+    "preferred_contact_method": "omnis"
 };
 
 fetch(url, {
@@ -2242,7 +2376,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
+x-ratelimit-remaining: 57
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -2470,10 +2604,10 @@ vary: Origin
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="preferred_contact_method"                data-endpoint="POSTapi-v1-register"
-               value="quasi"
+               value="omnis"
                data-component="body">
     <br>
-<p>method of user to contact.Default email Example: <code>quasi</code></p>
+<p>method of user to contact.Default email Example: <code>omnis</code></p>
         </div>
         </form>
 
@@ -2494,7 +2628,7 @@ vary: Origin
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"code\": \"est\"
+    \"code\": \"autem\"
 }"
 </code></pre></div>
 
@@ -2510,7 +2644,7 @@ const headers = {
 };
 
 let body = {
-    "code": "est"
+    "code": "autem"
 };
 
 fetch(url, {
@@ -2529,12 +2663,12 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;firstname&quot;: &quot;Richard&quot;,
-        &quot;lastname&quot;: &quot;Haley&quot;,
+        &quot;firstname&quot;: &quot;Cullen&quot;,
+        &quot;lastname&quot;: &quot;Fay&quot;,
         &quot;country&quot;: &quot;Turkey&quot;,
-        &quot;primaryNumber&quot;: &quot;13514773448&quot;,
-        &quot;number&quot;: &quot;15305913525&quot;,
-        &quot;email&quot;: &quot;tristian.towne@hotmail.com&quot;
+        &quot;primaryNumber&quot;: &quot;13606844255&quot;,
+        &quot;number&quot;: &quot;19795194884&quot;,
+        &quot;email&quot;: &quot;schimmel.anna@prosacco.org&quot;
     }
 }</code>
  </pre>
@@ -2607,10 +2741,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="code"                data-endpoint="POSTapi-v1-verify"
-               value="est"
+               value="autem"
                data-component="body">
     <br>
-<p>Example: <code>est</code></p>
+<p>Example: <code>autem</code></p>
         </div>
         </form>
 
@@ -2669,7 +2803,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
+x-ratelimit-remaining: 56
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -2815,8 +2949,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;firstname&quot;: &quot;Russel&quot;,
-        &quot;lastname&quot;: &quot;Kris&quot;
+        &quot;firstname&quot;: &quot;Keshawn&quot;,
+        &quot;lastname&quot;: &quot;Stracke&quot;
     }
 }</code>
  </pre>
