@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Product;
 use App\Models\ProductContact;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,6 @@ class ProductContactSeeder extends Seeder
      */
     public function run()
     {
-        ProductContact::factory(20)->create();
+        ProductContact::factory(40)->create();
     }
 }

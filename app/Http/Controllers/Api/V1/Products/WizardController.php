@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api\V1\Products;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\V1\Products\Wizard\WizardRoomRequest;
 use App\Http\Requests\Api\V1\Products\Wizard\WizardSetupRequest;
+use App\Http\Resources\V1\Products\Wizard\WizardRoomResource;
 use App\Http\Resources\V1\Products\Wizard\WizardSetupResource;
 use App\Models\Product;
 use App\Traits\UploadFile;
@@ -59,13 +61,42 @@ class WizardController extends Controller
 
         return response()->json([
             "message" => "First step is done",
-            "product" => WizardSetupResource::make($product)
+            "data" => WizardSetupResource::make($product)
         ]);
     }
 
     public function services(Product $product)
     {
 
+    }
+
+    /**
+     * This endpoint will create room for existing product
+     *
+     * @bodyParam room_type required.
+     * @bodyParam is_smoking_allowed nullable boolean default false.
+     * @bodyParam bed_type required.Type of the bed
+     * @bodyParam bed_count required integer.How many beds room have
+     * @bodyParam price required float.This is price for foreigners
+     * @bodyParam price_for_residents float.This is price for  locals
+     * @bodyParam room_size integer.Size of the room
+     *
+     * @param Product $product
+     * @param WizardRoomRequest $request
+     * @return JsonResponse
+     */
+    public function rooms(Product $product, WizardRoomRequest $request): JsonResponse
+    {
+        $fields = $request->validated();
+
+        $fields["product_id"] = $product->id;
+
+        $data = $product->entities()->create($fields);
+
+        return response()->json([
+            "message" => "Last step is done",
+            "data" => WizardRoomResource::make($data)
+        ]);
     }
 
 }

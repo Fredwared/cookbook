@@ -16,10 +16,10 @@ return new class extends Migration {
             $table->id();
             $table->foreignId("product_id")->constrained();
             $table->string("room_type");
-            $table->boolean("is_smoking_allowed");
+            $table->boolean("is_smoking_allowed")->default(false);
             $table->string("bed_type");
             $table->integer("bed_count");
-            $table->float("room_size");
+            $table->float("room_size")->nullable();
             $table->float("price");
             $table->float("price_for_residents");
             $table->timestamps();

@@ -10,7 +10,16 @@ class ProductEntity extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["room_type", "is_smoking_allowed", "bed_type", "bed_count", "price", "price_for_residents", "room_size","product_id"];
+    protected $fillable = [
+        "room_type",
+        "is_smoking_allowed",
+        "bed_type",
+        "bed_count",
+        "price",
+        "price_for_residents",
+        "room_size",
+        "product_id"
+    ];
 
     public function product() : BelongsTo
     {
