@@ -23,7 +23,7 @@ Route::apiResource("categories", CategoryController::class);
 Route::apiResource("reviews", ReviewController::class);
 
 Route::get("/currencies/list", [CurrencyController::class, "list"]);
-Route::apiResource("currencies", CurrencyController::class);
+Route::apiResource("currencies", CurrencyController::class)->only(["index", "show", "store", "delete"]);
 
 
 Route::controller(AuthController::class)->group(function () {

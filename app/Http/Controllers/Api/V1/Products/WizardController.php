@@ -10,6 +10,7 @@ use App\Http\Resources\V1\Products\Wizard\WizardSetupResource;
 use App\Models\Product;
 use App\Traits\UploadFile;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class WizardController extends Controller
@@ -28,7 +29,7 @@ class WizardController extends Controller
      * @bodyParam postal_code required.Example:112332
      * @bodyParam description required.Example: the Best hotel with all facilities
      * @bodyParam contacts required array.Example[name => Avaz,number => 7975452]
-     * @bodyParam rating required float.Example:3,5
+     * @bodyParam rating required float Rating of the hotel.Example:3,5
      *
      * @param WizardSetupRequest $request
      * @return JsonResponse
@@ -42,21 +43,26 @@ class WizardController extends Controller
 
         $fields["uuid"] = Str::uuid();
 
-        /** @var Product $product */
         $product = Product::query()->create($fields);
 
-        $this->uploadMultiple($product, "images");
+        DB::transaction(function () use ($product, $fields) {
 
-        foreach ($fields["contacts"] as $contact) {
-            $name = $contact["name"];
-            $number = $contact["number"];
-        }
+            /** @var Product $product */
 
-        $product->contacts()->create([
-            "product_id" => $product->id,
-            "name" => $name,
-            "phone_number" => $number
-        ]);
+            $this->uploadMultiple($product, "images");
+
+            foreach ($fields["contacts"] as $contact) {
+                $name = $contact["name"];
+                $number = $contact["number"];
+            }
+
+            $product->contacts()->create([
+                "product_id" => $product->id,
+                "name" => $name,
+                "phone_number" => $number
+            ]);
+
+        });
 
 
         return response()->json([

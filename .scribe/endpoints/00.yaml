@@ -26,21 +26,21 @@ endpoints:
         name: category_id
         description: ''
         required: true
-        example: ea
+        example: perferendis
         type: string
         custom: []
       name:
         name: name
         description: ''
         required: true
-        example: dolores
+        example: voluptatem
         type: string
         custom: []
       description:
         name: description
         description: ''
         required: true
-        example: 'Quibusdam esse dolorem distinctio alias et quo vel voluptatum.'
+        example: 'Dolores voluptatem illo ea sed.'
         type: string
         custom: []
       images:
@@ -55,28 +55,28 @@ endpoints:
         name: postal_code
         description: ''
         required: true
-        example: 1476.0
+        example: 4.22176
         type: number
         custom: []
       location:
         name: location
         description: ''
         required: true
-        example: deleniti
+        example: quo
         type: string
         custom: []
       city_id:
         name: city_id
         description: ''
         required: true
-        example: asperiores
+        example: esse
         type: string
         custom: []
       country_id:
         name: country_id
         description: ''
         required: true
-        example: quas
+        example: reprehenderit
         type: string
         custom: []
       contacts:
@@ -84,48 +84,48 @@ endpoints:
         description: ''
         required: true
         example:
-          - atque
+          - in
         type: 'string[]'
         custom: []
       rating:
         name: rating
         description: 'Must not be greater than 5. Must be at least 1.'
         required: true
-        example: 2
+        example: 10
         type: number
         custom: []
       'contacts[].name':
         name: 'contacts[].name'
         description: 'Must not be greater than 100 characters.'
         required: true
-        example: mhgxomflgngumxfukdoszi
+        example: huusyagcgad
         type: string
         custom: []
       'contacts[].number':
         name: 'contacts[].number'
         description: 'Must match the regex /^[0-9 ]+$/.'
         required: true
-        example: '82'
+        example: ' 6'
         type: number
         custom: []
     cleanBodyParameters:
-      category_id: ea
-      name: dolores
-      description: 'Quibusdam esse dolorem distinctio alias et quo vel voluptatum.'
-      postal_code: 1476.0
-      location: deleniti
-      city_id: asperiores
-      country_id: quas
+      category_id: perferendis
+      name: voluptatem
+      description: 'Dolores voluptatem illo ea sed.'
+      postal_code: 4.22176
+      location: quo
+      city_id: esse
+      country_id: reprehenderit
       contacts:
-        - atque
-      rating: 2
+        - in
+      rating: 10
     fileParameters:
       images:
         - null
     responses:
       -
         status: 422
-        content: '{"message":"The selected category id is invalid. (and 4 more errors)","errors":{"category_id":["The selected category id is invalid."],"city_id":["The selected city id is invalid."],"country_id":["The selected country id is invalid."],"contacts.0.name":["The contacts.0.name field is required."],"contacts.0.number":["The contacts.0.number field is required."]}}'
+        content: '{"message":"The selected category id is invalid. (and 5 more errors)","errors":{"category_id":["The selected category id is invalid."],"city_id":["The selected city id is invalid."],"country_id":["The selected country id is invalid."],"rating":["The rating must not be greater than 5."],"contacts.0.name":["The contacts.0.name field is required."],"contacts.0.number":["The contacts.0.number field is required."]}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -161,11 +161,11 @@ endpoints:
         name: product_uuid
         description: ''
         required: true
-        example: d944821c-2ab0-4fe4-9195-c8372f0a153b
+        example: 50f9fb86-5e1c-4559-8bb8-3cafac362a65
         type: string
         custom: []
     cleanUrlParameters:
-      product_uuid: d944821c-2ab0-4fe4-9195-c8372f0a153b
+      product_uuid: 50f9fb86-5e1c-4559-8bb8-3cafac362a65
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -180,6 +180,111 @@ endpoints:
           cache-control: 'no-cache, private'
           x-ratelimit-limit: '60'
           x-ratelimit-remaining: '58'
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: 'api/v1/wizard/{product_uuid}/rooms'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'This endpoint will create room for existing product'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      product_uuid:
+        name: product_uuid
+        description: ''
+        required: true
+        example: 50f9fb86-5e1c-4559-8bb8-3cafac362a65
+        type: string
+        custom: []
+    cleanUrlParameters:
+      product_uuid: 50f9fb86-5e1c-4559-8bb8-3cafac362a65
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      room_type:
+        name: room_type
+        description: ''
+        required: false
+        example: consequatur
+        type: required.
+        custom: []
+      is_smoking_allowed:
+        name: is_smoking_allowed
+        description: 'boolean default false.'
+        required: false
+        example: velit
+        type: nullable
+        custom: []
+      bed_type:
+        name: bed_type
+        description: 'of the bed'
+        required: false
+        example: molestiae
+        type: required.Type
+        custom: []
+      bed_count:
+        name: bed_count
+        description: 'integer.How many beds room have'
+        required: false
+        example: quas
+        type: required
+        custom: []
+      room_size:
+        name: room_size
+        description: 'of the room'
+        required: false
+        example: voluptatem
+        type: integer.Size
+        custom: []
+      price:
+        name: price
+        description: 'float.This is price for foreigners'
+        required: false
+        example: ipsa
+        type: required
+        custom: []
+      price_for_residents:
+        name: price_for_residents
+        description: 'is price for  locals'
+        required: false
+        example: neque
+        type: float.This
+        custom: []
+    cleanBodyParameters:
+      room_type: consequatur
+      is_smoking_allowed: velit
+      bed_type: molestiae
+      bed_count: quas
+      room_size: voluptatem
+      price: ipsa
+      price_for_residents: neque
+    fileParameters: []
+    responses:
+      -
+        status: 422
+        content: '{"message":"The is smoking allowed field must be true or false. (and 4 more errors)","errors":{"is_smoking_allowed":["The is smoking allowed field must be true or false."],"bed_count":["The bed count must be a number."],"room_size":["The room size must be a number."],"price":["The price must be a number."],"price_for_residents":["The price for residents must be a number."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '57'
           vary: Origin
         description: null
         custom: []
@@ -210,7 +315,7 @@ endpoints:
         name: product_uuid
         description: ''
         required: true
-        example: d944821c-2ab0-4fe4-9195-c8372f0a153b
+        example: 50f9fb86-5e1c-4559-8bb8-3cafac362a65
         type: string
         custom: []
       media_id:
@@ -221,14 +326,25 @@ endpoints:
         type: integer
         custom: []
     cleanUrlParameters:
-      product_uuid: d944821c-2ab0-4fe4-9195-c8372f0a153b
+      product_uuid: 50f9fb86-5e1c-4559-8bb8-3cafac362a65
       media_id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"message":"Preview  updated successfully"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '56'
+          vary: Origin
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -261,7 +377,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":"e63e569f-42dc-4939-9618-1159747906fe","name":"Natus at molestiae natus fugiat exercitationem.","description":"Deserunt asperiores nihil non voluptatem officia placeat dolorem sunt. Fuga ab porro nobis recusandae possimus fugit. Repellat libero optio quos temporibus velit. Laborum dolores accusamus autem dolor accusantium est ab. Explicabo deserunt et esse voluptas maiores quae veniam.","country":"Tajikistan","city":"stad","location":"Perferendis adipisci maxime qui error.","rating":1,"postalCode":112332,"rate":"0,00","isPetAllowed":false}}'
+        content: '{"data":{"id":"4a5a8563-9315-49ff-aec2-eeee1483faf0","name":"Sit enim sint et quo excepturi.","description":"Perspiciatis hic quo rem rerum qui voluptas. Et quo veniam at aperiam autem facere. Cum sunt quis temporibus beatae. Eligendi rerum ipsa quidem voluptatem. Cupiditate velit et est repudiandae nostrum ipsum ut. Ab nobis consequatur ea accusamus cum non ab. Ad quas occaecati perspiciatis. Eos velit aut esse tenetur.","country":"Russia","city":"borough","location":"Maiores non nihil repudiandae qui porro harum.","rating":5,"postalCode":112332,"rate":"0,00","isPetAllowed":false}}'
         headers: []
         description: ''
         custom: []
@@ -292,11 +408,11 @@ endpoints:
         name: uuid
         description: ''
         required: true
-        example: d944821c-2ab0-4fe4-9195-c8372f0a153b
+        example: 50f9fb86-5e1c-4559-8bb8-3cafac362a65
         type: string
         custom: []
     cleanUrlParameters:
-      uuid: d944821c-2ab0-4fe4-9195-c8372f0a153b
+      uuid: 50f9fb86-5e1c-4559-8bb8-3cafac362a65
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -305,7 +421,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":"58048b93-a221-46f7-975a-3f1ff4787a14","name":"Maiores omnis quas repudiandae.","description":"Aut mollitia vel nostrum et similique libero qui. Debitis ex doloremque provident doloremque. In delectus optio id asperiores libero aut. Ut dolores aspernatur voluptatem ullam. Est impedit voluptas molestiae nam cumque enim dolor. Distinctio dolor laborum temporibus adipisci molestiae omnis eius est. Autem excepturi aspernatur molestiae. Eius nobis dolores recusandae doloribus quidem ut.","country":"Kazakhstan","city":"fort","location":"Non repellat ut et rem voluptatem.","rating":4,"postalCode":112332,"rate":"0,00","isPetAllowed":false}}'
+        content: '{"data":{"id":"3ac681b0-bc22-4827-8c45-699f5791945b","name":"Excepturi ipsa est numquam ut eligendi.","description":"Tempore velit ipsa voluptas non sunt. Sunt labore perferendis quia autem nostrum perspiciatis incidunt. Sunt nihil voluptates porro quaerat. Aut eum a pariatur repellat. Tempore reiciendis ut suscipit laudantium et. Asperiores iusto corrupti vero inventore magni ab repudiandae.","country":"Uzbekistan","city":"bury","location":"Facilis facere ipsa ea necessitatibus ut.","rating":4,"postalCode":112332,"rate":"0,00","isPetAllowed":false}}'
         headers: []
         description: ''
         custom: []
@@ -341,7 +457,59 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":16,"name":"corrupti"}}'
+        content: '{"data":{"id":152,"name":"mollitia"}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/categories
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new category'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Name of the category.'
+        required: true
+        example: sport
+        type: string
+        custom: []
+      parent_id:
+        name: parent_id
+        description: 'nullable ID of the parent category for subcategory.'
+        required: false
+        example: 17
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      name: sport
+      parent_id: 17
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":153,"name":"qui"}}'
         headers: []
         description: ''
         custom: []
@@ -385,7 +553,68 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":18,"name":"et"}}'
+        content: '{"data":{"id":154,"name":"fugiat"}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/categories/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: "Update existing category or it's subcategories"
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'Name of the category.'
+        required: true
+        example: sport
+        type: string
+        custom: []
+      parent_id:
+        name: parent_id
+        description: 'nullable ID of the parent category for subcategory.'
+        required: false
+        example: 11
+        type: integer
+        custom: []
+    cleanBodyParameters:
+      name: sport
+      parent_id: 11
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":155,"name":"et"}}'
         headers: []
         description: ''
         custom: []
@@ -428,13 +657,527 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
+        status: 500
         content: |-
           {
-          "message":"Category deleted successfully"
+              "message": "SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`auth`.`products`, CONSTRAINT `products_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`)) (SQL: delete from `categories` where `id` = 1)",
+              "exception": "Illuminate\\Database\\QueryException",
+              "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php",
+              "line": 760,
+              "trace": [
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php",
+                      "line": 720,
+                      "function": "runQueryCallback",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php",
+                      "line": 577,
+                      "function": "run",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php",
+                      "line": 522,
+                      "function": "affectingStatement",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php",
+                      "line": 3552,
+                      "function": "delete",
+                      "class": "Illuminate\\Database\\Connection",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php",
+                      "line": 1189,
+                      "function": "delete",
+                      "class": "Illuminate\\Database\\Query\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php",
+                      "line": 1459,
+                      "function": "delete",
+                      "class": "Illuminate\\Database\\Eloquent\\Builder",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Model.php",
+                      "line": 1404,
+                      "function": "performDeleteOnModel",
+                      "class": "Illuminate\\Database\\Eloquent\\Model",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\app\\Http\\Controllers\\Api\\V1\\Products\\CategoryController.php",
+                      "line": 128,
+                      "function": "delete",
+                      "class": "Illuminate\\Database\\Eloquent\\Model",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
+                      "line": 54,
+                      "function": "destroy",
+                      "class": "App\\Http\\Controllers\\Api\\V1\\Products\\CategoryController",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
+                      "line": 43,
+                      "function": "callAction",
+                      "class": "Illuminate\\Routing\\Controller",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+                      "line": 260,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\ControllerDispatcher",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+                      "line": 205,
+                      "function": "runController",
+                      "class": "Illuminate\\Routing\\Route",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+                      "line": 798,
+                      "function": "run",
+                      "class": "Illuminate\\Routing\\Route",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                      "line": 141,
+                      "function": "Illuminate\\Routing\\{closure}",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php",
+                      "line": 50,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
+                      "line": 126,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
+                      "line": 102,
+                      "function": "handleRequest",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
+                      "line": 54,
+                      "function": "handleRequestUsingNamedLimiter",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                      "line": 116,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+                      "line": 799,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+                      "line": 776,
+                      "function": "runRouteWithinStack",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+                      "line": 740,
+                      "function": "runRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+                      "line": 729,
+                      "function": "dispatchToRoute",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
+                      "line": 190,
+                      "function": "dispatch",
+                      "class": "Illuminate\\Routing\\Router",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                      "line": 141,
+                      "function": "Illuminate\\Foundation\\Http\\{closure}",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php",
+                      "line": 52,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Fruitcake\\Cors\\HandleCors",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php",
+                      "line": 31,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
+                      "line": 21,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php",
+                      "line": 40,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php",
+                      "line": 27,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php",
+                      "line": 86,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php",
+                      "line": 62,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\HandleCors",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php",
+                      "line": 39,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                      "line": 180,
+                      "function": "handle",
+                      "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+                      "line": 116,
+                      "function": "Illuminate\\Pipeline\\{closure}",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
+                      "line": 165,
+                      "function": "then",
+                      "class": "Illuminate\\Pipeline\\Pipeline",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
+                      "line": 134,
+                      "function": "sendRequestThroughRouter",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+                      "line": 299,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Http\\Kernel",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+                      "line": 287,
+                      "function": "callLaravelOrLumenRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+                      "line": 92,
+                      "function": "makeApiCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+                      "line": 45,
+                      "function": "makeResponseCall",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+                      "line": 35,
+                      "function": "makeResponseCallIfConditionsPass",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php",
+                      "line": 209,
+                      "function": "__invoke",
+                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php",
+                      "line": 166,
+                      "function": "iterateThroughStrategies",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php",
+                      "line": 95,
+                      "function": "fetchResponses",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php",
+                      "line": 124,
+                      "function": "processRoute",
+                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php",
+                      "line": 71,
+                      "function": "extractEndpointsInfoFromLaravelApp",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php",
+                      "line": 49,
+                      "function": "extractEndpointsInfoAndWriteToDisk",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
+                      "line": 51,
+                      "function": "get",
+                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
+                      "line": 36,
+                      "function": "handle",
+                      "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php",
+                      "line": 41,
+                      "function": "Illuminate\\Container\\{closure}",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
+                      "line": 93,
+                      "function": "unwrapIfClosure",
+                      "class": "Illuminate\\Container\\Util",
+                      "type": "::"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
+                      "line": 37,
+                      "function": "callBoundMethod",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
+                      "line": 661,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\BoundMethod",
+                      "type": "::"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
+                      "line": 183,
+                      "function": "call",
+                      "class": "Illuminate\\Container\\Container",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\symfony\\console\\Command\\Command.php",
+                      "line": 312,
+                      "function": "execute",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
+                      "line": 153,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Command\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\symfony\\console\\Application.php",
+                      "line": 1022,
+                      "function": "run",
+                      "class": "Illuminate\\Console\\Command",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\symfony\\console\\Application.php",
+                      "line": 314,
+                      "function": "doRunCommand",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\symfony\\console\\Application.php",
+                      "line": 168,
+                      "function": "doRun",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php",
+                      "line": 102,
+                      "function": "run",
+                      "class": "Symfony\\Component\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php",
+                      "line": 155,
+                      "function": "run",
+                      "class": "Illuminate\\Console\\Application",
+                      "type": "->"
+                  },
+                  {
+                      "file": "C:\\xampp\\htdocs\\cookbook\\artisan",
+                      "line": 37,
+                      "function": "handle",
+                      "class": "Illuminate\\Foundation\\Console\\Kernel",
+                      "type": "->"
+                  }
+              ]
           }
-        headers: []
-        description: ''
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '55'
+          vary: Origin
+        description: null
         custom: []
     responseFields: []
     auth: []
@@ -468,7 +1211,67 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"rating":5,"body":"In pariatur temporibus minus laborum beatae atque inventore. Perspiciatis expedita consectetur et natus aut sed assumenda. Itaque et dolor et deserunt quis. Adipisci officia beatae dicta sit ducimus iure hic. Sed ut fugiat dignissimos explicabo vitae et. Enim quod voluptas velit unde quaerat."}}'
+        content: '{"data":{"rating":5,"body":"Similique rerum minima praesentium et. Culpa et ipsa officia doloribus ut. Quas architecto atque dolorum rerum qui. Eaque consequatur eligendi vero qui eos. Blanditiis dolor vel asperiores ducimus rerum. In deleniti est quam et molestias."}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/reviews
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Create a new review'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      content:
+        name: content
+        description: 'string Body of the review.'
+        required: false
+        example: 'the worst product ever'
+        type: required
+        custom: []
+      product_uuid:
+        name: product_uuid
+        description: ''
+        required: true
+        example: deserunt
+        type: string
+        custom: []
+      product_id:
+        name: product_id
+        description: 'ID of product related to the review'
+        required: false
+        example: sed
+        type: required
+        custom: []
+    cleanBodyParameters:
+      content: 'the worst product ever'
+      product_uuid: deserunt
+      product_id: sed
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"rating":1,"body":"Eius voluptatem nesciunt pariatur quis expedita magnam. Sequi sit sed esse non. Ut odit nesciunt sunt ad sed possimus. Harum est dolorem eum et."}}'
         headers: []
         description: ''
         custom: []
@@ -512,7 +1315,68 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"rating":2,"body":"Ea in voluptatem rerum doloribus. Cumque est porro eaque deleniti illo quia ut iste. Sequi impedit soluta laborum. Rerum nostrum consectetur maxime eos sint et et rerum. Quasi totam aut odio porro eaque. Et accusamus earum ad repudiandae et corporis officiis nihil. Qui quis at nihil."}}'
+        content: '{"data":{"rating":5,"body":"Aut suscipit sed et dolore. Commodi sunt inventore consequatur quam assumenda minima optio. Voluptates sed quasi natus. Doloribus laudantium magnam modi ratione assumenda atque aut. Consequatur nam iusto nobis omnis voluptates iure. Quasi quia ipsum optio labore natus incidunt. Doloremque ut animi esse reprehenderit."}}'
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/reviews/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update a existing resource'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the review.'
+        required: true
+        example: 1
+        type: integer
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      content:
+        name: content
+        description: 'string Body of the review.'
+        required: false
+        example: 'the worst product ever'
+        type: required
+        custom: []
+      product_id:
+        name: product_id
+        description: 'ID of product related to the review'
+        required: false
+        example: ab
+        type: required
+        custom: []
+    cleanBodyParameters:
+      content: 'the worst product ever'
+      product_id: ab
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"rating":1,"body":"Inventore aut quod quia vitae tenetur deleniti esse autem. Quis nesciunt quo consequatur nam totam exercitationem nobis itaque. Nemo blanditiis quis sit qui. Vero incidunt esse corporis est delectus voluptas ut. Omnis vero recusandae animi dignissimos eum ea. Molestiae quo suscipit ut asperiores ut. Voluptatem nesciunt provident assumenda asperiores laboriosam."}}'
         headers: []
         description: ''
         custom: []
@@ -553,7 +1417,18 @@ endpoints:
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
-    responses: []
+    responses:
+      -
+        status: 200
+        content: '{"message":"Review deleted successfully"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '54'
+          vary: Origin
+        description: null
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -590,6 +1465,19 @@ endpoints:
         headers: []
         description: ''
         custom: []
+      -
+        status: 200
+        content: |-
+          {
+           "data" : [
+           "name": "US Dollar",
+           "code": "USD",
+           "value": "11421.00"
+          ]
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -623,6 +1511,27 @@ endpoints:
       -
         status: 200
         content: '{"data":{"id":1,"code":"Uzs","name":"Uzbek sum","value":1}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: |-
+          {
+          "data": [
+          {
+          "id": 1,
+          "code": "Uzs",
+          "name": "Uzbek sum",
+          "value": 1
+          },
+          {
+          "id": 2,
+          "code": "USD",
+          "name": "US Dollar",
+          "value": 11421
+          },
+          }
         headers: []
         description: ''
         custom: []
@@ -686,6 +1595,21 @@ endpoints:
         headers: []
         description: ''
         custom: []
+      -
+        status: 200
+        content: |-
+          {
+           "message":"New currency added successfully",
+           "data" : {
+           "id": 3,
+           "name": "British Pound",
+           "code": "GBP",
+           "value":10022
+          }
+          }
+        headers: []
+        description: ''
+        custom: []
     responseFields: []
     auth: []
     controller: null
@@ -730,44 +1654,20 @@ endpoints:
         headers: []
         description: ''
         custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/currencies/{id}'
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Delete existing currency'
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the currency.'
-        required: true
-        example: 1
-        type: integer
+      -
+        status: 200
+        content: |-
+          {
+          "data": {
+          "id": 1,
+          "code": "Uzs",
+          "name": "Uzbek sum",
+          "value": 1
+          }
+          }
+        headers: []
+        description: ''
         custom: []
-    cleanUrlParameters:
-      id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
     responseFields: []
     auth: []
     controller: null
@@ -890,7 +1790,7 @@ endpoints:
         name: preferred_contact_method
         description: 'method of user to contact.Default email'
         required: false
-        example: omnis
+        example: excepturi
         type: Preferred
         custom: []
     cleanBodyParameters:
@@ -906,7 +1806,7 @@ endpoints:
       password: 123asd2
       password_confirmation: 123asd2
       gender: 'male or female'
-      preferred_contact_method: omnis
+      preferred_contact_method: excepturi
     fileParameters: []
     responses:
       -
@@ -916,7 +1816,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '57'
+          x-ratelimit-remaining: '53'
           vary: Origin
         description: null
         custom: []
@@ -951,16 +1851,16 @@ endpoints:
         name: code
         description: ''
         required: false
-        example: autem
+        example: in
         type: required.
         custom: []
     cleanBodyParameters:
-      code: autem
+      code: in
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"firstname":"Cullen","lastname":"Fay","country":"Turkey","primaryNumber":"13606844255","number":"19795194884","email":"schimmel.anna@prosacco.org"}}'
+        content: '{"data":{"firstname":"Delores","lastname":"Walker","country":"Armenia","primaryNumber":"12154368992","number":"14798308905","email":"demetrius33@balistreri.com"}}'
         headers: []
         description: ''
         custom: []
@@ -1009,7 +1909,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '56'
+          x-ratelimit-remaining: '52'
           vary: Origin
         description: null
         custom: []
@@ -1062,7 +1962,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"firstname":"Keshawn","lastname":"Stracke"}}'
+        content: '{"data":{"firstname":"Tristian","lastname":"Kris"}}'
         headers: []
         description: ''
         custom: []

@@ -46,7 +46,6 @@ class CategoryController extends Controller
      * @apiResource App\Http\Resources\V1\Products\CategoryResource
      * @apiResourceModel App\Models\Category
      *
-     * @responseFile storage/responses/products/category.json
      *
      */
     public function store(StoreCategoryRequest $request): \Illuminate\Http\JsonResponse
@@ -98,7 +97,6 @@ class CategoryController extends Controller
      * @apiResource App\Http\Resources\V1\Products\CategoryResource
      * @apiResourceModel App\Models\Category
      *
-     * @responseFile storage/responses/products/category.json
      *
      */
     public function update(StoreCategoryRequest $request, Category $category): JsonResponse
@@ -121,10 +119,7 @@ class CategoryController extends Controller
      * @return JsonResponse
      *
      *
-     * @response 200
-     * {
-     * "message":"Category deleted successfully"
-     * }
+
      *
      */
 

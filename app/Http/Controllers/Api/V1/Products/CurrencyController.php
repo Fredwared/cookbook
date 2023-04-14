@@ -8,7 +8,7 @@ use App\Http\Requests\Api\V1\Products\StoreCurrencyRequest;
 use App\Http\Resources\V1\Products\CurrencyResource;
 use App\Http\Resources\V1\Products\ListCurrencyResource;
 use App\Models\Currency;
-use App\Services\Products\CurrencyService;
+use App\Services\CurrencyService;
 use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
@@ -24,6 +24,23 @@ class CurrencyController extends Controller
      *
      * @apiResource App\Http\Resources\V1\Products\CurrencyResource
      * @apiResourceModel App\Models\Currency
+     *
+     * @response 200
+     * {
+     * "data": [
+     * {
+     * "id": 1,
+     * "code": "Uzs",
+     * "name": "Uzbek sum",
+     * "value": 1
+     * },
+     * {
+     * "id": 2,
+     * "code": "USD",
+     * "name": "US Dollar",
+     * "value": 11421
+     * },
+     * }
      *
      */
     public function index(): AnonymousResourceCollection
@@ -45,12 +62,22 @@ class CurrencyController extends Controller
      *
      * @param StoreCurrencyRequest $request
      * @param CurrencyService $currencyService
+     *
      * @return JsonResponse
-     *
-     *
-     *
      * @apiResource App\Http\Resources\V1\Products\CurrencyResource
      * @apiResourceModel App\Models\Currency
+     *
+     * @response 200 {
+     *  "message":"New currency added successfully",
+     *  "data" : {
+     *  "id": 3,
+     *  "name": "British Pound",
+     *  "code": "GBP",
+     *  "value":10022
+     * }
+     * }
+     *
+     *
      */
     public function store(StoreCurrencyRequest $request, CurrencyService $currencyService): JsonResponse
     {
@@ -79,6 +106,18 @@ class CurrencyController extends Controller
      *
      * @apiResource App\Http\Resources\V1\Products\CurrencyResource
      * @apiResourceModel App\Models\Currency
+     *
+     *
+     * @response 200
+     * {
+     * "data": {
+     * "id": 1,
+     * "code": "Uzs",
+     * "name": "Uzbek sum",
+     * "value": 1
+     * }
+     * }
+     *
      */
     public function show(Currency $currency): CurrencyResource
     {
@@ -106,7 +145,7 @@ class CurrencyController extends Controller
         $currency->delete();
 
         return response()->json([
-            "message" => "CurrencyService removed successfully"
+            "message" => "Currency removed successfully"
         ]);
     }
 
@@ -119,6 +158,14 @@ class CurrencyController extends Controller
      * @apiResource App\Http\Resources\V1\Products\ListCurrencyResource
      * @apiResourceModel App\Models\Currency
      * @throws Exception
+     *
+     * @response 200 {
+     *  "data" : [
+     *  "name": "US Dollar",
+     *  "code": "USD",
+     *  "value": "11421.00"
+     * ]
+     * }
      */
     public function list(): AnonymousResourceCollection
     {

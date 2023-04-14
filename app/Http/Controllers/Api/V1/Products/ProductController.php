@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api\V1\Products;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\Products\ProductResource;
 use App\Models\Product;
-use App\Services\Products\CurrencyService;
+use App\Services\CurrencyService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;

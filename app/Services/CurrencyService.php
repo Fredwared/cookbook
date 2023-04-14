@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Services\Products;
+namespace App\Services;
 
 use App\Adapters\CurrencyAdapter;
 use App\Models\Currency;
 use Exception;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 

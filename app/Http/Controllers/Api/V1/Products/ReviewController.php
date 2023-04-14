@@ -42,7 +42,6 @@ class ReviewController extends Controller
      * @apiResource App\Http\Resources\V1\Products\ReviewResource
      * @apiResourceModel App\Models\Review
      *
-     * @responseFile storage/responses/products/review.json
      *
      * @param StoreReviewRequest $request
      *
@@ -53,8 +52,7 @@ class ReviewController extends Controller
         $fields = $request->validated();
 
 
-
-        $fields["user_id"] = 1;
+        $fields["user_id"] = auth()->id();
 
 
         $review = Review::query()->create($fields);
@@ -93,7 +91,6 @@ class ReviewController extends Controller
      * @apiResource App\Http\Resources\V1\Products\ReviewResource
      * @apiResourceModel App\Models\Review
      *
-     * @responseFile storage/responses/products/updateReview.json
      *
      * @param UpdateReviewRequest $request
      * @param Review $review
