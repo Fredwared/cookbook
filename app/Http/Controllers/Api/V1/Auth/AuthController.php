@@ -24,10 +24,18 @@ class AuthController extends Controller
      *
      * This endpoint will allow to register users
      *
-     * @bodyParam username string required Username of user. Example: Admin
-     * @bodyParam email  email required unique Email of user. Example: admin@gmail.com
      * @bodyParam firstname string  required Firstname of user. Example: Avaz
      * @bodyParam lastname string  required  Lastname of user. Example: Akhmedov
+     * @bodyParam surname string  nullable  Surname of user. Example: Something
+     * @bodyParam gender string  nullable  Gender of user. Example: male or female
+     * @bodyParam birthdate date  nullable  Birthdate of user.Example:1997.02.09
+     * @bodyParam country_id  required constrained   Country of user.Example:Uzbekistan
+     * @bodyParam country_id  nullable constrained  City of user.Example:Tashkent
+     * @bodyParam primary_number  string  required  Main number of user. Example: 99877822112
+     * @bodyParam number string  required  Second number of user. Example: 99822133211
+     * @bodyParam optional_number string  nullable  Optional number of user. Example: 53121213123
+     * @bodyParam email  email required unique Email of user. Example: admin@gmail.com
+     * @bodyParam preferred_contact_method Preferred method of user to contact.Default email
      * @bodyParam password  required Password of user. Example: 123asd2
      * @bodyParam password_confirmation required Confirm previous password. Example: 123asd2
      *
@@ -39,10 +47,7 @@ class AuthController extends Controller
      * @param RegisterService $registerService
      * @return JsonResponse
      *
-     * @apiResource App\Http\Resources\V1\Auth\RegisterResource
-     * @apiResourceModel App\Models\User
      *
-     * @responseFile storage/responses/auth/register.json
      */
     public function register(RegisterRequest $request, RegisterService $registerService): JsonResponse
     {
@@ -59,10 +64,23 @@ class AuthController extends Controller
 
 
     /**
+     * Verify User
+     *
+     * This endpoint will verify user and save him to database
+     *
+     * @bodyParam code required.
+     *
+     * @apiResource App\Http\Resources\V1\Auth\RegisterResource
+     * @apiResourceModel App\Models\User
+     *
+     * @apiResourceModel
      * @param VerifyUserRequest $request
      * @param RegisterService $registerService
      * @return JsonResponse
      * @throws ValidationException
+     *
+     * @header Content-Type application/json
+     * @header Accept application/json
      */
     public function verify(VerifyUserRequest $request, RegisterService $registerService): JsonResponse
     {
@@ -81,6 +99,12 @@ class AuthController extends Controller
 
 
     /**
+     * Resend code to the user
+     *
+     * This endpoint will send new code to the user by deleting previous one
+     *
+     * @bodyParam number required.Exists in users primary_number column.Example:9987872133
+     *
      * @param ResendCodeRequest $request
      * @param RegisterService $registerService
      * @return JsonResponse
@@ -119,10 +143,6 @@ class AuthController extends Controller
      * @apiResource App\Http\Resources\V1\Auth\LoginResource
      * @apiResourceModel App\Models\User
      *
-     * @responseFile storage/responses/auth/login.json
-     *
-     *
-     *
      *
      */
 
@@ -153,10 +173,6 @@ class AuthController extends Controller
      * @param Request $request
      * @return JsonResponse
      *
-     * @response 200
-     * {
-     *  "message":"User logged out"
-     * }
      */
     public
     function logout(Request $request): JsonResponse

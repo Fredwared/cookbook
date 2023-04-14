@@ -31,7 +31,6 @@ class ProductController extends Controller
         $products = Product::query()
             ->with(["category", "reviews", "images", "entities", "contacts", "city"])
             ->scopes(["filter"])
-            ->withAvg("reviews", "rating")
             ->get();
 
 
@@ -66,7 +65,6 @@ class ProductController extends Controller
      * @apiResource App\Http\Resources\V1\Products\ProductResource
      * @apiResourceModel App\Models\Product
      *
-     * @responseFile storage/responses/products/product.json
      *
      */
 
@@ -126,7 +124,6 @@ class ProductController extends Controller
      * @apiResource App\Http\Resources\V1\Products\ProductResource
      * @apiResourceModel App\Models\Product
      *
-     * @responseFile storage/responses/products/updateProduct.json
      *
      *
      */
@@ -154,10 +151,6 @@ class ProductController extends Controller
      *
      * @return JsonResponse
      *
-     * @response 200
-     * {
-     * "message":"Product deleted successfully"
-     *  }
      *
      */
     public function destroy(Product $product): JsonResponse
