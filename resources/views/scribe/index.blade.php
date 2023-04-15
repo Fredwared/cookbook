@@ -198,16 +198,16 @@ You can switch the language used with the tabs at the top right (or from the nav
     "http://localhost:8000/api/v1/wizard/setup" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "category_id=perferendis" \
-    --form "name=voluptatem" \
-    --form "description=Dolores voluptatem illo ea sed." \
-    --form "postal_code=4.22176" \
-    --form "location=quo" \
-    --form "city_id=esse" \
-    --form "country_id=reprehenderit" \
-    --form "contacts[]=in" \
-    --form "rating=10" \
-    --form "images[]=@C:\Users\-\AppData\Local\Temp\phpFA38.tmp" </code></pre></div>
+    --form "category_id=dolorem" \
+    --form "name=ex" \
+    --form "description=Adipisci est eius voluptate qui ratione fugiat." \
+    --form "postal_code=734.3446" \
+    --form "location=omnis" \
+    --form "city_id=quo" \
+    --form "country_id=minus" \
+    --form "contacts[]=quisquam" \
+    --form "rating=49" \
+    --form "images[]=@C:\Users\-\AppData\Local\Temp\php3C88.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -221,15 +221,15 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('category_id', 'perferendis');
-body.append('name', 'voluptatem');
-body.append('description', 'Dolores voluptatem illo ea sed.');
-body.append('postal_code', '4.22176');
-body.append('location', 'quo');
-body.append('city_id', 'esse');
-body.append('country_id', 'reprehenderit');
-body.append('contacts[]', 'in');
-body.append('rating', '10');
+body.append('category_id', 'dolorem');
+body.append('name', 'ex');
+body.append('description', 'Adipisci est eius voluptate qui ratione fugiat.');
+body.append('postal_code', '734.3446');
+body.append('location', 'omnis');
+body.append('city_id', 'quo');
+body.append('country_id', 'minus');
+body.append('contacts[]', 'quisquam');
+body.append('rating', '49');
 body.append('images[]', document.querySelector('input[name="images[]"]').files[0]);
 
 fetch(url, {
@@ -348,10 +348,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="category_id"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="perferendis"
+               value="dolorem"
                data-component="body">
     <br>
-<p>Example: <code>perferendis</code></p>
+<p>Example: <code>dolorem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -359,10 +359,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="voluptatem"
+               value="ex"
                data-component="body">
     <br>
-<p>Example: <code>voluptatem</code></p>
+<p>Example: <code>ex</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -370,10 +370,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="description"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="Dolores voluptatem illo ea sed."
+               value="Adipisci est eius voluptate qui ratione fugiat."
                data-component="body">
     <br>
-<p>Example: <code>Dolores voluptatem illo ea sed.</code></p>
+<p>Example: <code>Adipisci est eius voluptate qui ratione fugiat.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
@@ -394,10 +394,10 @@ vary: Origin
  &nbsp;
                 <input type="number" style="display: none"
                name="postal_code"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="4.22176"
+               value="734.3446"
                data-component="body">
     <br>
-<p>Example: <code>4.22176</code></p>
+<p>Example: <code>734.3446</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>location</code></b>&nbsp;&nbsp;
@@ -405,10 +405,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="location"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="quo"
+               value="omnis"
                data-component="body">
     <br>
-<p>Example: <code>quo</code></p>
+<p>Example: <code>omnis</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
@@ -416,10 +416,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="city_id"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="esse"
+               value="quo"
                data-component="body">
     <br>
-<p>Example: <code>esse</code></p>
+<p>Example: <code>quo</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>country_id</code></b>&nbsp;&nbsp;
@@ -427,10 +427,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="country_id"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="reprehenderit"
+               value="minus"
                data-component="body">
     <br>
-<p>Example: <code>reprehenderit</code></p>
+<p>Example: <code>minus</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -447,10 +447,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="contacts.0.name"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="huusyagcgad"
+               value="kndi"
                data-component="body">
     <br>
-<p>Must not be greater than 100 characters. Example: <code>huusyagcgad</code></p>
+<p>Must not be greater than 100 characters. Example: <code>kndi</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>number</code></b>&nbsp;&nbsp;
@@ -458,10 +458,10 @@ vary: Origin
  &nbsp;
                 <input type="number" style="display: none"
                name="contacts.0.number"                data-endpoint="POSTapi-v1-wizard-setup"
-               value=" 6"
+               value="8 42"
                data-component="body">
     <br>
-<p>Must match the regex /^[0-9 ]+$/. Example: <code>6</code></p>
+<p>Must match the regex /^[0-9 ]+$/. Example: <code>8 42</code></p>
                     </div>
                                     </details>
         </div>
@@ -471,10 +471,10 @@ vary: Origin
  &nbsp;
                 <input type="number" style="display: none"
                name="rating"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="10"
+               value="49"
                data-component="body">
     <br>
-<p>Must not be greater than 5. Must be at least 1. Example: <code>10</code></p>
+<p>Must not be greater than 5. Must be at least 1. Example: <code>49</code></p>
         </div>
         </form>
 
@@ -491,14 +491,14 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/v1/wizard/50f9fb86-5e1c-4559-8bb8-3cafac362a65/services" \
+    "http://localhost:8000/api/v1/wizard/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86/services" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/wizard/50f9fb86-5e1c-4559-8bb8-3cafac362a65/services"
+    "http://localhost:8000/api/v1/wizard/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86/services"
 );
 
 const headers = {
@@ -599,10 +599,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="product_uuid"                data-endpoint="POSTapi-v1-wizard--product_uuid--services"
-               value="50f9fb86-5e1c-4559-8bb8-3cafac362a65"
+               value="c5ee4476-71b9-47ce-b6a1-dca13e0d1d86"
                data-component="url">
     <br>
-<p>Example: <code>50f9fb86-5e1c-4559-8bb8-3cafac362a65</code></p>
+<p>Example: <code>c5ee4476-71b9-47ce-b6a1-dca13e0d1d86</code></p>
             </div>
                     </form>
 
@@ -619,24 +619,24 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/v1/wizard/50f9fb86-5e1c-4559-8bb8-3cafac362a65/rooms" \
+    "http://localhost:8000/api/v1/wizard/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86/rooms" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"room_type\": \"consequatur\",
-    \"is_smoking_allowed\": \"velit\",
-    \"bed_type\": \"molestiae\",
-    \"bed_count\": \"quas\",
-    \"room_size\": \"voluptatem\",
-    \"price\": \"ipsa\",
-    \"price_for_residents\": \"neque\"
+    \"room_type\": \"quia\",
+    \"is_smoking_allowed\": \"libero\",
+    \"bed_type\": \"enim\",
+    \"bed_count\": \"qui\",
+    \"room_size\": \"dolorum\",
+    \"price\": \"voluptatem\",
+    \"price_for_residents\": \"blanditiis\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/wizard/50f9fb86-5e1c-4559-8bb8-3cafac362a65/rooms"
+    "http://localhost:8000/api/v1/wizard/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86/rooms"
 );
 
 const headers = {
@@ -645,13 +645,13 @@ const headers = {
 };
 
 let body = {
-    "room_type": "consequatur",
-    "is_smoking_allowed": "velit",
-    "bed_type": "molestiae",
-    "bed_count": "quas",
-    "room_size": "voluptatem",
-    "price": "ipsa",
-    "price_for_residents": "neque"
+    "room_type": "quia",
+    "is_smoking_allowed": "libero",
+    "bed_type": "enim",
+    "bed_count": "qui",
+    "room_size": "dolorum",
+    "price": "voluptatem",
+    "price_for_residents": "blanditiis"
 };
 
 fetch(url, {
@@ -767,10 +767,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="product_uuid"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="50f9fb86-5e1c-4559-8bb8-3cafac362a65"
+               value="c5ee4476-71b9-47ce-b6a1-dca13e0d1d86"
                data-component="url">
     <br>
-<p>Example: <code>50f9fb86-5e1c-4559-8bb8-3cafac362a65</code></p>
+<p>Example: <code>c5ee4476-71b9-47ce-b6a1-dca13e0d1d86</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -779,10 +779,10 @@ vary: Origin
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="room_type"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="consequatur"
+               value="quia"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Example: <code>quia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>is_smoking_allowed</code></b>&nbsp;&nbsp;
@@ -790,10 +790,10 @@ vary: Origin
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="is_smoking_allowed"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="velit"
+               value="libero"
                data-component="body">
     <br>
-<p>boolean default false. Example: <code>velit</code></p>
+<p>boolean default false. Example: <code>libero</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>bed_type</code></b>&nbsp;&nbsp;
@@ -801,10 +801,10 @@ vary: Origin
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="bed_type"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="molestiae"
+               value="enim"
                data-component="body">
     <br>
-<p>of the bed Example: <code>molestiae</code></p>
+<p>of the bed Example: <code>enim</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>bed_count</code></b>&nbsp;&nbsp;
@@ -812,10 +812,10 @@ vary: Origin
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="bed_count"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="quas"
+               value="qui"
                data-component="body">
     <br>
-<p>integer.How many beds room have Example: <code>quas</code></p>
+<p>integer.How many beds room have Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>room_size</code></b>&nbsp;&nbsp;
@@ -823,10 +823,10 @@ vary: Origin
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="room_size"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="voluptatem"
+               value="dolorum"
                data-component="body">
     <br>
-<p>of the room Example: <code>voluptatem</code></p>
+<p>of the room Example: <code>dolorum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
@@ -834,10 +834,10 @@ vary: Origin
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="price"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="ipsa"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>float.This is price for foreigners Example: <code>ipsa</code></p>
+<p>float.This is price for foreigners Example: <code>voluptatem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>price_for_residents</code></b>&nbsp;&nbsp;
@@ -845,10 +845,10 @@ vary: Origin
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="price_for_residents"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="neque"
+               value="blanditiis"
                data-component="body">
     <br>
-<p>is price for  locals Example: <code>neque</code></p>
+<p>is price for  locals Example: <code>blanditiis</code></p>
         </div>
         </form>
 
@@ -865,14 +865,14 @@ vary: Origin
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PATCH \
-    "http://localhost:8000/api/v1/products/50f9fb86-5e1c-4559-8bb8-3cafac362a65/1" \
+    "http://localhost:8000/api/v1/products/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86/20" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/products/50f9fb86-5e1c-4559-8bb8-3cafac362a65/1"
+    "http://localhost:8000/api/v1/products/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86/20"
 );
 
 const headers = {
@@ -889,7 +889,7 @@ fetch(url, {
 
 <span id="example-responses-PATCHapi-v1-products--product_uuid---media_id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (404):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -903,7 +903,432 @@ vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Preview  updated successfully&quot;
+    &quot;message&quot;: &quot;No query results for model [Spatie\\MediaLibrary\\MediaCollections\\Models\\Media] 20&quot;,
+    &quot;exception&quot;: &quot;Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException&quot;,
+    &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php&quot;,
+    &quot;line&quot;: 391,
+    &quot;trace&quot;: [
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php&quot;,
+            &quot;line&quot;: 367,
+            &quot;function&quot;: &quot;prepareException&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Exceptions\\Handler&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\nunomaduro\\collision\\src\\Adapters\\Laravel\\ExceptionHandler.php&quot;,
+            &quot;line&quot;: 54,
+            &quot;function&quot;: &quot;render&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Exceptions\\Handler&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php&quot;,
+            &quot;line&quot;: 51,
+            &quot;function&quot;: &quot;render&quot;,
+            &quot;class&quot;: &quot;NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 185,
+            &quot;function&quot;: &quot;handleException&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 126,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 102,
+            &quot;function&quot;: &quot;handleRequest&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
+            &quot;line&quot;: 54,
+            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 116,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 799,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 776,
+            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 740,
+            &quot;function&quot;: &quot;runRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
+            &quot;line&quot;: 729,
+            &quot;function&quot;: &quot;dispatchToRoute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 190,
+            &quot;function&quot;: &quot;dispatch&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 141,
+            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php&quot;,
+            &quot;line&quot;: 52,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Fruitcake\\Cors\\HandleCors&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php&quot;,
+            &quot;line&quot;: 31,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
+            &quot;line&quot;: 21,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php&quot;,
+            &quot;line&quot;: 40,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php&quot;,
+            &quot;line&quot;: 27,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php&quot;,
+            &quot;line&quot;: 86,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php&quot;,
+            &quot;line&quot;: 62,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\HandleCors&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php&quot;,
+            &quot;line&quot;: 39,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 180,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
+            &quot;line&quot;: 116,
+            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 165,
+            &quot;function&quot;: &quot;then&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
+            &quot;line&quot;: 134,
+            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 299,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 287,
+            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 92,
+            &quot;function&quot;: &quot;makeApiCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 45,
+            &quot;function&quot;: &quot;makeResponseCall&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
+            &quot;line&quot;: 35,
+            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 209,
+            &quot;function&quot;: &quot;__invoke&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 166,
+            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
+            &quot;line&quot;: 95,
+            &quot;function&quot;: &quot;fetchResponses&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 124,
+            &quot;function&quot;: &quot;processRoute&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 71,
+            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
+            &quot;line&quot;: 49,
+            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php&quot;,
+            &quot;line&quot;: 51,
+            &quot;function&quot;: &quot;get&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 36,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php&quot;,
+            &quot;line&quot;: 41,
+            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 93,
+            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
+            &quot;line&quot;: 37,
+            &quot;function&quot;: &quot;callBoundMethod&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
+            &quot;line&quot;: 661,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
+            &quot;type&quot;: &quot;::&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
+            &quot;line&quot;: 183,
+            &quot;function&quot;: &quot;call&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\symfony\\console\\Command\\Command.php&quot;,
+            &quot;line&quot;: 312,
+            &quot;function&quot;: &quot;execute&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
+            &quot;line&quot;: 153,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 1022,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 314,
+            &quot;function&quot;: &quot;doRunCommand&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\symfony\\console\\Application.php&quot;,
+            &quot;line&quot;: 168,
+            &quot;function&quot;: &quot;doRun&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php&quot;,
+            &quot;line&quot;: 102,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php&quot;,
+            &quot;line&quot;: 155,
+            &quot;function&quot;: &quot;run&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Console\\Application&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        },
+        {
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\artisan&quot;,
+            &quot;line&quot;: 37,
+            &quot;function&quot;: &quot;handle&quot;,
+            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
+            &quot;type&quot;: &quot;-&gt;&quot;
+        }
+    ]
 }</code>
  </pre>
     </span>
@@ -975,10 +1400,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="product_uuid"                data-endpoint="PATCHapi-v1-products--product_uuid---media_id-"
-               value="50f9fb86-5e1c-4559-8bb8-3cafac362a65"
+               value="c5ee4476-71b9-47ce-b6a1-dca13e0d1d86"
                data-component="url">
     <br>
-<p>Example: <code>50f9fb86-5e1c-4559-8bb8-3cafac362a65</code></p>
+<p>Example: <code>c5ee4476-71b9-47ce-b6a1-dca13e0d1d86</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>media_id</code></b>&nbsp;&nbsp;
@@ -986,10 +1411,10 @@ vary: Origin
  &nbsp;
                 <input type="number" style="display: none"
                name="media_id"                data-endpoint="PATCHapi-v1-products--product_uuid---media_id-"
-               value="1"
+               value="20"
                data-component="url">
     <br>
-<p>The ID of the media. Example: <code>1</code></p>
+<p>The ID of the media. Example: <code>20</code></p>
             </div>
                     </form>
 
@@ -1036,13 +1461,13 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: &quot;4a5a8563-9315-49ff-aec2-eeee1483faf0&quot;,
-        &quot;name&quot;: &quot;Sit enim sint et quo excepturi.&quot;,
-        &quot;description&quot;: &quot;Perspiciatis hic quo rem rerum qui voluptas. Et quo veniam at aperiam autem facere. Cum sunt quis temporibus beatae. Eligendi rerum ipsa quidem voluptatem. Cupiditate velit et est repudiandae nostrum ipsum ut. Ab nobis consequatur ea accusamus cum non ab. Ad quas occaecati perspiciatis. Eos velit aut esse tenetur.&quot;,
-        &quot;country&quot;: &quot;Russia&quot;,
-        &quot;city&quot;: &quot;borough&quot;,
-        &quot;location&quot;: &quot;Maiores non nihil repudiandae qui porro harum.&quot;,
-        &quot;rating&quot;: 5,
+        &quot;id&quot;: &quot;eee1cae2-37cc-46c5-bdf3-336bb9ba2425&quot;,
+        &quot;name&quot;: &quot;Porro expedita ad necessitatibus sed sapiente.&quot;,
+        &quot;description&quot;: &quot;Nihil repellat iste delectus sunt fugiat beatae eum tempora. Et aliquid magnam quam ut nesciunt suscipit dignissimos et. Voluptatem ad qui eum quam saepe eaque rem. Quo optio quia delectus dolores. Est quod dolorem pariatur. Consequuntur dolorem voluptas consequatur. Quia dolores odit beatae occaecati. Sit illo ut fugiat numquam quam sed sapiente et. Quia voluptate mollitia unde quae qui quam adipisci natus. Occaecati accusamus in labore qui alias voluptate.&quot;,
+        &quot;country&quot;: &quot;Turkey&quot;,
+        &quot;city&quot;: &quot;port&quot;,
+        &quot;location&quot;: &quot;Atque inventore exercitationem quae quia velit.&quot;,
+        &quot;rating&quot;: 2,
         &quot;postalCode&quot;: 112332,
         &quot;rate&quot;: &quot;0,00&quot;,
         &quot;isPetAllowed&quot;: false
@@ -1126,14 +1551,14 @@ fetch(url, {
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/products/50f9fb86-5e1c-4559-8bb8-3cafac362a65" \
+    --get "http://localhost:8000/api/v1/products/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/products/50f9fb86-5e1c-4559-8bb8-3cafac362a65"
+    "http://localhost:8000/api/v1/products/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86"
 );
 
 const headers = {
@@ -1156,13 +1581,13 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: &quot;3ac681b0-bc22-4827-8c45-699f5791945b&quot;,
-        &quot;name&quot;: &quot;Excepturi ipsa est numquam ut eligendi.&quot;,
-        &quot;description&quot;: &quot;Tempore velit ipsa voluptas non sunt. Sunt labore perferendis quia autem nostrum perspiciatis incidunt. Sunt nihil voluptates porro quaerat. Aut eum a pariatur repellat. Tempore reiciendis ut suscipit laudantium et. Asperiores iusto corrupti vero inventore magni ab repudiandae.&quot;,
-        &quot;country&quot;: &quot;Uzbekistan&quot;,
-        &quot;city&quot;: &quot;bury&quot;,
-        &quot;location&quot;: &quot;Facilis facere ipsa ea necessitatibus ut.&quot;,
-        &quot;rating&quot;: 4,
+        &quot;id&quot;: &quot;c7eb74cd-d731-40df-8172-2821721deb96&quot;,
+        &quot;name&quot;: &quot;Et ut tempora eos quae eos est sed.&quot;,
+        &quot;description&quot;: &quot;Omnis perspiciatis harum optio sit eligendi eum ut. Sint commodi doloremque eum sit qui et. Alias et ut mollitia deleniti praesentium. Perferendis quia sed illo illum aut libero. In voluptas quibusdam dolorum ullam voluptatum incidunt quo. Quis enim itaque eos impedit. Laboriosam rerum et doloribus aspernatur. Expedita recusandae omnis praesentium atque voluptatem aperiam.&quot;,
+        &quot;country&quot;: &quot;Russia&quot;,
+        &quot;city&quot;: &quot;land&quot;,
+        &quot;location&quot;: &quot;Voluptatem commodi ut molestiae sint et.&quot;,
+        &quot;rating&quot;: 3,
         &quot;postalCode&quot;: 112332,
         &quot;rate&quot;: &quot;0,00&quot;,
         &quot;isPetAllowed&quot;: false
@@ -1238,10 +1663,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="uuid"                data-endpoint="GETapi-v1-products--uuid-"
-               value="50f9fb86-5e1c-4559-8bb8-3cafac362a65"
+               value="c5ee4476-71b9-47ce-b6a1-dca13e0d1d86"
                data-component="url">
     <br>
-<p>Example: <code>50f9fb86-5e1c-4559-8bb8-3cafac362a65</code></p>
+<p>Example: <code>c5ee4476-71b9-47ce-b6a1-dca13e0d1d86</code></p>
             </div>
                     </form>
 
@@ -1288,8 +1713,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 152,
-        &quot;name&quot;: &quot;mollitia&quot;
+        &quot;id&quot;: 16,
+        &quot;name&quot;: &quot;cupiditate&quot;
     }
 }</code>
  </pre>
@@ -1375,7 +1800,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"name\": \"sport\",
-    \"parent_id\": 17
+    \"parent_id\": 2
 }"
 </code></pre></div>
 
@@ -1392,7 +1817,7 @@ const headers = {
 
 let body = {
     "name": "sport",
-    "parent_id": 17
+    "parent_id": 2
 };
 
 fetch(url, {
@@ -1411,8 +1836,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 153,
-        &quot;name&quot;: &quot;qui&quot;
+        &quot;id&quot;: 17,
+        &quot;name&quot;: &quot;ratione&quot;
     }
 }</code>
  </pre>
@@ -1496,10 +1921,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="parent_id"                data-endpoint="POSTapi-v1-categories"
-               value="17"
+               value="2"
                data-component="body">
     <br>
-<p>nullable ID of the parent category for subcategory. Example: <code>17</code></p>
+<p>nullable ID of the parent category for subcategory. Example: <code>2</code></p>
         </div>
         </form>
 
@@ -1546,8 +1971,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 154,
-        &quot;name&quot;: &quot;fugiat&quot;
+        &quot;id&quot;: 18,
+        &quot;name&quot;: &quot;rerum&quot;
     }
 }</code>
  </pre>
@@ -1645,7 +2070,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"name\": \"sport\",
-    \"parent_id\": 11
+    \"parent_id\": 5
 }"
 </code></pre></div>
 
@@ -1662,7 +2087,7 @@ const headers = {
 
 let body = {
     "name": "sport",
-    "parent_id": 11
+    "parent_id": 5
 };
 
 fetch(url, {
@@ -1681,8 +2106,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 155,
-        &quot;name&quot;: &quot;et&quot;
+        &quot;id&quot;: 19,
+        &quot;name&quot;: &quot;voluptas&quot;
     }
 }</code>
  </pre>
@@ -1782,10 +2207,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="parent_id"                data-endpoint="PUTapi-v1-categories--id-"
-               value="11"
+               value="5"
                data-component="body">
     <br>
-<p>nullable ID of the parent category for subcategory. Example: <code>11</code></p>
+<p>nullable ID of the parent category for subcategory. Example: <code>5</code></p>
         </div>
         </form>
 
@@ -2471,8 +2896,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;rating&quot;: 5,
-        &quot;body&quot;: &quot;Similique rerum minima praesentium et. Culpa et ipsa officia doloribus ut. Quas architecto atque dolorum rerum qui. Eaque consequatur eligendi vero qui eos. Blanditiis dolor vel asperiores ducimus rerum. In deleniti est quam et molestias.&quot;
+        &quot;rating&quot;: 4,
+        &quot;body&quot;: &quot;Voluptas laborum tempora a. Nisi quia dolores qui voluptatem nihil provident. Architecto dolore eligendi vero corporis nostrum. Id sequi modi optio.&quot;
     }
 }</code>
  </pre>
@@ -2558,8 +2983,8 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"content\": \"the worst product ever\",
-    \"product_uuid\": \"deserunt\",
-    \"product_id\": \"sed\"
+    \"product_uuid\": \"et\",
+    \"product_id\": \"qui\"
 }"
 </code></pre></div>
 
@@ -2576,8 +3001,8 @@ const headers = {
 
 let body = {
     "content": "the worst product ever",
-    "product_uuid": "deserunt",
-    "product_id": "sed"
+    "product_uuid": "et",
+    "product_id": "qui"
 };
 
 fetch(url, {
@@ -2597,7 +3022,7 @@ fetch(url, {
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
         &quot;rating&quot;: 1,
-        &quot;body&quot;: &quot;Eius voluptatem nesciunt pariatur quis expedita magnam. Sequi sit sed esse non. Ut odit nesciunt sunt ad sed possimus. Harum est dolorem eum et.&quot;
+        &quot;body&quot;: &quot;Ut et non nostrum. Magni tempora perspiciatis veritatis praesentium assumenda voluptates fuga. Inventore dolor rerum aut voluptatem omnis ut. Quasi sunt est omnis veritatis error. Est et labore doloremque ullam et libero minima.&quot;
     }
 }</code>
  </pre>
@@ -2681,10 +3106,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="product_uuid"                data-endpoint="POSTapi-v1-reviews"
-               value="deserunt"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>deserunt</code></p>
+<p>Example: <code>et</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>product_id</code></b>&nbsp;&nbsp;
@@ -2692,10 +3117,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="product_id"                data-endpoint="POSTapi-v1-reviews"
-               value="sed"
+               value="qui"
                data-component="body">
     <br>
-<p>ID of product related to the review Example: <code>sed</code></p>
+<p>ID of product related to the review Example: <code>qui</code></p>
         </div>
         </form>
 
@@ -2742,8 +3167,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;rating&quot;: 5,
-        &quot;body&quot;: &quot;Aut suscipit sed et dolore. Commodi sunt inventore consequatur quam assumenda minima optio. Voluptates sed quasi natus. Doloribus laudantium magnam modi ratione assumenda atque aut. Consequatur nam iusto nobis omnis voluptates iure. Quasi quia ipsum optio labore natus incidunt. Doloremque ut animi esse reprehenderit.&quot;
+        &quot;rating&quot;: 1,
+        &quot;body&quot;: &quot;Nulla reiciendis et neque est et unde aut laborum. Hic rem saepe sint occaecati illum. Voluptatem id iusto reprehenderit aliquid maiores quam. Est ipsa quasi sequi sed. Consectetur nisi impedit iure ut esse pariatur. Quae cumque amet exercitationem cumque minus. Ex et consequatur eius veritatis quasi.&quot;
     }
 }</code>
  </pre>
@@ -2841,7 +3266,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"content\": \"the worst product ever\",
-    \"product_id\": \"ab\"
+    \"product_id\": \"quia\"
 }"
 </code></pre></div>
 
@@ -2858,7 +3283,7 @@ const headers = {
 
 let body = {
     "content": "the worst product ever",
-    "product_id": "ab"
+    "product_id": "quia"
 };
 
 fetch(url, {
@@ -2877,8 +3302,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;rating&quot;: 1,
-        &quot;body&quot;: &quot;Inventore aut quod quia vitae tenetur deleniti esse autem. Quis nesciunt quo consequatur nam totam exercitationem nobis itaque. Nemo blanditiis quis sit qui. Vero incidunt esse corporis est delectus voluptas ut. Omnis vero recusandae animi dignissimos eum ea. Molestiae quo suscipit ut asperiores ut. Voluptatem nesciunt provident assumenda asperiores laboriosam.&quot;
+        &quot;rating&quot;: 2,
+        &quot;body&quot;: &quot;Ratione aliquam impedit deserunt est est libero eveniet. Deleniti est velit unde adipisci vero reprehenderit eos libero. Nihil voluptatem sapiente deserunt magni molestias amet. Possimus ut enim accusamus voluptate eius. Ea esse enim vitae nihil illo dolorem. Autem earum perferendis sed dolore.&quot;
     }
 }</code>
  </pre>
@@ -2978,10 +3403,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="product_id"                data-endpoint="PUTapi-v1-reviews--id-"
-               value="ab"
+               value="quia"
                data-component="body">
     <br>
-<p>ID of product related to the review Example: <code>ab</code></p>
+<p>ID of product related to the review Example: <code>quia</code></p>
         </div>
         </form>
 
@@ -3721,7 +4146,7 @@ fetch(url, {
     \"password\": \"123asd2\",
     \"password_confirmation\": \"123asd2\",
     \"gender\": \"male or female\",
-    \"preferred_contact_method\": \"excepturi\"
+    \"preferred_contact_method\": \"debitis\"
 }"
 </code></pre></div>
 
@@ -3749,7 +4174,7 @@ let body = {
     "password": "123asd2",
     "password_confirmation": "123asd2",
     "gender": "male or female",
-    "preferred_contact_method": "excepturi"
+    "preferred_contact_method": "debitis"
 };
 
 fetch(url, {
@@ -3999,10 +4424,10 @@ vary: Origin
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="preferred_contact_method"                data-endpoint="POSTapi-v1-register"
-               value="excepturi"
+               value="debitis"
                data-component="body">
     <br>
-<p>method of user to contact.Default email Example: <code>excepturi</code></p>
+<p>method of user to contact.Default email Example: <code>debitis</code></p>
         </div>
         </form>
 
@@ -4023,7 +4448,7 @@ vary: Origin
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"code\": \"in\"
+    \"code\": \"sit\"
 }"
 </code></pre></div>
 
@@ -4039,7 +4464,7 @@ const headers = {
 };
 
 let body = {
-    "code": "in"
+    "code": "sit"
 };
 
 fetch(url, {
@@ -4058,12 +4483,29 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;firstname&quot;: &quot;Delores&quot;,
-        &quot;lastname&quot;: &quot;Walker&quot;,
-        &quot;country&quot;: &quot;Armenia&quot;,
-        &quot;primaryNumber&quot;: &quot;12154368992&quot;,
-        &quot;number&quot;: &quot;14798308905&quot;,
-        &quot;email&quot;: &quot;demetrius33@balistreri.com&quot;
+        &quot;firstname&quot;: &quot;Raegan&quot;,
+        &quot;lastname&quot;: &quot;Anderson&quot;,
+        &quot;country&quot;: &quot;Tajikistan&quot;,
+        &quot;primaryNumber&quot;: &quot;15517816020&quot;,
+        &quot;number&quot;: &quot;19344722796&quot;,
+        &quot;email&quot;: &quot;hgreenholt@stiedemann.com&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Successfully verified&quot;,
+    &quot;data&quot;: {
+        &quot;firstname&quot;: &quot;Avaz&quot;,
+        &quot;lastname&quot;: &quot;Akhmedov&quot;,
+        &quot;country&quot;: &quot;Uzbekistan&quot;,
+        &quot;primaryNumber&quot;: &quot;9987977212&quot;,
+        &quot;number&quot;: &quot;9984321122&quot;,
+        &quot;email&quot;: &quot;avaz.corp@gmail.com&quot;
     }
 }</code>
  </pre>
@@ -4136,10 +4578,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="code"                data-endpoint="POSTapi-v1-verify"
-               value="in"
+               value="sit"
                data-component="body">
     <br>
-<p>Example: <code>in</code></p>
+<p>Example: <code>sit</code></p>
         </div>
         </form>
 
@@ -4203,11 +4645,10 @@ vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The selected number is invalid. (and 1 more error)&quot;,
+    &quot;message&quot;: &quot;The selected number is invalid.&quot;,
     &quot;errors&quot;: {
         &quot;number&quot;: [
-            &quot;The selected number is invalid.&quot;,
-            &quot;User is verified&quot;
+            &quot;The selected number is invalid.&quot;
         ]
     }
 }</code>
@@ -4344,8 +4785,22 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;firstname&quot;: &quot;Tristian&quot;,
-        &quot;lastname&quot;: &quot;Kris&quot;
+        &quot;firstname&quot;: &quot;Sandra&quot;,
+        &quot;lastname&quot;: &quot;Weissnat&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;token&quot;: &quot;1|fMyN7p4LYO89olWWJmCct1sY3seIdR7wsZqIJ9Xd&quot;,
+    &quot;message&quot;: &quot;Welcome back Avaz&quot;,
+    &quot;data&quot;: {
+        &quot;firstname&quot;: &quot;Avaz&quot;,
+        &quot;lastname&quot;: &quot;Akhmedov&quot;
     }
 }</code>
  </pre>

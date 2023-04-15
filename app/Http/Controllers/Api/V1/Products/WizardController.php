@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1\Products;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\Products\Wizard\WizardRoomRequest;
 use App\Http\Requests\Api\V1\Products\Wizard\WizardSetupRequest;
+use App\Http\Requests\WizardServicesRequest;
 use App\Http\Resources\V1\Products\Wizard\WizardRoomResource;
 use App\Http\Resources\V1\Products\Wizard\WizardSetupResource;
 use App\Models\Product;
@@ -36,6 +37,8 @@ class WizardController extends Controller
      *
      * @apiResource App\Http\Resources\V1\Products\Wizard\WizardSetupResource
      * @apiResourceModel App\Models\Product
+     *
+     * @responseFile storage/responses/wizard/setup.json
      */
     public function setup(WizardSetupRequest $request): JsonResponse
     {
@@ -71,9 +74,29 @@ class WizardController extends Controller
         ]);
     }
 
-    public function services(Product $product)
+    /**
+     *
+     * @bodyParam attributes required array.Attributes of the hotel
+     * @bodyParam attributes.name required.
+     * @bodyParam attributes.value required.
+     *
+     *
+     * @param WizardServicesRequest $request
+     * @param Product $product
+     * @return JsonResponse
+     */
+    public function services(WizardServicesRequest $request, Product $product): JsonResponse
     {
+        $fields = $request->validated();
 
+
+
+        $product->attributes()->sync($fields);
+
+        return response()->json([
+            "message" => "Second step is done",
+            "data" => []
+        ]);
     }
 
     /**
@@ -84,12 +107,14 @@ class WizardController extends Controller
      * @bodyParam bed_type required.Type of the bed
      * @bodyParam bed_count required integer.How many beds room have
      * @bodyParam price required float.This is price for foreigners
-     * @bodyParam price_for_residents float.This is price for  locals
+     * @bodyParam price_for_residents float.This is price for locals
      * @bodyParam room_size integer.Size of the room
      *
      * @param Product $product
      * @param WizardRoomRequest $request
      * @return JsonResponse
+     *
+     * @responseFile storage/responses/wizard/rooms.json
      */
     public function rooms(Product $product, WizardRoomRequest $request): JsonResponse
     {

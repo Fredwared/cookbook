@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Api\V1\Auth;
+namespace App\Http\Requests;
 
-use App\Rules\UserVerified;
 use Illuminate\Foundation\Http\FormRequest;
 
-class ResendCodeRequest extends FormRequest
+class WizardServicesRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +21,12 @@ class ResendCodeRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            "number" => ["required", "numeric", "exists:users,primary_number"]
+            "attributes" =>"required|array",
+            "attributes.*.name" => "required",
+            "attributes.*.value" => "required",
         ];
     }
 }

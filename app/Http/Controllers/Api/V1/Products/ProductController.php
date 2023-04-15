@@ -25,7 +25,7 @@ class ProductController extends Controller
     public function index(): AnonymousResourceCollection
     {
         $products = Product::query()
-            ->with(["category", "reviews", "images", "entities", "contacts", "city", "country", ])
+            ->with(["category", "reviews", "images", "entities", "contacts", "city", "country","attributes" ])
             ->get();
 
 

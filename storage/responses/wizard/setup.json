@@ -1,0 +1,34 @@
+{
+  "message": "First step is done",
+  "data": {
+    "id": "70d7379f-0845-497c-a5ad-cfa9af32c64e",
+    "name": "La maree",
+    "description": "The best hotel ever",
+    "category": {
+      "id": 1,
+      "name": "Hotel"
+    },
+    "country": "Uzbekistan",
+    "city": "view",
+    "postalCode": "112332",
+    "location": "Somewhere",
+    "images": [
+      {
+        "media_id": 1,
+        "url": "http://localhost:8000/storage/1/4.jfif"
+      },
+      {
+        "media_id": 2,
+        "url": "http://localhost:8000/storage/2/3.jfif"
+      }
+    ],
+    "isPetAllowed": false,
+    "rating": "3",
+    "contacts": [
+      {
+        "name": "Avaz Akhmedov",
+        "phoneNumber": "9987972212"
+      }
+    ]
+  }
+}

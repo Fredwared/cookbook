@@ -14,6 +14,27 @@ class AttributeSeeder extends Seeder
      */
     public function run()
     {
-        Attribute::factory(15)->create();
+        Attribute::query()->insert([
+            [
+                "name" => "Internet access"
+            ],
+
+            [
+                "name" => "Parking"
+            ],
+            [
+                "name" => "Language"
+            ],
+            [
+                "name" => "Breakfast"
+            ],
+            [
+                "name" => "Facilities"
+            ],
+
+            [
+                "name"  => "Internet access place"
+            ],
+        ]);
     }
 }

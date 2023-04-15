@@ -52,20 +52,12 @@ class  RegisterService
 
         return User::query()->create($user);
 
-
     }
 
-    /**
-     * @param $code
-     * @return bool
-     * @throws Exception
-     */
-    public function resendVerificationCode($code): bool
+
+    public function resendVerificationCode(array $validation, $code): bool
     {
 
-        Cache::forget("user_verification_code");
-
-        return Cache::put("user_verification_code", $code, now()->addMinutes(10));
 
     }
 }

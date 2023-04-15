@@ -22,6 +22,7 @@ class ProductResource extends JsonResource
             "rating" => $this->rating,
             "postalCode" => $this->postal_code,
             "rooms" => EntityResource::collection($this->whenLoaded("entities")),
+            "services" => AttributeResource::collection($this->whenLoaded("attributes")),
             "contacts" => ProductContactResource::collection($this->whenLoaded("contacts")),
             "reviews" => ReviewResource::collection($this->whenLoaded('reviews')),
             "rate" => number_format($this->reviews->avg("rating"), 2, ","),

@@ -1,0 +1,12 @@
+{
+  "message": "Last step is done",
+  "data": {
+    "roomType": "Suite",
+    "isSmokingAllowed": true,
+    "bedType": "King size",
+    "bedCount": "3",
+    "roomSize": "3",
+    "price": "75",
+    "priceForResidents": "45"
+  }
+}
