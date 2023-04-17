@@ -66,45 +66,34 @@
                     <a href="#authenticating-requests">Authenticating requests</a>
                 </li>
                             </ul>
+                    <ul id="tocify-header-categories" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="categories">
+                    <a href="#categories">Categories</a>
+                </li>
+                                    <ul id="tocify-subheader-categories" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="categories-GETapi-v1-categories">
+                                <a href="#categories-GETapi-v1-categories">Show collection of categories</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="categories-POSTapi-v1-categories">
+                                <a href="#categories-POSTapi-v1-categories">Create a new category</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="categories-GETapi-v1-categories--id-">
+                                <a href="#categories-GETapi-v1-categories--id-">Show each individual category</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="categories-PUTapi-v1-categories--id-">
+                                <a href="#categories-PUTapi-v1-categories--id-">Update existing category or it's subcategories</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="categories-DELETEapi-v1-categories--id-">
+                                <a href="#categories-DELETEapi-v1-categories--id-">Delete existing category or it's subcategories</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-endpoints" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="endpoints">
                     <a href="#endpoints">Endpoints</a>
                 </li>
                                     <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-wizard-setup">
-                                <a href="#endpoints-POSTapi-v1-wizard-setup">POST api/v1/wizard/setup</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-wizard--product_uuid--services">
-                                <a href="#endpoints-POSTapi-v1-wizard--product_uuid--services">POST api/v1/wizard/{product_uuid}/services</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-wizard--product_uuid--rooms">
-                                <a href="#endpoints-POSTapi-v1-wizard--product_uuid--rooms">This endpoint will create room for existing product</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PATCHapi-v1-products--product_uuid---media_id-">
-                                <a href="#endpoints-PATCHapi-v1-products--product_uuid---media_id-">Update Current Preview</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-products">
-                                <a href="#endpoints-GETapi-v1-products">Show collection of products</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-products--uuid-">
-                                <a href="#endpoints-GETapi-v1-products--uuid-">Show individual product</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-categories">
-                                <a href="#endpoints-GETapi-v1-categories">Show collection of categories</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-categories">
-                                <a href="#endpoints-POSTapi-v1-categories">Create a new category</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-categories--id-">
-                                <a href="#endpoints-GETapi-v1-categories--id-">Show each individual category</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-v1-categories--id-">
-                                <a href="#endpoints-PUTapi-v1-categories--id-">Update existing category or it's subcategories</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-v1-categories--id-">
-                                <a href="#endpoints-DELETEapi-v1-categories--id-">Delete existing category or it's subcategories</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-reviews">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-reviews">
                                 <a href="#endpoints-GETapi-v1-reviews">Show collection of reviews</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-reviews">
@@ -131,20 +120,66 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-currencies--id-">
                                 <a href="#endpoints-GETapi-v1-currencies--id-">Show individual currency</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-register">
-                                <a href="#endpoints-POSTapi-v1-register">User Register</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-v1-currencies--id-">
+                                <a href="#endpoints-DELETEapi-v1-currencies--id-">Delete existing currency</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-verify">
-                                <a href="#endpoints-POSTapi-v1-verify">Verify User</a>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-login-and-logout" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="login-and-logout">
+                    <a href="#login-and-logout">Login and Logout</a>
+                </li>
+                                    <ul id="tocify-subheader-login-and-logout" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="login-and-logout-POSTapi-v1-login">
+                                <a href="#login-and-logout-POSTapi-v1-login">User Login</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-resend-code">
-                                <a href="#endpoints-POSTapi-v1-resend-code">Resend code to the user</a>
+                                                                                <li class="tocify-item level-2" data-unique="login-and-logout-POSTapi-v1-logout">
+                                <a href="#login-and-logout-POSTapi-v1-logout">User Logout</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-login">
-                                <a href="#endpoints-POSTapi-v1-login">User Login</a>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-products" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="products">
+                    <a href="#products">Products</a>
+                </li>
+                                    <ul id="tocify-subheader-products" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="products-GETapi-v1-products">
+                                <a href="#products-GETapi-v1-products">Show collection of products</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-logout">
-                                <a href="#endpoints-POSTapi-v1-logout">User Logout</a>
+                                                                                <li class="tocify-item level-2" data-unique="products-GETapi-v1-products--uuid-">
+                                <a href="#products-GETapi-v1-products--uuid-">Show individual product</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-registration" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="registration">
+                    <a href="#registration">Registration</a>
+                </li>
+                                    <ul id="tocify-subheader-registration" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="registration-POSTapi-v1-register">
+                                <a href="#registration-POSTapi-v1-register">User Register</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="registration-POSTapi-v1-verify">
+                                <a href="#registration-POSTapi-v1-verify">Verify User</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="registration-POSTapi-v1-resend-code">
+                                <a href="#registration-POSTapi-v1-resend-code">Resend code to the user</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-wizard" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="wizard">
+                    <a href="#wizard">Wizard</a>
+                </li>
+                                    <ul id="tocify-subheader-wizard" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="wizard-POSTapi-v1-wizard-setup">
+                                <a href="#wizard-POSTapi-v1-wizard-setup">POST api/v1/wizard/setup</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="wizard-POSTapi-v1-wizard--product_uuid--services">
+                                <a href="#wizard-POSTapi-v1-wizard--product_uuid--services">POST api/v1/wizard/{product_uuid}/services</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="wizard-POSTapi-v1-wizard--product_uuid--rooms">
+                                <a href="#wizard-POSTapi-v1-wizard--product_uuid--rooms">This endpoint will create room for existing product</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -157,7 +192,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: April 14, 2023</li>
+        <li>Last updated: April 17, 2023</li>
     </ul>
 </div>
 
@@ -174,1503 +209,15 @@
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>Authenticate requests to this API's endpoints by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+<p>This API is authenticated by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
-        <h1 id="endpoints">Endpoints</h1>
+        <h1 id="categories">Categories</h1>
 
-    
+    <p>End points to see list of categories and individual category</p>
 
-                                <h2 id="endpoints-POSTapi-v1-wizard-setup">POST api/v1/wizard/setup</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-v1-wizard-setup">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/v1/wizard/setup" \
-    --header "Content-Type: multipart/form-data" \
-    --header "Accept: application/json" \
-    --form "category_id=dolorem" \
-    --form "name=ex" \
-    --form "description=Adipisci est eius voluptate qui ratione fugiat." \
-    --form "postal_code=734.3446" \
-    --form "location=omnis" \
-    --form "city_id=quo" \
-    --form "country_id=minus" \
-    --form "contacts[]=quisquam" \
-    --form "rating=49" \
-    --form "images[]=@C:\Users\-\AppData\Local\Temp\php3C88.tmp" </code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/wizard/setup"
-);
-
-const headers = {
-    "Content-Type": "multipart/form-data",
-    "Accept": "application/json",
-};
-
-const body = new FormData();
-body.append('category_id', 'dolorem');
-body.append('name', 'ex');
-body.append('description', 'Adipisci est eius voluptate qui ratione fugiat.');
-body.append('postal_code', '734.3446');
-body.append('location', 'omnis');
-body.append('city_id', 'quo');
-body.append('country_id', 'minus');
-body.append('contacts[]', 'quisquam');
-body.append('rating', '49');
-body.append('images[]', document.querySelector('input[name="images[]"]').files[0]);
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-v1-wizard-setup">
-            <blockquote>
-            <p>Example response (422):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
-vary: Origin
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The selected category id is invalid. (and 5 more errors)&quot;,
-    &quot;errors&quot;: {
-        &quot;category_id&quot;: [
-            &quot;The selected category id is invalid.&quot;
-        ],
-        &quot;city_id&quot;: [
-            &quot;The selected city id is invalid.&quot;
-        ],
-        &quot;country_id&quot;: [
-            &quot;The selected country id is invalid.&quot;
-        ],
-        &quot;rating&quot;: [
-            &quot;The rating must not be greater than 5.&quot;
-        ],
-        &quot;contacts.0.name&quot;: [
-            &quot;The contacts.0.name field is required.&quot;
-        ],
-        &quot;contacts.0.number&quot;: [
-            &quot;The contacts.0.number field is required.&quot;
-        ]
-    }
-}</code>
- </pre>
-    </span>
-<span id="execution-results-POSTapi-v1-wizard-setup" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-v1-wizard-setup"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-wizard-setup" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-v1-wizard-setup" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-wizard-setup"></code></pre>
-</span>
-<form id="form-POSTapi-v1-wizard-setup" data-method="POST"
-      data-path="api/v1/wizard/setup"
-      data-authed="0"
-      data-hasfiles="1"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-wizard-setup', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-v1-wizard-setup"
-                    onclick="tryItOut('POSTapi-v1-wizard-setup');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-v1-wizard-setup"
-                    onclick="cancelTryOut('POSTapi-v1-wizard-setup');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-v1-wizard-setup" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/v1/wizard/setup</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="multipart/form-data"
-               data-component="header">
-    <br>
-<p>Example: <code>multipart/form-data</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>category_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="category_id"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="dolorem"
-               data-component="body">
-    <br>
-<p>Example: <code>dolorem</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="name"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="ex"
-               data-component="body">
-    <br>
-<p>Example: <code>ex</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="description"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="Adipisci est eius voluptate qui ratione fugiat."
-               data-component="body">
-    <br>
-<p>Example: <code>Adipisci est eius voluptate qui ratione fugiat.</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
-<small>file[]</small>&nbsp;
- &nbsp;
-                <input type="file" style="display: none"
-               name="images[0]"                data-endpoint="POSTapi-v1-wizard-setup"
-               data-component="body">
-        <input type="file" style="display: none"
-               name="images[1]"                data-endpoint="POSTapi-v1-wizard-setup"
-               data-component="body">
-    <br>
-<p>Must be an image. Must not be greater than 2048 kilobytes.</p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>postal_code</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               name="postal_code"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="734.3446"
-               data-component="body">
-    <br>
-<p>Example: <code>734.3446</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>location</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="location"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="omnis"
-               data-component="body">
-    <br>
-<p>Example: <code>omnis</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="city_id"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="quo"
-               data-component="body">
-    <br>
-<p>Example: <code>quo</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>country_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="country_id"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="minus"
-               data-component="body">
-    <br>
-<p>Example: <code>minus</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-        <details>
-            <summary style="padding-bottom: 10px;">
-                <b style="line-height: 2;"><code>contacts</code></b>&nbsp;&nbsp;
-<small>string[]</small>&nbsp;
- &nbsp;
-<br>
-
-            </summary>
-                                                <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="contacts.0.name"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="kndi"
-               data-component="body">
-    <br>
-<p>Must not be greater than 100 characters. Example: <code>kndi</code></p>
-                    </div>
-                                                                <div style="margin-left: 14px; clear: unset;">
-                        <b style="line-height: 2;"><code>number</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               name="contacts.0.number"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="8 42"
-               data-component="body">
-    <br>
-<p>Must match the regex /^[0-9 ]+$/. Example: <code>8 42</code></p>
-                    </div>
-                                    </details>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>rating</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               name="rating"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="49"
-               data-component="body">
-    <br>
-<p>Must not be greater than 5. Must be at least 1. Example: <code>49</code></p>
-        </div>
-        </form>
-
-                    <h2 id="endpoints-POSTapi-v1-wizard--product_uuid--services">POST api/v1/wizard/{product_uuid}/services</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-v1-wizard--product_uuid--services">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/v1/wizard/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86/services" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/wizard/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86/services"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-v1-wizard--product_uuid--services">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">content-type: text/html; charset=UTF-8
-cache-control: no-cache, private
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
-vary: Origin
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;"></code>
- </pre>
-    </span>
-<span id="execution-results-POSTapi-v1-wizard--product_uuid--services" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-v1-wizard--product_uuid--services"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-wizard--product_uuid--services" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-v1-wizard--product_uuid--services" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-wizard--product_uuid--services"></code></pre>
-</span>
-<form id="form-POSTapi-v1-wizard--product_uuid--services" data-method="POST"
-      data-path="api/v1/wizard/{product_uuid}/services"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-wizard--product_uuid--services', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-v1-wizard--product_uuid--services"
-                    onclick="tryItOut('POSTapi-v1-wizard--product_uuid--services');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-v1-wizard--product_uuid--services"
-                    onclick="cancelTryOut('POSTapi-v1-wizard--product_uuid--services');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-v1-wizard--product_uuid--services" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/v1/wizard/{product_uuid}/services</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="POSTapi-v1-wizard--product_uuid--services"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="POSTapi-v1-wizard--product_uuid--services"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>product_uuid</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="product_uuid"                data-endpoint="POSTapi-v1-wizard--product_uuid--services"
-               value="c5ee4476-71b9-47ce-b6a1-dca13e0d1d86"
-               data-component="url">
-    <br>
-<p>Example: <code>c5ee4476-71b9-47ce-b6a1-dca13e0d1d86</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-POSTapi-v1-wizard--product_uuid--rooms">This endpoint will create room for existing product</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-v1-wizard--product_uuid--rooms">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/v1/wizard/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86/rooms" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"room_type\": \"quia\",
-    \"is_smoking_allowed\": \"libero\",
-    \"bed_type\": \"enim\",
-    \"bed_count\": \"qui\",
-    \"room_size\": \"dolorum\",
-    \"price\": \"voluptatem\",
-    \"price_for_residents\": \"blanditiis\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/wizard/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86/rooms"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "room_type": "quia",
-    "is_smoking_allowed": "libero",
-    "bed_type": "enim",
-    "bed_count": "qui",
-    "room_size": "dolorum",
-    "price": "voluptatem",
-    "price_for_residents": "blanditiis"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-v1-wizard--product_uuid--rooms">
-            <blockquote>
-            <p>Example response (422):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
-vary: Origin
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The is smoking allowed field must be true or false. (and 4 more errors)&quot;,
-    &quot;errors&quot;: {
-        &quot;is_smoking_allowed&quot;: [
-            &quot;The is smoking allowed field must be true or false.&quot;
-        ],
-        &quot;bed_count&quot;: [
-            &quot;The bed count must be a number.&quot;
-        ],
-        &quot;room_size&quot;: [
-            &quot;The room size must be a number.&quot;
-        ],
-        &quot;price&quot;: [
-            &quot;The price must be a number.&quot;
-        ],
-        &quot;price_for_residents&quot;: [
-            &quot;The price for residents must be a number.&quot;
-        ]
-    }
-}</code>
- </pre>
-    </span>
-<span id="execution-results-POSTapi-v1-wizard--product_uuid--rooms" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-v1-wizard--product_uuid--rooms"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-wizard--product_uuid--rooms" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-v1-wizard--product_uuid--rooms" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-wizard--product_uuid--rooms"></code></pre>
-</span>
-<form id="form-POSTapi-v1-wizard--product_uuid--rooms" data-method="POST"
-      data-path="api/v1/wizard/{product_uuid}/rooms"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-wizard--product_uuid--rooms', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-v1-wizard--product_uuid--rooms"
-                    onclick="tryItOut('POSTapi-v1-wizard--product_uuid--rooms');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-v1-wizard--product_uuid--rooms"
-                    onclick="cancelTryOut('POSTapi-v1-wizard--product_uuid--rooms');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-v1-wizard--product_uuid--rooms" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/v1/wizard/{product_uuid}/rooms</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>product_uuid</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="product_uuid"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="c5ee4476-71b9-47ce-b6a1-dca13e0d1d86"
-               data-component="url">
-    <br>
-<p>Example: <code>c5ee4476-71b9-47ce-b6a1-dca13e0d1d86</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>room_type</code></b>&nbsp;&nbsp;
-<small>required.</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="room_type"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="quia"
-               data-component="body">
-    <br>
-<p>Example: <code>quia</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>is_smoking_allowed</code></b>&nbsp;&nbsp;
-<small>nullable</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="is_smoking_allowed"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="libero"
-               data-component="body">
-    <br>
-<p>boolean default false. Example: <code>libero</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>bed_type</code></b>&nbsp;&nbsp;
-<small>required.Type</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="bed_type"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="enim"
-               data-component="body">
-    <br>
-<p>of the bed Example: <code>enim</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>bed_count</code></b>&nbsp;&nbsp;
-<small>required</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="bed_count"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="qui"
-               data-component="body">
-    <br>
-<p>integer.How many beds room have Example: <code>qui</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>room_size</code></b>&nbsp;&nbsp;
-<small>integer.Size</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="room_size"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="dolorum"
-               data-component="body">
-    <br>
-<p>of the room Example: <code>dolorum</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
-<small>required</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="price"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="voluptatem"
-               data-component="body">
-    <br>
-<p>float.This is price for foreigners Example: <code>voluptatem</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>price_for_residents</code></b>&nbsp;&nbsp;
-<small>float.This</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="price_for_residents"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="blanditiis"
-               data-component="body">
-    <br>
-<p>is price for  locals Example: <code>blanditiis</code></p>
-        </div>
-        </form>
-
-                    <h2 id="endpoints-PATCHapi-v1-products--product_uuid---media_id-">Update Current Preview</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-PATCHapi-v1-products--product_uuid---media_id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request PATCH \
-    "http://localhost:8000/api/v1/products/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86/20" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/products/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86/20"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "PATCH",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-PATCHapi-v1-products--product_uuid---media_id-">
-            <blockquote>
-            <p>Example response (404):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
-vary: Origin
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;No query results for model [Spatie\\MediaLibrary\\MediaCollections\\Models\\Media] 20&quot;,
-    &quot;exception&quot;: &quot;Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException&quot;,
-    &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php&quot;,
-    &quot;line&quot;: 391,
-    &quot;trace&quot;: [
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php&quot;,
-            &quot;line&quot;: 367,
-            &quot;function&quot;: &quot;prepareException&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Exceptions\\Handler&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\nunomaduro\\collision\\src\\Adapters\\Laravel\\ExceptionHandler.php&quot;,
-            &quot;line&quot;: 54,
-            &quot;function&quot;: &quot;render&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Exceptions\\Handler&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php&quot;,
-            &quot;line&quot;: 51,
-            &quot;function&quot;: &quot;render&quot;,
-            &quot;class&quot;: &quot;NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 185,
-            &quot;function&quot;: &quot;handleException&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
-            &quot;line&quot;: 126,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
-            &quot;line&quot;: 102,
-            &quot;function&quot;: &quot;handleRequest&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
-            &quot;line&quot;: 54,
-            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 116,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
-            &quot;line&quot;: 799,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
-            &quot;line&quot;: 776,
-            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
-            &quot;line&quot;: 740,
-            &quot;function&quot;: &quot;runRoute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
-            &quot;line&quot;: 729,
-            &quot;function&quot;: &quot;dispatchToRoute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
-            &quot;line&quot;: 190,
-            &quot;function&quot;: &quot;dispatch&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 141,
-            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php&quot;,
-            &quot;line&quot;: 52,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Fruitcake\\Cors\\HandleCors&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
-            &quot;line&quot;: 21,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php&quot;,
-            &quot;line&quot;: 31,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
-            &quot;line&quot;: 21,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php&quot;,
-            &quot;line&quot;: 40,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php&quot;,
-            &quot;line&quot;: 27,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php&quot;,
-            &quot;line&quot;: 86,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php&quot;,
-            &quot;line&quot;: 62,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\HandleCors&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php&quot;,
-            &quot;line&quot;: 39,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 180,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 116,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
-            &quot;line&quot;: 165,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
-            &quot;line&quot;: 134,
-            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
-            &quot;line&quot;: 299,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
-            &quot;line&quot;: 287,
-            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
-            &quot;line&quot;: 92,
-            &quot;function&quot;: &quot;makeApiCall&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
-            &quot;line&quot;: 45,
-            &quot;function&quot;: &quot;makeResponseCall&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
-            &quot;line&quot;: 35,
-            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
-            &quot;line&quot;: 209,
-            &quot;function&quot;: &quot;__invoke&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
-            &quot;line&quot;: 166,
-            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
-            &quot;line&quot;: 95,
-            &quot;function&quot;: &quot;fetchResponses&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 124,
-            &quot;function&quot;: &quot;processRoute&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 71,
-            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 49,
-            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php&quot;,
-            &quot;line&quot;: 51,
-            &quot;function&quot;: &quot;get&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
-            &quot;line&quot;: 36,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php&quot;,
-            &quot;line&quot;: 41,
-            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
-            &quot;line&quot;: 93,
-            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
-            &quot;line&quot;: 37,
-            &quot;function&quot;: &quot;callBoundMethod&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
-            &quot;line&quot;: 661,
-            &quot;function&quot;: &quot;call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\symfony\\console\\Command\\Command.php&quot;,
-            &quot;line&quot;: 312,
-            &quot;function&quot;: &quot;execute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
-            &quot;line&quot;: 153,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\symfony\\console\\Application.php&quot;,
-            &quot;line&quot;: 1022,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\symfony\\console\\Application.php&quot;,
-            &quot;line&quot;: 314,
-            &quot;function&quot;: &quot;doRunCommand&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\symfony\\console\\Application.php&quot;,
-            &quot;line&quot;: 168,
-            &quot;function&quot;: &quot;doRun&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php&quot;,
-            &quot;line&quot;: 102,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php&quot;,
-            &quot;line&quot;: 155,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\artisan&quot;,
-            &quot;line&quot;: 37,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        }
-    ]
-}</code>
- </pre>
-    </span>
-<span id="execution-results-PATCHapi-v1-products--product_uuid---media_id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PATCHapi-v1-products--product_uuid---media_id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PATCHapi-v1-products--product_uuid---media_id-" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-PATCHapi-v1-products--product_uuid---media_id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PATCHapi-v1-products--product_uuid---media_id-"></code></pre>
-</span>
-<form id="form-PATCHapi-v1-products--product_uuid---media_id-" data-method="PATCH"
-      data-path="api/v1/products/{product_uuid}/{media_id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-v1-products--product_uuid---media_id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PATCHapi-v1-products--product_uuid---media_id-"
-                    onclick="tryItOut('PATCHapi-v1-products--product_uuid---media_id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PATCHapi-v1-products--product_uuid---media_id-"
-                    onclick="cancelTryOut('PATCHapi-v1-products--product_uuid---media_id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PATCHapi-v1-products--product_uuid---media_id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-purple">PATCH</small>
-            <b><code>api/v1/products/{product_uuid}/{media_id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="PATCHapi-v1-products--product_uuid---media_id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="PATCHapi-v1-products--product_uuid---media_id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>product_uuid</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="product_uuid"                data-endpoint="PATCHapi-v1-products--product_uuid---media_id-"
-               value="c5ee4476-71b9-47ce-b6a1-dca13e0d1d86"
-               data-component="url">
-    <br>
-<p>Example: <code>c5ee4476-71b9-47ce-b6a1-dca13e0d1d86</code></p>
-            </div>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>media_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               name="media_id"                data-endpoint="PATCHapi-v1-products--product_uuid---media_id-"
-               value="20"
-               data-component="url">
-    <br>
-<p>The ID of the media. Example: <code>20</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-GETapi-v1-products">Show collection of products</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-products">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/products" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/products"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-v1-products">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;id&quot;: &quot;eee1cae2-37cc-46c5-bdf3-336bb9ba2425&quot;,
-        &quot;name&quot;: &quot;Porro expedita ad necessitatibus sed sapiente.&quot;,
-        &quot;description&quot;: &quot;Nihil repellat iste delectus sunt fugiat beatae eum tempora. Et aliquid magnam quam ut nesciunt suscipit dignissimos et. Voluptatem ad qui eum quam saepe eaque rem. Quo optio quia delectus dolores. Est quod dolorem pariatur. Consequuntur dolorem voluptas consequatur. Quia dolores odit beatae occaecati. Sit illo ut fugiat numquam quam sed sapiente et. Quia voluptate mollitia unde quae qui quam adipisci natus. Occaecati accusamus in labore qui alias voluptate.&quot;,
-        &quot;country&quot;: &quot;Turkey&quot;,
-        &quot;city&quot;: &quot;port&quot;,
-        &quot;location&quot;: &quot;Atque inventore exercitationem quae quia velit.&quot;,
-        &quot;rating&quot;: 2,
-        &quot;postalCode&quot;: 112332,
-        &quot;rate&quot;: &quot;0,00&quot;,
-        &quot;isPetAllowed&quot;: false
-    }
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-products" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-products"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-products" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-products" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-products"></code></pre>
-</span>
-<form id="form-GETapi-v1-products" data-method="GET"
-      data-path="api/v1/products"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-products', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-products"
-                    onclick="tryItOut('GETapi-v1-products');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-products"
-                    onclick="cancelTryOut('GETapi-v1-products');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-products" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/products</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="GETapi-v1-products"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="GETapi-v1-products"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-GETapi-v1-products--uuid-">Show individual product</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-products--uuid-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/products/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/products/c5ee4476-71b9-47ce-b6a1-dca13e0d1d86"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-v1-products--uuid-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;id&quot;: &quot;c7eb74cd-d731-40df-8172-2821721deb96&quot;,
-        &quot;name&quot;: &quot;Et ut tempora eos quae eos est sed.&quot;,
-        &quot;description&quot;: &quot;Omnis perspiciatis harum optio sit eligendi eum ut. Sint commodi doloremque eum sit qui et. Alias et ut mollitia deleniti praesentium. Perferendis quia sed illo illum aut libero. In voluptas quibusdam dolorum ullam voluptatum incidunt quo. Quis enim itaque eos impedit. Laboriosam rerum et doloribus aspernatur. Expedita recusandae omnis praesentium atque voluptatem aperiam.&quot;,
-        &quot;country&quot;: &quot;Russia&quot;,
-        &quot;city&quot;: &quot;land&quot;,
-        &quot;location&quot;: &quot;Voluptatem commodi ut molestiae sint et.&quot;,
-        &quot;rating&quot;: 3,
-        &quot;postalCode&quot;: 112332,
-        &quot;rate&quot;: &quot;0,00&quot;,
-        &quot;isPetAllowed&quot;: false
-    }
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-products--uuid-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-products--uuid-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-products--uuid-" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-products--uuid-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-products--uuid-"></code></pre>
-</span>
-<form id="form-GETapi-v1-products--uuid-" data-method="GET"
-      data-path="api/v1/products/{uuid}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-products--uuid-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-products--uuid-"
-                    onclick="tryItOut('GETapi-v1-products--uuid-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-products--uuid-"
-                    onclick="cancelTryOut('GETapi-v1-products--uuid-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-products--uuid-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/products/{uuid}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="GETapi-v1-products--uuid-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="GETapi-v1-products--uuid-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="uuid"                data-endpoint="GETapi-v1-products--uuid-"
-               value="c5ee4476-71b9-47ce-b6a1-dca13e0d1d86"
-               data-component="url">
-    <br>
-<p>Example: <code>c5ee4476-71b9-47ce-b6a1-dca13e0d1d86</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-GETapi-v1-categories">Show collection of categories</h2>
+                                <h2 id="categories-GETapi-v1-categories">Show collection of categories</h2>
 
 <p>
 </p>
@@ -1713,8 +260,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 16,
-        &quot;name&quot;: &quot;cupiditate&quot;
+        &quot;id&quot;: 32,
+        &quot;name&quot;: &quot;a&quot;
     }
 }</code>
  </pre>
@@ -1782,7 +329,7 @@ fetch(url, {
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-v1-categories">Create a new category</h2>
+                    <h2 id="categories-POSTapi-v1-categories">Create a new category</h2>
 
 <p>
 </p>
@@ -1800,7 +347,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"name\": \"sport\",
-    \"parent_id\": 2
+    \"parent_id\": 5
 }"
 </code></pre></div>
 
@@ -1817,7 +364,7 @@ const headers = {
 
 let body = {
     "name": "sport",
-    "parent_id": 2
+    "parent_id": 5
 };
 
 fetch(url, {
@@ -1836,8 +383,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 17,
-        &quot;name&quot;: &quot;ratione&quot;
+        &quot;id&quot;: 33,
+        &quot;name&quot;: &quot;tempora&quot;
     }
 }</code>
  </pre>
@@ -1921,14 +468,14 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="parent_id"                data-endpoint="POSTapi-v1-categories"
-               value="2"
+               value="5"
                data-component="body">
     <br>
-<p>nullable ID of the parent category for subcategory. Example: <code>2</code></p>
+<p>nullable ID of the parent category for subcategory. Example: <code>5</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-GETapi-v1-categories--id-">Show each individual category</h2>
+                    <h2 id="categories-GETapi-v1-categories--id-">Show each individual category</h2>
 
 <p>
 </p>
@@ -1971,8 +518,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 18,
-        &quot;name&quot;: &quot;rerum&quot;
+        &quot;id&quot;: 34,
+        &quot;name&quot;: &quot;omnis&quot;
     }
 }</code>
  </pre>
@@ -2052,7 +599,7 @@ fetch(url, {
             </div>
                     </form>
 
-                    <h2 id="endpoints-PUTapi-v1-categories--id-">Update existing category or it&#039;s subcategories</h2>
+                    <h2 id="categories-PUTapi-v1-categories--id-">Update existing category or it&#039;s subcategories</h2>
 
 <p>
 </p>
@@ -2070,7 +617,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"name\": \"sport\",
-    \"parent_id\": 5
+    \"parent_id\": 2
 }"
 </code></pre></div>
 
@@ -2087,7 +634,7 @@ const headers = {
 
 let body = {
     "name": "sport",
-    "parent_id": 5
+    "parent_id": 2
 };
 
 fetch(url, {
@@ -2106,8 +653,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 19,
-        &quot;name&quot;: &quot;voluptas&quot;
+        &quot;id&quot;: 35,
+        &quot;name&quot;: &quot;est&quot;
     }
 }</code>
  </pre>
@@ -2207,14 +754,14 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="parent_id"                data-endpoint="PUTapi-v1-categories--id-"
-               value="5"
+               value="2"
                data-component="body">
     <br>
-<p>nullable ID of the parent category for subcategory. Example: <code>5</code></p>
+<p>nullable ID of the parent category for subcategory. Example: <code>2</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-DELETEapi-v1-categories--id-">Delete existing category or it&#039;s subcategories</h2>
+                    <h2 id="categories-DELETEapi-v1-categories--id-">Delete existing category or it&#039;s subcategories</h2>
 
 <p>
 </p>
@@ -2260,7 +807,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 57
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -2320,8 +867,8 @@ vary: Origin
             &quot;type&quot;: &quot;-&gt;&quot;
         },
         {
-            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\app\\Http\\Controllers\\Api\\V1\\Products\\CategoryController.php&quot;,
-            &quot;line&quot;: 128,
+            &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\app\\Http\\Controllers\\V1\\Products\\CategoryController.php&quot;,
+            &quot;line&quot;: 135,
             &quot;function&quot;: &quot;delete&quot;,
             &quot;class&quot;: &quot;Illuminate\\Database\\Eloquent\\Model&quot;,
             &quot;type&quot;: &quot;-&gt;&quot;
@@ -2330,7 +877,7 @@ vary: Origin
             &quot;file&quot;: &quot;C:\\xampp\\htdocs\\cookbook\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php&quot;,
             &quot;line&quot;: 54,
             &quot;function&quot;: &quot;destroy&quot;,
-            &quot;class&quot;: &quot;App\\Http\\Controllers\\Api\\V1\\Products\\CategoryController&quot;,
+            &quot;class&quot;: &quot;App\\Http\\Controllers\\V1\\Products\\CategoryController&quot;,
             &quot;type&quot;: &quot;-&gt;&quot;
         },
         {
@@ -2853,7 +1400,11 @@ vary: Origin
             </div>
                     </form>
 
-                    <h2 id="endpoints-GETapi-v1-reviews">Show collection of reviews</h2>
+                <h1 id="endpoints">Endpoints</h1>
+
+    
+
+                                <h2 id="endpoints-GETapi-v1-reviews">Show collection of reviews</h2>
 
 <p>
 </p>
@@ -2896,8 +1447,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;rating&quot;: 4,
-        &quot;body&quot;: &quot;Voluptas laborum tempora a. Nisi quia dolores qui voluptatem nihil provident. Architecto dolore eligendi vero corporis nostrum. Id sequi modi optio.&quot;
+        &quot;rating&quot;: 5,
+        &quot;body&quot;: &quot;Illo quibusdam ut sed. Possimus quo et dolorem ea corrupti ea aperiam. Sit molestiae sunt ea. Aperiam soluta vitae culpa reprehenderit sed. Rem nemo amet aperiam. Nesciunt ut qui deserunt omnis fuga voluptas nihil. Quo voluptas voluptas cumque perferendis et.&quot;
     }
 }</code>
  </pre>
@@ -2983,8 +1534,9 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"content\": \"the worst product ever\",
-    \"product_uuid\": \"et\",
-    \"product_id\": \"qui\"
+    \"product_uuid\": \"sed\",
+    \"rating\": \"ntzqm\",
+    \"product_id\": \"ut\"
 }"
 </code></pre></div>
 
@@ -3001,8 +1553,9 @@ const headers = {
 
 let body = {
     "content": "the worst product ever",
-    "product_uuid": "et",
-    "product_id": "qui"
+    "product_uuid": "sed",
+    "rating": "ntzqm",
+    "product_id": "ut"
 };
 
 fetch(url, {
@@ -3021,8 +1574,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;rating&quot;: 1,
-        &quot;body&quot;: &quot;Ut et non nostrum. Magni tempora perspiciatis veritatis praesentium assumenda voluptates fuga. Inventore dolor rerum aut voluptatem omnis ut. Quasi sunt est omnis veritatis error. Est et labore doloremque ullam et libero minima.&quot;
+        &quot;rating&quot;: 2,
+        &quot;body&quot;: &quot;Facere quia voluptate rerum temporibus labore quod. Quia sunt earum necessitatibus est amet autem doloribus. Animi neque facilis rerum et. Aliquam eveniet est eius commodi blanditiis corporis quas fugit.&quot;
     }
 }</code>
  </pre>
@@ -3106,10 +1659,21 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="product_uuid"                data-endpoint="POSTapi-v1-reviews"
-               value="et"
+               value="sed"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>sed</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rating</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="rating"                data-endpoint="POSTapi-v1-reviews"
+               value="ntzqm"
+               data-component="body">
+    <br>
+<p>Must be at least 1 character. Must not be greater than 5 characters. Example: <code>ntzqm</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>product_id</code></b>&nbsp;&nbsp;
@@ -3117,10 +1681,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="product_id"                data-endpoint="POSTapi-v1-reviews"
-               value="qui"
+               value="ut"
                data-component="body">
     <br>
-<p>ID of product related to the review Example: <code>qui</code></p>
+<p>ID of product related to the review Example: <code>ut</code></p>
         </div>
         </form>
 
@@ -3167,8 +1731,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;rating&quot;: 1,
-        &quot;body&quot;: &quot;Nulla reiciendis et neque est et unde aut laborum. Hic rem saepe sint occaecati illum. Voluptatem id iusto reprehenderit aliquid maiores quam. Est ipsa quasi sequi sed. Consectetur nisi impedit iure ut esse pariatur. Quae cumque amet exercitationem cumque minus. Ex et consequatur eius veritatis quasi.&quot;
+        &quot;rating&quot;: 2,
+        &quot;body&quot;: &quot;Voluptatem odio iure explicabo quis rem voluptas fugit rerum. Velit suscipit rerum et eveniet. Dicta sint ut voluptatibus nam assumenda nobis. Veniam eum consequatur alias et ut beatae maiores. Debitis nihil dicta voluptas unde esse. Quibusdam maiores recusandae autem harum est est blanditiis.&quot;
     }
 }</code>
  </pre>
@@ -3266,7 +1830,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"content\": \"the worst product ever\",
-    \"product_id\": \"quia\"
+    \"product_id\": \"in\"
 }"
 </code></pre></div>
 
@@ -3283,7 +1847,7 @@ const headers = {
 
 let body = {
     "content": "the worst product ever",
-    "product_id": "quia"
+    "product_id": "in"
 };
 
 fetch(url, {
@@ -3302,8 +1866,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;rating&quot;: 2,
-        &quot;body&quot;: &quot;Ratione aliquam impedit deserunt est est libero eveniet. Deleniti est velit unde adipisci vero reprehenderit eos libero. Nihil voluptatem sapiente deserunt magni molestias amet. Possimus ut enim accusamus voluptate eius. Ea esse enim vitae nihil illo dolorem. Autem earum perferendis sed dolore.&quot;
+        &quot;rating&quot;: 5,
+        &quot;body&quot;: &quot;Consequuntur non beatae repudiandae fugit esse. Reiciendis ut blanditiis distinctio quae. Rem voluptatem ut aspernatur sequi voluptatem. Labore temporibus vero animi omnis id. Repellendus voluptatem dolor sunt est et. Veniam voluptatem laborum iure sunt maiores. Minus optio nobis rerum.&quot;
     }
 }</code>
  </pre>
@@ -3403,10 +1967,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="product_id"                data-endpoint="PUTapi-v1-reviews--id-"
-               value="quia"
+               value="in"
                data-component="body">
     <br>
-<p>ID of product related to the review Example: <code>quia</code></p>
+<p>ID of product related to the review Example: <code>in</code></p>
         </div>
         </form>
 
@@ -3456,7 +2020,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
+x-ratelimit-remaining: 56
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -4117,7 +2681,703 @@ fetch(url, {
             </div>
                     </form>
 
-                    <h2 id="endpoints-POSTapi-v1-register">User Register</h2>
+                    <h2 id="endpoints-DELETEapi-v1-currencies--id-">Delete existing currency</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-currencies--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:8000/api/v1/currencies/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/currencies/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-v1-currencies--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 55
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;US Dollar can&#039;t be deleted&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-v1-currencies--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-currencies--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-currencies--id-" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-currencies--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-currencies--id-"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-currencies--id-" data-method="DELETE"
+      data-path="api/v1/currencies/{id}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-currencies--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-currencies--id-"
+                    onclick="tryItOut('DELETEapi-v1-currencies--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-currencies--id-"
+                    onclick="cancelTryOut('DELETEapi-v1-currencies--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-currencies--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/currencies/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="DELETEapi-v1-currencies--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="DELETEapi-v1-currencies--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="id"                data-endpoint="DELETEapi-v1-currencies--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>The ID of the currency. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                <h1 id="login-and-logout">Login and Logout</h1>
+
+    <p>End points to register and logout users</p>
+
+                                <h2 id="login-and-logout-POSTapi-v1-login">User Login</h2>
+
+<p>
+</p>
+
+<p>This endpoint will allow to log in users</p>
+
+<span id="example-requests-POSTapi-v1-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/v1/login" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Authorization: Bearer {token}" \
+    --data "{
+    \"email\": \"admin@gmail.com\",
+    \"password\": \"123asd2\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/login"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer {token}",
+};
+
+let body = {
+    "email": "admin@gmail.com",
+    "password": "123asd2"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-login">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;firstname&quot;: &quot;Estelle&quot;,
+        &quot;lastname&quot;: &quot;Ruecker&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;token&quot;: &quot;1|fMyN7p4LYO89olWWJmCct1sY3seIdR7wsZqIJ9Xd&quot;,
+    &quot;message&quot;: &quot;Welcome back Avaz&quot;,
+    &quot;data&quot;: {
+        &quot;firstname&quot;: &quot;Avaz&quot;,
+        &quot;lastname&quot;: &quot;Akhmedov&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-login" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-login"></code></pre>
+</span>
+<form id="form-POSTapi-v1-login" data-method="POST"
+      data-path="api/v1/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-login"
+                    onclick="tryItOut('POSTapi-v1-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-login"
+                    onclick="cancelTryOut('POSTapi-v1-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-login" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/login</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="POSTapi-v1-login"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="POSTapi-v1-login"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization"                data-endpoint="POSTapi-v1-login"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="email"                data-endpoint="POSTapi-v1-login"
+               value="admin@gmail.com"
+               data-component="body">
+    <br>
+<p>Email of existing user. Example: <code>admin@gmail.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="password"                data-endpoint="POSTapi-v1-login"
+               value="123asd2"
+               data-component="body">
+    <br>
+<p>Password of existing user. Example: <code>123asd2</code></p>
+        </div>
+        </form>
+
+                    <h2 id="login-and-logout-POSTapi-v1-logout">User Logout</h2>
+
+<p>
+</p>
+
+<p>This endpoint will allow to log out users</p>
+
+<span id="example-requests-POSTapi-v1-logout">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/v1/logout" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Authorization/Type:Bearer: Token. Example: 44|cSi4RtDPHw6vjnqiR3oKUP1x963fj1VcW9fMLmUF"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/logout"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization/Type:Bearer": "Token. Example: 44|cSi4RtDPHw6vjnqiR3oKUP1x963fj1VcW9fMLmUF",
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-logout">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-logout" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-logout"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-logout" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-logout" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-logout"></code></pre>
+</span>
+<form id="form-POSTapi-v1-logout" data-method="POST"
+      data-path="api/v1/logout"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-logout', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-logout"
+                    onclick="tryItOut('POSTapi-v1-logout');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-logout"
+                    onclick="cancelTryOut('POSTapi-v1-logout');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-logout" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/logout</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="POSTapi-v1-logout"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="POSTapi-v1-logout"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization/Type:Bearer</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Authorization/Type:Bearer"                data-endpoint="POSTapi-v1-logout"
+               value="Token. Example: 44|cSi4RtDPHw6vjnqiR3oKUP1x963fj1VcW9fMLmUF"
+               data-component="header">
+    <br>
+<p>Example: <code>Token. Example: 44|cSi4RtDPHw6vjnqiR3oKUP1x963fj1VcW9fMLmUF</code></p>
+            </div>
+                        </form>
+
+                <h1 id="products">Products</h1>
+
+    <p>End points to see list of products and individual product</p>
+
+                                <h2 id="products-GETapi-v1-products">Show collection of products</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-products">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/products" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/products"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-products">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;cff7286b-0e80-4134-b62d-4ab8ce1f3971&quot;,
+        &quot;name&quot;: &quot;Consequatur totam magni alias atque dolores perferendis.&quot;,
+        &quot;description&quot;: &quot;Pariatur facilis eos accusantium ab quas. Recusandae facere repellat inventore ut dolor. Modi sunt sit nihil voluptate. Maiores aut tempore voluptatum hic. Culpa quos ad qui modi eos. Odit eligendi sit magni modi molestiae. Non dolor ut consequatur accusantium tempore voluptatibus. Sit molestiae in eum a aut.&quot;,
+        &quot;country&quot;: &quot;Tajikistan&quot;,
+        &quot;city&quot;: &quot;furt&quot;,
+        &quot;location&quot;: &quot;Magnam repudiandae debitis temporibus dolores temporibus harum.&quot;,
+        &quot;rating&quot;: 2,
+        &quot;postalCode&quot;: 112332,
+        &quot;rate&quot;: &quot;0,00&quot;,
+        &quot;isPetAllowed&quot;: false
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-products" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-products"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-products" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-products" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-products"></code></pre>
+</span>
+<form id="form-GETapi-v1-products" data-method="GET"
+      data-path="api/v1/products"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-products', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-products"
+                    onclick="tryItOut('GETapi-v1-products');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-products"
+                    onclick="cancelTryOut('GETapi-v1-products');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-products" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/products</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-v1-products"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-v1-products"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="products-GETapi-v1-products--uuid-">Show individual product</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-products--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/products/65be9d21-9bdd-4138-a2ee-2dbc0363e5a7" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/products/65be9d21-9bdd-4138-a2ee-2dbc0363e5a7"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-products--uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;387eec75-dd72-4264-8531-8f20a5c7bb53&quot;,
+        &quot;name&quot;: &quot;Esse temporibus sed odio.&quot;,
+        &quot;description&quot;: &quot;Officia alias quidem qui hic sapiente modi eos. Quia voluptatem libero ipsa aut perferendis et. Sunt labore quasi rerum incidunt dolores rerum soluta. Error repudiandae eveniet commodi sint eius eligendi nihil cumque. Dolore modi reprehenderit cupiditate quis in qui. Temporibus dolor quia eos aliquid quo modi exercitationem doloribus. Veniam velit architecto eligendi possimus nemo qui.&quot;,
+        &quot;country&quot;: &quot;Tajikistan&quot;,
+        &quot;city&quot;: &quot;view&quot;,
+        &quot;location&quot;: &quot;Totam ut consectetur qui soluta eaque non.&quot;,
+        &quot;rating&quot;: 3,
+        &quot;postalCode&quot;: 112332,
+        &quot;rate&quot;: &quot;0,00&quot;,
+        &quot;isPetAllowed&quot;: false
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-products--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-products--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-products--uuid-" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-products--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-products--uuid-"></code></pre>
+</span>
+<form id="form-GETapi-v1-products--uuid-" data-method="GET"
+      data-path="api/v1/products/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-products--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-products--uuid-"
+                    onclick="tryItOut('GETapi-v1-products--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-products--uuid-"
+                    onclick="cancelTryOut('GETapi-v1-products--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-products--uuid-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/products/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="GETapi-v1-products--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="GETapi-v1-products--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="uuid"                data-endpoint="GETapi-v1-products--uuid-"
+               value="65be9d21-9bdd-4138-a2ee-2dbc0363e5a7"
+               data-component="url">
+    <br>
+<p>Example: <code>65be9d21-9bdd-4138-a2ee-2dbc0363e5a7</code></p>
+            </div>
+                    </form>
+
+                <h1 id="registration">Registration</h1>
+
+    <p>End points register users</p>
+
+                                <h2 id="registration-POSTapi-v1-register">User Register</h2>
 
 <p>
 </p>
@@ -4146,7 +3406,7 @@ fetch(url, {
     \"password\": \"123asd2\",
     \"password_confirmation\": \"123asd2\",
     \"gender\": \"male or female\",
-    \"preferred_contact_method\": \"debitis\"
+    \"preferred_contact_method\": \"aliquam\"
 }"
 </code></pre></div>
 
@@ -4174,7 +3434,7 @@ let body = {
     "password": "123asd2",
     "password_confirmation": "123asd2",
     "gender": "male or female",
-    "preferred_contact_method": "debitis"
+    "preferred_contact_method": "aliquam"
 };
 
 fetch(url, {
@@ -4187,29 +3447,13 @@ fetch(url, {
 
 <span id="example-responses-POSTapi-v1-register">
             <blockquote>
-            <p>Example response (422):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
-vary: Origin
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The birthdate is not a valid date. (and 1 more error)&quot;,
-    &quot;errors&quot;: {
-        &quot;birthdate&quot;: [
-            &quot;The birthdate is not a valid date.&quot;
-        ],
-        &quot;country_id&quot;: [
-            &quot;The selected country id is invalid.&quot;
-        ]
-    }
+    &quot;message&quot;: &quot;Pincode was sent&quot;,
+    &quot;pincode&quot;: 577779
 }</code>
  </pre>
     </span>
@@ -4424,14 +3668,14 @@ vary: Origin
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="preferred_contact_method"                data-endpoint="POSTapi-v1-register"
-               value="debitis"
+               value="aliquam"
                data-component="body">
     <br>
-<p>method of user to contact.Default email Example: <code>debitis</code></p>
+<p>method of user to contact.Default email Example: <code>aliquam</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-POSTapi-v1-verify">Verify User</h2>
+                    <h2 id="registration-POSTapi-v1-verify">Verify User</h2>
 
 <p>
 </p>
@@ -4448,7 +3692,7 @@ vary: Origin
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"code\": \"sit\"
+    \"code\": \"debitis\"
 }"
 </code></pre></div>
 
@@ -4464,7 +3708,7 @@ const headers = {
 };
 
 let body = {
-    "code": "sit"
+    "code": "debitis"
 };
 
 fetch(url, {
@@ -4483,12 +3727,12 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;firstname&quot;: &quot;Raegan&quot;,
-        &quot;lastname&quot;: &quot;Anderson&quot;,
-        &quot;country&quot;: &quot;Tajikistan&quot;,
-        &quot;primaryNumber&quot;: &quot;15517816020&quot;,
-        &quot;number&quot;: &quot;19344722796&quot;,
-        &quot;email&quot;: &quot;hgreenholt@stiedemann.com&quot;
+        &quot;firstname&quot;: &quot;Rogelio&quot;,
+        &quot;lastname&quot;: &quot;Sauer&quot;,
+        &quot;country&quot;: &quot;Turkey&quot;,
+        &quot;primaryNumber&quot;: &quot;14585473686&quot;,
+        &quot;number&quot;: &quot;17199049241&quot;,
+        &quot;email&quot;: &quot;prudence.cronin@buckridge.net&quot;
     }
 }</code>
  </pre>
@@ -4578,14 +3822,14 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="code"                data-endpoint="POSTapi-v1-verify"
-               value="sit"
+               value="debitis"
                data-component="body">
     <br>
-<p>Example: <code>sit</code></p>
+<p>Example: <code>debitis</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-POSTapi-v1-resend-code">Resend code to the user</h2>
+                    <h2 id="registration-POSTapi-v1-resend-code">Resend code to the user</h2>
 
 <p>
 </p>
@@ -4631,27 +3875,20 @@ fetch(url, {
 
 <span id="example-responses-POSTapi-v1-resend-code">
             <blockquote>
-            <p>Example response (422):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
                 <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
             </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
+            <pre><code class="language-http">content-type: text/html; charset=UTF-8
+cache-control: no-cache, private
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 52
+x-ratelimit-remaining: 54
 vary: Origin
  </code></pre></details>         <pre>
 
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The selected number is invalid.&quot;,
-    &quot;errors&quot;: {
-        &quot;number&quot;: [
-            &quot;The selected number is invalid.&quot;
-        ]
-    }
-}</code>
+<code class="language-json" style="max-height: 300px;"></code>
  </pre>
     </span>
 <span id="execution-results-POSTapi-v1-resend-code" hidden>
@@ -4729,44 +3966,340 @@ vary: Origin
         </div>
         </form>
 
-                    <h2 id="endpoints-POSTapi-v1-login">User Login</h2>
+                <h1 id="wizard">Wizard</h1>
+
+    <p>End points for wizard or multistep form</p>
+
+                                <h2 id="wizard-POSTapi-v1-wizard-setup">POST api/v1/wizard/setup</h2>
 
 <p>
 </p>
 
-<p>This endpoint will allow to log in users</p>
 
-<span id="example-requests-POSTapi-v1-login">
+
+<span id="example-requests-POSTapi-v1-wizard-setup">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/v1/login" \
+    "http://localhost:8000/api/v1/wizard/setup" \
+    --header "Content-Type: multipart/form-data" \
+    --header "Accept: application/json" \
+    --form "category_id=recusandae" \
+    --form "name=aut" \
+    --form "description=Nemo porro voluptatum dignissimos recusandae optio fuga sit." \
+    --form "postal_code=69" \
+    --form "location=ad" \
+    --form "city_id=et" \
+    --form "country_id=maiores" \
+    --form "contacts[]=illum" \
+    --form "rating=39" \
+    --form "images[]=@C:\Users\-\AppData\Local\Temp\php5ECC.tmp" </code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/wizard/setup"
+);
+
+const headers = {
+    "Content-Type": "multipart/form-data",
+    "Accept": "application/json",
+};
+
+const body = new FormData();
+body.append('category_id', 'recusandae');
+body.append('name', 'aut');
+body.append('description', 'Nemo porro voluptatum dignissimos recusandae optio fuga sit.');
+body.append('postal_code', '69');
+body.append('location', 'ad');
+body.append('city_id', 'et');
+body.append('country_id', 'maiores');
+body.append('contacts[]', 'illum');
+body.append('rating', '39');
+body.append('images[]', document.querySelector('input[name="images[]"]').files[0]);
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-wizard-setup">
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 59
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;The selected category id is invalid. (and 5 more errors)&quot;,
+    &quot;errors&quot;: {
+        &quot;category_id&quot;: [
+            &quot;The selected category id is invalid.&quot;
+        ],
+        &quot;city_id&quot;: [
+            &quot;The selected city id is invalid.&quot;
+        ],
+        &quot;country_id&quot;: [
+            &quot;The selected country id is invalid.&quot;
+        ],
+        &quot;rating&quot;: [
+            &quot;The rating must not be greater than 5.&quot;
+        ],
+        &quot;contacts.0.name&quot;: [
+            &quot;The contacts.0.name field is required.&quot;
+        ],
+        &quot;contacts.0.number&quot;: [
+            &quot;The contacts.0.number field is required.&quot;
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-wizard-setup" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-wizard-setup"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-wizard-setup" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-wizard-setup" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-wizard-setup"></code></pre>
+</span>
+<form id="form-POSTapi-v1-wizard-setup" data-method="POST"
+      data-path="api/v1/wizard/setup"
+      data-authed="0"
+      data-hasfiles="1"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-wizard-setup', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-wizard-setup"
+                    onclick="tryItOut('POSTapi-v1-wizard-setup');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-wizard-setup"
+                    onclick="cancelTryOut('POSTapi-v1-wizard-setup');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-wizard-setup" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/wizard/setup</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="POSTapi-v1-wizard-setup"
+               value="multipart/form-data"
+               data-component="header">
+    <br>
+<p>Example: <code>multipart/form-data</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Accept"                data-endpoint="POSTapi-v1-wizard-setup"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>category_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="category_id"                data-endpoint="POSTapi-v1-wizard-setup"
+               value="recusandae"
+               data-component="body">
+    <br>
+<p>Example: <code>recusandae</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="name"                data-endpoint="POSTapi-v1-wizard-setup"
+               value="aut"
+               data-component="body">
+    <br>
+<p>Example: <code>aut</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="description"                data-endpoint="POSTapi-v1-wizard-setup"
+               value="Nemo porro voluptatum dignissimos recusandae optio fuga sit."
+               data-component="body">
+    <br>
+<p>Example: <code>Nemo porro voluptatum dignissimos recusandae optio fuga sit.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
+<small>file[]</small>&nbsp;
+ &nbsp;
+                <input type="file" style="display: none"
+               name="images[0]"                data-endpoint="POSTapi-v1-wizard-setup"
+               data-component="body">
+        <input type="file" style="display: none"
+               name="images[1]"                data-endpoint="POSTapi-v1-wizard-setup"
+               data-component="body">
+    <br>
+<p>Must be an image. Must not be greater than 2048 kilobytes.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>postal_code</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="postal_code"                data-endpoint="POSTapi-v1-wizard-setup"
+               value="69"
+               data-component="body">
+    <br>
+<p>Must be at least 1. Example: <code>69</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>location</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="location"                data-endpoint="POSTapi-v1-wizard-setup"
+               value="ad"
+               data-component="body">
+    <br>
+<p>Example: <code>ad</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="city_id"                data-endpoint="POSTapi-v1-wizard-setup"
+               value="et"
+               data-component="body">
+    <br>
+<p>Example: <code>et</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>country_id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="country_id"                data-endpoint="POSTapi-v1-wizard-setup"
+               value="maiores"
+               data-component="body">
+    <br>
+<p>Example: <code>maiores</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>contacts</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="contacts.0.name"                data-endpoint="POSTapi-v1-wizard-setup"
+               value="nnasvskkeujjlhgpzagap"
+               data-component="body">
+    <br>
+<p>Must not be greater than 100 characters. Example: <code>nnasvskkeujjlhgpzagap</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>number</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="contacts.0.number"                data-endpoint="POSTapi-v1-wizard-setup"
+               value="05169"
+               data-component="body">
+    <br>
+<p>Must match the regex /^[0-9 ]+$/. Example: <code>05169</code></p>
+                    </div>
+                                    </details>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rating</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               name="rating"                data-endpoint="POSTapi-v1-wizard-setup"
+               value="39"
+               data-component="body">
+    <br>
+<p>Must not be greater than 5. Must be at least 1. Example: <code>39</code></p>
+        </div>
+        </form>
+
+                    <h2 id="wizard-POSTapi-v1-wizard--product_uuid--services">POST api/v1/wizard/{product_uuid}/services</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-wizard--product_uuid--services">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/v1/wizard/65be9d21-9bdd-4138-a2ee-2dbc0363e5a7/services" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --header "Authorization: Bearer {token}" \
     --data "{
-    \"email\": \"admin@gmail.com\",
-    \"password\": \"123asd2\"
+    \"attributes\": \"aut\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/login"
+    "http://localhost:8000/api/v1/wizard/65be9d21-9bdd-4138-a2ee-2dbc0363e5a7/services"
 );
 
 const headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "Authorization": "Bearer {token}",
 };
 
 let body = {
-    "email": "admin@gmail.com",
-    "password": "123asd2"
+    "attributes": "aut"
 };
 
 fetch(url, {
@@ -4777,171 +4310,9 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-POSTapi-v1-login">
+<span id="example-responses-POSTapi-v1-wizard--product_uuid--services">
             <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;data&quot;: {
-        &quot;firstname&quot;: &quot;Sandra&quot;,
-        &quot;lastname&quot;: &quot;Weissnat&quot;
-    }
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;token&quot;: &quot;1|fMyN7p4LYO89olWWJmCct1sY3seIdR7wsZqIJ9Xd&quot;,
-    &quot;message&quot;: &quot;Welcome back Avaz&quot;,
-    &quot;data&quot;: {
-        &quot;firstname&quot;: &quot;Avaz&quot;,
-        &quot;lastname&quot;: &quot;Akhmedov&quot;
-    }
-}</code>
- </pre>
-    </span>
-<span id="execution-results-POSTapi-v1-login" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-v1-login"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-login" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-v1-login" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-login"></code></pre>
-</span>
-<form id="form-POSTapi-v1-login" data-method="POST"
-      data-path="api/v1/login"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-login', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-v1-login"
-                    onclick="tryItOut('POSTapi-v1-login');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-v1-login"
-                    onclick="cancelTryOut('POSTapi-v1-login');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-v1-login" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/v1/login</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="POSTapi-v1-login"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Accept"                data-endpoint="POSTapi-v1-login"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-               name="Authorization"                data-endpoint="POSTapi-v1-login"
-               value="Bearer {token}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {token}</code></p>
-            </div>
-                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
-<small>required</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="email"                data-endpoint="POSTapi-v1-login"
-               value="admin@gmail.com"
-               data-component="body">
-    <br>
-<p>Email of existing user. Example: <code>admin@gmail.com</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
-<small>required</small>&nbsp;
-<i>optional</i> &nbsp;
-                <input type="text" style="display: none"
-               name="password"                data-endpoint="POSTapi-v1-login"
-               value="123asd2"
-               data-component="body">
-    <br>
-<p>Password of existing user. Example: <code>123asd2</code></p>
-        </div>
-        </form>
-
-                    <h2 id="endpoints-POSTapi-v1-logout">User Logout</h2>
-
-<p>
-</p>
-
-<p>This endpoint will allow to log out users</p>
-
-<span id="example-requests-POSTapi-v1-logout">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/v1/logout" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --header "Authorization/Type:Bearer: Token. Example: 44|cSi4RtDPHw6vjnqiR3oKUP1x963fj1VcW9fMLmUF"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/logout"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "Authorization/Type:Bearer": "Token. Example: 44|cSi4RtDPHw6vjnqiR3oKUP1x963fj1VcW9fMLmUF",
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-v1-logout">
-            <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (422):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -4949,51 +4320,58 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 58
 vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;message&quot;: &quot;The attributes must be an array.&quot;,
+    &quot;errors&quot;: {
+        &quot;attributes&quot;: [
+            &quot;The attributes must be an array.&quot;
+        ]
+    }
 }</code>
  </pre>
     </span>
-<span id="execution-results-POSTapi-v1-logout" hidden>
+<span id="execution-results-POSTapi-v1-wizard--product_uuid--services" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-POSTapi-v1-logout"></span>:
+                id="execution-response-status-POSTapi-v1-wizard--product_uuid--services"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-logout" style="max-height: 400px;"></code></pre>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-wizard--product_uuid--services" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-POSTapi-v1-logout" hidden>
+<span id="execution-error-POSTapi-v1-wizard--product_uuid--services" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-logout"></code></pre>
+    <pre><code id="execution-error-message-POSTapi-v1-wizard--product_uuid--services"></code></pre>
 </span>
-<form id="form-POSTapi-v1-logout" data-method="POST"
-      data-path="api/v1/logout"
+<form id="form-POSTapi-v1-wizard--product_uuid--services" data-method="POST"
+      data-path="api/v1/wizard/{product_uuid}/services"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-logout', this);">
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-wizard--product_uuid--services', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-v1-logout"
-                    onclick="tryItOut('POSTapi-v1-logout');">Try it out ⚡
+                    id="btn-tryout-POSTapi-v1-wizard--product_uuid--services"
+                    onclick="tryItOut('POSTapi-v1-wizard--product_uuid--services');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-v1-logout"
-                    onclick="cancelTryOut('POSTapi-v1-logout');" hidden>Cancel 🛑
+                    id="btn-canceltryout-POSTapi-v1-wizard--product_uuid--services"
+                    onclick="cancelTryOut('POSTapi-v1-wizard--product_uuid--services');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-v1-logout" hidden>Send Request 💥
+                    id="btn-executetryout-POSTapi-v1-wizard--product_uuid--services" hidden>Send Request 💥
             </button>
             </h3>
             <p>
             <small class="badge badge-black">POST</small>
-            <b><code>api/v1/logout</code></b>
+            <b><code>api/v1/wizard/{product_uuid}/services</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -5001,7 +4379,7 @@ vary: Origin
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Content-Type"                data-endpoint="POSTapi-v1-logout"
+               name="Content-Type"                data-endpoint="POSTapi-v1-wizard--product_uuid--services"
                value="application/json"
                data-component="header">
     <br>
@@ -5012,24 +4390,288 @@ vary: Origin
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Accept"                data-endpoint="POSTapi-v1-logout"
+               name="Accept"                data-endpoint="POSTapi-v1-wizard--product_uuid--services"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>product_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="product_uuid"                data-endpoint="POSTapi-v1-wizard--product_uuid--services"
+               value="65be9d21-9bdd-4138-a2ee-2dbc0363e5a7"
+               data-component="url">
+    <br>
+<p>Example: <code>65be9d21-9bdd-4138-a2ee-2dbc0363e5a7</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>attributes</code></b>&nbsp;&nbsp;
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
+<br>
+<p>array.Attributes of the hotel Example: <code>aut</code></p>
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>required.</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="attributes.name"                data-endpoint="POSTapi-v1-wizard--product_uuid--services"
+               value="omnis"
+               data-component="body">
+    <br>
+<p>Example: <code>omnis</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
+<small>required.</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="attributes.value"                data-endpoint="POSTapi-v1-wizard--product_uuid--services"
+               value="fuga"
+               data-component="body">
+    <br>
+<p>Example: <code>fuga</code></p>
+                    </div>
+                                    </details>
+        </div>
+        </form>
+
+                    <h2 id="wizard-POSTapi-v1-wizard--product_uuid--rooms">This endpoint will create room for existing product</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-wizard--product_uuid--rooms">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/v1/wizard/65be9d21-9bdd-4138-a2ee-2dbc0363e5a7/rooms" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"room_type\": \"accusamus\",
+    \"is_smoking_allowed\": \"quas\",
+    \"bed_type\": \"quasi\",
+    \"bed_count\": \"deleniti\",
+    \"room_size\": \"qui\",
+    \"price\": \"eaque\",
+    \"price_for_residents\": \"impedit\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/wizard/65be9d21-9bdd-4138-a2ee-2dbc0363e5a7/rooms"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "room_type": "accusamus",
+    "is_smoking_allowed": "quas",
+    "bed_type": "quasi",
+    "bed_count": "deleniti",
+    "room_size": "qui",
+    "price": "eaque",
+    "price_for_residents": "impedit"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-wizard--product_uuid--rooms">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Last step is done&quot;,
+    &quot;data&quot;: {
+        &quot;roomType&quot;: &quot;Suite&quot;,
+        &quot;isSmokingAllowed&quot;: true,
+        &quot;bedType&quot;: &quot;King size&quot;,
+        &quot;bedCount&quot;: &quot;3&quot;,
+        &quot;roomSize&quot;: &quot;3&quot;,
+        &quot;price&quot;: &quot;75&quot;,
+        &quot;priceForResidents&quot;: &quot;45&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-wizard--product_uuid--rooms" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-wizard--product_uuid--rooms"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-wizard--product_uuid--rooms" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-wizard--product_uuid--rooms" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-wizard--product_uuid--rooms"></code></pre>
+</span>
+<form id="form-POSTapi-v1-wizard--product_uuid--rooms" data-method="POST"
+      data-path="api/v1/wizard/{product_uuid}/rooms"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-wizard--product_uuid--rooms', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-wizard--product_uuid--rooms"
+                    onclick="tryItOut('POSTapi-v1-wizard--product_uuid--rooms');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-wizard--product_uuid--rooms"
+                    onclick="cancelTryOut('POSTapi-v1-wizard--product_uuid--rooms');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-wizard--product_uuid--rooms" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/wizard/{product_uuid}/rooms</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="Content-Type"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
                value="application/json"
                data-component="header">
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization/Type:Bearer</code></b>&nbsp;&nbsp;
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-               name="Authorization/Type:Bearer"                data-endpoint="POSTapi-v1-logout"
-               value="Token. Example: 44|cSi4RtDPHw6vjnqiR3oKUP1x963fj1VcW9fMLmUF"
+               name="Accept"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
+               value="application/json"
                data-component="header">
     <br>
-<p>Example: <code>Token. Example: 44|cSi4RtDPHw6vjnqiR3oKUP1x963fj1VcW9fMLmUF</code></p>
+<p>Example: <code>application/json</code></p>
             </div>
-                        </form>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>product_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+               name="product_uuid"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
+               value="65be9d21-9bdd-4138-a2ee-2dbc0363e5a7"
+               data-component="url">
+    <br>
+<p>Example: <code>65be9d21-9bdd-4138-a2ee-2dbc0363e5a7</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>room_type</code></b>&nbsp;&nbsp;
+<small>required.</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="room_type"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
+               value="accusamus"
+               data-component="body">
+    <br>
+<p>Example: <code>accusamus</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>is_smoking_allowed</code></b>&nbsp;&nbsp;
+<small>nullable</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="is_smoking_allowed"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
+               value="quas"
+               data-component="body">
+    <br>
+<p>boolean default false. Example: <code>quas</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bed_type</code></b>&nbsp;&nbsp;
+<small>required.Type</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="bed_type"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
+               value="quasi"
+               data-component="body">
+    <br>
+<p>of the bed Example: <code>quasi</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>bed_count</code></b>&nbsp;&nbsp;
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="bed_count"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
+               value="deleniti"
+               data-component="body">
+    <br>
+<p>integer.How many beds room have Example: <code>deleniti</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>room_size</code></b>&nbsp;&nbsp;
+<small>integer.Size</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="room_size"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
+               value="qui"
+               data-component="body">
+    <br>
+<p>of the room Example: <code>qui</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="price"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
+               value="eaque"
+               data-component="body">
+    <br>
+<p>float.This is price for foreigners Example: <code>eaque</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>price_for_residents</code></b>&nbsp;&nbsp;
+<small>float.This</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="price_for_residents"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
+               value="impedit"
+               data-component="body">
+    <br>
+<p>is price for locals Example: <code>impedit</code></p>
+        </div>
+        </form>
 
             
 

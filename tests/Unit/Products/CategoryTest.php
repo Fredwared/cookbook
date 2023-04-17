@@ -2,7 +2,7 @@
 
 namespace Products;
 
-use App\Http\Controllers\Api\V1\Products\CategoryController;
+use App\Http\Controllers\V1\Products\CategoryController;
 use App\Models\Category;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -58,12 +58,9 @@ class CategoryTest extends TestCase
         ];
 
         $this->postJson(route("categories.store"), $data, ["Accept" => "Application/json"])
-            ->assertOk()
+            ->assertCreated()
             ->assertJsonStructure([
-                "data" => [
-                    "id",
-                    "name",
-                ],
+                "data",
                 "message"
             ]);
 

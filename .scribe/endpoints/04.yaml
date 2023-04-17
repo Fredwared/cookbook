@@ -1,0 +1,257 @@
+name: Registration
+description: |-
+
+  End points register users
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/register
+    metadata:
+      groupName: Registration
+      groupDescription: |-
+
+        End points register users
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'User Register'
+      description: 'This endpoint will allow to register users'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      firstname:
+        name: firstname
+        description: 'Firstname of user.'
+        required: true
+        example: Avaz
+        type: string
+        custom: []
+      lastname:
+        name: lastname
+        description: 'Lastname of user.'
+        required: true
+        example: Akhmedov
+        type: string
+        custom: []
+      surname:
+        name: surname
+        description: 'nullable  Surname of user.'
+        required: false
+        example: Something
+        type: string
+        custom: []
+      birthdate:
+        name: birthdate
+        description: 'nullable  Birthdate of user.'
+        required: false
+        example: 1997.02.09
+        type: date
+        custom: []
+      country_id:
+        name: country_id
+        description: 'constrained  City of user.'
+        required: false
+        example: Tashkent
+        type: nullable
+        custom: []
+      city_id:
+        name: city_id
+        description: ''
+        required: false
+        example: null
+        type: string
+        custom: []
+      primary_number:
+        name: primary_number
+        description: 'Main number of user.'
+        required: true
+        example: '99877822112'
+        type: string
+        custom: []
+      number:
+        name: number
+        description: 'Second number of user.'
+        required: true
+        example: '99822133211'
+        type: string
+        custom: []
+      optional_number:
+        name: optional_number
+        description: 'nullable  Optional number of user.'
+        required: false
+        example: '53121213123'
+        type: string
+        custom: []
+      email:
+        name: email
+        description: 'unique Email of user.'
+        required: true
+        example: admin@gmail.com
+        type: email
+        custom: []
+      password:
+        name: password
+        description: 'Password of user.'
+        required: false
+        example: 123asd2
+        type: required
+        custom: []
+      password_confirmation:
+        name: password_confirmation
+        description: 'Confirm previous password.'
+        required: false
+        example: 123asd2
+        type: required
+        custom: []
+      gender:
+        name: gender
+        description: 'nullable  Gender of user.'
+        required: false
+        example: 'male or female'
+        type: string
+        custom: []
+      preferred_contact_method:
+        name: preferred_contact_method
+        description: 'method of user to contact.Default email'
+        required: false
+        example: aliquam
+        type: Preferred
+        custom: []
+    cleanBodyParameters:
+      firstname: Avaz
+      lastname: Akhmedov
+      surname: Something
+      birthdate: 1997.02.09
+      country_id: Tashkent
+      primary_number: '99877822112'
+      number: '99822133211'
+      optional_number: '53121213123'
+      email: admin@gmail.com
+      password: 123asd2
+      password_confirmation: 123asd2
+      gender: 'male or female'
+      preferred_contact_method: aliquam
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: "{\r\n  \"message\": \"Pincode was sent\",\r\n  \"pincode\": 577779\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/verify
+    metadata:
+      groupName: Registration
+      groupDescription: |-
+
+        End points register users
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Verify User'
+      description: 'This endpoint will verify user and save him to database'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      code:
+        name: code
+        description: ''
+        required: false
+        example: debitis
+        type: required.
+        custom: []
+    cleanBodyParameters:
+      code: debitis
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"firstname":"Rogelio","lastname":"Sauer","country":"Turkey","primaryNumber":"14585473686","number":"17199049241","email":"prudence.cronin@buckridge.net"}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"message\": \"Successfully verified\",\r\n  \"data\": {\r\n    \"firstname\": \"Avaz\",\r\n    \"lastname\": \"Akhmedov\",\r\n    \"country\": \"Uzbekistan\",\r\n    \"primaryNumber\": \"9987977212\",\r\n    \"number\": \"9984321122\",\r\n    \"email\": \"avaz.corp@gmail.com\"\r\n  }\r\n}"
+        headers: []
+        description: ''
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/resend-code
+    metadata:
+      groupName: Registration
+      groupDescription: |-
+
+        End points register users
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Resend code to the user'
+      description: 'This endpoint will send new code to the user by deleting previous one'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      number:
+        name: number
+        description: 'in users primary_number column.'
+        required: false
+        example: '9987872133'
+        type: required.Exists
+        custom: []
+    cleanBodyParameters:
+      number: '9987872133'
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: ''
+        headers:
+          content-type: 'text/html; charset=UTF-8'
+          cache-control: 'no-cache, private'
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '54'
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

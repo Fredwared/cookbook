@@ -3,10 +3,8 @@
 namespace App\Services\Auth;
 
 
+use App\Http\Resources\V1\Auth\RegisterResource;
 use App\Models\User;
-use Exception;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Validation\ValidationException;
 
@@ -35,10 +33,10 @@ class  RegisterService
 
     /**
      * @param array $validation
-     * @return Model|Builder
+     * @return RegisterResource
      * @throws ValidationException
      */
-    public function verifyUser(array $validation): Model|Builder
+    public function verifyUser(array $validation): RegisterResource
     {
         $user = Cache::get("user");
 
@@ -50,12 +48,14 @@ class  RegisterService
             ]);
         }
 
-        return User::query()->create($user);
+        $data = User::query()->create($user);
+
+        return RegisterResource::make($data);
 
     }
 
 
-    public function resendVerificationCode(array $validation, $code): bool
+    public function resendVerificationCode(array $validation, $code): void
     {
 
 
