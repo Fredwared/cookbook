@@ -27,7 +27,7 @@ class ReviewController extends Controller
      */
     public function index(): AnonymousResourceCollection
     {
-        $reviews = Review::query()->with("users")->get();
+        $reviews = Review::query()->with("user")->get();
 
         return ReviewResource::collection($reviews);
     }
