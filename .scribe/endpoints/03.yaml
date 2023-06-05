@@ -27,7 +27,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"rating":5,"body":"Illo quibusdam ut sed. Possimus quo et dolorem ea corrupti ea aperiam. Sit molestiae sunt ea. Aperiam soluta vitae culpa reprehenderit sed. Rem nemo amet aperiam. Nesciunt ut qui deserunt omnis fuga voluptas nihil. Quo voluptas voluptas cumque perferendis et."}}'
+        content: '{"data":{"rating":3,"body":"Quasi est aut voluptas placeat eos. Omnis exercitationem dolorem quod ea excepturi. Nihil rem maxime aut est. Est ea in ut dolor est labore."}}'
         headers: []
         description: ''
         custom: []
@@ -69,33 +69,33 @@ endpoints:
         name: product_uuid
         description: ''
         required: true
-        example: sed
+        example: libero
         type: string
         custom: []
       rating:
         name: rating
         description: 'Must be at least 1 character. Must not be greater than 5 characters.'
         required: false
-        example: ntzqm
+        example: k
         type: string
         custom: []
       product_id:
         name: product_id
         description: 'ID of product related to the review'
         required: false
-        example: ut
+        example: repudiandae
         type: required
         custom: []
     cleanBodyParameters:
       content: 'the worst product ever'
-      product_uuid: sed
-      rating: ntzqm
-      product_id: ut
+      product_uuid: libero
+      rating: k
+      product_id: repudiandae
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"rating":2,"body":"Facere quia voluptate rerum temporibus labore quod. Quia sunt earum necessitatibus est amet autem doloribus. Animi neque facilis rerum et. Aliquam eveniet est eius commodi blanditiis corporis quas fugit."}}'
+        content: '{"data":{"rating":4,"body":"Temporibus officiis autem sed enim rem et accusantium. Rem consequatur molestias dolorem tenetur et. Dolores quis repellendus totam velit et fugit. Vitae fugit perspiciatis ea reiciendis reiciendis quo quia soluta. Vel et consequatur amet vel nisi consectetur laborum."}}'
         headers: []
         description: ''
         custom: []
@@ -139,7 +139,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"rating":2,"body":"Voluptatem odio iure explicabo quis rem voluptas fugit rerum. Velit suscipit rerum et eveniet. Dicta sint ut voluptatibus nam assumenda nobis. Veniam eum consequatur alias et ut beatae maiores. Debitis nihil dicta voluptas unde esse. Quibusdam maiores recusandae autem harum est est blanditiis."}}'
+        content: '{"data":{"rating":3,"body":"Aut ullam error est qui non reiciendis deserunt. Odit quaerat repudiandae ut qui aliquam ipsa fuga. Corrupti non optio tempora molestiae dolores ut. Voluptas aut ducimus est maiores qui ipsam vitae."}}'
         headers: []
         description: ''
         custom: []
@@ -190,17 +190,17 @@ endpoints:
         name: product_id
         description: 'ID of product related to the review'
         required: false
-        example: in
+        example: aut
         type: required
         custom: []
     cleanBodyParameters:
       content: 'the worst product ever'
-      product_id: in
+      product_id: aut
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"rating":5,"body":"Consequuntur non beatae repudiandae fugit esse. Reiciendis ut blanditiis distinctio quae. Rem voluptatem ut aspernatur sequi voluptatem. Labore temporibus vero animi omnis id. Repellendus voluptatem dolor sunt est et. Veniam voluptatem laborum iure sunt maiores. Minus optio nobis rerum."}}'
+        content: '{"data":{"rating":2,"body":"Facilis officiis accusamus impedit ipsum occaecati at nobis est. Perspiciatis quo aut similique quo iusto repellat reiciendis modi. Magnam reprehenderit repellat voluptatem rerum sequi. A nemo quisquam odio consequatur excepturi. Exercitationem nostrum nobis et qui. Quia suscipit earum qui repudiandae non dolor ullam."}}'
         headers: []
         description: ''
         custom: []
@@ -249,7 +249,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '56'
+          x-ratelimit-remaining: '57'
           vary: Origin
         description: null
         custom: []
@@ -537,7 +537,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '55'
+          x-ratelimit-remaining: '56'
           vary: Origin
         description: null
         custom: []

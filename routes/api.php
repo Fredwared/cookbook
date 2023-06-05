@@ -10,8 +10,10 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::prefix("wizard")->group(function () {
-    Route::post("setup", [WizardController::class, "setup"])->name("wizard.setup");
+    Route::post("setup", [WizardController::class, "setup"]);
     Route::post("{product}/services", [WizardController::class, "services"]);
+    Route::post("{product}/living", [WizardController::class, "living"]);
+    Route::post("{product}/payment", [WizardController::class, "payment"]);
     Route::post("{product}/rooms", [WizardController::class, "rooms"]);
 });
 

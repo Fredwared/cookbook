@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\StatusEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -28,16 +29,24 @@ class Product extends Model implements HasMedia
         "country_id",
         "postal_code",
         "location",
-        "rating"
+        "rating",
+        "status"
     ];
 
     protected $hidden = "id";
     protected $primaryKey = "id";
 
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('place');
+        $this->addMediaCollection('rooms');
+    }
+
+
     /**
      * @return BelongsTo
      */
-
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
@@ -83,7 +92,6 @@ class Product extends Model implements HasMedia
     {
         return $this->belongsTo(Country::class);
     }
-
 
 
     /**

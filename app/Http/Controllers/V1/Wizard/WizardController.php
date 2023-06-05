@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\V1\Wizard\WizardRoomRequest;
 use App\Http\Requests\V1\Wizard\WizardServicesRequest;
 use App\Http\Requests\V1\Wizard\WizardSetupRequest;
-use App\Http\Resources\V1\Wizard\WizardRoomResource;
 use App\Http\Responses\ApiCreatedResponse;
 use App\Models\Product;
 use App\Services\Wizard\WizardService;
@@ -23,15 +22,14 @@ class WizardController extends Controller
 {
 
 
-    protected $wizardService;
+    protected WizardService $wizardService;
 
     public function __construct(WizardService $wizardService)
     {
         $this->wizardService = $wizardService;
     }
 
-    /**Store Products with contacts
-     *
+    /** Store Products with contacts
      * @bodyParam category_id required exists:categories,id.Example:Hotel
      * @bodyParam name required string unique.Example:La-mare
      * @bodyParam images required array.
@@ -45,7 +43,8 @@ class WizardController extends Controller
      *
      * @param WizardSetupRequest $request
      *
-     * @apiResource App\Http\Resources\V1\Products\Wizard\WizardSetupResource
+     * @return ApiCreatedResponse
+     * @apiResource App\Http\Resources\V1\Wizard\WizardSetupResource
      * @apiResourceModel App\Models\Product
      *
      * @responseFile storage/responses/wizard/setup.json
@@ -60,8 +59,8 @@ class WizardController extends Controller
     /**
      *
      * @bodyParam attributes required array.Attributes of the hotel
-     * @bodyParam attributes.name required.
-     * @bodyParam attributes.value required.
+     * @bodyParam attributes.name required.Name of the attribute
+     * @bodyParam attributes.value required.Value of the attribute
      *
      * @param WizardServicesRequest $request
      * @param Product $product
@@ -69,12 +68,48 @@ class WizardController extends Controller
      */
     public function services(WizardServicesRequest $request, Product $product): ApiCreatedResponse
     {
-        $fields = $request->validated();
+        $data = $this->wizardService->secondStepServices($request->validated(), $product);
+
+        return new ApiCreatedResponse(
+            $data,
+            'Second step is done',
+            ResponseAlias::HTTP_CREATED
+        );
+    }
 
 
-        $product->attributes()->sync($fields);
+    public function living(WizardServicesRequest $request, Product $product): ApiCreatedResponse
+    {
 
-        return new ApiCreatedResponse($product, 'Second step is done', ResponseAlias::HTTP_CREATED);
+        $data = $this->wizardService->thirdStepLiving($request->validated(), $product);
+        return new ApiCreatedResponse(
+            $data,
+            'Third step is done',
+            ResponseAlias::HTTP_CREATED
+        );
+    }
+
+
+    /**
+     *
+     * @bodyParam attributes required array.Attributes of the hotel
+     * @bodyParam attributes.name required.Name of the attribute
+     * @bodyParam attributes.value required.Value of the attribute
+     *
+     * @param WizardServicesRequest $request
+     * @param Product $product
+     * @return ApiCreatedResponse
+     */
+    public function payment(WizardServicesRequest $request, Product $product): ApiCreatedResponse
+    {
+
+        $data = $this->wizardService->fourthStepPayment($request->validated(), $product);
+        return new ApiCreatedResponse(
+            $data,
+            'Second step is done',
+            ResponseAlias::HTTP_CREATED
+        );
+
     }
 
     /**
@@ -87,6 +122,7 @@ class WizardController extends Controller
      * @bodyParam price required float.This is price for foreigners
      * @bodyParam price_for_residents float.This is price for locals
      * @bodyParam room_size integer.Size of the room
+     * @bodyParam images array.
      *
      * @param Product $product
      * @param WizardRoomRequest $request
@@ -94,15 +130,10 @@ class WizardController extends Controller
      *
      * @responseFile storage/responses/wizard/rooms.json
      */
-    public function rooms(Product $product, WizardRoomRequest $request): ApiCreatedResponse
+    public function rooms(WizardRoomRequest $request, Product $product): ApiCreatedResponse
     {
-        $fields = $request->validated();
 
-        $fields["product_id"] = $product->id;
-
-        $product->entities()->create($fields);
-
-        $data = WizardRoomResource::make($product);
+        $data = $this->wizardService->lastStepRooms($request->validated(), $product);
 
         return new ApiCreatedResponse($data, 'Last step is done', ResponseAlias::HTTP_CREATED);
     }

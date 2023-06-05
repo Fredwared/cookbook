@@ -24,9 +24,10 @@ class WizardServicesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "attributes" =>"required|array",
-            "attributes.*.name" => "required",
-            "attributes.*.value" => "required",
+            'attributes' => 'required|array',
+            'attributes.*.name' => 'required|string',
+            'attributes.*.value' => 'required',
+
         ];
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\StatusEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -24,6 +25,10 @@ return new class extends Migration {
             $table->boolean("is_pet_allowed")->default(false);
             $table->integer("postal_code");
             $table->float("rating");
+            $table->enum("status", [
+                StatusEnum::PUBLISHED->value,
+                StatusEnum::DRAFT->value
+            ])->default(StatusEnum::DRAFT->value);
             $table->timestamps();
         });
     }

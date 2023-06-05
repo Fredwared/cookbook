@@ -19,9 +19,7 @@ class DatabaseSeeder extends Seeder
             ProductContactSeeder::class,
             ProductEntitySeeder::class,
             ReviewSeeder::class,
-            AttributeSeeder::class,
-            AttributeValueSeeder::class,
-            ProductAttributeSeeder::class
+
         ]);
     }
 }

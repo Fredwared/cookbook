@@ -61,7 +61,7 @@ class RegisterController extends Controller
     public function register(RegisterRequest $request): JsonResponse
     {
 
-        $code = rand(100000, 999999);
+        $code = rand(10000, 99999);
         $this->registerService->registerUser($request->validated(), $code);
 
 

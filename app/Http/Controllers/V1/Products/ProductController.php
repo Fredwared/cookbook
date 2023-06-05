@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\V1\Products;
 
+use App\Enums\StatusEnum;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\Products\ProductResource;
 use App\Models\Product;
@@ -33,6 +34,7 @@ class ProductController extends Controller
     {
         $products = Product::query()
             ->with(["category", "reviews", "images", "entities", "contacts", "city", "country", "attributes"])
+            ->where("status", StatusEnum::PUBLISHED)
             ->get();
 
 
@@ -59,10 +61,11 @@ class ProductController extends Controller
 
     public function show(Product $product): ProductResource
     {
-        $product->load(["category", "reviews", "images", "entities", "contacts", "city", "languages", "country"]);
+        $product->load(["category", "reviews", "images", "entities", "contacts", "city", "languages", "country", "attributes"]);
         $currency = app(CurrencyService::class)->getCurrency(request("currency", "usd"));
 
         request()->merge(['rate' => $currency->value]);
+
         return ProductResource::make($product);
     }
 

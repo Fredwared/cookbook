@@ -21,12 +21,12 @@ class ProductResource extends JsonResource
             "location" => $this->location,
             "rating" => $this->rating,
             "postalCode" => $this->postal_code,
-            "rooms" => EntityResource::collection($this->whenLoaded("entities")),
+            "rooms" => ProductEntityResource::collection($this->whenLoaded("entities")),
             "services" => AttributeResource::collection($this->whenLoaded("attributes")),
             "contacts" => ProductContactResource::collection($this->whenLoaded("contacts")),
             "reviews" => ReviewResource::collection($this->whenLoaded('reviews')),
             "rate" => number_format($this->reviews->avg("rating"), 2, ","),
-            "images" => ImageResource::collection($this->whenLoaded('images')),
+            "images" => ImageResource::collection($this->getMedia("place")),
             "isPetAllowed" => boolval($this->is_pet_allowed),
         ];
     }

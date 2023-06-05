@@ -30,7 +30,9 @@ class WizardRoomRequest extends FormRequest
             "bed_count" => "required|numeric|min:1",
             "room_size" => "nullable|numeric|min:1",
             "price" => "required|numeric|min:1",
-            "price_for_residents" => "required|numeric|min:1"
+            "price_for_residents" => "required|numeric|min:1",
+            "images" => "required|array",
+            "images.*" => "required|image|mimes:jpg,png,jpeg,gif,svg|max:2048",
         ];
     }
 }

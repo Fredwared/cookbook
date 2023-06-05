@@ -1,6 +1,6 @@
 # Introduction
 
-This is documentation for auth api 
+This is documentation start booking project api 
 
 <aside>
     <strong>Base URL</strong>: <code>http://localhost:8000</code>

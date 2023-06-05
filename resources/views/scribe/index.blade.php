@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Auth api documentation</title>
+    <title>Start booking api documentation</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
@@ -173,7 +173,7 @@
                 </li>
                                     <ul id="tocify-subheader-wizard" class="tocify-subheader">
                                                     <li class="tocify-item level-2" data-unique="wizard-POSTapi-v1-wizard-setup">
-                                <a href="#wizard-POSTapi-v1-wizard-setup">POST api/v1/wizard/setup</a>
+                                <a href="#wizard-POSTapi-v1-wizard-setup">Store Products with contacts</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="wizard-POSTapi-v1-wizard--product_uuid--services">
                                 <a href="#wizard-POSTapi-v1-wizard--product_uuid--services">POST api/v1/wizard/{product_uuid}/services</a>
@@ -192,7 +192,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: April 17, 2023</li>
+        <li>Last updated: April 18, 2023</li>
     </ul>
 </div>
 
@@ -200,7 +200,7 @@
     <div class="dark-box"></div>
     <div class="content">
         <h1 id="introduction">Introduction</h1>
-<p>This is documentation for auth api </p>
+<p>This is documentation start booking project api </p>
 <aside>
     <strong>Base URL</strong>: <code>http://localhost:8000</code>
 </aside>
@@ -260,8 +260,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 32,
-        &quot;name&quot;: &quot;a&quot;
+        &quot;id&quot;: 48,
+        &quot;name&quot;: &quot;aliquid&quot;
     }
 }</code>
  </pre>
@@ -347,7 +347,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"name\": \"sport\",
-    \"parent_id\": 5
+    \"parent_id\": 12
 }"
 </code></pre></div>
 
@@ -364,7 +364,7 @@ const headers = {
 
 let body = {
     "name": "sport",
-    "parent_id": 5
+    "parent_id": 12
 };
 
 fetch(url, {
@@ -383,8 +383,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 33,
-        &quot;name&quot;: &quot;tempora&quot;
+        &quot;id&quot;: 49,
+        &quot;name&quot;: &quot;sint&quot;
     }
 }</code>
  </pre>
@@ -468,10 +468,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="parent_id"                data-endpoint="POSTapi-v1-categories"
-               value="5"
+               value="12"
                data-component="body">
     <br>
-<p>nullable ID of the parent category for subcategory. Example: <code>5</code></p>
+<p>nullable ID of the parent category for subcategory. Example: <code>12</code></p>
         </div>
         </form>
 
@@ -518,8 +518,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 34,
-        &quot;name&quot;: &quot;omnis&quot;
+        &quot;id&quot;: 50,
+        &quot;name&quot;: &quot;quo&quot;
     }
 }</code>
  </pre>
@@ -617,7 +617,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"name\": \"sport\",
-    \"parent_id\": 2
+    \"parent_id\": 8
 }"
 </code></pre></div>
 
@@ -634,7 +634,7 @@ const headers = {
 
 let body = {
     "name": "sport",
-    "parent_id": 2
+    "parent_id": 8
 };
 
 fetch(url, {
@@ -653,8 +653,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: 35,
-        &quot;name&quot;: &quot;est&quot;
+        &quot;id&quot;: 51,
+        &quot;name&quot;: &quot;nihil&quot;
     }
 }</code>
  </pre>
@@ -754,10 +754,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                name="parent_id"                data-endpoint="PUTapi-v1-categories--id-"
-               value="2"
+               value="8"
                data-component="body">
     <br>
-<p>nullable ID of the parent category for subcategory. Example: <code>2</code></p>
+<p>nullable ID of the parent category for subcategory. Example: <code>8</code></p>
         </div>
         </form>
 
@@ -807,7 +807,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 57
+x-ratelimit-remaining: 58
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -1447,8 +1447,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;rating&quot;: 5,
-        &quot;body&quot;: &quot;Illo quibusdam ut sed. Possimus quo et dolorem ea corrupti ea aperiam. Sit molestiae sunt ea. Aperiam soluta vitae culpa reprehenderit sed. Rem nemo amet aperiam. Nesciunt ut qui deserunt omnis fuga voluptas nihil. Quo voluptas voluptas cumque perferendis et.&quot;
+        &quot;rating&quot;: 3,
+        &quot;body&quot;: &quot;Quasi est aut voluptas placeat eos. Omnis exercitationem dolorem quod ea excepturi. Nihil rem maxime aut est. Est ea in ut dolor est labore.&quot;
     }
 }</code>
  </pre>
@@ -1534,9 +1534,9 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"content\": \"the worst product ever\",
-    \"product_uuid\": \"sed\",
-    \"rating\": \"ntzqm\",
-    \"product_id\": \"ut\"
+    \"product_uuid\": \"libero\",
+    \"rating\": \"k\",
+    \"product_id\": \"repudiandae\"
 }"
 </code></pre></div>
 
@@ -1553,9 +1553,9 @@ const headers = {
 
 let body = {
     "content": "the worst product ever",
-    "product_uuid": "sed",
-    "rating": "ntzqm",
-    "product_id": "ut"
+    "product_uuid": "libero",
+    "rating": "k",
+    "product_id": "repudiandae"
 };
 
 fetch(url, {
@@ -1574,8 +1574,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;rating&quot;: 2,
-        &quot;body&quot;: &quot;Facere quia voluptate rerum temporibus labore quod. Quia sunt earum necessitatibus est amet autem doloribus. Animi neque facilis rerum et. Aliquam eveniet est eius commodi blanditiis corporis quas fugit.&quot;
+        &quot;rating&quot;: 4,
+        &quot;body&quot;: &quot;Temporibus officiis autem sed enim rem et accusantium. Rem consequatur molestias dolorem tenetur et. Dolores quis repellendus totam velit et fugit. Vitae fugit perspiciatis ea reiciendis reiciendis quo quia soluta. Vel et consequatur amet vel nisi consectetur laborum.&quot;
     }
 }</code>
  </pre>
@@ -1659,10 +1659,10 @@ fetch(url, {
  &nbsp;
                 <input type="text" style="display: none"
                name="product_uuid"                data-endpoint="POSTapi-v1-reviews"
-               value="sed"
+               value="libero"
                data-component="body">
     <br>
-<p>Example: <code>sed</code></p>
+<p>Example: <code>libero</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>rating</code></b>&nbsp;&nbsp;
@@ -1670,10 +1670,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="rating"                data-endpoint="POSTapi-v1-reviews"
-               value="ntzqm"
+               value="k"
                data-component="body">
     <br>
-<p>Must be at least 1 character. Must not be greater than 5 characters. Example: <code>ntzqm</code></p>
+<p>Must be at least 1 character. Must not be greater than 5 characters. Example: <code>k</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>product_id</code></b>&nbsp;&nbsp;
@@ -1681,10 +1681,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="product_id"                data-endpoint="POSTapi-v1-reviews"
-               value="ut"
+               value="repudiandae"
                data-component="body">
     <br>
-<p>ID of product related to the review Example: <code>ut</code></p>
+<p>ID of product related to the review Example: <code>repudiandae</code></p>
         </div>
         </form>
 
@@ -1731,8 +1731,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;rating&quot;: 2,
-        &quot;body&quot;: &quot;Voluptatem odio iure explicabo quis rem voluptas fugit rerum. Velit suscipit rerum et eveniet. Dicta sint ut voluptatibus nam assumenda nobis. Veniam eum consequatur alias et ut beatae maiores. Debitis nihil dicta voluptas unde esse. Quibusdam maiores recusandae autem harum est est blanditiis.&quot;
+        &quot;rating&quot;: 3,
+        &quot;body&quot;: &quot;Aut ullam error est qui non reiciendis deserunt. Odit quaerat repudiandae ut qui aliquam ipsa fuga. Corrupti non optio tempora molestiae dolores ut. Voluptas aut ducimus est maiores qui ipsam vitae.&quot;
     }
 }</code>
  </pre>
@@ -1830,7 +1830,7 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"content\": \"the worst product ever\",
-    \"product_id\": \"in\"
+    \"product_id\": \"aut\"
 }"
 </code></pre></div>
 
@@ -1847,7 +1847,7 @@ const headers = {
 
 let body = {
     "content": "the worst product ever",
-    "product_id": "in"
+    "product_id": "aut"
 };
 
 fetch(url, {
@@ -1866,8 +1866,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;rating&quot;: 5,
-        &quot;body&quot;: &quot;Consequuntur non beatae repudiandae fugit esse. Reiciendis ut blanditiis distinctio quae. Rem voluptatem ut aspernatur sequi voluptatem. Labore temporibus vero animi omnis id. Repellendus voluptatem dolor sunt est et. Veniam voluptatem laborum iure sunt maiores. Minus optio nobis rerum.&quot;
+        &quot;rating&quot;: 2,
+        &quot;body&quot;: &quot;Facilis officiis accusamus impedit ipsum occaecati at nobis est. Perspiciatis quo aut similique quo iusto repellat reiciendis modi. Magnam reprehenderit repellat voluptatem rerum sequi. A nemo quisquam odio consequatur excepturi. Exercitationem nostrum nobis et qui. Quia suscipit earum qui repudiandae non dolor ullam.&quot;
     }
 }</code>
  </pre>
@@ -1967,10 +1967,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="product_id"                data-endpoint="PUTapi-v1-reviews--id-"
-               value="in"
+               value="aut"
                data-component="body">
     <br>
-<p>ID of product related to the review Example: <code>in</code></p>
+<p>ID of product related to the review Example: <code>aut</code></p>
         </div>
         </form>
 
@@ -2020,7 +2020,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
+x-ratelimit-remaining: 57
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -2727,7 +2727,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 56
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -2871,8 +2871,8 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;firstname&quot;: &quot;Estelle&quot;,
-        &quot;lastname&quot;: &quot;Ruecker&quot;
+        &quot;firstname&quot;: &quot;Rodger&quot;,
+        &quot;lastname&quot;: &quot;D&#039;Amore&quot;
     }
 }</code>
  </pre>
@@ -3164,12 +3164,12 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: &quot;cff7286b-0e80-4134-b62d-4ab8ce1f3971&quot;,
-        &quot;name&quot;: &quot;Consequatur totam magni alias atque dolores perferendis.&quot;,
-        &quot;description&quot;: &quot;Pariatur facilis eos accusantium ab quas. Recusandae facere repellat inventore ut dolor. Modi sunt sit nihil voluptate. Maiores aut tempore voluptatum hic. Culpa quos ad qui modi eos. Odit eligendi sit magni modi molestiae. Non dolor ut consequatur accusantium tempore voluptatibus. Sit molestiae in eum a aut.&quot;,
-        &quot;country&quot;: &quot;Tajikistan&quot;,
-        &quot;city&quot;: &quot;furt&quot;,
-        &quot;location&quot;: &quot;Magnam repudiandae debitis temporibus dolores temporibus harum.&quot;,
+        &quot;id&quot;: &quot;0edc636a-011e-429c-bc8c-b8d4c6f2f948&quot;,
+        &quot;name&quot;: &quot;Dolores quis assumenda sint voluptatem inventore.&quot;,
+        &quot;description&quot;: &quot;Culpa ut qui illo magni tenetur dolores est. Facere ipsa eveniet quia ex voluptas dolores. Dolorem ratione cum accusamus molestias repellendus libero. Ea molestias eveniet quos cumque est. Voluptas rem natus amet accusantium exercitationem. Ipsam dignissimos dolore aut dolor dolor ab eveniet est.&quot;,
+        &quot;country&quot;: &quot;Uzbekistan&quot;,
+        &quot;city&quot;: &quot;burgh&quot;,
+        &quot;location&quot;: &quot;Accusantium aliquid quaerat qui enim mollitia.&quot;,
         &quot;rating&quot;: 2,
         &quot;postalCode&quot;: 112332,
         &quot;rate&quot;: &quot;0,00&quot;,
@@ -3284,13 +3284,13 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;id&quot;: &quot;387eec75-dd72-4264-8531-8f20a5c7bb53&quot;,
-        &quot;name&quot;: &quot;Esse temporibus sed odio.&quot;,
-        &quot;description&quot;: &quot;Officia alias quidem qui hic sapiente modi eos. Quia voluptatem libero ipsa aut perferendis et. Sunt labore quasi rerum incidunt dolores rerum soluta. Error repudiandae eveniet commodi sint eius eligendi nihil cumque. Dolore modi reprehenderit cupiditate quis in qui. Temporibus dolor quia eos aliquid quo modi exercitationem doloribus. Veniam velit architecto eligendi possimus nemo qui.&quot;,
-        &quot;country&quot;: &quot;Tajikistan&quot;,
-        &quot;city&quot;: &quot;view&quot;,
-        &quot;location&quot;: &quot;Totam ut consectetur qui soluta eaque non.&quot;,
-        &quot;rating&quot;: 3,
+        &quot;id&quot;: &quot;97df19a4-7b76-467e-b230-c7d35361dd51&quot;,
+        &quot;name&quot;: &quot;Maxime explicabo quo quae quod pariatur.&quot;,
+        &quot;description&quot;: &quot;Eos ratione omnis vel itaque occaecati ut. Atque dolores dolores dolorum. Assumenda molestiae consequuntur non dignissimos aut delectus. Nam repellendus aut iste ea sapiente veniam officia rerum. Sit corrupti totam non laudantium dolorum. Dolores voluptate illum alias facere quidem dignissimos. Sed eum amet aut nihil eius distinctio dignissimos. Unde qui omnis suscipit a esse et asperiores. Eum sapiente omnis assumenda alias nesciunt placeat.&quot;,
+        &quot;country&quot;: &quot;Armenia&quot;,
+        &quot;city&quot;: &quot;bury&quot;,
+        &quot;location&quot;: &quot;Aliquam aut blanditiis et qui.&quot;,
+        &quot;rating&quot;: 2,
         &quot;postalCode&quot;: 112332,
         &quot;rate&quot;: &quot;0,00&quot;,
         &quot;isPetAllowed&quot;: false
@@ -3406,7 +3406,7 @@ fetch(url, {
     \"password\": \"123asd2\",
     \"password_confirmation\": \"123asd2\",
     \"gender\": \"male or female\",
-    \"preferred_contact_method\": \"aliquam\"
+    \"preferred_contact_method\": \"nostrum\"
 }"
 </code></pre></div>
 
@@ -3434,7 +3434,7 @@ let body = {
     "password": "123asd2",
     "password_confirmation": "123asd2",
     "gender": "male or female",
-    "preferred_contact_method": "aliquam"
+    "preferred_contact_method": "nostrum"
 };
 
 fetch(url, {
@@ -3668,10 +3668,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="preferred_contact_method"                data-endpoint="POSTapi-v1-register"
-               value="aliquam"
+               value="nostrum"
                data-component="body">
     <br>
-<p>method of user to contact.Default email Example: <code>aliquam</code></p>
+<p>method of user to contact.Default email Example: <code>nostrum</code></p>
         </div>
         </form>
 
@@ -3692,7 +3692,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"code\": \"debitis\"
+    \"code\": \"deleniti\"
 }"
 </code></pre></div>
 
@@ -3708,7 +3708,7 @@ const headers = {
 };
 
 let body = {
-    "code": "debitis"
+    "code": "deleniti"
 };
 
 fetch(url, {
@@ -3727,12 +3727,12 @@ fetch(url, {
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;data&quot;: {
-        &quot;firstname&quot;: &quot;Rogelio&quot;,
-        &quot;lastname&quot;: &quot;Sauer&quot;,
-        &quot;country&quot;: &quot;Turkey&quot;,
-        &quot;primaryNumber&quot;: &quot;14585473686&quot;,
-        &quot;number&quot;: &quot;17199049241&quot;,
-        &quot;email&quot;: &quot;prudence.cronin@buckridge.net&quot;
+        &quot;firstname&quot;: &quot;Maynard&quot;,
+        &quot;lastname&quot;: &quot;Stoltenberg&quot;,
+        &quot;country&quot;: &quot;Kazakhstan&quot;,
+        &quot;primaryNumber&quot;: &quot;19405418402&quot;,
+        &quot;number&quot;: &quot;15633446252&quot;,
+        &quot;email&quot;: &quot;tevin.ernser@okon.com&quot;
     }
 }</code>
  </pre>
@@ -3742,6 +3742,7 @@ fetch(url, {
                 <pre>
 
 <code class="language-json" style="max-height: 300px;">{
+    &quot;token&quot;: &quot;1|fMyN7p4LYO89olWWJmCct1sY3seIdR7wsZqIJ9Xd&quot;,
     &quot;message&quot;: &quot;Successfully verified&quot;,
     &quot;data&quot;: {
         &quot;firstname&quot;: &quot;Avaz&quot;,
@@ -3822,10 +3823,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="code"                data-endpoint="POSTapi-v1-verify"
-               value="debitis"
+               value="deleniti"
                data-component="body">
     <br>
-<p>Example: <code>debitis</code></p>
+<p>Example: <code>deleniti</code></p>
         </div>
         </form>
 
@@ -3884,7 +3885,7 @@ fetch(url, {
             <pre><code class="language-http">content-type: text/html; charset=UTF-8
 cache-control: no-cache, private
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
+x-ratelimit-remaining: 55
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -3970,7 +3971,7 @@ vary: Origin
 
     <p>End points for wizard or multistep form</p>
 
-                                <h2 id="wizard-POSTapi-v1-wizard-setup">POST api/v1/wizard/setup</h2>
+                                <h2 id="wizard-POSTapi-v1-wizard-setup">Store Products with contacts</h2>
 
 <p>
 </p>
@@ -3984,18 +3985,21 @@ vary: Origin
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost:8000/api/v1/wizard/setup" \
-    --header "Content-Type: multipart/form-data" \
+    --header "Content-Type: application/json" \
     --header "Accept: application/json" \
-    --form "category_id=recusandae" \
-    --form "name=aut" \
-    --form "description=Nemo porro voluptatum dignissimos recusandae optio fuga sit." \
-    --form "postal_code=69" \
-    --form "location=ad" \
-    --form "city_id=et" \
-    --form "country_id=maiores" \
-    --form "contacts[]=illum" \
-    --form "rating=39" \
-    --form "images[]=@C:\Users\-\AppData\Local\Temp\php5ECC.tmp" </code></pre></div>
+    --data "{
+    \"category_id\": \"Hotel\",
+    \"name\": \"La-mare\",
+    \"description\": \"Doloribus nisi eos quos aspernatur.\",
+    \"images\": \"eum\",
+    \"postal_code\": \"consequatur\",
+    \"location\": \"ex\",
+    \"city_id\": \"Moscow\",
+    \"country_id\": \"Russia\",
+    \"contacts\": \"eum\",
+    \"rating\": \"3,5\"
+}"
+</code></pre></div>
 
 
 <div class="javascript-example">
@@ -4004,65 +4008,93 @@ vary: Origin
 );
 
 const headers = {
-    "Content-Type": "multipart/form-data",
+    "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
-const body = new FormData();
-body.append('category_id', 'recusandae');
-body.append('name', 'aut');
-body.append('description', 'Nemo porro voluptatum dignissimos recusandae optio fuga sit.');
-body.append('postal_code', '69');
-body.append('location', 'ad');
-body.append('city_id', 'et');
-body.append('country_id', 'maiores');
-body.append('contacts[]', 'illum');
-body.append('rating', '39');
-body.append('images[]', document.querySelector('input[name="images[]"]').files[0]);
+let body = {
+    "category_id": "Hotel",
+    "name": "La-mare",
+    "description": "Doloribus nisi eos quos aspernatur.",
+    "images": "eum",
+    "postal_code": "consequatur",
+    "location": "ex",
+    "city_id": "Moscow",
+    "country_id": "Russia",
+    "contacts": "eum",
+    "rating": "3,5"
+};
 
 fetch(url, {
     method: "POST",
     headers,
-    body,
+    body: JSON.stringify(body),
 }).then(response =&gt; response.json());</code></pre></div>
 
 </span>
 
 <span id="example-responses-POSTapi-v1-wizard-setup">
             <blockquote>
-            <p>Example response (422):</p>
+            <p>Example response (200):</p>
         </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
-vary: Origin
- </code></pre></details>         <pre>
+                <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;The selected category id is invalid. (and 5 more errors)&quot;,
-    &quot;errors&quot;: {
-        &quot;category_id&quot;: [
-            &quot;The selected category id is invalid.&quot;
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;0f44eb84-1399-499b-8ea7-9b4d1825d771&quot;,
+        &quot;name&quot;: &quot;Fugit vel consequuntur sint et occaecati.&quot;,
+        &quot;description&quot;: &quot;Enim nobis nesciunt et voluptas atque cumque sed commodi. Aut quia eos voluptatem quas. Id pariatur nostrum quo vel et et aut. Quasi est quae similique et rem. Praesentium ut sint magnam exercitationem accusamus minima.&quot;,
+        &quot;category&quot;: {
+            &quot;id&quot;: 4,
+            &quot;name&quot;: &quot;Single-family home&quot;
+        },
+        &quot;country&quot;: &quot;Turkey&quot;,
+        &quot;city&quot;: &quot;furt&quot;,
+        &quot;postalCode&quot;: 112332,
+        &quot;location&quot;: &quot;Maiores porro pariatur totam molestiae error quaerat odit nisi.&quot;,
+        &quot;images&quot;: [],
+        &quot;isPetAllowed&quot;: false,
+        &quot;rating&quot;: 5,
+        &quot;contacts&quot;: []
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;First step is done&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;70d7379f-0845-497c-a5ad-cfa9af32c64e&quot;,
+        &quot;name&quot;: &quot;La maree&quot;,
+        &quot;description&quot;: &quot;The best hotel ever&quot;,
+        &quot;category&quot;: {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;Hotel&quot;
+        },
+        &quot;country&quot;: &quot;Uzbekistan&quot;,
+        &quot;city&quot;: &quot;view&quot;,
+        &quot;postalCode&quot;: &quot;112332&quot;,
+        &quot;location&quot;: &quot;Somewhere&quot;,
+        &quot;images&quot;: [
+            {
+                &quot;media_id&quot;: 1,
+                &quot;url&quot;: &quot;http://localhost:8000/storage/1/4.jfif&quot;
+            },
+            {
+                &quot;media_id&quot;: 2,
+                &quot;url&quot;: &quot;http://localhost:8000/storage/2/3.jfif&quot;
+            }
         ],
-        &quot;city_id&quot;: [
-            &quot;The selected city id is invalid.&quot;
-        ],
-        &quot;country_id&quot;: [
-            &quot;The selected country id is invalid.&quot;
-        ],
-        &quot;rating&quot;: [
-            &quot;The rating must not be greater than 5.&quot;
-        ],
-        &quot;contacts.0.name&quot;: [
-            &quot;The contacts.0.name field is required.&quot;
-        ],
-        &quot;contacts.0.number&quot;: [
-            &quot;The contacts.0.number field is required.&quot;
+        &quot;isPetAllowed&quot;: false,
+        &quot;rating&quot;: &quot;3&quot;,
+        &quot;contacts&quot;: [
+            {
+                &quot;name&quot;: &quot;Avaz Akhmedov&quot;,
+                &quot;phoneNumber&quot;: &quot;9987972212&quot;
+            }
         ]
     }
 }</code>
@@ -4081,7 +4113,7 @@ vary: Origin
 <form id="form-POSTapi-v1-wizard-setup" data-method="POST"
       data-path="api/v1/wizard/setup"
       data-authed="0"
-      data-hasfiles="1"
+      data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
       onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-wizard-setup', this);">
@@ -4113,10 +4145,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="Content-Type"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="multipart/form-data"
+               value="application/json"
                data-component="header">
     <br>
-<p>Example: <code>multipart/form-data</code></p>
+<p>Example: <code>application/json</code></p>
             </div>
                                 <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
@@ -4132,102 +4164,100 @@ vary: Origin
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>category_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="category_id"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="recusandae"
+               value="Hotel"
                data-component="body">
     <br>
-<p>Example: <code>recusandae</code></p>
+<p>exists:categories,id. Example: <code>Hotel</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="name"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="aut"
+               value="La-mare"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>string unique. Example: <code>La-mare</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
+<small>required.Example:</small>&nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="description"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="Nemo porro voluptatum dignissimos recusandae optio fuga sit."
+               value="Doloribus nisi eos quos aspernatur."
                data-component="body">
     <br>
-<p>Example: <code>Nemo porro voluptatum dignissimos recusandae optio fuga sit.</code></p>
+<p>the Best hotel with all facilities Example: <code>Doloribus nisi eos quos aspernatur.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>images</code></b>&nbsp;&nbsp;
-<small>file[]</small>&nbsp;
- &nbsp;
-                <input type="file" style="display: none"
-               name="images[0]"                data-endpoint="POSTapi-v1-wizard-setup"
-               data-component="body">
-        <input type="file" style="display: none"
-               name="images[1]"                data-endpoint="POSTapi-v1-wizard-setup"
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+               name="images"                data-endpoint="POSTapi-v1-wizard-setup"
+               value="eum"
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2048 kilobytes.</p>
+<p>array. Example: <code>eum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>postal_code</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
+<small>required.Example:112332</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
                name="postal_code"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="69"
+               value="consequatur"
                data-component="body">
     <br>
-<p>Must be at least 1. Example: <code>69</code></p>
+<p>Example: <code>consequatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>location</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="location"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="ad"
+               value="ex"
                data-component="body">
     <br>
-<p>Example: <code>ad</code></p>
+<p>.Some street Example: <code>ex</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="city_id"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="et"
+               value="Moscow"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>exists:cities,id. Example: <code>Moscow</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>country_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="country_id"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="maiores"
+               value="Russia"
                data-component="body">
     <br>
-<p>Example: <code>maiores</code></p>
+<p>exists:countries,id. Example: <code>Russia</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
             <summary style="padding-bottom: 10px;">
                 <b style="line-height: 2;"><code>contacts</code></b>&nbsp;&nbsp;
-<small>string[]</small>&nbsp;
- &nbsp;
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
 <br>
-
+<p>array.Example[name =&gt; Avaz,number =&gt; 7975452] Example: <code>eum</code></p>
             </summary>
                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -4235,10 +4265,10 @@ vary: Origin
  &nbsp;
                 <input type="text" style="display: none"
                name="contacts.0.name"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="nnasvskkeujjlhgpzagap"
+               value="flcrwofrmpwc"
                data-component="body">
     <br>
-<p>Must not be greater than 100 characters. Example: <code>nnasvskkeujjlhgpzagap</code></p>
+<p>Must not be greater than 100 characters. Example: <code>flcrwofrmpwc</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>number</code></b>&nbsp;&nbsp;
@@ -4246,23 +4276,23 @@ vary: Origin
  &nbsp;
                 <input type="number" style="display: none"
                name="contacts.0.number"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="05169"
+               value=" 41"
                data-component="body">
     <br>
-<p>Must match the regex /^[0-9 ]+$/. Example: <code>05169</code></p>
+<p>Must match the regex /^[0-9 ]+$/. Example: <code>41</code></p>
                     </div>
                                     </details>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>rating</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
                name="rating"                data-endpoint="POSTapi-v1-wizard-setup"
-               value="39"
+               value="3,5"
                data-component="body">
     <br>
-<p>Must not be greater than 5. Must be at least 1. Example: <code>39</code></p>
+<p>float Rating of the hotel. Example: <code>3,5</code></p>
         </div>
         </form>
 
@@ -4283,7 +4313,7 @@ vary: Origin
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"attributes\": \"aut\"
+    \"attributes\": \"et\"
 }"
 </code></pre></div>
 
@@ -4299,7 +4329,7 @@ const headers = {
 };
 
 let body = {
-    "attributes": "aut"
+    "attributes": "et"
 };
 
 fetch(url, {
@@ -4321,7 +4351,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 58
+x-ratelimit-remaining: 59
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -4416,7 +4446,7 @@ vary: Origin
 <small>required</small>&nbsp;
 <i>optional</i> &nbsp;
 <br>
-<p>array.Attributes of the hotel Example: <code>aut</code></p>
+<p>array.Attributes of the hotel Example: <code>et</code></p>
             </summary>
                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -4424,10 +4454,10 @@ vary: Origin
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="attributes.name"                data-endpoint="POSTapi-v1-wizard--product_uuid--services"
-               value="omnis"
+               value="sunt"
                data-component="body">
     <br>
-<p>Example: <code>omnis</code></p>
+<p>Example: <code>sunt</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
@@ -4435,10 +4465,10 @@ vary: Origin
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="attributes.value"                data-endpoint="POSTapi-v1-wizard--product_uuid--services"
-               value="fuga"
+               value="ea"
                data-component="body">
     <br>
-<p>Example: <code>fuga</code></p>
+<p>Example: <code>ea</code></p>
                     </div>
                                     </details>
         </div>
@@ -4461,13 +4491,13 @@ vary: Origin
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"room_type\": \"accusamus\",
-    \"is_smoking_allowed\": \"quas\",
-    \"bed_type\": \"quasi\",
-    \"bed_count\": \"deleniti\",
-    \"room_size\": \"qui\",
-    \"price\": \"eaque\",
-    \"price_for_residents\": \"impedit\"
+    \"room_type\": \"cumque\",
+    \"is_smoking_allowed\": \"qui\",
+    \"bed_type\": \"alias\",
+    \"bed_count\": \"id\",
+    \"room_size\": \"est\",
+    \"price\": \"incidunt\",
+    \"price_for_residents\": \"occaecati\"
 }"
 </code></pre></div>
 
@@ -4483,13 +4513,13 @@ const headers = {
 };
 
 let body = {
-    "room_type": "accusamus",
-    "is_smoking_allowed": "quas",
-    "bed_type": "quasi",
-    "bed_count": "deleniti",
-    "room_size": "qui",
-    "price": "eaque",
-    "price_for_residents": "impedit"
+    "room_type": "cumque",
+    "is_smoking_allowed": "qui",
+    "bed_type": "alias",
+    "bed_count": "id",
+    "room_size": "est",
+    "price": "incidunt",
+    "price_for_residents": "occaecati"
 };
 
 fetch(url, {
@@ -4600,10 +4630,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="room_type"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="accusamus"
+               value="cumque"
                data-component="body">
     <br>
-<p>Example: <code>accusamus</code></p>
+<p>Example: <code>cumque</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>is_smoking_allowed</code></b>&nbsp;&nbsp;
@@ -4611,10 +4641,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="is_smoking_allowed"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="quas"
+               value="qui"
                data-component="body">
     <br>
-<p>boolean default false. Example: <code>quas</code></p>
+<p>boolean default false. Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>bed_type</code></b>&nbsp;&nbsp;
@@ -4622,10 +4652,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="bed_type"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="quasi"
+               value="alias"
                data-component="body">
     <br>
-<p>of the bed Example: <code>quasi</code></p>
+<p>of the bed Example: <code>alias</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>bed_count</code></b>&nbsp;&nbsp;
@@ -4633,10 +4663,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="bed_count"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="deleniti"
+               value="id"
                data-component="body">
     <br>
-<p>integer.How many beds room have Example: <code>deleniti</code></p>
+<p>integer.How many beds room have Example: <code>id</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>room_size</code></b>&nbsp;&nbsp;
@@ -4644,10 +4674,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="room_size"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="qui"
+               value="est"
                data-component="body">
     <br>
-<p>of the room Example: <code>qui</code></p>
+<p>of the room Example: <code>est</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
@@ -4655,10 +4685,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="price"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="eaque"
+               value="incidunt"
                data-component="body">
     <br>
-<p>float.This is price for foreigners Example: <code>eaque</code></p>
+<p>float.This is price for foreigners Example: <code>incidunt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>price_for_residents</code></b>&nbsp;&nbsp;
@@ -4666,10 +4696,10 @@ fetch(url, {
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                name="price_for_residents"                data-endpoint="POSTapi-v1-wizard--product_uuid--rooms"
-               value="impedit"
+               value="occaecati"
                data-component="body">
     <br>
-<p>is price for locals Example: <code>impedit</code></p>
+<p>is price for locals Example: <code>occaecati</code></p>
         </div>
         </form>
 

@@ -9,13 +9,13 @@ return [
     /*
      * The HTML <title> for the generated documentation. If this is empty, Scribe will infer it from config('app.name').
      */
-    'title' => "Auth api documentation",
+    'title' => "Start booking api documentation",
 
 
     /*
      * A short description of your API. Will be included in the docs webpage, Postman collection and OpenAPI spec.
      */
-    'description' => 'This is documentation for auth api ',
+    'description' => 'This is documentation start booking project api ',
 
     /*
      * The base URL displayed in the docs. If this is empty, Scribe will use the value of config('app.url').
@@ -88,7 +88,7 @@ return [
                      * API calls will be made only for routes in this group matching these HTTP methods (GET, POST, etc).
                      * List the methods here or use '*' to mean all methods. Leave empty to disable API calls.
                      */
-                    'methods' => ['GET', 'POST','PUT','PATCH','DELETE'],
+                    'methods' => ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
 
                     /*
                      * Laravel config variables which should be set for the API call.

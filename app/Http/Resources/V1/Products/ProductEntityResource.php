@@ -4,7 +4,7 @@ namespace App\Http\Resources\V1\Products;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class EntityResource extends JsonResource
+class ProductEntityResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -21,7 +21,8 @@ class EntityResource extends JsonResource
             "roomSize" => $this->room_size,
             "price" => $this->price,
             "priceForResidents" => $this->price_for_residents,
-            "isSmokingAllowed" => boolval($this->is_smoking_allowed)
+            "isSmokingAllowed" => boolval($this->is_smoking_allowed),
+            "images" => ImageResource::collection($this->getMedia("rooms"))
         ];
     }
 }

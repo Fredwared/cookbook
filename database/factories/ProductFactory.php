@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\StatusEnum;
 use App\Models\Category;
 use App\Models\City;
 use App\Models\Country;
@@ -25,7 +26,8 @@ class ProductFactory extends Factory
             "city_id" => City::query()->inRandomOrder()->first()->id,
             "country_id" => Country::query()->inRandomOrder()->first()->id,
             "postal_code" => 112332,
-            "rating" => $this->faker->randomElement([1, 2, 3, 4, 5])
+            "rating" => $this->faker->randomElement([1, 2, 3, 4, 5]),
+            "status" => StatusEnum::PUBLISHED
         ];
     }
 }

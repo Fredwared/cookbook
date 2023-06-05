@@ -50,7 +50,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"firstname":"Estelle","lastname":"Ruecker"}}'
+        content: '{"data":{"firstname":"Rodger","lastname":"D''Amore"}}'
         headers: []
         description: ''
         custom: []

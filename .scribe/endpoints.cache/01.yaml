@@ -33,7 +33,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":"cff7286b-0e80-4134-b62d-4ab8ce1f3971","name":"Consequatur totam magni alias atque dolores perferendis.","description":"Pariatur facilis eos accusantium ab quas. Recusandae facere repellat inventore ut dolor. Modi sunt sit nihil voluptate. Maiores aut tempore voluptatum hic. Culpa quos ad qui modi eos. Odit eligendi sit magni modi molestiae. Non dolor ut consequatur accusantium tempore voluptatibus. Sit molestiae in eum a aut.","country":"Tajikistan","city":"furt","location":"Magnam repudiandae debitis temporibus dolores temporibus harum.","rating":2,"postalCode":112332,"rate":"0,00","isPetAllowed":false}}'
+        content: '{"data":{"id":"0edc636a-011e-429c-bc8c-b8d4c6f2f948","name":"Dolores quis assumenda sint voluptatem inventore.","description":"Culpa ut qui illo magni tenetur dolores est. Facere ipsa eveniet quia ex voluptas dolores. Dolorem ratione cum accusamus molestias repellendus libero. Ea molestias eveniet quos cumque est. Voluptas rem natus amet accusantium exercitationem. Ipsam dignissimos dolore aut dolor dolor ab eveniet est.","country":"Uzbekistan","city":"burgh","location":"Accusantium aliquid quaerat qui enim mollitia.","rating":2,"postalCode":112332,"rate":"0,00","isPetAllowed":false}}'
         headers: []
         description: ''
         custom: []
@@ -79,7 +79,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":"387eec75-dd72-4264-8531-8f20a5c7bb53","name":"Esse temporibus sed odio.","description":"Officia alias quidem qui hic sapiente modi eos. Quia voluptatem libero ipsa aut perferendis et. Sunt labore quasi rerum incidunt dolores rerum soluta. Error repudiandae eveniet commodi sint eius eligendi nihil cumque. Dolore modi reprehenderit cupiditate quis in qui. Temporibus dolor quia eos aliquid quo modi exercitationem doloribus. Veniam velit architecto eligendi possimus nemo qui.","country":"Tajikistan","city":"view","location":"Totam ut consectetur qui soluta eaque non.","rating":3,"postalCode":112332,"rate":"0,00","isPetAllowed":false}}'
+        content: '{"data":{"id":"97df19a4-7b76-467e-b230-c7d35361dd51","name":"Maxime explicabo quo quae quod pariatur.","description":"Eos ratione omnis vel itaque occaecati ut. Atque dolores dolores dolorum. Assumenda molestiae consequuntur non dignissimos aut delectus. Nam repellendus aut iste ea sapiente veniam officia rerum. Sit corrupti totam non laudantium dolorum. Dolores voluptate illum alias facere quidem dignissimos. Sed eum amet aut nihil eius distinctio dignissimos. Unde qui omnis suscipit a esse et asperiores. Eum sapiente omnis assumenda alias nesciunt placeat.","country":"Armenia","city":"bury","location":"Aliquam aut blanditiis et qui.","rating":2,"postalCode":112332,"rate":"0,00","isPetAllowed":false}}'
         headers: []
         description: ''
         custom: []

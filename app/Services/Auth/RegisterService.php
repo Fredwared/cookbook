@@ -13,9 +13,9 @@ class  RegisterService
 {
 
     /**
-     * @param array $validation
-     * @param $code
-     * @return mixed
+     *
+     * @used \App\Http\Controllers\V1\Register\RegisterController
+     * @method register
      */
     public function registerUser(array $validation, $code): mixed
     {
@@ -32,9 +32,9 @@ class  RegisterService
 
 
     /**
-     * @param array $validation
-     * @return RegisterResource
-     * @throws ValidationException
+     *
+     * @used \App\Http\Controllers\V1\verify\RegisterController
+     * @method verify
      */
     public function verifyUser(array $validation): RegisterResource
     {
@@ -54,7 +54,11 @@ class  RegisterService
 
     }
 
-
+    /**
+     *
+     * @used \App\Http\Controllers\V1\Register\RegisterController
+     * @method resend
+     */
     public function resendVerificationCode(array $validation, $code): void
     {
 

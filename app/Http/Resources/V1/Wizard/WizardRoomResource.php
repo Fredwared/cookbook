@@ -2,17 +2,13 @@
 
 namespace App\Http\Resources\V1\Wizard;
 
+use App\Http\Resources\V1\Products\ImageResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class WizardRoomResource extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
-     */
-    public function toArray($request)
+
+    public function toArray($request): array
     {
         return [
             "roomType" => $this->room_type,
@@ -21,7 +17,8 @@ class WizardRoomResource extends JsonResource
             "bedCount" => $this->bed_count,
             "roomSize" => $this->room_size ?? "unknown",
             "price" => $this->price,
-            "priceForResidents" => $this->price_for_residents
+            "priceForResidents" => $this->price_for_residents,
+            "images" => ImageResource::collection($this->images),
         ];
     }
 }

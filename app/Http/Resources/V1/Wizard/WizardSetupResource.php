@@ -29,6 +29,7 @@ class WizardSetupResource extends JsonResource
             "images" => ImageResource::collection($this->images),
             "isPetAllowed" => boolval($this->is_pet_allowed),
             "rating" => $this->rating,
+            "status" => $this->status,
             "contacts" => ProductContactResource::collection($this->contacts),
 
         ];

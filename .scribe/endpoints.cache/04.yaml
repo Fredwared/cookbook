@@ -123,7 +123,7 @@ endpoints:
         name: preferred_contact_method
         description: 'method of user to contact.Default email'
         required: false
-        example: aliquam
+        example: nostrum
         type: Preferred
         custom: []
     cleanBodyParameters:
@@ -139,7 +139,7 @@ endpoints:
       password: 123asd2
       password_confirmation: 123asd2
       gender: 'male or female'
-      preferred_contact_method: aliquam
+      preferred_contact_method: nostrum
     fileParameters: []
     responses:
       -
@@ -181,22 +181,22 @@ endpoints:
         name: code
         description: ''
         required: false
-        example: debitis
+        example: deleniti
         type: required.
         custom: []
     cleanBodyParameters:
-      code: debitis
+      code: deleniti
     fileParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"firstname":"Rogelio","lastname":"Sauer","country":"Turkey","primaryNumber":"14585473686","number":"17199049241","email":"prudence.cronin@buckridge.net"}}'
+        content: '{"data":{"firstname":"Maynard","lastname":"Stoltenberg","country":"Kazakhstan","primaryNumber":"19405418402","number":"15633446252","email":"tevin.ernser@okon.com"}}'
         headers: []
         description: ''
         custom: []
       -
         status: 200
-        content: "{\r\n  \"message\": \"Successfully verified\",\r\n  \"data\": {\r\n    \"firstname\": \"Avaz\",\r\n    \"lastname\": \"Akhmedov\",\r\n    \"country\": \"Uzbekistan\",\r\n    \"primaryNumber\": \"9987977212\",\r\n    \"number\": \"9984321122\",\r\n    \"email\": \"avaz.corp@gmail.com\"\r\n  }\r\n}"
+        content: "{\r\n  \"token\": \"1|fMyN7p4LYO89olWWJmCct1sY3seIdR7wsZqIJ9Xd\",\r\n  \"message\": \"Successfully verified\",\r\n  \"data\": {\r\n    \"firstname\": \"Avaz\",\r\n    \"lastname\": \"Akhmedov\",\r\n    \"country\": \"Uzbekistan\",\r\n    \"primaryNumber\": \"9987977212\",\r\n    \"number\": \"9984321122\",\r\n    \"email\": \"avaz.corp@gmail.com\"\r\n  }\r\n}"
         headers: []
         description: ''
         custom: []
@@ -247,7 +247,7 @@ endpoints:
           content-type: 'text/html; charset=UTF-8'
           cache-control: 'no-cache, private'
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '54'
+          x-ratelimit-remaining: '55'
           vary: Origin
         description: null
         custom: []

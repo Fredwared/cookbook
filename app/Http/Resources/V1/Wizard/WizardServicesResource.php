@@ -6,16 +6,20 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class WizardServicesResource extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
-     */
-    public function toArray($request)
-    {
-        return [
 
+    public function toArray($request): array
+    {
+
+
+        $data = collect($this->attributes)->map(function ($attribute) {
+            return [
+                "name" => $attribute["attribute"]["name"],
+                "value" => $attribute["value"]
+            ];
+        });
+
+        return [
+            "services" => $data
         ];
     }
 }

@@ -14,12 +14,12 @@ endpoints:
         End points for wizard or multistep form
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'Store Products with contacts'
       description: ''
       authenticated: false
       custom: []
     headers:
-      Content-Type: multipart/form-data
+      Content-Type: application/json
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
@@ -28,115 +28,112 @@ endpoints:
     bodyParameters:
       category_id:
         name: category_id
-        description: ''
-        required: true
-        example: recusandae
-        type: string
+        description: 'exists:categories,id.'
+        required: false
+        example: Hotel
+        type: required
         custom: []
       name:
         name: name
-        description: ''
-        required: true
-        example: aut
-        type: string
+        description: 'string unique.'
+        required: false
+        example: La-mare
+        type: required
         custom: []
       description:
         name: description
-        description: ''
-        required: true
-        example: 'Nemo porro voluptatum dignissimos recusandae optio fuga sit.'
-        type: string
+        description: 'the Best hotel with all facilities'
+        required: false
+        example: 'Doloribus nisi eos quos aspernatur.'
+        type: 'required.Example:'
         custom: []
       images:
         name: images
-        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
-        required: true
-        example:
-          - null
-        type: 'file[]'
+        description: array.
+        required: false
+        example: eum
+        type: required
         custom: []
       postal_code:
         name: postal_code
-        description: 'Must be at least 1.'
-        required: true
-        example: 69
-        type: number
+        description: ''
+        required: false
+        example: consequatur
+        type: 'required.Example:112332'
         custom: []
       location:
         name: location
-        description: ''
-        required: true
-        example: ad
-        type: string
+        description: '.Some street'
+        required: false
+        example: ex
+        type: required
         custom: []
       city_id:
         name: city_id
-        description: ''
-        required: true
-        example: et
-        type: string
+        description: 'exists:cities,id.'
+        required: false
+        example: Moscow
+        type: required
         custom: []
       country_id:
         name: country_id
-        description: ''
-        required: true
-        example: maiores
-        type: string
+        description: 'exists:countries,id.'
+        required: false
+        example: Russia
+        type: required
         custom: []
       contacts:
         name: contacts
-        description: ''
-        required: true
-        example:
-          - illum
-        type: 'string[]'
+        description: 'array.Example[name => Avaz,number => 7975452]'
+        required: false
+        example: eum
+        type: required
         custom: []
       rating:
         name: rating
-        description: 'Must not be greater than 5. Must be at least 1.'
-        required: true
-        example: 39
-        type: number
+        description: 'float Rating of the hotel.'
+        required: false
+        example: '3,5'
+        type: required
         custom: []
       'contacts[].name':
         name: 'contacts[].name'
         description: 'Must not be greater than 100 characters.'
         required: true
-        example: nnasvskkeujjlhgpzagap
+        example: flcrwofrmpwc
         type: string
         custom: []
       'contacts[].number':
         name: 'contacts[].number'
         description: 'Must match the regex /^[0-9 ]+$/.'
         required: true
-        example: '05169'
+        example: ' 41'
         type: number
         custom: []
     cleanBodyParameters:
-      category_id: recusandae
-      name: aut
-      description: 'Nemo porro voluptatum dignissimos recusandae optio fuga sit.'
-      postal_code: 69
-      location: ad
-      city_id: et
-      country_id: maiores
-      contacts:
-        - illum
-      rating: 39
-    fileParameters:
-      images:
-        - null
+      category_id: Hotel
+      name: La-mare
+      description: 'Doloribus nisi eos quos aspernatur.'
+      images: eum
+      postal_code: consequatur
+      location: ex
+      city_id: Moscow
+      country_id: Russia
+      contacts: eum
+      rating: '3,5'
+    fileParameters: []
     responses:
       -
-        status: 422
-        content: '{"message":"The selected category id is invalid. (and 5 more errors)","errors":{"category_id":["The selected category id is invalid."],"city_id":["The selected city id is invalid."],"country_id":["The selected country id is invalid."],"rating":["The rating must not be greater than 5."],"contacts.0.name":["The contacts.0.name field is required."],"contacts.0.number":["The contacts.0.number field is required."]}}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
-          vary: Origin
-        description: null
+        status: 200
+        content: '{"data":{"id":"0f44eb84-1399-499b-8ea7-9b4d1825d771","name":"Fugit vel consequuntur sint et occaecati.","description":"Enim nobis nesciunt et voluptas atque cumque sed commodi. Aut quia eos voluptatem quas. Id pariatur nostrum quo vel et et aut. Quasi est quae similique et rem. Praesentium ut sint magnam exercitationem accusamus minima.","category":{"id":4,"name":"Single-family home"},"country":"Turkey","city":"furt","postalCode":112332,"location":"Maiores porro pariatur totam molestiae error quaerat odit nisi.","images":[],"isPetAllowed":false,"rating":5,"contacts":[]}}'
+        headers: []
+        description: ''
+        custom: []
+      -
+        status: 200
+        content: "{\r\n  \"message\": \"First step is done\",\r\n  \"data\": {\r\n    \"id\": \"70d7379f-0845-497c-a5ad-cfa9af32c64e\",\r\n    \"name\": \"La maree\",\r\n    \"description\": \"The best hotel ever\",\r\n    \"category\": {\r\n      \"id\": 1,\r\n      \"name\": \"Hotel\"\r\n    },\r\n    \"country\": \"Uzbekistan\",\r\n    \"city\": \"view\",\r\n    \"postalCode\": \"112332\",\r\n    \"location\": \"Somewhere\",\r\n    \"images\": [\r\n      {\r\n        \"media_id\": 1,\r\n        \"url\": \"http://localhost:8000/storage/1/4.jfif\"\r\n      },\r\n      {\r\n        \"media_id\": 2,\r\n        \"url\": \"http://localhost:8000/storage/2/3.jfif\"\r\n      }\r\n    ],\r\n    \"isPetAllowed\": false,\r\n    \"rating\": \"3\",\r\n    \"contacts\": [\r\n      {\r\n        \"name\": \"Avaz Akhmedov\",\r\n        \"phoneNumber\": \"9987972212\"\r\n      }\r\n    ]\r\n  }\r\n}"
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth: []
@@ -179,39 +176,39 @@ endpoints:
         name: attributes
         description: 'array.Attributes of the hotel'
         required: false
-        example: aut
+        example: et
         type: required
         custom: []
       'attributes[].name':
         name: 'attributes[].name'
         description: ''
         required: true
-        example: a
+        example: ea
         type: string
         custom: []
       'attributes[].value':
         name: 'attributes[].value'
         description: ''
         required: true
-        example: dolorem
+        example: porro
         type: string
         custom: []
       attributes.name:
         name: attributes.name
         description: ''
         required: false
-        example: omnis
+        example: sunt
         type: required.
         custom: []
       attributes.value:
         name: attributes.value
         description: ''
         required: false
-        example: fuga
+        example: ea
         type: required.
         custom: []
     cleanBodyParameters:
-      attributes: aut
+      attributes: et
     fileParameters: []
     responses:
       -
@@ -221,7 +218,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '58'
+          x-ratelimit-remaining: '59'
           vary: Origin
         description: null
         custom: []
@@ -266,59 +263,59 @@ endpoints:
         name: room_type
         description: ''
         required: false
-        example: accusamus
+        example: cumque
         type: required.
         custom: []
       is_smoking_allowed:
         name: is_smoking_allowed
         description: 'boolean default false.'
         required: false
-        example: quas
+        example: qui
         type: nullable
         custom: []
       bed_type:
         name: bed_type
         description: 'of the bed'
         required: false
-        example: quasi
+        example: alias
         type: required.Type
         custom: []
       bed_count:
         name: bed_count
         description: 'integer.How many beds room have'
         required: false
-        example: deleniti
+        example: id
         type: required
         custom: []
       room_size:
         name: room_size
         description: 'of the room'
         required: false
-        example: qui
+        example: est
         type: integer.Size
         custom: []
       price:
         name: price
         description: 'float.This is price for foreigners'
         required: false
-        example: eaque
+        example: incidunt
         type: required
         custom: []
       price_for_residents:
         name: price_for_residents
         description: 'is price for locals'
         required: false
-        example: impedit
+        example: occaecati
         type: float.This
         custom: []
     cleanBodyParameters:
-      room_type: accusamus
-      is_smoking_allowed: quas
-      bed_type: quasi
-      bed_count: deleniti
-      room_size: qui
-      price: eaque
-      price_for_residents: impedit
+      room_type: cumque
+      is_smoking_allowed: qui
+      bed_type: alias
+      bed_count: id
+      room_size: est
+      price: incidunt
+      price_for_residents: occaecati
     fileParameters: []
     responses:
       -
